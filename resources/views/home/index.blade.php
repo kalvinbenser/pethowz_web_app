@@ -41,10 +41,10 @@
 
 
 
-
 </head>
 
 <body>
+
     <!-- Header Section Start -->
     <div class="header section">
 
@@ -101,17 +101,21 @@
                         <div class="col-lg-6 d-none d-lg-block">
                             <div class="main-menu">
                                 <ul>
+                                    <li><a href="/home">Home</a></li>
+                                    <li><a href="/about">About Us</a></li>
                                     <li class="has-children">
-                                        <a href="#">Home</a>
+                                        <a href="/pet_host">Pet host</a>
                                         <ul class="sub-menu">
-                                            <li><a href="index.html">Home 1</a></li>
-                                            <li><a href="index-2.html">Home 2</a></li>
-                                            <li><a href="index-3.html">Home 3</a></li>
-                                            <li><a href="index-4.html">Home 4</a></li>
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="contact.html">Contact Us</a></li>
+                                            <li><a href="error-404.html">Error 404</a></li>
+                                            <li><a href="faq.html">FAQ</a></li>
+                                            <li><a href="{{URL::asset('/login/login')}}">Login</a></li>
+                                            <li><a href="register.html">Register</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-children position-static">
-                                        <a href="#">Shop</a>
+                                        <a href="#">Service</a>
                                         <ul class="mega-menu">
                                             <li class="mega-menu-col">
                                                 <h4 class="mega-menu-title">Shop Layout</h4>
@@ -146,6 +150,7 @@
                                                     <li><a href="compare.html">Compare</a></li>
                                                 </ul>
                                             </li>
+                                         
                                             <li class="mega-menu-col">
                                                 <div class="megamenu-image">
                                                     <a href="shop.html">
@@ -155,6 +160,7 @@
                                             </li>
                                         </ul>
                                     </li>
+<<<<<<< HEAD
                                     <li class="has-children">
                                         <a href="#">Pages</a>
                                         <ul class="sub-menu">
@@ -178,6 +184,11 @@
                                     </li>
                                     <li><a href="{{URL::asset('/about/about')}}">About</a></li>
                                     <li><a href="contact.html">Contact</a></li>
+=======
+                              
+                                    <li><a href="/login">Login</a></li>
+                                    
+>>>>>>> 691df8d926865746643215b06884830d943520c0
                                 </ul>
                             </div>
                         </div>
@@ -376,11 +387,13 @@
         <div class="container">
 
             <!-- Section Title & Tab Start -->
-            <div class="row" data-aos="fade-up" data-aos-duration="1000">
+            <div class="row " data-aos="fade-up" data-aos-duration="1000" >
                 <!-- Tab Start -->
-                <div class="col-12">
+                <div class="col-12 my-3">
                     <h1>Exclusive Pet Spaces</h1>
+                    <a class="btn btn-warning btn-sm mx-auto">view all</a>
                 </div>
+                
                 <!-- Tab End -->
             </div>
             <!-- Section Title & Tab End -->
