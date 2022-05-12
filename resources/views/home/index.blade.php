@@ -158,7 +158,7 @@
                                     <li class="has-children">
                                         <a href="#">Pages</a>
                                         <ul class="sub-menu">
-                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="{{URL::asset('/about/about')}}">About Us</a></li>
                                             <li><a href="contact.html">Contact Us</a></li>
                                             <li><a href="error-404.html">Error 404</a></li>
                                             <li><a href="faq.html">FAQ</a></li>
@@ -176,7 +176,7 @@
                                             <li><a href="blog-details-sidebar.html">Blog Details Sidebar</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="{{URL::asset('/about/about')}}">About</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
@@ -962,329 +962,631 @@
             <div class="row m-b-n30">
 
                 <!-- Banner Start -->
-                <div class="col-md-6 col-12 m-b-30" data-aos="fade-up" data-aos-duration="1000">
-                    <a href="shop.html" class="banner">
-                        <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Breeding Yellow.svg')}}" alt="Banner Image" />
-                    </a>
+                <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+                    <div class="sitting align_service">
+                        <a href="shop.html" class="banner">
+                            <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Group 18007.svg')}}" alt="Banner Image" />
+                        </a>
+                    </div>  
+                </div>
+              <!-- Banner End -->
+               <!-- Banner Start -->
+                <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+                   <div class="grooming align_service">
+                        <a href="shop.html" class="banner">
+                            <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Grooming white.svg')}}" alt="Banner Image" />
+                        </a>
+                   </div>
                 </div>
                 <!-- Banner End -->
-
                 <!-- Banner Start -->
-                <div class="col-md-6 col-12 m-b-30" data-aos="fade-up" data-aos-duration="1400">
-                    <a href="shop.html" class="banner">
-                        <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/2.png')}}" alt="Banner Image" />
-                    </a>
+                <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
+                    <div class="walking align_service">
+                        <a href="shop.html" class="banner">
+                            <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Walking White.svg')}}" alt="Banner Image" />
+                        </a>
+                    </div>
+                </div>
+                <!-- Banner End -->
+                <!-- Banner Start -->
+                <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+                    <div class="breading align_service">
+                        <a href="shop.html" class="banner">
+                            <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Breeding White.svg')}}" alt="Banner Image" />
+                        </a>
+                    </div>
+                </div>
+                <!-- Banner End -->
+                <!-- Banner Start -->
+                <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+                    <div class="training align_service">
+                        <a href="shop.html" class="banner">
+                            <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Path 27524.svg')}}" alt="Banner Image" />
+                        </a>
+                    </div>
+                </div>
+                <!-- Banner End -->
+                  <!-- Banner Start -->
+                  <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+                    <div class="photo align_service">
+                        <a href="shop.html" class="banner">
+                            <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Photography White.svg')}}" alt="Banner Image" />
+                        </a>
+                    </div>
                 </div>
                 <!-- Banner End -->
 
             </div>
             <!-- Banners End -->
         </div>
-
     </div>
     <!-- Banner Section End -->
-
-    <!-- Product Deal Section Start -->
-    <div class="section">
-        <div class="container">
-            <div class="row">
+    <!-- Exclusive Pet Spaces in service cender -->
+      <!-- pet Section Start -->
+      <div class="section position-relative">
+                  <div class="container">
+            <!-- Section Title & Tab Start -->
+            <div class="row" data-aos="fade-up" data-aos-duration="1000">
+                <!-- Tab Start -->
+             <div class="col-12">
+                    <h1>Exclusive Pet Spaces</h1>
+                </div>
+                <!-- Tab End -->
+            </div>
+            <!-- Section Title & Tab End -->
+            <!-- Products Tab Start -->
+            <div class="row" data-aos="fade-up" data-aos-duration="1100">
                 <div class="col-12">
-
-                    <!-- Section Title Start -->
-                    <div class="section-title text-center">
-                        <h2 class="title" data-aos="fade-up" data-aos-duration="1000">Deal Of The Week</h2>
-                    </div>
-                    <!-- Section Title End -->
-
-                    <!-- Latest Blog Carousel Start -->
-                    <div class="product-deal-carousel arrow-outside-container">
-                        <div class="swiper-container">
-
-                            <div class="swiper-wrapper">
-
-                                <div class="swiper-slide">
-                                    <!-- Single Product Deal Start -->
-                                    <div class="single-deal-product row m-b-n30">
-                                        <!-- Deal Thumb Start -->
-                                        <div class="deal-thumb col-md-6 m-b-30" data-aos="fade-up" data-aos-duration="1200">
-                                            <a href="single-product.html">
-                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/large-product/9.png')}}" alt="Product Image">
-                                            </a>
-                                        </div>
-                                        <!-- Deal Thumb End -->
-                                        <!-- Deal Content Start -->
-                                        <div class="product-deal-content col-md-6 m-b-30" data-aos="fade-up" data-aos-duration="1400">
-                                            <h5 class="title m-b-15"><a href="single-product.html">An Animal Album</a></h5>
-                                            <span class="rating m-b-15">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="tab-product-all">
+                            <div class="row m-b-n40">
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
+                                           </a>
+                                            <span class="badges">
+                                            <span class="sale">-18%</span>
+                                            </span>
+                                          
+                                       </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">An Animal Album</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
                                             <span class="price">
-													<span class="new">$80.50</span>
+                                            <span class="new">$80.50</span>
+                                            <span class="old">$85.80</span>                                            </span>
+                                        </div>
+                                        <!-- Content End  -->
+                                    </div>
+                                </div>
+                                <!-- Product End -->
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 3.png')}}" alt="Product" />
+                                            </a>
+                                            <span class="badges">
+                                            <span class="new">New</span>
+                                            </span>
+                                                                                   </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">Wait, You Need This</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                           <span class="price">
+                                            <span class="new">$90.00</span>                                          
+                                         </span>
+                                        </div>
+                                        <!-- Content End  -->
+                                    </div>
+                                </div>
+                                <!-- Product End -->
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 4.png')}}" alt="Product" />
+                                           </a>
+                                            
+                                       </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">Pet Food Corner</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                            <span class="price">
+                                            <span class="new">$105.00</span>
+                                            </span>
+                                        </div>
+                                        <!-- Content End  -->
+                                    </div>
+                                </div>
+                                <!-- Product End -->
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 5.png')}}" alt="Product" />
+                                            </a>
+                                            <span class="badges">
+                                            <span class="sale">-18%</span>
+                                            </span>
+                                           
+                                            <div class="countdown-area">                                                <div class="countdown-wrapper" data-countdown="2028/12/28"></div>
+                                            </div>                                       </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                            <span class="price">
+                                            <span class="new">$47.50</span>
+                                            <span class="old">$50.00</span>
+                                            </span>
+                                        </div>
+                                        <!-- Content End  -->
+                                    </div>
+                                </div>
+                                <!-- Product End -->
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 2 in webscreen 5.png')}}" alt="Product" />
+                                            </a>
+                                            <span class="badges">
+                                            <span class="sale">-20%</span>
+                                            </span>
+                                            
+                                        </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                            <span class="price">
+                                            <span class="new">$58.50</span>
+                                            <span class="old">$62.85</span>
+                                            </span>
+                                        </div>
+                                        <!-- Content End  -->
+                                    </div>
+                                </div>
+                                <!-- Product End -->
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 3 in webscreen 5.png')}}" alt="Product" />
+                                            </a>
+                                            <span class="badges">
+                                            <span class="new">New</span>
+                                            </span>
+                                            
+                                        </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">This is the testing</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                            <span class="price">
+                                            <span class="new">$78.50</span>
+                                            </span>
+                                        </div>
+                                        <!-- Content End  -->
+                                    </div>
+                                </div>
+                                <!-- Product End -->
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 1 in webscreen 5.png')}}" alt="Product" />
+                                            </a>
+                                            
+                                        </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">Basic Dog Trainning</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                            <span class="price">
+                                            <span class="new">$55.00</span>
+                                            </span>
+                                        </div>
+                                        <!-- Content End  -->
+                                    </div>
+                                </div>
+                                <!-- Product End -->
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 2.png')}}" alt="Product" />
+                                            </a>
+                                            <span class="badges">
+                                            <span class="sale">-20%</span>
+                                            </span>
+                                           
+                                        </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">Animal For Life</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                            <span class="price">
+                                            <span class="new">$75.50</span>
+                                            <span class="old">$82.85</span>
+                                            </span>
+                                        </div>
+                                        <!-- Content End  -->
+                                    </div>
+                                </div>
+                                <!-- Product End -->
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-product-featured">
+                            <div class="row m-b-n40">
+
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/5.png')}}" alt="Product" />
+                                            </a>
+                                            <span class="badges">
+                                            <span class="sale">-18%</span>
+                                            </span>
+                                            
+                                        </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                            <span class="price">
+                                            <span class="new">$47.50</span>
+                                            <span class="old">$50.00</span>
+                                            </span>
+                                        </div>
+                                        <!-- Content End  -->
+                                    </div>
+                                </div>
+                                <!-- Product End -->
+
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/6.png')}}" alt="Product" />
+                                            </a>
+                                            <span class="badges">
+                                            <span class="sale">-20%</span>
+                                            </span>
+                                            
+                                        </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                            <span class="price">
+                                            <span class="new">$58.50</span>
+                                            <span class="old">$62.85</span>
+                                            </span>
+                                        </div>
+                                        <!-- Content End  -->
+                                    </div>
+                                </div>
+                                <!-- Product End -->
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 3.png')}}" alt="Product" />
+                                            </a>
+                                            <span class="badges">
+                                            <span class="new">New</span>
+                                            </span>
+                                            
+                                        </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">Wait, You Need This</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                            <span class="price">
+                                            <span class="new">$90.00</span>
+                                            </span>
+                                        </div>
+                                        <!-- Content End  -->
+                                    </div>
+                                </div>
+                                <!-- Product End -->
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/7.png')}}" alt="Product" />
+                                            </a>
+                                            <span class="badges">
+                                            <span class="new">New</span>
+                                            </span>
+                                          
+                                        </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">This is the testing</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                            <span class="price">
+                                            <span class="new">$78.50</span>
+                                            </span>
+                                        </div>
+                                        <!-- Content End  -->
+                                    </div>
+                                </div>
+                                <!-- Product End -->
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/8.png')}}" alt="Product" />
+                                            </a>
+                                          
+                                        </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">Basic Dog Trainning</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                            <span class="price">
+                                            <span class="new">$55.00</span>
+                                            </span>
+                                        </div>
+                                        <!-- Content End  -->
+                                    </div>
+                                </div>
+                                <!-- Product End -->
+
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/1.png')}}" alt="Product" />
+                                            </a>
+                                            <span class="badges">
+                                            <span class="sale">-18%</span>
+                                            </span>
+                                         
+                                        </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">An Animal Album</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                            <span class="price">
+                                            <span class="new">$80.50</span>
                                             <span class="old">$85.80</span>
                                             </span>
-                                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
-                                            <div class="countdown-area">
-                                                <div class="countdown-wrapper" data-countdown="2028/12/28"></div>
-                                            </div>
                                         </div>
-                                        <!-- Deal Content End -->
+                                        <!-- Content End  -->
                                     </div>
-                                    <!-- Single Product Deal End -->
                                 </div>
-
-                                <div class="swiper-slide">
-                                    <!-- Single Product Deal Start -->
-                                    <div class="single-deal-product row m-b-n30">
-                                        <!-- Deal Thumb Start -->
-                                        <div class="deal-thumb col-md-6 m-b-30">
-                                            <a href="single-product.html">
-                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/large-product/10.png')}}" alt="Product Image">
+                                <!-- Product End -->
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/2.png')}}" alt="Product" />
                                             </a>
-                                        </div>
-                                        <!-- Deal Thumb End -->
-                                        <!-- Deal Content Start -->
-                                        <div class="product-deal-content col-md-6 m-b-30">
-                                            <h5 class="title m-b-15"><a href="single-product.html">Animal For Life</a></h5>
-                                            <span class="rating m-b-15">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-                                            <span class="price">
-													<span class="new">$60.00</span>
-                                            <span class="old">$66.00</span>
+                                            <span class="badges">
+                                            <span class="sale">-20%</span>
                                             </span>
-                                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
-                                            <div class="countdown-area">
-                                                <div class="countdown-wrapper" data-countdown="2028/12/28"></div>
-                                            </div>
-                                            <a href="shop.html" class="btn btn-primary btn-hover-dark">Shop Now</a>
+                                            
                                         </div>
-                                        <!-- Deal Content End -->
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">Animal For Life</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                            <span class="price">
+                                            <span class="new">$75.50</span>
+                                            <span class="old">$82.85</span>
+                                            </span>
+                                        </div>
+                                        <!-- Content End  -->
                                     </div>
-                                    <!-- Single Product Deal End -->
                                 </div>
+                                <!-- Product End -->
 
+                                <!-- Product Start -->
+                                <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                                    <div class="product">
+                                        <!-- Thumb Start  -->
+                                        <div class="thumb">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 4.png')}}" alt="Product" />
+                                            </a>
+                                         
+                                        </div>
+                                        <!-- Thumb End  -->
+                                        <!-- Content Start  -->
+                                        <div class="content">
+                                            <h5 class="title"><a href="single-product.html">Pet Food Corner</a></h5>
+                                            <span class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </span>
+                                            <span class="price">
+                                            <span class="new">$105.00</span>
+                                            </span>
+                                        </div>
+                                        <!-- Content End  -->
+                                    </div>
+                                </div>
+                                <!-- Product End -->
                             </div>
-
-                            <!-- Swiper Pagination Start -->
-                            <div class="swiper-pagination d-none"></div>
-                            <!-- Swiper Pagination End -->
-
-                            <!-- Next Previous Button Start -->
-                            <div class="swiper-deal-button-next swiper-button-next swiper-nav-button"><i class="ti-angle-right"></i></div>
-                            <div class="swiper-deal-button-prev swiper-button-prev swiper-nav-button"><i class="ti-angle-left"></i></div>
-                            <!-- Next Previous Button End -->
                         </div>
                     </div>
-                    <!-- Latest Blog Carousel End -->
-
                 </div>
             </div>
+            <!-- Products Tab End -->
         </div>
-    </div>
+    </div>  
     <!-- Product Deal Section End -->
-
     <!-- Testimonial Section Start -->
     <div class="section bg-name-bright section-padding section-margin">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-
-                    <!-- Testimonial Carousel Start -->
-                    <div class="testimonial-carousel">
-
-                        <!-- Testimonial Gallery Top Start -->
-                        <div class="swiper-container testimonial-gallery-top" data-aos="fade-up" data-aos-duration="1000">
-                            <div class="swiper-wrapper">
-
-                                <!-- Single Swiper Slide Start -->
-                                <div class="swiper-slide">
-
-                                    <!-- Testimonial Content Start -->
-                                    <div class="testimonial-content text-center">
-                                        <p>Lorem ipsum dolor sit amet, co adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercita ullamco laboris nisi ut aliquip ex ea commodo</p>
-                                    </div>
-                                    <!-- Testimonial Content End -->
-
-                                </div>
-                                <!-- Single Swiper Slide End -->
-
-                                <!-- Single Swiper Slide Start -->
-                                <div class="swiper-slide">
-
-                                    <!-- Testimonial Content Start -->
-                                    <div class="testimonial-content text-center">
-                                        <p>Vivamus a lobortis ipsum, vel condimentum magna. Etiam id turpis tortor. Nunc scelerisque, nisi a blandit varius, nunc purus venenatis ligula, sed venenatis orci augue nec sapien. Cum sociis natoque</p>
-                                    </div>
-                                    <!-- Testimonial Content End -->
-
-                                </div>
-                                <!-- Single Swiper Slide End -->
-                            </div>
-
+          <!-- ending Slider Start -->
+    <div class="section">
+        <div class="hero-slider swiper-container">
+            <div class="swiper-wrapper">
+                <div class="hero-slide-item swiper-slide">
+                    <div class="hero-slide-bg">
+                        <img src="{{URL::asset('front-end/assets/images/slider/Footer Image.png')}}" alt="Slider Image" />
+                   </div>
+                    <div class="container">
+                        <div class="hero-slide-content text-start">
+                            <h2 class="title m-0">List your space for pets<br>and start earning</h2>
+                            <a href="shop.html" class="btn btn-dark btn-hover-primary">become a Pethost</a>
                         </div>
-                        <!-- Testimonial Gallery Top End -->
-
-                        <!-- Testimonial Gallery Thumb Start -->
-                        <div class="swiper-container testimonial-gallery-thumbs" data-aos="fade-up" data-aos-duration="1500">
-                            <div class="swiper-wrapper">
-
-                                <!-- Single Swiper Slide Start -->
-                                <div class="swiper-slide">
-                                    <!-- Testimonial Thumb Start -->
-                                    <div class="testimonial-thumb text-center">
-                                        <img src="{{URL::asset('front-end/assets/images/testimonial/1.png')}}" alt="Testimonial Image">
-                                        <h3 class="thumb-title">Jonathon Jhon</h3>
-                                        <h6 class="thumb-subtitle">Customer</h6>
-                                    </div>
-                                    <!-- Testimonial Thumb End -->
-                                </div>
-                                <!-- Single Swiper Slide End -->
-
-                                <!-- Single Swiper Slide Start -->
-                                <div class="swiper-slide">
-                                    <!-- Testimonial Thumb Start -->
-                                    <div class="testimonial-thumb text-center">
-                                        <img src="{{URL::asset('front-end/assets/images/testimonial/2.png')}}" alt="Testimonial Image">
-                                        <h3 class="thumb-title">Cristal Jerry</h3>
-                                        <h6 class="thumb-subtitle">Customer</h6>
-                                    </div>
-                                    <!-- Testimonial Thumb End -->
-                                </div>
-                                <!-- Single Swiper Slide End -->
-
-                            </div>
-
-                            <!-- Add Pagination -->
-                            <div class="swiper-pagination"></div>
-                        </div>
-                        <!-- Testimonial Gallery Thumb End -->
-
                     </div>
-                    <!-- Testimonial Carousel End -->
-
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- Testimonial Section End -->
-
-    <!-- Blog Section Start -->
-    <div class="section section-margin-bottom">
-        <div class="container">
-
-            <div class="row" data-aos="fade-up" data-aos-duration="1000">
-                <div class="col-12">
-                    <div class="section-title text-center">
-                        <h2 class="title">From Our Blog</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 m-b-n40">
-
-                <div class="col m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog-wrapper">
-
-                        <!-- Blog Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details.html">
-                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/blog/medium-size/1.jpg')}}" alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- Blog Thumb End -->
-
-                        <!-- Blog Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="#/">Admin</a></li>
-                                    <li><span>27, Jan, 2021</span></li>
-                                </ul>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details.html">How to take care of your fish</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details.html">Read More</a>
-                        </div>
-                        <!-- Blog Content End -->
-
-                    </div>
-                    <!-- Single Blog End -->
-                </div>
-
-                <div class="col m-b-40" data-aos="fade-up" data-aos-duration="1300">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog-wrapper">
-
-                        <!-- Blog Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details.html">
-                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/blog/medium-size/2.jpg')}}" alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- Blog Thumb End -->
-
-                        <!-- Blog Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="#/">Admin</a></li>
-                                    <li><span>12, Feb, 2021</span></li>
-                                </ul>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details.html">Find the male and female fish</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details.html">Read More</a>
-                        </div>
-                        <!-- Blog Content End -->
-
-                    </div>
-                    <!-- Single Blog End -->
-                </div>
-
-                <div class="col m-b-40" data-aos="fade-up" data-aos-duration="1600">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog-wrapper">
-
-                        <!-- Blog Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details.html">
-                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/blog/medium-size/3.jpg')}} alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- Blog Thumb End -->
-
-                        <!-- Blog Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="#/">Admin</a></li>
-                                    <li><span>20, March, 2021</span></li>
-                                </ul>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details.html">Tips for taking care of dogs</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details.html">Read More</a>
-                        </div>
-                        <!-- Blog Content End -->
-
-                    </div>
-                    <!-- Single Blog End -->
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-    <!-- Blog Section End -->
 
     <!-- Footer Section Start -->
     <footer class="section footer-section">
@@ -1294,52 +1596,43 @@
                 <div class="row m-b-n40">
                     <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                         <div class="single-footer-widget">
-                            <h1 class="widget-title">About Us</h1>
-                            <p class="desc-content">Lorem ipsum dolor sit amet, co adipisi elit, sed eiusmod tempor incididunt ut labore et dolore</p>
-                            <!-- Soclial Link Start -->
-                            <div class="widget-social justify-content-start m-b-n10">
-                                <a title="Twitter" href="#/"><i class="icon-social-twitter"></i></a>
-                                <a title="Instagram" href="#/"><i class="icon-social-instagram"></i></a>
-                                <a title="Linkedin" href="#/"><i class="icon-social-linkedin"></i></a>
-                                <a title="Skype" href="#/"><i class="icon-social-skype"></i></a>
-                                <a title="Dribble" href="#/"><i class="icon-social-dribbble"></i></a>
-                            </div>
-                            <!-- Social Link End -->
+                            <h1 class="widget-title">Head Office</h1>
+                            <p class="desc-content">91 springboard, Gopala krishna complex,<br>45/3 Residency Road,Mahatma Gandhi Rd,<br>ShanthalamNagar,Ashok Nagar,<br>Bengaluru,Karnadaka -560025</p>
+                            <div class="copyright-content">
+                            <div class="copyright-content">
+                            <p class="mb-0"><i class="fa fa-phone text-danger"></i> <strong>098840 42119</strong> </p>
+                        </div>
+                            <p class="mb-0"><i class="fa fa-envelope-o text-danger"></i> <strong>Support@pethows.com</strong></p>
+                        </div>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1200">
                         <div class="single-footer-widget">
-                            <h2 class="widget-title">Useful Links</h2>
-                            <ul class="widget-list">
-                                <li><a href="wishlist.html">Help & Contact Us</a></li>
-                                <li><a href="contact.html">Returns & Refunds</a></li>
-                                <li><a href="contact.html">Online Stores</a></li>
-                                <li><a href="contact.html">Terms & Conditions</a></li>
-                            </ul>
+                            <h2 class="widget-title">Site Links</h2>
+                           
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1400">
                         <div class="single-footer-widget">
-                            <h2 class="widget-title">Help</h2>
-                            <ul class="widget-list">
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="contact.html">Pricing Plans</a></li>
-                                <li><a href="contact.html">Order Traking</a></li>
-                                <li><a href="contact.html">Returns</a></li>
-                            </ul>
+                            <h2 class="widget-title">Follow Us</h2>
+                           <!-- Soclial Link Start -->
+                           <div class="widget-social justify-content-start mb-n2">
+                           <a style="color: #ac2bac;" href="#!" role="button"><i class="fa fa-instagram fa-lg"></i></a>
+                           <a style="color: #dd4b39;" href="#!" role="button"><i class="fa fa-youtube fa-lg"></i></a>
+                           <a style="color: #3b5998;" href="#!" role="button"><i class="fa fa-facebook fa-lg"></i></a>
+                           <a style="color: #55acee;" href="#!" role="button"><i class="fa fa-twitter fa-lg"></i></a>
+                            </div>
+                            <!-- Social Link End -->
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1600">
                         <div class="single-footer-widget">
-                            <h2 class="widget-title">Send newsletter</h2>
+                            <h2 class="widget-title">Services We Provide</h2>
                             <div class="widget-body">
-                                <p class="desc-content m-b-20">Subscribe to our newsletter and get 10% off your first purchase..</p>
+                   <p> Pet Sitting <br> Pet Training <br>Pet Walking  <br> Pet Grooming <br> Pet Breading <br> Pet Photography</p>
                                 <!-- Newsletter Form Start -->
-                                <div class="newsletter-form-wrap p-t-5">
-                                    <form id="mc-form" class="mc-form">
-                                        <input type="email" id="mc-email" class="form-control email-box" placeholder="demo@example.com" name="EMAIL">
-                                        <button id="mc-submit" class="newsletter-btn" type="submit">Send</button>
-                                    </form>
+                                <div class="newsletter-form-wrap p-t-5">                             
+                                   
                                     <!-- mailchimp-alerts Start -->
                                     <div class="mailchimp-alerts text-centre">
                                         <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
@@ -1354,6 +1647,14 @@
                     </div>
                 </div>
             </div>
+            <div class="app">
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/payment/App Store.svg')}}" alt="Product" />
+                                            </a>
+                                            <a href="single-product.html" class="image">
+                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/payment/Google Play.svg')}}" alt="Product" />
+                                            </a>
+                                      </div>
         </div>
         <!-- Footer Top End -->
 
@@ -1363,14 +1664,13 @@
                 <div class="row align-items-center m-b-n20">
                     <div class="col-md-6 text-center text-md-start order-2 order-md-1 m-b-20">
                         <div class="copyright-content">
-                            <p class="mb-0">© 2021 <strong>Pethows</strong> Made with <i class="fa fa-heart text-danger"></i> by <a href="https://hasthemes.com/">HasThemes.</a></p>
+                            <p class="mb-0">© 2022 <strong>Pethows.</strong>All rights reserved. <a href="https://sales@paladinsoftwares.com/">HasThemes.</a></p>
                         </div>
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
-                        <div class="payment">
-                            <a href="#/">
-                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/payment/payment_large.png')}}" alt="Payment">
-                            </a>
+                        <div>
+                            <p>Terms&Conditions &emsp;&emsp; Privacy</p>
+                          
                         </div>
                     </div>
                 </div>
@@ -1597,7 +1897,7 @@
                             <li class="has-children">
                                 <a href="#">Pages <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul class="dropdown">
-                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="{{URL::asset('/about/about')}}">About Us</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                     <li><a href="faq.html">Faq</a></li>
                                     <li><a href="error-404.html">Error 404</a></li>
@@ -1615,7 +1915,7 @@
                                     <li><a href="blog-details-sidebar.html">Blog Details Sidebar</a></li>
                                 </ul>
                             </li>
-                            <li><a href="about.html">About</a></li>
+                            <li><a href="{{URL::asset('/about/about')}}">About</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </nav>
