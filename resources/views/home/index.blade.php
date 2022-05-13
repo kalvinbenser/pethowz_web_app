@@ -101,77 +101,29 @@
                         <div class="col-lg-6 d-none d-lg-block">
                             <div class="main-menu">
                                 <ul>
-                                    <li class="has-children">
+                                    <li>
                                         <a href="{{URL::asset('/home/index')}}">Home</a>                                        
-                                   </li>                                    
-                                   <li class="has-children position-static">
-                                        <a href="#">Shop</a>
-                                        <ul class="mega-menu">
-                                            <li class="mega-menu-col">
-                                                <h4 class="mega-menu-title">Shop Layout</h4>
-                                                <ul class="m-b-n10">
-                                                    <li><a href="shop.html">Shop Grid</a></li>
-                                                    <li><a href="shop-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a href="shop-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a href="shop-list-fullwidth.html">List Fullwidth</a></li>
-                                                    <li><a href="shop-list-left-sidebar.html">List Left Sidebar</a></li>
-                                                    <li><a href="shop-list-right-sidebar.html">List Right Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-menu-col">
-                                                <h4 class="mega-menu-title">Product Layout</h4>
-                                                <ul class="m-b-n10">
-                                                    <li><a href="single-product.html">Single Product</a></li>
-                                                    <li><a href="single-product-sale.html">Single Product Sale</a></li>
-                                                    <li><a href="single-product-variable.html">Single Product Variable</a></li>
-                                                    <li><a href="single-product-countdown.html">Single Product Countdown</a></li>
-                                                    <li><a href="single-product-affiliate.html">Single Product Affiliate</a></li>
-                                                    <li><a href="single-product-slider.html">Single Product Slider</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-menu-col">
-                                                <h4 class="mega-menu-title">Other Pages</h4>
-                                                <ul class="m-b-n10">
-                                                    <li><a href="my-account.html">My Account</a></li>
-                                                    <li><a href="{{URL::asset('/login/login')}}">Login | Register</a></li>
-                                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                                    <li><a href="cart.html">Cart</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                    <li><a href="compare.html">Compare</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-menu-col">
-                                                <div class="megamenu-image">
-                                                    <a href="shop.html">
-                                                        <img class="fit-image" src="assets/images/header/mega-menu.png" alt="Megamenu Image">
-                                                    </a>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                   </li>  
+                                   <li><a href="{{URL::asset('/about/about')}}">About</a></li>                                  
+                                   <li>
+                                        <a href="{{URL::asset('/pethost/pethost')}}">Pet host</a>
                                     </li>
+                                    
                                     <li class="has-children">
-                                        <a href="#">Pages</a>
+                                        <a href="#">services</a>
                                         <ul class="sub-menu">
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                            <li><a href="error-404.html">Error 404</a></li>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="{{URL::asset('/login/login')}}">Login</a></li>
-                                            <li><a href="register.html">Register</a></li>
+                                            <li><a href="{{URL::asset('/service/service')}}">Sitting</a></li>
+                                            <li><a href="{{URL::asset('/service/service')}}">Grooming</a></li>
+                                            <li><a href="{{URL::asset('/service/service')}}">Walking</a></li>
+                                            <li><a href="{{URL::asset('/service/service')}}">Bredding</a></li>
+                                            <li><a href="{{URL::asset('/service/service')}}">Training</a></li>
+                                            <li><a href="{{URL::asset('/service/service')}}">Photography</a></li>
                                         </ul>
+                                      </li>
+                                    <li>
+                                        <a href="{{URL::asset('/login/login')}}">Login</a>
                                     </li>
-                                    <li class="has-children">
-                                        <a href="#">Blog</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                            <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                            <li><a href="blog-details-sidebar.html">Blog Details Sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                  
                                 </ul>
                             </div>
                         </div>
@@ -330,26 +282,11 @@
                     <div class="hero-slide-bg">
                         <img src="{{URL::asset('front-end/assets/images/slider/Slider Image.png')}}" alt="Slider Image" />
                     </div>
-                    <div class="container">
-                        <div class="hero-slide-content text-start">
-                            <h5 class="sub-title">We keep pets for pleasure.</h5>
-                            <h2 class="title m-0">Vitamins For all Pets</h2>
-                            <p class="ms-0">We know your concerns when you are looking for a chewing treat for your dog.</p>
-                            <a href="shop.html" class="btn btn-dark btn-hover-primary">Shop Now</a>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="hero-slide-item swiper-slide">
                     <div class="hero-slide-bg">
-                        <img src="{{URL::asset('front-end/assets/images/slider/slider1-2.png')}}" alt="Slider Image" />
-                    </div>
-                    <div class="container">
-                        <div class="hero-slide-content text-center text-md-end">
-                            <h5 class="sub-title">We keep pets for pleasure.</h5>
-                            <h2 class="title m-0">Vitamins For all Pets</h2>
-                            <p>We know your concerns when you are looking for a chewing treat for your dog.</p>
-                        </div>
+                        <img src="{{URL::asset('front-end/assets/images/slider/Webscreen 12 image 3.png')}}" alt="Slider Image" />
                     </div>
                 </div>
             </div>
@@ -374,7 +311,9 @@
                 <!-- Tab Start -->
                 <div class="col-12 my-3">
                     <h1>Exclusive Pet Spaces</h1>
-                    <a class="btn btn-warning btn-sm mx-auto">view all</a>
+                    <div class="viewall">
+                        <a href="{{URL::asset('/exclusive_petspaces/exclusive-petspaces')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
+                    </div>
                 </div>
                 
                 <!-- Tab End -->
@@ -952,8 +891,8 @@
 
     <!-- Banner Section Start -->
     <div class="section section-margin">
-
         <div class="container">
+        <h1>Pet Service Providers</h1>
             <!-- Banners Start -->
             <div class="row m-b-n30">
 
@@ -1025,7 +964,10 @@
             <div class="row" data-aos="fade-up" data-aos-duration="1000">
                 <!-- Tab Start -->
              <div class="col-12">
-                    <h1>Exclusive Pet Spaces</h1>
+                    <h1>Independent House | Apartment</h1>
+                    <div class="viewall">
+                      <a  href="{{URL::asset('/house&apartment/house_apartment')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
+                    </div>
                 </div>
                 <!-- Tab End -->
             </div>
@@ -1664,8 +1606,8 @@
                         </div>
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
-                        <div>
-                            <p>Terms&Conditions &emsp;&emsp; Privacy</p>
+                        <div class="copyright-content">
+                            <p> <a href="https://sales@paladinsoftwares.com/">Terms&Conditions &emsp;&emsp; Privacy</a></p>
                           
                         </div>
                     </div>

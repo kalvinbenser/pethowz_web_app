@@ -5852,5 +5852,10 @@ input[type="checkbox"]:checked+label:after {
     border-radius: 30px;
     margin-top: 60px;
 }
+.btn-warning {
+    position: relative;
+    left: 1000px;
+    bottom: 10px;
+}
 
 

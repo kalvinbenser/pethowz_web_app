@@ -16,9 +16,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home/index');
 });
+Route::get('/home/index', function () {
+    return view('home/index');
+});
 Route::get('/login/login', function () {
     return view('login/login');
 });
 Route::get('/about/about', function () {
     return view('about/about');
+});
+Route::get('/service/service', function () {
+    return view('service/service');
+});
+Route::get('/pethost/pethost', function () {
+    return view('pethost/pethost');
+});
+Route::get('/exclusive_petspaces/exclusive_petspaces', function () {
+    return view('exclusive_petspaces/exclusive-petspaces');
+});
+Route::get('/house&apartment/house_apartment', function () {
+    return view('house&apartment/house_apartment');
 });
