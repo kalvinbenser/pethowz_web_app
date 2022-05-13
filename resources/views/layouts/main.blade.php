@@ -47,42 +47,6 @@
 
     <!-- Header Section Start -->
     <div class="header section">
-
-        <!-- Header Top Start -->
-        <div class="header-top bg-name-primary">
-            <div class="container">
-                <div class="row align-items-center">
-
-                    <!-- Header Top Message Start -->
-                    <div class="col-12 col-lg-6">
-                        <div class="header-top-msg-wrapper">
-                            <p class="header-top-message">Welcome To Pet Hows</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="header-top-settings">
-                            <ul class="nav">
-                                <li class="curreny-wrap">
-                                    <a href="#">USD</a>
-                                    <i class="fa fa-angle-down"></i>
-                                    <ul class="dropdown-list curreny-list">
-                                        <li><a href="#">$ USD</a></li>
-                                        <li><a href="#">€ EUR</a></li>
-                                        <li><a href="#">£ GBP</a></li>
-                                        <li><a href="#">₹ INR</a></li>
-                                        <li><a href="#">¥ JPY</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Header Top Message End -->
-
-                </div>
-            </div>
-        </div>
-        <!-- Header Top End -->
-
         <!-- Header Bottom Start -->
         <div class="header-bottom">
             <div class="header-sticky">
