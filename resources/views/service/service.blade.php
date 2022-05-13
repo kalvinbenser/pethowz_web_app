@@ -107,17 +107,9 @@
                            <li>
                                 <a href="#">Pet host</a>
                             </li>
-                            <li class="has-children">
-                                        <a href="#">services</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{URL::asset('/service/service')}}">Sitting</a></li>
-                                            <li><a href="{{URL::asset('/service/service')}}">Grooming</a></li>
-                                            <li><a href="{{URL::asset('/service/service')}}">Walking</a></li>
-                                            <li><a href="{{URL::asset('/service/service')}}">Bredding</a></li>
-                                            <li><a href="{{URL::asset('/service/service')}}">Training</a></li>
-                                            <li><a href="{{URL::asset('/service/service')}}">Photography</a></li>
-                                        </ul>
-                                      </li>                       
+                            <li>
+                                <a href="{{URL::asset('/service/service')}}">Service</a>
+                            </li>                        
                         </ul>
                     </div>
                 </div>
@@ -365,7 +357,7 @@
             <!-- Banners End -->
         </div>
     </div>
-    <
+    
     <!-- Footer Section Start -->
     <footer class="section footer-section">
         <!-- Footer Top Start -->
