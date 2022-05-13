@@ -19,9 +19,6 @@ Route::get('/', function () {
 Route::get('/home/index', function () {
     return view('home/index');
 });
-Route::get('/login/login', function () {
-    return view('login/login');
-});
 Route::get('/about/about', function () {
     return view('about/about');
 });
@@ -37,3 +34,6 @@ Route::get('/exclusive_petspaces/exclusive_petspaces', function () {
 Route::get('/house&apartment/house_apartment', function () {
     return view('house&apartment/house_apartment');
 });
+
+
+require __DIR__.'/Auth.php';

@@ -4526,7 +4526,7 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .bg-name-bright {
-  background-color: #f5ecec;
+  background-color: #f4f4f4;
 }
 
 .bg-name-splashy {
