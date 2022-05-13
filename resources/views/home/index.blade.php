@@ -101,21 +101,11 @@
                         <div class="col-lg-6 d-none d-lg-block">
                             <div class="main-menu">
                                 <ul>
-                                    <li><a href="/home">Home</a></li>
-                                    <li><a href="/about">About Us</a></li>
                                     <li class="has-children">
-                                        <a href="/pet_host">Pet host</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                            <li><a href="error-404.html">Error 404</a></li>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="{{URL::asset('/login/login')}}">Login</a></li>
-                                            <li><a href="register.html">Register</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-children position-static">
-                                        <a href="#">Service</a>
+                                        <a href="{{URL::asset('/home/index')}}">Home</a>                                        
+                                   </li>                                    
+                                   <li class="has-children position-static">
+                                        <a href="#">Shop</a>
                                         <ul class="mega-menu">
                                             <li class="mega-menu-col">
                                                 <h4 class="mega-menu-title">Shop Layout</h4>
@@ -143,28 +133,26 @@
                                                 <h4 class="mega-menu-title">Other Pages</h4>
                                                 <ul class="m-b-n10">
                                                     <li><a href="my-account.html">My Account</a></li>
-                                                    <li><a href="{{URL::asset('/login/login')}}"">Login | Register</a></li>
+                                                    <li><a href="{{URL::asset('/login/login')}}">Login | Register</a></li>
                                                     <li><a href="wishlist.html">Wishlist</a></li>
                                                     <li><a href="cart.html">Cart</a></li>
                                                     <li><a href="checkout.html">Checkout</a></li>
                                                     <li><a href="compare.html">Compare</a></li>
                                                 </ul>
                                             </li>
-                                         
                                             <li class="mega-menu-col">
                                                 <div class="megamenu-image">
                                                     <a href="shop.html">
-                                                        <img class="fit-image" src="{{URL::asset('front-end/assets/images/header/3.jpg')}}" alt="Megamenu Image">
+                                                        <img class="fit-image" src="assets/images/header/mega-menu.png" alt="Megamenu Image">
                                                     </a>
                                                 </div>
                                             </li>
                                         </ul>
                                     </li>
-<<<<<<< HEAD
                                     <li class="has-children">
                                         <a href="#">Pages</a>
                                         <ul class="sub-menu">
-                                            <li><a href="{{URL::asset('/about/about')}}">About Us</a></li>
+                                            <li><a href="about.html">About Us</a></li>
                                             <li><a href="contact.html">Contact Us</a></li>
                                             <li><a href="error-404.html">Error 404</a></li>
                                             <li><a href="faq.html">FAQ</a></li>
@@ -182,13 +170,8 @@
                                             <li><a href="blog-details-sidebar.html">Blog Details Sidebar</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="{{URL::asset('/about/about')}}">About</a></li>
+                                    <li><a href="about.html">About</a></li>
                                     <li><a href="contact.html">Contact</a></li>
-=======
-                              
-                                    <li><a href="/login">Login</a></li>
-                                    
->>>>>>> 691df8d926865746643215b06884830d943520c0
                                 </ul>
                             </div>
                         </div>
