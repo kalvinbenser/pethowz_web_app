@@ -1212,7 +1212,7 @@ input[type="checkbox"]:checked+label:after {
     font-weight: 500;
 }
 .header-sticky {
-    background: #ff9a71;
+    background:#a75e2d ;
 }
 .header-sticky.sticky {
     position: fixed;
@@ -5855,6 +5855,11 @@ input[type="checkbox"]:checked+label:after {
 .btn-warning {
     position: relative;
     left: 1000px;
+    bottom: 10px;
+}
+.view-all{
+    position: relative;
+    left: 1200px;
     bottom: 10px;
 }
 

@@ -12,4 +12,7 @@ class AuthController extends Controller
     public function register(){
         return view('auth/register');
     }
+    public function sitting(){
+        return view('/service/sitting/sitting');
+    }
 }

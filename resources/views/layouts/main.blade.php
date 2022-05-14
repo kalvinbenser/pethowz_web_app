@@ -76,16 +76,16 @@
                                     <li class="has-children">
                                         <a href="#">services</a>
                                         <ul class="sub-menu">
-                                            <li><a href="{{URL::asset('/service/service')}}">Sitting</a></li>
-                                            <li><a href="{{URL::asset('/service/service')}}">Grooming</a></li>
-                                            <li><a href="{{URL::asset('/service/service')}}">Walking</a></li>
-                                            <li><a href="{{URL::asset('/service/service')}}">Bredding</a></li>
-                                            <li><a href="{{URL::asset('/service/service')}}">Training</a></li>
-                                            <li><a href="{{URL::asset('/service/service')}}">Photography</a></li>
+                                            <li><a href="{{URL::asset('/sitting')}}">Sitting</a></li>
+                                            <li><a href="{{URL::asset('/grooming')}}">Grooming</a></li>
+                                            <li><a href="{{URL::asset('/walking')}}">Walking</a></li>
+                                            <li><a href="{{URL::asset('/breading')}}">Bredding</a></li>
+                                            <li><a href="{{URL::asset('/training')}}">Training</a></li>
+                                            <li><a href="{{URL::asset('/photography')}}">Photography</a></li>
                                         </ul>
                                       </li>
                                     <li>
-                                        <a href="{{URL::asset('/login/login')}}">Login</a>
+                                        <a href="{{URL::asset('/login')}}">Login</a>
                                     </li>
                                   
                                 </ul>
