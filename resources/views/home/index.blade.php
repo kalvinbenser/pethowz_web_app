@@ -60,7 +60,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="{{('/add_pethost')}}" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">

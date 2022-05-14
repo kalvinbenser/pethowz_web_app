@@ -55,6 +55,10 @@ Route::get('/apartment', function () {
 Route::get('/exclusive', function () {
     return view('exclusive/exclusive');
 });
+Route::get('/petspace_details', function () {
+    return view('petspace/pethost_details');
+});
+
 
 
 require __DIR__.'/Auth.php';

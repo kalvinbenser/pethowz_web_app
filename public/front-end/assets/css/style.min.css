@@ -5862,5 +5862,8 @@ input[type="checkbox"]:checked+label:after {
     left: 1200px;
     bottom: 10px;
 }
+.profile_pic{
+    margin-right: 1200px;
+}
 
 
