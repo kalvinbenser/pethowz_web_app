@@ -58,6 +58,9 @@ Route::get('/exclusive', function () {
 Route::get('/petspace_details', function () {
     return view('petspace/pethost_details');
 });
+Route::get('/terms_condition', function () {
+    return view('terms_coditions/terms_coditions');
+});
 
 
 

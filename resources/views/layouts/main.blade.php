@@ -320,7 +320,7 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
                         <div class="copyright-content">
-                            <p> <a href="https://sales@paladinsoftwares.com/">Terms&Conditions &emsp;&emsp; Privacy</a></p>
+                            <p> <a href="{{URL::asset('/terms_condition')}}">Terms&Conditions &emsp;&emsp; Privacy</a></p>
                           
                         </div>
                     </div>

@@ -618,7 +618,8 @@
 
     <!-- Banner Section Start -->
     <div class="section section-margin">
-        <div class="container">
+        <div class="container" >
+            <div class="service-providers">
         <h1>Pet Service Providers</h1>
             <!-- Banners Start -->
             <div class="row m-b-n30">
@@ -680,6 +681,7 @@
 
             </div>
             <!-- Banners End -->
+        </div>
         </div>
     </div>
     <!-- Banner Section End -->
