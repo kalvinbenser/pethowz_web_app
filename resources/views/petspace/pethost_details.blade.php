@@ -73,10 +73,10 @@
                     </div>
                     <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1600">
                         <div class="single-footer-widget">
-                            <h3 class="rupee"> <a href=""><i class="fa fa-rupee" style="font-size:24px">100</i></a></h3>
+                            <h3 class="rupee"> <a href="{{URL::asset('/bookingdetails')}}"><i class="fa fa-rupee" style="font-size:24px">100</i></a></h3>
                             <h6 class="rupee">Per Hour</h6>
                             <div class="book">
-                                <a  href="{{URL::asset('')}}"  class="btn btn-danger btn-sm mx-auto">Book</a>
+                                <a  href="{{URL::asset('/bookingdetails')}}"  class="btn btn-danger btn-sm mx-auto">Book</a>
                             </div>
                         </div>
                     </div>
@@ -212,6 +212,7 @@
         </div>
         </div>
     </div>
+ 
 
 
      @endsection

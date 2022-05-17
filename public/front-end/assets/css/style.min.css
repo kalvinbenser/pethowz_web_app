@@ -134,6 +134,7 @@ input[type="checkbox"]:checked+label:after {
 }.section-margin {
     margin-top: 80px;
     margin-bottom: 80px;
+    background-color: #d8d8d8;
 }
 @media only screen and (max-width: 767px) {
     .section-margin {
@@ -1549,10 +1550,10 @@ input[type="checkbox"]:checked+label:after {
     box-shadow: none;
 }
 .btn-primary {
-    border-color: #f6ab49;
-    background-color: #f6ab49;
+    border-color: #FF9A71;
+    background-color: #FF9A71;
     color: #ffffff;
-    background-color: #f6ab49;
+    background-color: #FF9A71;
     border: 1px solid transparent;
 }
 .btn-dark {
@@ -3088,12 +3089,12 @@ input[type="checkbox"]:checked+label:after {
     width: 280px;
 }
 }.testimonial-thumb {
-    margin-bottom: -10px;
     background-color: #f8f8f8;
 }
 .testimonial-thumb img {
     width: 100px;
     height: 100px;
+    padding: 5px;
     border: 1px solid #f6ab49;
     border-radius: 100%}
 .testimonial-thumb .thumb-title {
@@ -4803,6 +4804,7 @@ input[type="checkbox"]:checked+label:after {
 }.myaccount-content {
     border: 1px solid #ebebeb;
     padding: 30px;
+    margin-bottom: 100px;
 }
 @media only screen and (max-width: 575px) {
     .myaccount-content {
@@ -4833,7 +4835,7 @@ input[type="checkbox"]:checked+label:after {
     font-size: 14px;
 }
 .myaccount-content form .single-item-button {
-    width: 25%}
+    width: 100%}
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .myaccount-content form .single-item-button {
     width: 30%}
@@ -5890,7 +5892,7 @@ input[type="checkbox"]:checked+label:after {
     padding: 10px;
 }
 .service-providers{
-    background-color:#d8d8d8;
+    padding: 20px;
 }
 .align_services{
     display: inline-flex;
@@ -5924,35 +5926,35 @@ input[type="checkbox"]:checked+label:after {
     top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #205CA9;
+    color: #60B135;
 }
 .grom{
     position: absolute;
     top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #205CA9;
+    color: #5691E4;
 }
 .walk{
     position: absolute;
     top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #205CA9;
+    color: #FFB870;
 }
 .brea{
     position: absolute;
     top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #205CA9;
+    color: #FAD338;
 }
 .trai{
     position: absolute;
     top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #205CA9;
+    color: #01B3AF;
 }
 .phot{
         position: absolute;
@@ -5962,4 +5964,106 @@ input[type="checkbox"]:checked+label:after {
         color: #205CA9;
     
 }
+.sitti{
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+}
+.groom{
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:#FFFFFF;
+}
+.walks{
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+}
+.bread{
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+}
+.train{
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:#FFFFFF;
+}
+.photog{
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #FFFFFF;
+    
+}
+.form-check-label{
+    font-size: smaller;
+}
+.sittink:hover{
+    background: linear-gradient(178deg, rgba(86,171,47,1) 0%, rgba(168,224,99,1) 100%);
+}
+.groomink:hover{
+    background: linear-gradient(178deg, rgba(54,209,220,1) 0%, rgba(91,134,229,1) 100%);
+}
+.walkink:hover{
+     background: linear-gradient(188deg, rgba(255,95,109,1) 0%, rgba(255,195,113,1) 75%);
+}
+.breadink:hover{
+    background: linear-gradient(188deg, rgba(250,214,55,1) 0%, rgba(231,176,77,1) 75%);
+}
+.trainink:hover{
+    background: linear-gradient(246deg, rgba(39,239,246,1) 0%, rgba(0,205,172,1) 75%);
+}
+.photography:hover{
+    background: linear-gradient(188deg, rgba(45,56,138,1) 0%, rgba(1,174,239,1) 75%);
+}
+.sitt:hover{
+    color: #FFFFFF;
+    
+}
+
+.grom:hover{
+color: #FFFFFF;
+    
+}
+
+.walk:hover{
+    color: #FFFFFF;
+    
+}
+
+.brea:hover{
+color: #FFFFFF;
+    
+}
+
+.trai:hover{
+    color: #FFFFFF;
+    
+}
+
+.phot:hover{
+color: #FFFFFF;
+    
+}
+.booking{
+    padding: 30px;
+    height: 100%;
+    width: 1200px;
+}
+.yourself{
+    font-size: medium;
+}
+
 

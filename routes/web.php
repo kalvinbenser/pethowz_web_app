@@ -61,7 +61,12 @@ Route::get('/petspace_details', function () {
 Route::get('/terms_condition', function () {
     return view('terms_coditions/terms_coditions');
 });
-
+Route::get('/bookingdetails', function () {
+    return view('booking-details/bookingdeteils');
+});
+Route::get('/add', function () {
+    return view('add/add');
+});
 
 
 require __DIR__.'/Auth.php';

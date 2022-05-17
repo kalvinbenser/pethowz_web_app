@@ -95,7 +95,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 3.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -129,7 +129,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 4.png')}}" alt="Product" />
                                             </a>
                                             
@@ -160,7 +160,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -199,7 +199,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 2 in webscreen 5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -234,7 +234,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 3 in webscreen 5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -268,7 +268,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 1 in webscreen 5.png')}}" alt="Product" />
                                             </a>
                                             
@@ -299,7 +299,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 2.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -340,7 +340,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -375,7 +375,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/6.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -410,7 +410,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 3.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -444,7 +444,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/7.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -478,7 +478,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/8.png')}}" alt="Product" />
                                             </a>
                                           
@@ -509,7 +509,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/1.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -544,7 +544,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/2.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -579,7 +579,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 4.png')}}" alt="Product" />
                                             </a>
                                          
@@ -627,54 +627,60 @@
                 <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="sitting align_service">
-                        <a href="shop.html" class="banner">
+                        <a href="{{('/petspace_details')}}" class="banner">
                             <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Group 18007.svg')}}" alt="Banner Image" />
                         </a>
+                        <div class="sitti">Sitting</div>
                     </div>  
                 </div>
               <!-- Banner End -->
                <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                    <div class="grooming align_service">
-                        <a href="shop.html" class="banner">
+                        <a href="{{('/petspace_details')}}" class="banner">
                             <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Grooming white.svg')}}" alt="Banner Image" />
                         </a>
+                        <div class="groom">Grooming</div>
                    </div>
                 </div>
                 <!-- Banner End -->
                 <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
                     <div class="walking align_service">
-                        <a href="shop.html" class="banner">
+                        <a href="{{('/petspace_details')}}" class="banner">
                             <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Walking White.svg')}}" alt="Banner Image" />
                         </a>
+                        <div class="walks">Walking</div>
                     </div>
                 </div>
                 <!-- Banner End -->
                 <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="breading align_service">
-                        <a href="shop.html" class="banner">
+                        <a href="{{('/petspace_details')}}" class="banner">
                             <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Breeding White.svg')}}" alt="Banner Image" />
                         </a>
+                        <div class="bread">Breading</div>
                     </div>
                 </div>
                 <!-- Banner End -->
                 <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="training align_service">
-                        <a href="shop.html" class="banner">
+                        <a href="{{('/petspace_details')}}" class="banner">
                             <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Path 27524.svg')}}" alt="Banner Image" />
                         </a>
+                        <div class="train">Training</div>
                     </div>
                 </div>
                 <!-- Banner End -->
                   <!-- Banner Start -->
                   <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="photo align_service">
-                        <a href="shop.html" class="banner">
+                        <a href="{{('/petspace_details')}}" class="banner">
                             <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Photography White.svg')}}" alt="Banner Image" />
                         </a>
+                        <div class="photog">Photography</div>
                     </div>
                 </div>
                 <!-- Banner End -->
@@ -712,7 +718,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
                                            </a>
                                             <span class="badges">
@@ -744,7 +750,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 3.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -775,7 +781,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 4.png')}}" alt="Product" />
                                            </a>
                                             
@@ -804,7 +810,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -838,7 +844,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 2 in webscreen 5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -871,7 +877,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 3 in webscreen 5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -903,7 +909,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 1 in webscreen 5.png')}}" alt="Product" />
                                             </a>
                                             
@@ -932,7 +938,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 2.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -970,7 +976,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -1004,7 +1010,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/6.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -1037,7 +1043,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 3.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -1069,7 +1075,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/7.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -1101,7 +1107,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/8.png')}}" alt="Product" />
                                             </a>
                                           
@@ -1131,7 +1137,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/1.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -1164,7 +1170,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/2.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -1198,7 +1204,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 4.png')}}" alt="Product" />
                                             </a>
                                          
