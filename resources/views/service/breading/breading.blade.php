@@ -36,7 +36,7 @@
     
         <div class="section section-margin">
             <div class="container">
-            <h1>Pet Service Providers</h1>
+            <h1>Pet Breading Service Providers</h1>
                 <!-- Banners Start -->
                 <div class="row m-b-n30">
     

@@ -22,18 +22,46 @@ Route::get('/home/index', function () {
 Route::get('/about/about', function () {
     return view('about/about');
 });
-Route::get('/service/service', function () {
-    return view('service/service');
+Route::get('/sitting', function () {
+    return view('/service/sitting/sitting');
+});
+Route::get('/grooming', function () {
+    return view('/service/grooming/grooming');
+});
+Route::get('/walking', function () {
+    return view('/service/walking/walking');
+});
+Route::get('/breading', function () {
+    return view('/service/breading/breading');
+});
+Route::get('/training', function () {
+    return view('/service/training/training');
+});
+Route::get('/photography', function () {
+    return view('/service/photography/photography');
 });
 Route::get('/pethost/pethost', function () {
     return view('pethost/pethost');
 });
-Route::get('/exclusive_petspaces/exclusive_petspaces', function () {
+Route::get('/exclusive_petspaces', function () {
     return view('exclusive_petspaces/exclusive-petspaces');
 });
 Route::get('/house&apartment/house_apartment', function () {
     return view('house&apartment/house_apartment');
 });
+Route::get('/apartment', function () {
+    return view('apartment/apartment');
+});
+Route::get('/exclusive', function () {
+    return view('exclusive/exclusive');
+});
+Route::get('/petspace_details', function () {
+    return view('petspace/pethost_details');
+});
+Route::get('/terms_condition', function () {
+    return view('terms_coditions/terms_coditions');
+});
+
 
 
 require __DIR__.'/Auth.php';

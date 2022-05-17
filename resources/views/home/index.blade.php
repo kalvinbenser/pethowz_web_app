@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
       <!-- Hero/Intro Slider Start -->
-      <div class="section">
+    <div class="section">
         <div class="hero-slider swiper-container">
             <div class="swiper-wrapper">
 
@@ -27,7 +27,7 @@
             <div class="home-slider-next swiper-button-next main-slider-nav d-lg-flex d-none"><i class="icon-arrow-right"></i></div>
             <!-- Swiper Navigation End -->
         </div>
-    </div>
+     </div>
   
     <!-- pet Section Start -->
     <div class="section position-relative">
@@ -39,7 +39,7 @@
                 <div class="col-12 my-3">
                     <h1>Exclusive Pet Spaces</h1>
                     <div class="viewall">
-                        <a href="{{URL::asset('/exclusive_petspaces/exclusive-petspaces')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
+                        <a href="{{URL::asset('/exclusive_petspaces')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
                     </div>
                 </div>
                 
@@ -60,7 +60,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="single-product.html" class="image">
+                                            <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -618,7 +618,8 @@
 
     <!-- Banner Section Start -->
     <div class="section section-margin">
-        <div class="container">
+        <div class="container" >
+            <div class="service-providers">
         <h1>Pet Service Providers</h1>
             <!-- Banners Start -->
             <div class="row m-b-n30">
@@ -680,6 +681,7 @@
 
             </div>
             <!-- Banners End -->
+        </div>
         </div>
     </div>
     <!-- Banner Section End -->
