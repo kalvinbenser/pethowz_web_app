@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <div class="myaccount-content">
-        <h3 class="title">Booking Details</h3>
+        <h3 class="title" id="title">Booking Details</h3>
         <div class="account-details-form">
             <form action="#" mehod="post">
                 <div class="row">
@@ -85,7 +85,7 @@
                 
                         <div class="col-lg-2">
                         <div class="single-input-item single-item-button m-t-30">
-                        <button class="btn btn btn-primary btn-hover-dark rounded-0">Submit</button>
+                        <a href="{{URL::asset('/')}}"  class="btn btn btn-primary btn-hover-dark rounded-0">Submit</a>
                         </div>
                         </div>
                 </div>

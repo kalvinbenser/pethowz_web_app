@@ -663,6 +663,8 @@
 
     <!--Main JS-->
     <script src="{{URL::asset('front-end/assets/js/main.js')}}"></script>
+     <!--Multiselect-->
+    <script src="{{URL::asset('front-end/assets/js/multiselect-dropdown.js')}}"></script>
 </body>
 
 </html>
