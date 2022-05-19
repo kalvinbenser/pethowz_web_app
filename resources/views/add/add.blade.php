@@ -3,7 +3,7 @@
    <!-- Section Title Start -->
    <div class="container">
 
-    <h1 class="yourself">About Your Self</h1>
+    <h1 class="yourself ">About Your Self</h1>
 <!-- Section Title End -->
 
 <!-- Latest Blog Carousel Start -->

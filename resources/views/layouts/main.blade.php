@@ -664,6 +664,8 @@
 
     <!--Main JS-->
     <script src="{{URL::asset('front-end/assets/js/main.js')}}"></script>
+
+    @yield('scripts')
 </body>
 
 </html>
