@@ -8,7 +8,7 @@ body {
 body[dir="rtl"] {
     text-align: right;
 }
-a, a:hover, a:focus, a:active, button, button:focus, .btn, .btn:focus, input, input:focus, select, textarea {
+a, a:hover, a:focus, a:active, button, button:focus, .btn, .btn:focus, input, input:focus, select{
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -6113,6 +6113,48 @@ background-color: #ddd;
 #title{
     margin-top: 10px;
 }
+#payments{
+    padding: 30px;
+}
 #payment{
     width: 1000px;
+    border: #00000029;
+    width: 1000px;
 }
+#paymen{
+    width: 1000px;
+    border: #00000029;
+    width: 1000px;
+}
+#master{
+    margin-left: 30px;
+}
+.reg-image{
+    background-color: #FF9062;
+    width: 300%;
+    border-radius: 50%;
+}
+.upload{
+    margin-left: 75px;
+}
+#register{
+    padding: 10px;
+}
+#reg-img{
+    margin-right: 100px;
+}
+textarea{
+    background: #ffffff;
+    border-radius: 5px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #000000;
+    font-size: 14px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    border: 1px solid #ebebeb;
+}
+
