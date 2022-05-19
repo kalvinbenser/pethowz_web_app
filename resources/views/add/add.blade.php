@@ -1,13 +1,11 @@
 @extends('layouts.main')
 @section('content')
    <!-- Section Title Start -->
-   <div class="container">
+<div class="container" id="yourself">
 
-    <h1 class="yourself ">About Your Self</h1>
-<!-- Section Title End -->
+    <h1 class="yourself">About Your Self</h1>
 
-<!-- Latest Blog Carousel Start -->
-<div class="product-deal-carousel arrow-outside-container">
+ <div class="product-deal-carousel arrow-outside-container">
     <div class="swiper-container">
 
         <div class="swiper-wrapper">
@@ -59,23 +57,37 @@
                     <div class="product-deal-content col-md-6 m-b-30" data-aos="fade-up" data-aos-duration="1400">
                         
                             <h1 class="yourself">Select Your Category</h1>
-                        
-                    </div>
+                            <div class="row" id="category">
+                            <div class="deal-thumb col-md-3 m-b-15" data-aos="fade-up" data-aos-duration="1200">
+                                <a href="single-product.html">
+                                    <img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - Bird.png')}}" alt="Product Image">
+                                </a>
+                                <p class="about">Birds</p>
+                            </div>
+                            <div class="deal-thumb col-md-3 m-b-15" data-aos="fade-up" data-aos-duration="1200">
+                                <a href="single-product.html">
+                                    <img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - cat.png')}}" alt="Product Image">
+                                </a>
+                                <p class="about">Cat</p>
+                            </div>
+                            <div class="deal-thumb col-md-3 m-b-15" data-aos="fade-up" data-aos-duration="1200">
+                                <a href="single-product.html">
+                                    <img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - Dog.png')}}" alt="Product Image">
+                                </a>
+                                <p class="about">Dog</p>
+                            </div>
+                            <div class="next-btn">
+                                <a href="/bookingform" class="btn btn-primary btn-hover-dark">Next</a>
+                            </div>
+                
+                      </div>
                     <!-- Deal Content End -->
                 </div>
                 <!-- Single Product Deal End -->
             </div>
-
-            <div class="swiper-slide">
-                <!-- Single Product Deal Start -->
-                le Product Deal End -->
-            </div>
-
         </div>
-
-       
-    </div>
-</div>
+     </div>
    </div>
+</div>
 <!-- Latest Blog Carousel End -->
 @endsection

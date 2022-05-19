@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home/index');
+    return view('register/register');
 });
 Route::get('/home/index', function () {
     return view('home/index');
@@ -49,12 +49,6 @@ Route::get('/exclusive_petspaces', function () {
 Route::get('/house&apartment/house_apartment', function () {
     return view('house&apartment/house_apartment');
 });
-Route::get('/apartment', function () {
-    return view('apartment/apartment');
-});
-Route::get('/exclusive', function () {
-    return view('exclusive/exclusive');
-});
 Route::get('/petspace_details', function () {
     return view('petspace/pethost_details');
 });
@@ -66,6 +60,9 @@ Route::get('/bookingdetails', function () {
 });
 Route::get('/add', function () {
     return view('add/add');
+});
+Route::get('/bookingform', function () {
+    return view('booking-details/booking_form/booking_form');
 });
 
 
