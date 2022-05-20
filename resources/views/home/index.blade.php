@@ -1250,7 +1250,7 @@
                    </div>
                     <div class="container">
                         <div class="hero-slide-content text-start">
-                            <h2 class="title m-0">List your space for pets<br>and start earning</h2>
+                            <h2 class="title m-0" id="title-color">List your space for pets<br>and start earning</h2>
                             <a href="shop.html" class="btn btn-dark btn-hover-primary">become a Pethost</a>
                         </div>
                     </div>

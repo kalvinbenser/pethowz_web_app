@@ -8,7 +8,9 @@ body {
 body[dir="rtl"] {
     text-align: right;
 }
-a, a:hover, a:focus, a:active, button, button:focus, .btn, .btn:focus, input, input:focus, select{
+a, a:hover, a:focus, a:active, button, button:focus, .btn, .btn:focus, input, input:focus, select
+
+{
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -885,7 +887,7 @@ input[type="checkbox"]:checked+label:after {
     align-items: center;
 }
 .header-actions .header-action-btn:hover {
-    color: #FF9062;
+    color: hsl(220, 33%, 98%);
 }
 .header-actions .header-action-btn-cart {
     padding-right: 10px;
@@ -1554,12 +1556,12 @@ input[type="checkbox"]:checked+label:after {
     border-color: #FF9A71;
     background-color: #FF9A71;
     color: #ffffff;
-    background-color: #FF9A71;
     border: 1px solid transparent;
 }
 .btn-dark {
-    border-color: #000000;
-    background-color: #000000;
+    border-color: #FF9A71;
+    background: rgb(255,95,109);
+    background: linear-gradient(177deg, rgba(255,95,109,1) 0%, rgba(255,195,113,1) 75%);
     color: #ffffff;
 }
 .btn-heading-dark {
@@ -6101,6 +6103,7 @@ background-color: #ddd;
     border-radius: 5px;
     height: 30px;
     text-align: center;
+    padding: 5px;
 }
 .submite{
     background-color: #FF9A71 ;
@@ -6129,16 +6132,13 @@ background-color: #ddd;
 #master{
     margin-left: 30px;
 }
-.reg-image{
+#profile{
     background-color: #FF9062;
     width: 300%;
     border-radius: 50%;
 }
 .upload{
     margin-left: 75px;
-}
-#register{
-    padding: 10px;
 }
 #reg-img{
     margin-right: 100px;
@@ -6157,4 +6157,64 @@ textarea{
     width: 100%;
     border: 1px solid #ebebeb;
 }
+#title-color{
+color:#ff986d;
+}
+.gender-btn{
+    border-color:#00000029;
+    background-color: #00000029;
+    color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+.active{
+    background-color: #ffffff;
+  color: white;
+}
+.image-upload>input {
+    display: none;
+  }
+  
+  .upload-icon {
+    width: 100px;
+    height: 97px;
+    border-radius: 18px;
+    float: left;
+  }
+  
+  .upload-icon .icon {
+    width: 60px;
+    height: 60px;
+    margin: 19px;
+    cursor: pointer;
+  }
+  
+  .prev {
+    display: none;
+    width: 95px;
+    height: 92px;
+    margin: 2px;
+    border-radius: 100px;
+  }
+  #profil{
+    background-color: #FF9062;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 0px;
+}
+.pro-img{
+    color: #FF9062;
+}
+.pro-submite{
+ 
+    margin-top: 200px;
+    margin-left: 200px;
+    color: #ffff;
+    background: #ff9a71;
+    border-color: #ff9a71;
+    border-radius: 7px;
+}
+
+  
 

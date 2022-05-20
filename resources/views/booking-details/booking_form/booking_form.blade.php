@@ -96,9 +96,9 @@
                     </div>
                     <div class="service-providers">
                         <form action="{{URL::asset('/home/index')}}">
-                    <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
+                    <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;padding:15px;">
                     <label class="images" for="file" style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>
-                    <img id="output" width="200" />
+                    <img id="output" width="250" style="padding: 10px;"/>
                     <button class="submite" name="submite">Submit</button>
                         </form>
 
