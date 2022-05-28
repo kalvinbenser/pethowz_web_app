@@ -2469,6 +2469,7 @@ input[type="checkbox"]:checked + label:after {
 /* Product Style */
 .product {
   overflow: hidden;
+  
 }
 
 .product .thumb {

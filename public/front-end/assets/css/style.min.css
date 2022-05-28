@@ -911,9 +911,9 @@ input[type="checkbox"]:checked+label:after {
     width: 20px;
     height: 20px;
     text-align: center;
-    color: #ffffff;
+    color: #ff9a71;
     border-radius: 50%;
-    background-color: #f6ab49;
+    background-color: #ffffff;
 }
 @media only screen and (max-width: 479px) {
     .header-actions .header-action-btn .header-action-num {
@@ -1986,10 +1986,16 @@ input[type="checkbox"]:checked+label:after {
 }
 .product {
     overflow: hidden;
+    box-shadow: 0 0 2px rgb(0 0 0 / 82%);
+    border-radius: 5px;
+
 }
 .product .thumb {
     position: relative;
     overflow: hidden;
+    padding: 5px;
+    border-bottom: 1px solid #bcc7d5;
+
 }
 .product .thumb .action-wrapper {
     position: absolute;
@@ -4912,12 +4918,8 @@ input[type="checkbox"]:checked+label:after {
     padding: 20px;
 }
 .login-wrapper, .register-wrapper {
-    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
     padding: 80px;
-    border: 1px solid #ebebeb;
     border-radius: 5px;
-    text-align: left;
     overflow: hidden;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -5479,6 +5481,9 @@ input[type="checkbox"]:checked+label:after {
 .order-notes textarea:focus {
     border: 1px solid #f6ab49;
 }
+.pets-details{
+    padding: 35px;
+}
 .your-order-area {
     padding: 30px 40px 30px;
 }
@@ -5864,18 +5869,12 @@ input[type="checkbox"]:checked+label:after {
 }
 .btn-warning {
     position: relative;
-    left: 1200px;
-    bottom: 10px;
     background-color: #FF9966;
 }
 .view-all{
     position: relative;
-    left: 1300px;
     bottom: 10px;
-}
-.name_details{
-    margin-right: -300px;
-    margin-top: -100px;
+    text-align: end;
 }
 .rupee{
     margin-right: 100px;
@@ -6177,9 +6176,9 @@ color:#ff986d;
   
   .upload-icon {
     width: 100px;
-    height: 97px;
-    border-radius: 18px;
-    float: left;
+    height: 100px;
+    border-radius: 100px;
+    background-color: #ffff;
   }
   
   .upload-icon .icon {
@@ -6191,30 +6190,129 @@ color:#ff986d;
   
   .prev {
     display: none;
-    width: 95px;
-    height: 92px;
-    margin: 2px;
+    width: 100px;
+    height: 100px;
+    margin: 0px;
     border-radius: 100px;
   }
   #profil{
     background-color: #FF9062;
     width: 100px;
     height: 100px;
-    border-radius: 50%;
+    border-radius: 100%;
     margin-left: 0px;
+    margin-top: 0px;
 }
 .pro-img{
-    color: #FF9062;
+    color: #FF9062; 
+    margin-top: 20px;
 }
 .pro-submite{
- 
-    margin-top: 200px;
-    margin-left: 200px;
+    margin-top: 80px;
+    margin-left: 210px;
     color: #ffff;
     background: #ff9a71;
     border-color: #ff9a71;
-    border-radius: 7px;
 }
+.registeration{
+    text-decoration:underline #ff9a71;
+    padding: 20px;
+}
+.profile-pic{
+    width: 100px;
+    height: 100px;
+    margin: 0px;
+    border-radius: 100px;
+}
+.profil-pic{
+    width: 60px;
+    height: 60px;
+    margin: 19px;
+}
+.pro-img{
+    position: absolute;
+    position: absolute;
+    margin-left: 30px;
+    margin-top: -45px;
+}
+#user-profile{
+    padding: 20px;
+    text-align: -webkit-center;
+}
+#profile1{
+    text-align: initial;
+}
+#profile2{
+    text-align: end;
+}
+#pro-details{
+    text-align: initial;
+    padding: 5px;
+}
+.fit-img{
+    vertical-align: middle;
+    width: 40%;
+   
+    margin-top: 10px;
+}
+.venue-booking{
+    text-align: -webkit-center;
+    background-color: #eedbdb;
+    width: 200px;
+    height: 110px;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgb(0 0 0 / 67%);
+    display: table-cell;
+}
+.service-booking{
+    text-align: -webkit-center;
+    background-color: #eedbdb;
+    width: 200px;
+    height: 110px;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgb(0 0 0 / 67%);
+    display: table-cell;
+}
+#title1{
+    margin-top: 72px;
+    font-size: 1.5rem;
+    font-family: "Raleway", sans-serif;
+}
+.px{
+    padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+#image-upload{
+    width: 150px;
+    height: 150px;
+}  
+.pro-image{
+    margin-bottom: 10px;
+    color: #ff9a71;
+}
+.pro_name{
+    border: none;
+    border-bottom: thin dashed #ff9a71;
+    padding-bottom: 0;
+    outline: none;
+    font-size: 15px;
+  }
+  .booking_form_details{
+      text-align: end;
+  }
+  .booking_button{
+    
+    width: 100%;
+  }
+  .profile_images{
+      width: 100%;
+      background-color: #01B3AF
 
-  
+  }
+  .pro-images{
+       width: 100%;
+       height: 100%;
+  }
 

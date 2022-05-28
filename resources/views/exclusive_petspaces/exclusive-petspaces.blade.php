@@ -43,7 +43,7 @@
                             <div class="row m-b-n40">
 
                                 <!-- Product Start -->
-                                <div class="col-12 col-sm-3 col-lg-2 product-wrapper m-b-30">
+                                <div class="col-12 col-sm-3 col-lg-3 product-wrapper m-b-30">
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
@@ -77,7 +77,7 @@
                                 </div>
                                 <!-- Product End -->
                                <!-- Product Start -->
-                                <div class="col-12 col-sm-3 col-lg-2 product-wrapper m-b-30">
+                                <div class="col-12 col-sm-3 col-lg-3 product-wrapper m-b-30">
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
@@ -114,7 +114,7 @@
                                 </div>
                                 <!-- Product End -->
                                 <!-- Product Start -->
-                                <div class="col-12 col-sm-3 col-lg-2 product-wrapper m-b-30">
+                                <div class="col-12 col-sm-3 col-lg-3 product-wrapper m-b-30">
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
@@ -148,7 +148,7 @@
                                 <!-- Product End -->
 
                                 <!-- Product Start -->
-                                <div class="col-12 col-sm-3 col-lg-2 product-wrapper m-b-30">
+                                <div class="col-12 col-sm-3 col-lg-3 product-wrapper m-b-30">
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
@@ -182,7 +182,7 @@
                                 <!-- Product End -->
 
                                 <!-- Product Start -->
-                                <div class="col-12 col-sm-3 col-lg-2 product-wrapper m-b-30">
+                                <div class="col-12 col-sm-3 col-lg-3 product-wrapper m-b-30">
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
@@ -213,7 +213,7 @@
                                 <!-- Product End -->
 
                                 <!-- Product Start -->
-                                <div class="col-12 col-sm-3 col-lg-2 product-wrapper m-b-30">
+                                <div class="col-12 col-sm-3 col-lg-3 product-wrapper m-b-30">
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
@@ -249,7 +249,7 @@
 
                             
                                 <!-- Product Start -->
-                                <div class="col-12 col-sm-3 col-lg-2 product-wrapper m-b-30">
+                                <div class="col-12 col-sm-3 col-lg-3 product-wrapper m-b-30">
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
@@ -285,7 +285,7 @@
                            
 
                                 <!-- Product Start -->
-                                <div class="col-12 col-sm-3 col-lg-2 product-wrapper m-b-30">
+                                <div class="col-12 col-sm-3 col-lg-3 product-wrapper m-b-30">
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
@@ -321,7 +321,7 @@
                   
 
                                 <!-- Product Start -->
-                                <div class="col-12 col-sm-3 col-lg-2 product-wrapper m-b-30">
+                                <div class="col-12 col-sm-3 col-lg-3 product-wrapper m-b-30">
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
@@ -358,7 +358,7 @@
 
                              
                                 <!-- Product Start -->
-                                <div class="col-12 col-sm-3 col-lg-2 product-wrapper m-b-30">
+                                <div class="col-12 col-sm-3 col-lg-3 product-wrapper m-b-30">
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
@@ -393,7 +393,7 @@
                                 <!-- Product End -->
 
                                 <!-- Product Start -->
-                                <div class="col-12 col-sm-3 col-lg-2 product-wrapper m-b-30">
+                                <div class="col-12 col-sm-3 col-lg-3 product-wrapper m-b-30">
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
@@ -429,7 +429,7 @@
 
                                 
                                 <!-- Product Start -->
-                                <div class="col-12 col-sm-3 col-lg-2 product-wrapper m-b-30">
+                                <div class="col-12 col-sm-3 col-lg-3 product-wrapper m-b-30">
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">

@@ -38,7 +38,7 @@
                 <!-- Tab Start -->
                 <div class="col-12 my-3">
                     <h1>Exclusive Pet Spaces</h1>
-                    <div class="viewall">
+                    <div class="view-all">
                         <a href="{{URL::asset('/exclusive_petspaces')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
                     </div>
                 </div>
@@ -700,7 +700,7 @@
                 <!-- Tab Start -->
              <div class="col-12">
                     <h1>Independent House | Apartment</h1>
-                    <div class="viewall">
+                    <div class="view-all">
                       <a  href="{{URL::asset('/house&apartment/house_apartment')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
                     </div>
                 </div>

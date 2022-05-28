@@ -58,27 +58,27 @@
                         
                             <h1 class="yourself">Select Your Category</h1>
                             <div class="row" id="category">
-                            <div class="deal-thumb col-md-3 m-b-15" data-aos="fade-up" data-aos-duration="1200">
+                            <div class="deal-thumb col-md-4 m-b-15" data-aos="fade-up" data-aos-duration="1200">
                                 <a href="single-product.html">
                                     <img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - Bird.png')}}" alt="Product Image">
                                 </a>
                                 <p class="about">Birds</p>
                             </div>
-                            <div class="deal-thumb col-md-3 m-b-15" data-aos="fade-up" data-aos-duration="1200">
+                            <div class="deal-thumb col-md-4 m-b-15" data-aos="fade-up" data-aos-duration="1200">
                                 <a href="single-product.html">
                                     <img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - cat.png')}}" alt="Product Image">
                                 </a>
                                 <p class="about">Cat</p>
                             </div>
-                            <div class="deal-thumb col-md-3 m-b-15" data-aos="fade-up" data-aos-duration="1200">
+                            <div class="deal-thumb col-md-4 m-b-15" data-aos="fade-up" data-aos-duration="1200">
                                 <a href="single-product.html">
                                     <img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - Dog.png')}}" alt="Product Image">
                                 </a>
                                 <p class="about">Dog</p>
                             </div>
-                            <div class="next-btn">
-                                <a href="/bookingform" class="btn btn-primary btn-hover-dark">Next</a>
-                            </div>
+                            <div class="view-all booking_button col-md-5">
+                                <a  href="/bookingform"  class="btn btn-primary btn-sm mx-auto">Next</a>
+                              </div>
                 
                       </div>
                     <!-- Deal Content End -->
@@ -88,6 +88,7 @@
         </div>
      </div>
    </div>
+</div>
 </div>
 <!-- Latest Blog Carousel End -->
 @endsection

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('register/register');
+    return view('home/index');
 });
 Route::get('/home/index', function () {
     return view('home/index');
@@ -64,6 +65,28 @@ Route::get('/add', function () {
 Route::get('/bookingform', function () {
     return view('booking-details/booking_form/booking_form');
 });
+Route::get('/register', function () {
+    return view('register/register');
+});
+Route::get('/profile', function () {
+    return view('profile/profile');
+});
 
+
+// booking details
+
+Route::post('/insert_booking_details',[HomeController::class,'insert_booking_details']);
+
+// login details
+
+Route::post('/insert_login_details',[HomeController::class,'insert_login_details']);
+
+// register details
+
+Route::post('/insert_register_details',[HomeController::class,'insert_register_details']);
+
+// otp details
+
+Route::post('/insert_otp_details',[HomeController::class,'insert_otp_details']);
 
 require __DIR__.'/Auth.php';

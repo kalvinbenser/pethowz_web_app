@@ -2,80 +2,63 @@
 @section('content')
       <!-- Hero/Intro Slider Start -->
     <div class="section">
-        <div class="hero-slider swiper-container">
-            <div class="swiper-wrapper">
-
-                <div class="hero-slide-item swiper-slide">
-                    <div class="hero-slide-bg">
-                        <img src="{{URL::asset('front-end/assets/images/slider/Slider Image.png')}}" alt="Slider Image" />
-                    </div>
-                </div>
-
-                <div class="hero-slide-item swiper-slide">
-                    <div class="hero-slide-bg">
-                        <img src="{{URL::asset('front-end/assets/images/slider/Webscreen 12 image 3.png')}}" alt="Slider Image" />
-                    </div>
-                </div>
-                <div class="hero-slide-item swiper-slide">
-                    <div class="hero-slide-bg">
-                        <img src="{{URL::asset('front-end/assets/images/slider/Webscreen 13 image 4.png')}}" alt="Slider Image" />
-                    </div>
-                </div>
-                <div class="hero-slide-item swiper-slide">
-                    <div class="hero-slide-bg">
-                        <img src="{{URL::asset('front-end/assets/images/slider/istockphoto-1262197572-612x612.jpg')}}" alt="Slider Image" />
-                    </div>
-                </div>
-                <div class="hero-slide-item swiper-slide">
-                    <div class="hero-slide-bg">
-                        <img src="{{URL::asset('front-end/assets/images/slider/slider.png')}}" alt="Slider Image" />
-                    </div>
-                </div>
-                <div class="hero-slide-item swiper-slide">
-                    <div class="hero-slide-bg">
-                        <img src="{{URL::asset('front-end/assets/images/slider/Footer Image.png')}}" alt="Slider Image" />
+        <div class="profile_images">
+      <div class="row">
+        <div class="col-md-2 col-lg-5 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+            <div class="profile_pic1">
+                 <a href="shop.html" class="banner">
+                     <img class="pro-images" src="{{URL::asset('front-end/assets/images/profile-images/Exc pet space pt2 image 1 in webscreen 4.png')}}" alt="Banner Image" />
+                 </a>
+            </div>
+         </div>
+         <div class="col-md-2 col-lg-5 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+            <div class="row">
+            <div class=" col-md-2 col-lg-3 m-b-30">  
+                  <div class="profile_pic2">      
+                <a href="shop.html" class="banner">
+                    <img class="pro-images" src="{{URL::asset('front-end/assets/images/profile-images/Exc pet space pt2 image 1 in webscreen 4.png')}}" alt="Banner Image" />
+                </a>
                   </div>
+            </div>
+             
+                <div class=" col-md-2 col-lg-3 m-b-30 profile_pic3">
+                        <a href="shop.html" class="banner">
+                            <img class="pro-images" src="{{URL::asset('front-end/assets/images/profile-images/Exc pet space pt2 image 1 in webscreen 4.png')}}" alt="Banner Image" />
+                        </a>
                 </div>
            </div>
-        </div>
-
-
-            <!-- Swiper Pagination Start -->
-            <div class="swiper-pagination d-lg-none"></div>
-            <!-- Swiper Pagination End -->
-
-            <!-- Swiper Navigation Start -->
-            <div class="home-slider-prev swiper-button-prev main-slider-nav d-lg-flex d-none"><i class="icon-arrow-left"></i></div>
-            <div class="home-slider-next swiper-button-next main-slider-nav d-lg-flex d-none"><i class="icon-arrow-right"></i></div>
-            <!-- Swiper Navigation End -->
+         </div>
+         </div>
+      </div>
         </div>
     </div>
     
 
  
   
-            <div class="container">
+            <div class="section">
                 <div class="testimonial-thumb text-center">
                 <div class="row m-b-n40">
-                    <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="col-6 col-sm-6 col-lg-6 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                         <div class="single-footer-widget">
+                            <div class="row">
+                                <div class="col-3 col-sm-3 col-lg-3 m-b-40 user_pic">
                         
                             <img src="{{URL::asset('front-end/assets/images/testimonial/User Image.png')}}" alt="Testimonial Image"/>
-                            <div class="name_details">
+                                </div>
+                            <div class="col-3 col-sm-3 col-lg-3 m-b-40 name_details">
                                 <h3 class="thumb-title">Jonathon Jhon</h3>
                                 <h6 class="thumb-subtitle">joining date</h6>
                            </div>
                             </div> 
                         </div>
-                    <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1200">
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1400">        
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1600">
-                        <div class="single-footer-widget">
+                        </div>
+             
+                    <div class="col-6 col-sm-6 col-lg-6 m-b-40" data-aos="fade-up" data-aos-duration="1600">
+                        <div class="single-footer-widget booking_form_details">
                             <h3 class="rupee"> <a href="{{URL::asset('/bookingdetails')}}"><i class="fa fa-rupee" style="font-size:24px">100</i></a></h3>
                             <h6 class="rupee">Per Hour</h6>
-                            <div class="book">
+                            <div class="view-all">
                                 <a  href="{{URL::asset('/bookingdetails')}}"  class="btn btn-danger btn-sm mx-auto">Book</a>
                             </div>
                         </div>
@@ -84,7 +67,7 @@
             </div>
             </div>
               
-    <div class="section section-margin">
+    <div class="section section-margin pets-details">
 
           <div class="container">
            

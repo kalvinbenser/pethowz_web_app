@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Pethows</title>
 
     <!-- Favicons -->
@@ -38,6 +39,7 @@
     <link rel="stylesheet" href="{{URL::asset('front-end/assets/css/vendor/vendor.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('front-end/assets/css/plugins/plugins.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('front-end/assets/css/style.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('front-end/assets/css/model.css')}}">
 
 
 
@@ -85,7 +87,7 @@
                                         </ul>
                                       </li>
                                     <li>
-                                        <a href="{{URL::asset('/login')}}">Login</a>
+                                        <a onclick="" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
                                     </li>
                                   
                                 </ul>
@@ -113,7 +115,7 @@
                                 <!-- Header Action Search Button End -->
 
                                 <!-- Header My Account Button Start -->
-                                <a href="my-account.html" class="header-action-btn header-action-btn-wishlist">
+                                <a href="{{URL::asset('/profile')}}" class="header-action-btn header-action-btn-wishlist">
                                     <i class="icon-user icons"></i>
                                 </a>
                                 <!-- Header My Account Button End -->
@@ -238,6 +240,198 @@
     <!-- Header Section End -->
 
    @yield('content')
+   <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog model-center">
+      <div class="modal-content ">
+      
+        <div class="modal-body">
+          <div class="model-item-center">
+            <div class="row">
+                
+                  <div >
+                    <img src="{{asset('front-end/assets/images/Web App/Icons/Pethowz logo.svg')}}" alt="" class="logo-size" /><br>
+                    <img src="{{asset('front-end/assets/images/Web App/Icons/Pethowz.svg')}}" alt="" width="70px" />
+                    
+                  </div>
+
+              </div>
+
+              </div>
+
+              <p class="model-text-center mt-2">You will get One Time Password<br>to this number</p>
+
+              <div class="model-item-center">
+                <input type="text" class="model-input-text mobile_number" placeholder="Mobile Number">
+                <span id="mobile_number_error" class="text-danger"></span>
+                
+              </div>
+
+              <div class="model-item-center mt-2">
+              <input type="submit" id="booking_btn" value="SUBMIT" data-bs-toggle="modal" class="btn-model">
+              </div>
+
+              <p class="model-text-center mt-2">Or Login With</p>
+
+              <div class="model-item-center">
+                <div >
+                  <img src="{{asset('front-end/assets/images/logo/Gmail-model.png')}}" alt="" />
+ 
+                  
+                  <img src="{{asset('front-end/assets/images/logo/facebook-model.png')}}" alt=""  width="50px" />
+                 
+                </div>
+                
+              </div>
+        
+            </div>
+      
+
+     
+        </div>
+        {{-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> --}}
+      </div>
+    </div>
+
+
+
+  
+  <div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog model-center">
+      <div class="modal-content">
+      
+        <div class="modal-body model-login-two">
+          <div class="model-item-center">
+            <div class="row">
+                
+                  <div >
+                    <img src="{{asset('front-end/assets/images/Web App/Icons/Pethowz logo.svg')}}" alt="" class="logo-size" /><br>
+                    <img src="{{asset('front-end/assets/images/Web App/Icons/Pethowz.svg')}}" alt="" width="70px" />
+                    
+                  </div>
+
+              </div>
+
+              </div>
+
+              <p class="model-text-center mt-5">Enter the 4-Degit Verification Code</p>
+
+              <div class="model-item-center mt-2">
+                <div style="display: flex;justify-content: center" id="otp-container">
+                  <input oninput="inputInsideOtpInput(this)"
+                         maxlength="1" class="model-otp mobile_otp" type="number">
+          
+                  <input oninput="inputInsideOtpInput(this)"
+                         maxlength="1" class="model-otp mobile_otp" type="number">
+          
+                  <input oninput="inputInsideOtpInput(this)"
+                         maxlength="1" class="model-otp mobile_otp" type="number">
+          
+                  <input oninput="inputInsideOtpInput(this)"
+                         maxlength="1" class="model-otp mobile_otp" type="number">
+                        
+                         <span id="mobile_otp_error" class="text-danger"></span>
+              </div>
+                
+              </div>
+              <p class="model-text-center mt-1">Did not receive the code? <span class="model-resend-text">Re-send</span></p>
+
+              <div class="model-item-center">
+              <input type="submit" value="VERIFY" id="booking_btn" data-bs-toggle="modal" class="btn-model-verify" > 
+              </div>
+
+            </div>
+      
+
+     
+        </div>
+    </div>
+  </div>
+
+
+   
+  <div class="modal fade " id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog model-center">
+      <div class="modal-content">
+      
+  
+          
+
+
+
+
+              {{-- //begin  --}}
+
+
+                 <p class="model-terms-heading">Terms And Conditions</p>
+
+             
+              <div class="modal-body  modal-content-overflow">
+                
+                
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus orci sit amet lacus lobortis viverra a tincidunt nunc. Morbi elementum ipsum eu lectus gravida fermentum. Maecenas vel luctus nisl. Donec lacinia dolor sit amet neque dapibus, eget semper enim placerat. Vestibulum congue, purus quis semper imperdiet, diam mi ultrices purus, sit amet posuere diam arcu at ligula. Fusce id vestibulum magna. Quisque vitae bibendum dolor. Praesent arcu urna, fringilla non consectetur sollicitudin, porttitor quis quam. Suspendisse viverra ex maximus arcu elementum consequat. Sed tortor purus, interdum a dapibus quis, laoreet ut nulla. Integer eu vulputate est, nec pellentesque nunc. Curabitur tempor congue arcu, vitae consectetur lacus congue ut.
+        
+        Mauris tempor nunc nisl, vitae dictum justo venenatis non. Mauris ultricies nisl nec sagittis eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur rutrum laoreet nibh, vitae laoreet nulla. In facilisis, massa eu elementum elementum, mi turpis semper lectus, euismod scelerisque neque justo ultrices justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In consequat, justo vitae facilisis aliquam, sem libero convallis diam, vitae mattis eros urna vitae turpis. Praesent aliquam arcu mauris, sit amet scelerisque odio dictum ac.
+        
+        Nam a quam vehicula, vehicula ante vel, tristique nulla. Duis ac placerat arcu. Mauris eu nulla in nunc viverra gravida ac eu massa. Duis scelerisque ultrices velit, at efficitur eros gravida non. Curabitur accumsan scelerisque erat sagittis placerat. Donec scelerisque ultricies ipsum, ac facilisis orci bibendum ac. Suspendisse eu molestie justo. In quis efficitur dolor. Sed porttitor mauris vitae aliquam sollicitudin. In ut cursus ligula. Quisque ut magna sed magna commodo vulputate et vitae metus. Praesent gravida, diam ac pharetra vestibulum, enim sapien vulputate lacus, at tempor mi enim quis lorem. Suspendisse mi eros, cursus quis iaculis sed, rhoncus in est. Maecenas non lacinia magna.
+        
+        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque non hendrerit arcu. Curabitur posuere sem sit amet tortor consectetur, nec placerat ligula hendrerit. Ut consectetur nec metus sed dignissim. In id lorem malesuada, mollis libero a, egestas justo. Cras auctor sapien quis nisl pretium, sit amet gravida augue semper. In eu imperdiet felis, sit amet feugiat est. Nunc eu vehicula quam, non feugiat purus.
+        
+        Aliquam aliquet ipsum eu eros vehicula volutpat. Nunc rhoncus vulputate eros non egestas. Cras eleifend in justo quis malesuada. Integer cursus ante et ex venenatis porta. Pellentesque et libero tristique, mollis leo eu, convallis sapien. Nullam cursus quis urna nec finibus. Curabitur ultricies euismod diam ut suscipit. Nam non orci sed quam porttitor varius. Nunc mattis lobortis efficitur. Nunc sed est sit amet metus interdum tristique. Duis in ipsum metus. Vestibulum eleifend interdum porta. Donec blandit elementum tortor semper interdum. Aliquam tempor sapien tortor, a consectetur odio varius eget.
+        
+        Mauris vel pretium neque, vel pretium justo. In tristique imperdiet justo, nec blandit sem ornare et. Vivamus lacinia tortor purus. Proin semper, orci ut mattis ultricies, purus ante ornare erat, id gravida neque purus in ipsum. Praesent scelerisque vestibulum mi, et lobortis lacus faucibus id. In ut pulvinar diam. Donec at faucibus leo. Fusce ac suscipit risus. Donec congue, tortor vel dictum facilisis, ligula dui tincidunt lectus, ac suscipit sapien magna dictum tortor. Morbi at auctor nunc.
+        
+        Cras ac orci posuere, fermentum mauris vel, elementum erat. Nulla nec aliquam sem, vestibulum commodo augue. Nullam molestie ex nec pretium vehicula. Sed pretium cursus elit, et hendrerit nibh dapibus vel. Vivamus nec mattis enim. Aliquam et ipsum non tortor dapibus luctus. Donec sit amet porta urna, eu ullamcorper lectus. Sed turpis nisl, pretium sit amet posuere in, pharetra ac turpis. Nullam ut risus nunc. Nullam sed augue neque. Quisque sem sapien, fringilla at congue eu, sodales at orci. Nullam vehicula vel nulla non tristique. Proin dapibus luctus volutpat. Suspendisse elementum tellus nec lacus varius eleifend. Aliquam elementum, enim in lacinia facilisis, ligula ex consectetur nisi, at dapibus sapien erat ac neque. In hac habitasse platea dictumst.
+        
+        Praesent sed felis quis ex euismod convallis. Integer massa ipsum, posuere id vulputate vitae, euismod non ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed tellus eu ligula varius euismod sit amet in ex. Quisque eget fermentum urna. Cras tempor bibendum vehicula. Sed porttitor tellus sed metus tempor venenatis id nec ex. Quisque et aliquet elit. Nam vestibulum lorem vitae metus lacinia bibendum. Nam nulla lorem, feugiat in tellus sit amet, scelerisque sodales erat. Cras vel lacus quis tortor cursus pellentesque. Nam ultricies vehicula orci a efficitur. Nulla aliquet dolor ac sem fermentum laoreet.
+        
+        Sed consequat ullamcorper tristique. Fusce rhoncus mauris turpis. Donec rhoncus blandit rhoncus. Pellentesque venenatis lobortis arcu, a pellentesque tortor commodo sit amet. Praesent ut nulla metus. Aenean quis consequat sapien. Nunc vehicula vestibulum tortor eget finibus. Donec maximus tincidunt sapien sit amet pretium. Ut aliquet magna tortor, eu imperdiet turpis condimentum non. Suspendisse mattis, ligula ut ultrices lobortis, tellus diam posuere elit, vel laoreet ante metus ac lorem.
+        
+        Ut pharetra urna ut lacus volutpat hendrerit. Curabitur quis elit leo. Praesent non accumsan nibh. Vestibulum quam est, rhoncus non diam in, blandit consectetur mi. Sed lobortis id velit eu malesuada. Morbi mattis felis non massa accumsan, in pretium metus aliquet. Ut porttitor commodo urna vel suscipit. Maecenas dictum odio eu nisl maximus, vel laoreet lorem egestas. Proin leo lectus, vestibulum eu suscipit sit amet, consequat vel libero. Nam eros quam, rhoncus interdum lacus sit amet, tristique finibus erat. Nullam ut euismod nunc, quis efficitur leo. Aenean accumsan odio ut ante vehicula, in eleifend orci varius. Integer ut ultrices neque. Duis nec ullamcorper lorem, sit amet pharetra magna.
+        
+        Mauris elit orci, blandit eu libero vel, malesuada vehicula nulla. Fusce dictum, tortor id ultrices rhoncus, justo augue imperdiet ex, a egestas sapien mi sit amet orci. Curabitur vitae diam at ex mollis pharetra. Ut tellus massa, dapibus eget sodales ac, feugiat et nunc. Phasellus tristique maximus orci, eu pharetra arcu pulvinar sit amet. Morbi fermentum condimentum felis, a elementum nibh viverra ac. Suspendisse ac posuere ex. Ut rutrum ligula libero, aliquet iaculis lectus tempus eget. Quisque egestas tellus commodo elementum commodo. Phasellus ultricies enim at massa ultricies blandit. Morbi a euismod nulla.
+        
+        Praesent finibus pellentesque turpis quis vehicula. Pellentesque mi mauris, hendrerit et dolor vel, tempus vehicula massa. Suspendisse pellentesque, ex eget vehicula fringilla, ante tortor varius libero, a semper ligula dolor at diam. Donec a convallis metus. Morbi lobortis molestie odio sed facilisis. Proin vitae aliquam metus. Donec quis orci urna.
+        
+        In cursus dolor sollicitudin fermentum rhoncus. Nam ante arcu, ullamcorper sit amet fringilla ac, sollicitudin ut est. Aliquam consectetur nibh sed dolor imperdiet, id congue ligula bibendum. Nulla quis volutpat felis, id accumsan sem. Nam quis volutpat lorem, in porta turpis. Maecenas non dignissim libero. Donec mollis pellentesque molestie. Morbi sollicitudin imperdiet turpis, et fringilla mauris luctus eu. Mauris posuere, eros id venenatis pulvinar, massa tellus imperdiet diam, a aliquam erat sem non urna. Morbi placerat, leo vitae tempus porta, felis libero auctor augue, eu suscipit felis felis quis tellus. Maecenas facilisis felis at consequat vehicula.
+        
+        Fusce eget nisi et ipsum porta consequat. Nullam id nisi nisl. Vivamus blandit dignissim eros, eget ornare diam placerat non. Sed ipsum dolor, tempus vitae risus quis, mollis ultricies velit. Cras consectetur vestibulum erat, quis sodales ante porta et. Pellentesque faucibus metus sit amet lacus tristique, sit amet interdum leo consequat. Ut at felis nisi. Fusce cursus efficitur ligula, ut laoreet lacus. Sed id lobortis enim, vitae dapibus nunc. Fusce ullamcorper arcu eget justo tincidunt, at ultricies purus malesuada. Duis a risus tempor, finibus neque ut, ultricies est. Nulla id vestibulum erat, nec lacinia dolor.
+        
+        Aenean consectetur risus aliquet lectus congue, suscipit euismod dolor euismod. Quisque ut lorem rutrum, venenatis turpis non, feugiat nunc. Vestibulum sodales erat turpis, eget sodales nunc elementum ullamcorper. Sed sollicitudin in ipsum id lacinia. Nunc at lectus eget diam placerat tincidunt. Nulla facilisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In dapibus consequat massa porta porta. Curabitur sit amet dui risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc imperdiet consectetur lacus, mollis vulputate enim lacinia vitae. Sed scelerisque nisl ipsum, non pulvinar lectus pulvinar a. Nulla facilisi.
+                
+                
+                
+              </div>
+            
+
+
+
+
+
+              {{-- //end
+               --}}
+
+
+
+
+
+
+             
+              <form action="{{('/register')}}">
+                <input type="checkbox" id="terms" name="terms" value="ok" required>
+                <label for="terms">I accept the <u>Terms and Conditions</u></label><br>
+             <button class="btn" >submit</button>
+              </form>
+           
+      
+
+     
+        </div>
+    </div>
+  </div>
+
 
     <!-- Footer Section Start -->
     <footer class="section footer-section">
@@ -245,10 +439,13 @@
         <div class="footer-top bg-name-bright section-padding">
             <div class="container">
                 <div class="row m-b-n40">
-                    <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="col-12 col-sm-3 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                         <div class="single-footer-widget">
                             <h1 class="widget-title">Head Office</h1>
-                            <p class="desc-content">91 springboard, Gopala krishna complex,<br>45/3 Residency Road,Mahatma Gandhi Rd,<br>ShanthalamNagar,Ashok Nagar,<br>Bengaluru,Karnadaka -560025</p>
+                            <span class="desc-content">91 springboard, Gopala krishna complex,
+                                <span class="desc-content">45/3 Residency Road,Mahatma Gandhi Rd,</span>
+                                <span class="desc-content">ShanthalamNagar,Ashok Nagar,</span>
+                                <span class="desc-content">Bengaluru,Karnadaka -560025</span>
                             <div class="copyright-content">
                             <div class="copyright-content">
                             <p class="mb-0"><i class="fa fa-phone text-danger"></i> <strong>098840 42119</strong> </p>
@@ -257,13 +454,13 @@
                         </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="col-12 col-sm-3 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1200">
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Site Links</h2>
                            
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1400">
+                    <div class="col-12 col-sm-3 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1400">
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Follow Us</h2>
                            <!-- Soclial Link Start -->
@@ -276,7 +473,7 @@
                             <!-- Social Link End -->
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1600">
+                    <div class="col-12 col-sm-3 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1600">
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Services We Provide</h2>
                             <div class="widget-body">
@@ -313,14 +510,14 @@
         <div class="footer-bottom bg-name-light p-t-20 p-b-20">
             <div class="container">
                 <div class="row align-items-center m-b-n20">
-                    <div class="col-md-6 text-center text-md-start order-2 order-md-1 m-b-20">
+                    <div class="col-md-6 text-center text-md-start order-2 order-md-2 m-b-20">
                         <div class="copyright-content">
-                            <p class="mb-0">© 2022 <strong>Pethows.</strong>All rights reserved. <a href="https://sales@paladinsoftwares.com/">HasThemes.</a></p>
+                            <span class="mb-0">© 2022 <strong>Pethows.</strong>All rights reserved. <a href="https://sales@paladinsoftwares.com/">HasThemes.</a></span>
                         </div>
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
                         <div class="copyright-content">
-                            <p> <a href="{{URL::asset('/terms_condition')}}">Terms&Conditions &emsp;&emsp; Privacy</a></p>
+                            <span> <a href="{{URL::asset('/terms_condition')}}">Terms&Conditions &emsp;&emsp; Privacy</a></span>
                           
                         </div>
                     </div>
@@ -510,69 +707,33 @@
                 <div class="mobile-navigation">
                     <nav>
                         <ul class="mobile-menu">
-                            <li class="has-children">
-                                <a href="#">Home <i class="fa fa-angle-down"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="index.html">Home One</a></li>
-                                    <li><a href="index-2.html">Home Two</a></li>
-                                    <li><a href="index-3.html">Home Three</a></li>
-                                    <li><a href="index-4.html">Home Four</a></li>
-                                </ul>
+                            <li>
+                                <a href="{{URL::asset('/home/index')}}">Home</a>                                        
+                           </li>  
+                           <li><a href="{{URL::asset('/about/about')}}">About</a></li>                                  
+                           <li>
+                                <a href="{{URL::asset('/pethost/pethost')}}">Pet host</a>
                             </li>
+                            
                             <li class="has-children">
-                                <a href="#">Shop <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="shop.html">Shop Grid</a></li>
-                                    <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
-                                    <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                                    <li><a href="shop-list-fullwidth.html">Shop List Fullwidth</a></li>
-                                    <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a></li>
-                                    <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="cart.html">Shopping Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="compare.html">Compare</a></li>
+                                <a href="#">services</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{{URL::asset('/sitting')}}">Sitting</a></li>
+                                    <li><a href="{{URL::asset('/grooming')}}">Grooming</a></li>
+                                    <li><a href="{{URL::asset('/walking')}}">Walking</a></li>
+                                    <li><a href="{{URL::asset('/breading')}}">Bredding</a></li>
+                                    <li><a href="{{URL::asset('/training')}}">Training</a></li>
+                                    <li><a href="{{URL::asset('/photography')}}">Photography</a></li>
                                 </ul>
+                              </li>
+                            <li>
+                                <a onclick="" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
                             </li>
-                            <li class="has-children">
-                                <a href="#">Product <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="single-product.html">Single Product</a></li>
-                                    <li><a href="single-product-sale.html">Single Product Sale</a></li>
-                                    <li><a href="single-product-group.html">Single Product Group</a></li>
-                                    <li><a href="single-product-normal.html">Single Product Normal</a></li>
-                                    <li><a href="single-product-affiliate.html">Single Product Affiliate</a></li>
-                                    <li><a href="single-product-slider.html">Single Product Slider</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-children">
-                                <a href="#">Pages <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="{{URL::asset('/about/about')}}">About Us</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="faq.html">Faq</a></li>
-                                    <li><a href="error-404.html">Error 404</a></li>
-                                    <li><a href="my-account.html">My Account</a></li>
-                                    <li><a href="{{URL::asset('/login/login')}}">Login | Register</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-children">
-                                <a href="#">Blog <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                    <li><a href="blog-details-sidebar.html">Blog Details Sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="{{URL::asset('/about/about')}}">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                          
                         </ul>
                     </nav>
                 </div>
                 <!-- Mobile Menu End -->
-
                 <!-- Language, Currency & Link Start -->
                 <div class="offcanvas-lag-curr m-b-30">
                     <div class="header-top-lan-curr-link">
@@ -665,6 +826,110 @@
     <script src="{{URL::asset('front-end/assets/js/main.js')}}"></script>
      <!--Multiselect-->
     <script src="{{URL::asset('front-end/assets/js/multiselect-dropdown.js')}}"></script>
+    <script>
+        $('body').on('click','#booking_btn',function(e){
+    
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                }
+            }); 
+    
+    
+            e.preventDefault();
+            var mobile_number = $('.mobile_number').val();
+          
+    
+                               if(!mobile_number){
+                                mobile_number_error="Mobile number is required";
+                                 $('#mobile_number_error').html("");
+                                 $('#mobile_number_error').html(mobile_number_error);
+                               }
+                               else{
+                                mobile_number_error="";
+                                  $('#mobile_number_error').html("");
+                               }
+    
+                               
+                               
+                               if( mobile_number_error !=''){
+                                 return false;
+                               }
+                               else{
+                            $.ajaxSetup({
+                                            headers: {
+                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                            }
+                                        });
+                                        $.ajax({
+                                            type:'POST',
+                                            url:"{{ url('insert_login_details') }}",
+                                            data:{
+                                                mobile_number:mobile_number
+                                            },
+                                            success:function(data){
+                                                   // console.log(data.mobile_number);
+                                                  // alert(data.status);
+                                                  $('#exampleModal2').modal('show');
+                                            }
+                                            
+                                        });
+                                    }
+                            });
+          </script>
+          <script>
+            $('body').on('click','#booking_btn',function(e){
+        
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                    }
+                }); 
+        
+        
+                e.preventDefault();
+                var mobile_otp = $('.mobile_otp').val();
+              
+        
+                                   if(!mobile_otp){
+                                    mobile_otp_error="Mobile otp is required";
+                                     $('#mobile_otp_error').html("");
+                                     $('#mobile_otp_error').html(mobile_otp_error);
+                                   }
+                                   else{
+                                    mobile_otp_error="";
+                                      $('#mobile_otpr_error').html("");
+                                   }
+        
+                                   
+                                   
+                                   if( mobile_otp_error !=''){
+                                     return false;
+                                   }
+                                   else{
+                                $.ajaxSetup({
+                                                headers: {
+                                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                                }
+                                            });
+                                            $.ajax({
+                                                type:'POST',
+                                                url:"{{ url('insert_otp_details') }}",
+                                                data:{
+                                                    mobile_otp:mobile_otp
+                                                },
+                                                success:function(data){
+                                                       // console.log(data.status);
+                                                      //alert(data.status);
+                                                      $('#exampleModal3').modal('show');
+                                                }
+                                                
+                                            });
+                                        }
+                                });
+              </script> 
+    @yield('scripts')
+      
 </body>
 
 </html>
