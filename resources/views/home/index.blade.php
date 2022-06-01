@@ -36,12 +36,13 @@
             <!-- Section Title & Tab Start -->
             <div class="row " data-aos="fade-up" data-aos-duration="1000" >
                 <!-- Tab Start -->
-                <div class="col-12 my-3">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                     <h1>Exclusive Pet Spaces</h1>
-                    <div class="view-all">
-                        <a href="{{URL::asset('/exclusive_petspaces')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
-                    </div>
                 </div>
+                <div class="view-all col-12 col-sm-6 col-md-6 col-lg-6">
+                    <a href="{{URL::asset('/exclusive_petspaces')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
+                </div>
+               
                 
                 <!-- Tab End -->
             </div>
@@ -698,12 +699,13 @@
             <!-- Section Title & Tab Start -->
             <div class="row" data-aos="fade-up" data-aos-duration="1000">
                 <!-- Tab Start -->
-             <div class="col-12">
+             <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                     <h1>Independent House | Apartment</h1>
-                    <div class="view-all">
-                      <a  href="{{URL::asset('/house&apartment/house_apartment')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
-                    </div>
                 </div>
+                <div class="view-all col-12 col-sm-6 col-md-6 col-lg-6">
+                    <a  href="{{URL::asset('/house&apartment/house_apartment')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
+                  </div>
+              
                 <!-- Tab End -->
             </div>
             <!-- Section Title & Tab End -->
@@ -1257,6 +1259,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
     <!-- Testimonial Section End -->

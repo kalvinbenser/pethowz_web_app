@@ -262,10 +262,8 @@
 
               <div class="model-item-center">
                 <input type="text" class="model-input-text mobile_number" placeholder="Mobile Number">
-                <span id="mobile_number_error" class="text-danger"></span>
-                
               </div>
-
+              <span id="mobile_number_error" class="text-danger"></span>
               <div class="model-item-center mt-2">
               <input type="submit" id="booking_btn" value="SUBMIT" data-bs-toggle="modal" class="btn-model">
               </div>
@@ -321,21 +319,19 @@
               <div class="model-item-center mt-2">
                 <div style="display: flex;justify-content: center" id="otp-container">
                   <input oninput="inputInsideOtpInput(this)"
-                         maxlength="1" class="model-otp mobile_otp" type="number">
+                         maxlength="1" class="model-otp mobile_otp1" type="number">
           
                   <input oninput="inputInsideOtpInput(this)"
-                         maxlength="1" class="model-otp mobile_otp" type="number">
+                         maxlength="1" class="model-otp mobile_otp2" type="number">
           
                   <input oninput="inputInsideOtpInput(this)"
-                         maxlength="1" class="model-otp mobile_otp" type="number">
+                         maxlength="1" class="model-otp mobile_otp3" type="number">
           
                   <input oninput="inputInsideOtpInput(this)"
-                         maxlength="1" class="model-otp mobile_otp" type="number">
-                        
-                         <span id="mobile_otp_error" class="text-danger"></span>
+                         maxlength="1" class="model-otp mobile_otp4" type="number">
               </div>
-                
               </div>
+              <span id="mobile_otp_error" class="text-danger"></span>
               <p class="model-text-center mt-1">Did not receive the code? <span class="model-resend-text">Re-send</span></p>
 
               <div class="model-item-center">
@@ -439,19 +435,17 @@
         <div class="footer-top bg-name-bright section-padding">
             <div class="container">
                 <div class="row m-b-n40">
-                    <div class="col-12 col-sm-3 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="col-12 col-sm-3 col-lg-4 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                         <div class="single-footer-widget">
                             <h1 class="widget-title">Head Office</h1>
-                            <span class="desc-content">91 springboard, Gopala krishna complex,
-                                <span class="desc-content">45/3 Residency Road,Mahatma Gandhi Rd,</span>
-                                <span class="desc-content">ShanthalamNagar,Ashok Nagar,</span>
-                                <span class="desc-content">Bengaluru,Karnadaka -560025</span>
-                            <div class="copyright-content">
-                            <div class="copyright-content">
-                            <p class="mb-0"><i class="fa fa-phone text-danger"></i> <strong>098840 42119</strong> </p>
-                        </div>
-                            <p class="mb-0"><i class="fa fa-envelope-o text-danger"></i> <strong>Support@pethows.com</strong></p>
-                        </div>
+                            <ul>
+                                <li><i class="fa fa-map-marker text-danger"></i> springboard, Gopala krishna complex,</li>
+                                <li> &nbsp;&nbsp;&nbsp;45/3 Residency Road,Mahatma Gandhi Rd,</li>
+                                <li> &nbsp;&nbsp;&nbsp;ShanthalamNagar,Ashok Nagar,</li>
+                                <li> &nbsp;&nbsp;&nbsp;Bengaluru,Karnadaka -560025</li>
+                                <li><i class="fa fa-phone text-danger"></i> <strong>098840 42119</strong></li>
+                                <li><i class="fa fa-envelope-o text-danger"></i> <strong>Support@pethows.com</strong></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="col-12 col-sm-3 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1200">
@@ -460,7 +454,7 @@
                            
                         </div>
                     </div>
-                    <div class="col-12 col-sm-3 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1400">
+                    <div class="col-12 col-sm-3 col-lg-2 m-b-40" data-aos="fade-up" data-aos-duration="1400">
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Follow Us</h2>
                            <!-- Soclial Link Start -->
@@ -477,7 +471,14 @@
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Services We Provide</h2>
                             <div class="widget-body">
-                   <p> Pet Sitting <br> Pet Training <br>Pet Walking  <br> Pet Grooming <br> Pet Breading <br> Pet Photography</p>
+                                <ul>
+                                    <li>Pet Sitting</li>
+                                    <li>Pet Training</li>
+                                    <li>Pet Walking</li>
+                                    <li> Pet Grooming</li>
+                                    <li>Pet Breading</li>
+                                    <li>Pet Photography</li>
+                                        <ul>
                                 <!-- Newsletter Form Start -->
                                 <div class="newsletter-form-wrap p-t-5">                             
                                    
@@ -888,10 +889,40 @@
         
         
                 e.preventDefault();
-                var mobile_otp = $('.mobile_otp').val();
+                var mobile_otp = $('.mobile_otp1').val();
+                var mobile_otp = $('.mobile_otp2').val();
+                var mobile_otp = $('.mobile_otp3').val();
+                var mobile_otp = $('.mobile_otp4').val();
               
         
-                                   if(!mobile_otp){
+                                   if(!mobile_otp1){
+                                    mobile_otp_error="Mobile otp is required";
+                                     $('#mobile_otp_error').html("");
+                                     $('#mobile_otp_error').html(mobile_otp_error);
+                                   }
+                                   else{
+                                    mobile_otp_error="";
+                                      $('#mobile_otpr_error').html("");
+                                   }
+                                   if(!mobile_otp2){
+                                    mobile_otp_error="Mobile otp is required";
+                                     $('#mobile_otp_error').html("");
+                                     $('#mobile_otp_error').html(mobile_otp_error);
+                                   }
+                                   else{
+                                    mobile_otp_error="";
+                                      $('#mobile_otpr_error').html("");
+                                   }
+                                   if(!mobile_otp3){
+                                    mobile_otp_error="Mobile otp is required";
+                                     $('#mobile_otp_error').html("");
+                                     $('#mobile_otp_error').html(mobile_otp_error);
+                                   }
+                                   else{
+                                    mobile_otp_error="";
+                                      $('#mobile_otpr_error').html("");
+                                   }
+                                   if(!mobile_otp4){
                                     mobile_otp_error="Mobile otp is required";
                                      $('#mobile_otp_error').html("");
                                      $('#mobile_otp_error').html(mobile_otp_error);
@@ -916,7 +947,10 @@
                                                 type:'POST',
                                                 url:"{{ url('insert_otp_details') }}",
                                                 data:{
-                                                    mobile_otp:mobile_otp
+                                                    mobile_otp1:mobile_otp1
+                                                    mobile_otp2:mobile_otp2
+                                                    mobile_otp3:mobile_otp3
+                                                    mobile_otp4:mobile_otp4
                                                 },
                                                 success:function(data){
                                                        // console.log(data.status);

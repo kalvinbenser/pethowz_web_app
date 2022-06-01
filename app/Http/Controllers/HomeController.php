@@ -54,4 +54,62 @@ class HomeController extends Controller
         
        return response()->json(['status' => 'insert successfully','profile_name'=> $profile_name,'profile_email'=>$profile_email,'profile_number'=>$profile_number,'profile_address'=>$profile_address]);
     }
+
+    function insert_booking_form_details(Request $request){
+        $select_category=$request->select_category;
+        $select_serv=$request->select_serv;
+        $venue_details=$request-> venue_details;
+        $serv_details=$request->serv_details;
+        $select_applicable=$request->select_applicable;
+        $select_amenities=$request->select_amenities;
+      //  $select_profile=$request->select_profile;
+        
+       /* $response = Http::post('http://example.com',[
+                'name'=> $name,
+                'contact'=>$contact,
+                 'pet name'=>$pet_name,
+                 'pet count'=>$pet_count,
+                 'number of days'=>$no_of_days
+     ]
+     ); */
+
+        return response()->json(['status' => 'insert successfully', 'select_category'=> $select_category,'select_serv'=>$select_serv,'venue_details'=>$venue_details,'serv_details'=>$serv_details0,'select_applicable'=>$select_applicable,'select_amenities'=>$select_amenities]);
+    }
+    public function test_data(Request $request){
+        $your_self=$request->your_self;
+        $experience=$request->experience;
+        $service_your=$request->service_your;
+        $work_enjoy=$request->work_enjoy;
+        $enjoy_work=$request->enjoy_work;
+        $category=$request->category;
+       
+        $data=[
+            'your_self'=>$your_self,
+            'experience'=>$experience,
+            'service_your'=>$service_your,
+            'work_enjoy'=>$work_enjoy,
+            'enjoy_work'=>$enjoy_work,
+            'category'=>$category
+        ];
+        dd($data);
+
+      
+
+    }
+    
+    function pet_host_details(Request $request){
+        $select_category=$request->select_category;
+      
+        
+       /* $response = Http::post('http://example.com',[
+                'name'=> $name,
+                'contact'=>$contact,
+                 'pet name'=>$pet_name,
+                 'pet count'=>$pet_count,
+                 'number of days'=>$no_of_days
+     ]
+     ); */
+     return response()->json(['status' => 'insert successfully','select_category'=> $select_category]);
+    }
+
 }

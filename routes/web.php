@@ -71,6 +71,12 @@ Route::get('/register', function () {
 Route::get('/profile', function () {
     return view('profile/profile');
 });
+Route::get('/service-form', function () {
+    return view('/service/form/service_form');
+});
+Route::get('/allimages', function () {
+    return view('/photos/photos');
+});
 
 
 // booking details
@@ -88,5 +94,18 @@ Route::post('/insert_register_details',[HomeController::class,'insert_register_d
 // otp details
 
 Route::post('/insert_otp_details',[HomeController::class,'insert_otp_details']);
+
+// booking form details
+
+Route::post('/insert_booking_form_details',[HomeController::class,'insert_booking_form_details']);
+
+//about your selfe details
+
+Route::post('/test_data',[HomeController::class,'test_data']);
+
+//pethost details
+
+Route::post('/pet_host_details',[HomeController::class,'pet_host_details']);
+
 
 require __DIR__.'/Auth.php';

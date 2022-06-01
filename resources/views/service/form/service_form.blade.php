@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')      
     <div class="container">
-            <h1 id="yourself">Pet Space</h1>
+            <h1 id="yourself">List Your Pet Services</h1>
               <form action="{{URL::asset('/home/index')}}">
                   <div class="row m-b-n40">
                       <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
@@ -20,23 +20,18 @@
                       <span id="select_category_error" class="text-danger"></span>
                  </div>
                  <div class="service-providers">
-                      <div class="row">
-                        <label class="about">Select the Service</label>
-                        <select class="form-select select_serv" name="field1" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                          <option value="1">Audi</option>
-                          <option value="2">BMW</option>
-                          <option value="3">Mercedes</option>
-                          <option value="4">Volvo</option>
-                          <option value="5">Lexus</option>
-                          <option value="6">Tesla</option>
-                        </select>               
-                      </div>
-                      <span id="select_serv_error" class="text-danger"></span> 
+                    <div class="row">
+                      <label class="about">Choose Location</label>
+                      <select class="form-select select_location" name="field1" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                        <option value="1">Audi</option>
+                        <option value="2">BMW</option>
+                        <option value="3">Mercedes</option>
+                        <option value="4">Volvo</option>
+                        <option value="5">Lexus</option>
+                        <option value="6">Tesla</option>
+                      </select>               
                     </div>
-                      <label class="about">Select the Service</label>
-                    <div class="range-wrap">
-                      <div class="range-value" id="rangeV"></div>
-                      <input id="range" type="range" min="0" max="1000" value="0" step="1">
+                    <span id="select_location_error" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
@@ -46,44 +41,22 @@
                         <span id="venue_details_error" class="text-danger"></span>
                     </div>
                     <div class="service-providers">
-                        <label for="user-message" class="about">Service Details</label>                    
-                            <textarea name="user-message" id="user-message" class="form-control serv_details" cols="5" rows="2" placeholder=""></textarea>
-                            <span id="serv_details_error" class="text-danger"></span>
-                    </div>
+                        <div class="row">
+                            <label class="about">Select the options which are applicable</label>
+                            <select class="form-select select_applicable" name="field1" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                              <option value="1">Audi</option>
+                              <option value="2">BMW</option>
+                              <option value="3">Mercedes</option>
+                              <option value="4">Volvo</option>
+                              <option value="5">Lexus</option>
+                              <option value="6">Tesla</option>
+                            </select>               
+                          </div>
+                          <span id="select_applicable_error" class="text-danger"></span>
+                        </div>    
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                     <div class="service-providers">
-                    <div class="row">
-                        <label class="about">Select the options which are applicable</label>
-                        <select class="form-select select_applicable" name="field1" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                          <option value="1">Audi</option>
-                          <option value="2">BMW</option>
-                          <option value="3">Mercedes</option>
-                          <option value="4">Volvo</option>
-                          <option value="5">Lexus</option>
-                          <option value="6">Tesla</option>
-                        </select>               
-                      </div>
-                      <span id="select_applicable_error" class="text-danger"></span>
-                    </div>
-                    <div class="service-providers">
-                      <div class="row">
-                        <label class="about">Choose Location</label>
-                        <select class="form-select select_location" name="field1" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                          <option value="1">Audi</option>
-                          <option value="2">BMW</option>
-                          <option value="3">Mercedes</option>
-                          <option value="4">Volvo</option>
-                          <option value="5">Lexus</option>
-                          <option value="6">Tesla</option>
-                        </select>               
-                      </div>
-                      <span id="select_location_error" class="text-danger"></span>
-                      </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                   
-                        <div class="service-providers">
                         <div class="row">
                             <label class="about">Amenities</label>
                             <select class="form-select select_amenities" name="field1" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
@@ -96,18 +69,27 @@
                             </select>               
                           </div>
                           <span id="select_amenities_error" class="text-danger"></span>
-                        </div>                       
+                        </div> 
+                        <div class="service-providers"> 
+                        <label class="about">Select the Service</label>
+                        <div class="range-wrap">
+                            <div class="range-value" id="rangeV"></div>
+                            <input id="range" type="range" min="0" max="1000" value="0" step="1">
+                          </div>
+                        </div>                     
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                     <div class="service-providers">
-                    <input type="file"  accept="image/*" name="image" id="file_input"  style="display: none;padding:15px;">
-                    <label class="images" for="file_input"  style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>
-                    <i class="fa fa-image " style="color:#FF9A71;font-size:20px;"></i><input id="title" class="pro_name select_profile" />
-                    <div class="">
-                    <span id="select_profile_error" class="text-danger"></span>
-                    </div>
+                        <input type="file"  accept="image/*" name="image" id="file_input"  style="display: none;padding:15px;">
+                        <label class="images" for="file_input"  style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>
+                        <i class="fa fa-image " style="color:#FF9A71;font-size:20px;"></i><input id="title" class="pro_name select_profile" />
+                        <div class="">
+                        <span id="select_profile_error" class="text-danger"></span>
+                        </div>
+                </div> 
                     <div class="view-all">
-                    <button id="booking_btn" class="submite" name="submite">Submit</button>
-               </div>
-            </div>
+                        <button id="booking_btn" class="submite" name="submite">Submit</button>
+                   </div>                     
         </div>
     </div>
   </form>
@@ -123,19 +105,19 @@
    })
 </script>
 <script>
-  const
-  range = document.getElementById('range'),
-  rangeV = document.getElementById('rangeV'),
-  setValue = ()=>{
     const
-      newValue = Number( (range.value - range.min) * 100 / (range.max - range.min) ),
-      newPosition = 10 - (newValue * 0.2);
-    rangeV.innerHTML = `<span>${range.value}</span>`;
-    rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
-  };
-document.addEventListener("DOMContentLoaded", setValue);
-range.addEventListener('input', setValue);
-  </script>
+    range = document.getElementById('range'),
+    rangeV = document.getElementById('rangeV'),
+    setValue = ()=>{
+      const
+        newValue = Number( (range.value - range.min) * 100 / (range.max - range.min) ),
+        newPosition = 10 - (newValue * 0.2);
+      rangeV.innerHTML = `<span>${range.value}</span>`;
+      rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
+    };
+  document.addEventListener("DOMContentLoaded", setValue);
+  range.addEventListener('input', setValue);
+    </script>
 <script>
     $('body').on('click','#booking_btn',function(e){
        

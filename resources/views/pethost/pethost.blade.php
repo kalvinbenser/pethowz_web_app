@@ -42,11 +42,11 @@
                 <!-- Tab Start -->
                 <div class="col-12 my-3">
                     <h1>Exclusive Pet Spaces</h1>
-                    <div class="view-all">
-                        <a href="/add" target="">
-                            <i class="fa fa-plus-square"  style="font-size:28px;color:#FF9966"></i>
-                          </a>
-                    </div>
+                </div>
+                <div class="view-all">
+                    <a href="/add" target="">
+                        <i class="fa fa-plus-square"  style="font-size:28px;color:#FF9966"></i>
+                      </a>
                 </div>
                 
                 <!-- Tab End -->
