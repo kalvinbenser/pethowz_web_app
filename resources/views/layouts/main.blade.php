@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="{{URL::asset('front-end/assets/css/style.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('front-end/assets/css/model.css')}}">
 
-
+@yield('styles')
 
 </head>
 

@@ -25,7 +25,7 @@
                     <h1>Breading Service</h1>
                 </div>
                 <div class="view-all col-12 col-sm-6 col-md-6 col-lg-6">
-                    <a href="/service-form" target="">
+                    <a href="/service_form" target="">
                         <i class="fa fa-plus-square"  style="font-size:28px;color:#FF9966"></i>
                       </a>
                 </div>

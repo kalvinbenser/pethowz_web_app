@@ -1,14 +1,67 @@
 @extends('layouts.main')
+@section('styles')
+    <style>
+      input[type="checkbox"]:checked+label:after {
+    opacity: 1;
+}
+input[type="checkbox"]:checked+label:before {
+    border: 1px solid #f6ab49;
+}
+input[type="checkbox"]+label:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    content: "\f00c";
+    font-family: 'FontAwesome';
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    opacity: 0;
+    width: 15px;
+    text-align: center;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    color: #f6ab49;
+}
+input[type="checkbox"]+label:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    display: block;
+    border: 1px solid #cccccc;
+    content: "";
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+input[type="checkbox"]+label {
+    position: relative;
+    padding-left: 30px;
+    line-height: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+      </style>
+@endsection
 @section('content')      
     <div class="container">
             <h1 id="yourself">Pet Space</h1>
-              <form action="{{URL::asset('/home/index')}}">
+              <form action="/booking_create" method="post" enctype="multipart/form-data">
+                @csrf
                   <div class="row m-b-n40">
                       <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                  <div class="service-providers">
                     <div class="row">
                         <label class="about">Select Venue Category</label>
-                        <select class="form-select select_category" name="field1" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                        <select class="form-select select_category" name="venue_category[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
                           <option value="1">Audi</option>
                           <option value="2">BMW</option>
                           <option value="3">Mercedes</option>
@@ -17,68 +70,63 @@
                           <option value="6">Tesla</option>
                         </select>                                     
                       </div>
-                      <span id="select_category_error" class="text-danger"></span>
+                     
                  </div>
                  <div class="service-providers">
                       <div class="row">
                         <label class="about">Select the Service</label>
-                        <select class="form-select select_serv" name="field1" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                          <option value="1">Audi</option>
-                          <option value="2">BMW</option>
-                          <option value="3">Mercedes</option>
-                          <option value="4">Volvo</option>
-                          <option value="5">Lexus</option>
-                          <option value="6">Tesla</option>
+                        <select class="form-select select_serv" name="select_service[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                          <option value="1">Sitting</option>
+                          <option value="2">Breading</option>
+                          <option value="3">Photography</option>
+                          <option value="4">Grooming</option>
+                          <option value="5">Waiking</option>
+                          <option value="6">Training</option>
                         </select>               
                       </div>
-                      <span id="select_serv_error" class="text-danger"></span> 
+                     
                     </div>
                       <label class="about">Select the Service</label>
                     <div class="range-wrap">
                       <div class="range-value" id="rangeV"></div>
-                      <input id="range" type="range" min="0" max="1000" value="0" step="1">
+                      <input id="range" type="range" name="cost_per_hour" min="0" max="1000" value="0" step="1">
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                     <div class="service-providers">
                     <label class="about">Venue Details</label>                 
-                        <textarea name="user-message" id="user-message" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>
-                        <span id="venue_details_error" class="text-danger"></span>
+                        <textarea id="user-message" name="venue" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>
+                        
                     </div>
                     <div class="service-providers">
                         <label for="user-message" class="about">Service Details</label>                    
-                            <textarea name="user-message" id="user-message" class="form-control serv_details" cols="5" rows="2" placeholder=""></textarea>
-                            <span id="serv_details_error" class="text-danger"></span>
+                            <textarea id="user-message" name="servive_details" class="form-control serv_details" cols="5" rows="2" placeholder=""></textarea>
+                            
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                     <div class="service-providers">
                     <div class="row">
                         <label class="about">Select the options which are applicable</label>
-                        <select class="form-select select_applicable" name="field1" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                          <option value="1">Audi</option>
-                          <option value="2">BMW</option>
-                          <option value="3">Mercedes</option>
-                          <option value="4">Volvo</option>
-                          <option value="5">Lexus</option>
-                          <option value="6">Tesla</option>
+                        <select class="form-select select_applicable" name="options[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                          <option value="1">Play Area</option>
+                          <option value="2">CCTV</option>
                         </select>               
                       </div>
-                      <span id="select_applicable_error" class="text-danger"></span>
+                      
                     </div>
                     <div class="service-providers">
                       <div class="row">
                         <label class="about">Choose Location</label>
-                        <select class="form-select select_location" name="field1" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                          <option value="1">Audi</option>
-                          <option value="2">BMW</option>
-                          <option value="3">Mercedes</option>
-                          <option value="4">Volvo</option>
-                          <option value="5">Lexus</option>
-                          <option value="6">Tesla</option>
+                        <select class="form-select select_location" name="location[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                          <option value="1">T Nagar</option>
+                          <option value="2">Nungambakkam</option>
+                          <option value="3">Alwarpet</option>
+                          <option value="4">Kodambakkam</option>
+                          <option value="5">Teynampet</option>  
                         </select>               
                       </div>
-                      <span id="select_location_error" class="text-danger"></span>
+                    
                       </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
@@ -86,13 +134,13 @@
                         <div class="service-providers">
                         <div class="row">
                             <label class="about">Amenities</label>
-                            <select class="form-select select_amenities" name="field1" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                              <option value="1">Audi</option>
-                              <option value="2">BMW</option>
-                              <option value="3">Mercedes</option>
-                              <option value="4">Volvo</option>
-                              <option value="5">Lexus</option>
-                              <option value="6">Tesla</option>
+                            <select class="form-select select_amenities" name="amenities[]" id="" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                              <option value="1"> park signs</option>
+                              <option value="2">water fountains</option>
+                              <option value="3">park benches</option>
+                              <option value="4">picnic tables</option>
+                              <option value="5">agility equipment</option>
+                              <option value="6">cage</option>
                             </select>               
                           </div>
                           <span id="select_amenities_error" class="text-danger"></span>
@@ -105,7 +153,8 @@
                     <span id="select_profile_error" class="text-danger"></span>
                     </div>
                     <div class="view-all">
-                    <button id="booking_btn" class="submite" name="submite">Submit</button>
+                      <input type="submit" value="submit" class="submite" >
+                   <!-- <button id="booking_btn" class="submite" name="submite">Submit</button>-->
                </div>
             </div>
         </div>

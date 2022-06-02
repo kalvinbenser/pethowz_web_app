@@ -43,54 +43,8 @@ ul li {
 input[type="checkbox"] {
     display: none;
 }
-input[type="checkbox"]+label {
-    position: relative;
-    padding-left: 30px;
-    line-height: 14px;
-    font-size: 14px;
-    font-weight: 500;
-    margin: 0;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s;
-}
-input[type="checkbox"]+label:before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 15px;
-    height: 15px;
-    display: block;
-    border: 1px solid #cccccc;
-    content: "";
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s;
-}
-input[type="checkbox"]+label:after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: block;
-    content: "\f00c";
-    font-family: 'FontAwesome';
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 15px;
-    opacity: 0;
-    width: 15px;
-    text-align: center;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s;
-    color: #f6ab49;
-}
-input[type="checkbox"]:checked+label:before {
-    border: 1px solid #f6ab49;
-}
-input[type="checkbox"]:checked+label:after {
-    opacity: 1;
-}
+
+
 .fit-image {
     width: 100%;
     -o-object-fit: cover;
@@ -6428,4 +6382,7 @@ color:#ff986d;
     top: 435px;
     color: #ffff;
 }
+input[type=checkbox]:checked + label::before {
+    border-color: red;
+  }
   

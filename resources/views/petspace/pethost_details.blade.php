@@ -137,7 +137,7 @@
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="service-pic service-pic1" id="one" value="Sitting">
                     <div class="sittink align_services">
-                        <input type="checkbox" name="category[]" value="Sitting" id="cb1" />
+                        <input type="checkbox" class="checkbox" name="category[]" value="Sitting" id="cb1" />
                         <label for="cb1"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/lightgallery/Sitting Green.svg')}}"/>
                         </label>
                         <div class="sitt">Sitting</div>
@@ -153,7 +153,7 @@
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="service-pic service-pic2" id="two" value="60">
                    <div class="groomink align_services">
-                        <input type="checkbox" name="category[]" value="Grooming" id="cb2" />
+                        <input type="checkbox" class="checkbox" name="category[]" value="Grooming" id="cb2" />
                         <label for="cb2"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/lightgallery/Grooming Blue.svg')}}"/>
                         </label>
                         <div class="grom">Grooming</div>
@@ -169,7 +169,7 @@
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
                     <div class="service-pic service-pic3" id="three" value="60">
                     <div class="walkink align_services">
-                        <input type="checkbox" name="category[]" value="Walking" id="cb3" />
+                        <input type="checkbox" class="checkbox" name="category[]" value="Walking" id="cb3" />
                         <label for="cb3"  ><img class="fit-image"  src="{{URL::asset('front-end/assets/images/lightgallery/Walking Orange.svg')}}"/>
                         </label>
                         <div class="walk">Walking</div>
@@ -185,7 +185,7 @@
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="service-pic service-pic4" id="four" value="60">
                     <div class="breadink align_services">
-                        <input type="checkbox" name="category[]" value="Breading" id="cb4" />
+                        <input type="checkbox" class="checkbox" name="category[]" value="Breading" id="cb4" />
                         <label for="cb4"  ><img class="fit-image"  src="{{URL::asset('front-end/assets/images/lightgallery/Breeding Yellow.svg')}}"/>
                         </label> 
                         <div class="brea">Breading</div>
@@ -201,7 +201,7 @@
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="service-pic service-pic5" id="five" value="60">
                     <div class="trainink align_services">
-                        <input type="checkbox" name="category[]" value="Training" id="cb5" />
+                        <input type="checkbox" class="checkbox" name="category[]" value="Training" id="cb5" />
                         <label for="cb5"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/lightgallery/Training Blue.svg')}}"/>
                         </label> 
                         <div class="trai">Training</div>
@@ -217,7 +217,7 @@
                   <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                       <div class="service-pic service-pic6" id="six" value="60">
                     <div class="photography align_services" >
-                        <input type="checkbox" name="category[]" value="Photography" id="cb6" />
+                        <input type="checkbox" class="checkbox" name="category[]" value="Photography" id="cb6" />
                         <label for="cb6"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/lightgallery/Photography Blue.svg')}}" />
                         </label>  
                         <div class="phot">Photography</div>
