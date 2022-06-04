@@ -11,7 +11,7 @@
             <!-- Banner Start -->
             <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                 <div class="sitting align_service">
-                    <a href="{{('/petspace_details')}}" class="banner">
+                    <a href="{{('/sitting')}}" class="banner">
                         <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Group 18007.svg')}}" alt="Banner Image" />
                     </a>
                     <div class="sitti">Sitting</div>
@@ -21,7 +21,7 @@
            <!-- Banner Start -->
             <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                <div class="grooming align_service">
-                    <a href="{{('/petspace_details')}}" class="banner">
+                    <a href="{{('/grooming')}}" class="banner">
                         <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Grooming white.svg')}}" alt="Banner Image" />
                     </a>
                     <div class="groom">Grooming</div>
@@ -31,7 +31,7 @@
             <!-- Banner Start -->
             <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
                 <div class="walking align_service">
-                    <a href="{{('/petspace_details')}}" class="banner">
+                    <a href="{{('/walking')}}" class="banner">
                         <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Walking White.svg')}}" alt="Banner Image" />
                     </a>
                     <div class="walks">Walking</div>
@@ -41,7 +41,7 @@
             <!-- Banner Start -->
             <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                 <div class="breading align_service">
-                    <a href="{{('/petspace_details')}}" class="banner">
+                    <a href="{{('/breading')}}" class="banner">
                         <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Breeding White.svg')}}" alt="Banner Image" />
                     </a>
                     <div class="bread">Breading</div>
@@ -51,7 +51,7 @@
             <!-- Banner Start -->
             <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                 <div class="training align_service">
-                    <a href="{{('/petspace_details')}}" class="banner">
+                    <a href="{{('/training')}}" class="banner">
                         <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Path 27524.svg')}}" alt="Banner Image" />
                     </a>
                     <div class="train">Training</div>
@@ -61,7 +61,7 @@
               <!-- Banner Start -->
               <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                 <div class="photo align_service">
-                    <a href="{{('/petspace_details')}}" class="banner">
+                    <a href="{{('/photography')}}" class="banner">
                         <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Photography White.svg')}}" alt="Banner Image" />
                     </a>
                     <div class="photog">Photography</div>

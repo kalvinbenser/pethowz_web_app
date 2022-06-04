@@ -29,6 +29,10 @@ Route::get('/about/about',[HomeController::class,'about']);
 
 Route::get('/sitting',[HomeController::class,'sitting']);
 
+//main service
+
+Route::get('/service',[HomeController::class,'service']);
+
 //grooming service
 
 Route::get('/grooming',[HomeController::class,'grooming']);
@@ -77,14 +81,16 @@ Route::get('/terms_condition',[HomeController::class,'terms_condition']);
 
 Route::get('/bookingdetails',[HomeController::class,'bookingdetails']);
 
+// booking details
+
+Route::get('/insert_booking_details',[HomeController::class,'insert_booking_details']);
+
 //add_details
 
 Route::get('/add',[HomeController::class,'add']);
 
 
-//register_details
 
-Route::get('/register',[HomeController::class,'register']);
 
 //profile_details
 
@@ -94,17 +100,9 @@ Route::get('/profile',[HomeController::class,'profile']);
 
 Route::get('/allimages',[HomeController::class,'allimages']);
 
-// booking details
-
-Route::post('/insert_booking_details',[HomeController::class,'insert_booking_details']);
-
 // login details
 
 Route::post('/insert_login_details',[HomeController::class,'insert_login_details']);
-
-// register details
-
-Route::post('/insert_register_details',[HomeController::class,'insert_register_details']);
 
 // otp details
 

@@ -51,23 +51,23 @@
                     </div>
                     <!-- Deal Thumb End -->
                     <!-- Deal Content Start -->
-                    <div class="product-deal-content col-md-6 m-b-30" data-aos="fade-up" data-aos-duration="1400">
+                    <div class="product-deal-content col-md-6 m-b-30"  data-aos-duration="1400">
                         
                             <h1 class="yourself">Select Your Category</h1>
                             <div class="row" id="category">
-                            <div class="deal-thumb col-md-4 m-b-15" data-aos="fade-up" data-aos-duration="1200">
+                            <div class=" col-md-4 m-b-15" data-aos-duration="1200">
                                 <input type="checkbox" name="category[]" value="3" id="cb4" />
                                 <label for="cb4"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - Bird.png')}}" />
                                 </label> 
                                 <p class="about">Birds</p>
                             </div>
-                            <div class="deal-thumb col-md-4 m-b-15" data-aos="fade-up" data-aos-duration="1200">
+                            <div class="col-md-4 m-b-15" data-aos-duration="1200">
                                 <input type="checkbox" name="category[]" value="2" id="cb3" />
                                 <label for="cb3"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - cat.png')}}" />
                                 </label>  
                                 <p class="about">Cat</p>
                             </div>
-                            <div class="deal-thumb col-md-4 m-b-15" data-aos="fade-up" data-aos-duration="1200">
+                            <div class=" col-md-4 m-b-15" data-aos-duration="1200">
                                     <input type="checkbox" name="category[]" value="1" id="cb2" />
                                         <label for="cb2"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - Dog.png')}}" />
                                         </label>                                   

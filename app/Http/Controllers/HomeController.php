@@ -25,6 +25,12 @@ class HomeController extends Controller
     public function sitting(){
         return view('/service/sitting/sitting');
     }
+    
+    //main service
+
+    public function service(){
+        return view('/service/service');
+    }
     //grooming service
 
     public function grooming(){
@@ -73,9 +79,9 @@ class HomeController extends Controller
         return view('/house_apartment/house_apartment');
     }
 
-    //pethost_details
+    //petspace_details
 
-    public function pethost_details(){
+    public function petspace_details(){
         return view('/petspace/pethost_details');
     }
 
@@ -90,6 +96,28 @@ class HomeController extends Controller
      public function bookingdetails(){
         return view('/booking-details/bookingdeteils');
     }
+    // insert booking details
+    function insert_booking_details(Request $request){
+        $name=$request->name;
+        $contact=$request->contact;
+        $pet_name=$request->pet_name;
+        $pet_count=$request->pet_count;
+        $no_of_days=$request->no_of_days;
+        $select_service=$request->select_service;
+        $service_type=$request->service_type;
+ 
+       
+        $data=[
+            'name'=>$name,
+            'contact'=>$contact,
+            'pet_name'=>$pet_name,
+            'pet_count'=>$pet_count,
+            'no_of_days'=>$no_of_days,
+            'select_service'=>$select_service,
+            'service_type'=>$service_type
+        ];
+        dd($data);
+    }
 
      //add-details
 
@@ -97,39 +125,32 @@ class HomeController extends Controller
         return view('/add/add');
     }
 
-    function insert_booking_details(Request $request){
-        $name=$request->name;
-        $contact=$request->contact;
-        $pet_name=$request->pet_name;
-        $pet_count=$request->pet_count;
-        $no_of_days=$request->no_of_days;
-        
-       /* $response = Http::post('http://example.com',[
-                'name'=> $name,
-                'contact'=>$contact,
-                 'pet name'=>$pet_name,
-                 'pet count'=>$pet_count,
-                 'number of days'=>$no_of_days
-     ]
-     ); */
+      // add details
+    
+      public function test_data(Request $request){
+        $your_self=$request->your_self;
+        $experience=$request->experience;
+        $service_your=$request->service_your;
+        $work_enjoy=$request->work_enjoy;
+        $enjoy_work=$request->enjoy_work;
+        $category=$request->category;
+       
+        $data=[
+            'your_self'=>$your_self,
+            'experience'=>$experience,
+            'service_your'=>$service_your,
+            'work_enjoy'=>$work_enjoy,
+            'enjoy_work'=>$enjoy_work,
+            'category'=>$category
+        ];
+        dd($data);
 
-        return response()->json(['status' => 'insert successfully', 'name'=> $name,'contact'=>$contact,'pet_name'=>$pet_name,'pet_count'=>$pet_count,'no_of_days'=>$no_of_days]);
+      
+
     }
 
-       //register-details
-
-       public function register(){
-        return view('/register/register');
-    }
-    //regiter form details
-    function insert_register_details(Request $request){
-        $profile_name=$request->profile_name;
-        $profile_email=$request->profile_email;
-        $profile_number=$request->profile_number;
-        $profile_address=$request->profile_address;
-       // $no_of_days=$request->no_of_days;
-       return response()->json(['status' => 'insert successfully','profile_name'=> $profile_name,'profile_email'=>$profile_email,'profile_number'=>$profile_number,'profile_address'=>$profile_address]);
-    }
+  
+  
     function insert_otp_details(Request $request){
         $mobile_otp=$request->mobile_otp;
         
@@ -165,29 +186,6 @@ class HomeController extends Controller
         return response()->json(['status' => 'insert successfully','mobile_number'=>$mobile_number]);
     }
    
-
-    
-    public function test_data(Request $request){
-        $your_self=$request->your_self;
-        $experience=$request->experience;
-        $service_your=$request->service_your;
-        $work_enjoy=$request->work_enjoy;
-        $enjoy_work=$request->enjoy_work;
-        $category=$request->category;
-       
-        $data=[
-            'your_self'=>$your_self,
-            'experience'=>$experience,
-            'service_your'=>$service_your,
-            'work_enjoy'=>$work_enjoy,
-            'enjoy_work'=>$enjoy_work,
-            'category'=>$category
-        ];
-        dd($data);
-
-      
-
-    }
     
     function pet_host_details(Request $request){
         $select_category=$request->select_category;

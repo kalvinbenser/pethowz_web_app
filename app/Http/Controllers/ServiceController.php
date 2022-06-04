@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class ServiceController extends Controller
 {
@@ -33,13 +34,33 @@ class ServiceController extends Controller
             'service_detail'=>$service_detail,
             'option'=>$option,
             'select_service'=>$select_service,
-            'cost'=>$cost,
+            'cost_per_hour'=>$cost,
             'image'=>$imageName,
         ];
-      //dd($data);
-   
      
-         dd($data);
+
+
+        $response = Http::post('http://13.232.59.246:1337/api/v1/getAllPetService', [
+           
+        "user_id"=> "369",
+        "venue_name"=>"ksksk",
+        "service_details"=>"test4",
+        "services_id"=>[
+            1,
+            2,
+            3
+        ],
+        "cost_per_hour"=> 1000,
+        "location"=> "test369",
+        "options_id"=> [
+            1,
+            2,
+            3
+        ],
+        "image"=> "test369",
+        ]);
+
+        return response()->json(["status"=>200,"data"=>"kalvin"]);
 
     }
      //end service form
@@ -48,7 +69,7 @@ class ServiceController extends Controller
         //bookingform-details
 
         public function bookingform(){
-            return view('/booking-details/booking_form/booking_form');
+            return view('/booking-details/petspace_form/petspace_form');
         }
 
     public function booking_create(Request $request){

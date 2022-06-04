@@ -1,4 +1,68 @@
 @extends('layouts.main')
+@section('styles')
+<style>
+   .sittink:hover{
+    background: linear-gradient(178deg, rgba(86,171,47,1) 0%, rgba(168,224,99,1) 100%);
+  
+}
+.groomink:hover{
+    background: linear-gradient(178deg, rgba(54,209,220,1) 0%, rgba(91,134,229,1) 100%);
+}
+.walkink:hover{
+     background: linear-gradient(188deg, rgba(255,95,109,1) 0%, rgba(255,195,113,1) 75%);
+}
+.breadink{
+    background: linear-gradient(188deg, rgba(250,214,55,1) 0%, rgba(231,176,77,1) 75%);
+}
+.trainink{
+    background: linear-gradient(246deg, rgba(39,239,246,1) 0%, rgba(0,205,172,1) 75%);
+}
+.photography{
+    background: linear-gradient(188deg, rgba(45,56,138,1) 0%, rgba(1,174,239,1) 75%);
+} 
+
+.sittink{
+    background: linear-gradient(178deg, rgba(86,171,47,1) 0%, rgba(168,224,99,1) 100%);
+  
+}
+.groomink{
+    background: linear-gradient(178deg, rgba(54,209,220,1) 0%, rgba(91,134,229,1) 100%);
+}
+.walkink{
+     background: linear-gradient(188deg, rgba(255,95,109,1) 0%, rgba(255,195,113,1) 75%);
+}
+.breadink{
+    background: linear-gradient(188deg, rgba(250,214,55,1) 0%, rgba(231,176,77,1) 75%);
+}
+.trainink{
+    background: linear-gradient(246deg, rgba(39,239,246,1) 0%, rgba(0,205,172,1) 75%);
+}
+.photography{
+    background: linear-gradient(188deg, rgba(45,56,138,1) 0%, rgba(1,174,239,1) 75%);
+} 
+
+
+.click_logo1{
+    cursor: pointer;
+}
+.click_logo2{
+    cursor: pointer;
+}
+.click_logo3{
+    cursor: pointer;
+}
+.click_logo4{
+    cursor: pointer;
+}
+.click_logo5{
+    cursor: pointer;
+}
+.click_logo6{
+    cursor: pointer;
+}
+</style>
+    
+@endsection
 @section('content')
       <!-- Hero/Intro Slider Start -->
     <div class="section gallary-details">
@@ -136,9 +200,9 @@
                 <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="service-pic service-pic1" id="one" value="Sitting">
-                    <div class="sittink align_services">
+                    <div class="align_services sittinks pic1">
                         <input type="checkbox" class="checkbox" name="category[]" value="Sitting" id="cb1" />
-                        <label for="cb1"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/lightgallery/Sitting Green.svg')}}"/>
+                        <label for="cb1"  ><img class="fit-image click_logo1" src="{{URL::asset('front-end/assets/images/lightgallery/Sitting Green.svg')}}"/>
                         </label>
                         <div class="sitt">Sitting</div>
                     </div> 
@@ -152,9 +216,9 @@
                <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="service-pic service-pic2" id="two" value="60">
-                   <div class="groomink align_services">
+                   <div class="groominks align_services pic2">
                         <input type="checkbox" class="checkbox" name="category[]" value="Grooming" id="cb2" />
-                        <label for="cb2"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/lightgallery/Grooming Blue.svg')}}"/>
+                        <label for="cb2"  ><img class="fit-image click_logo2" src="{{URL::asset('front-end/assets/images/lightgallery/Grooming Blue.svg')}}"/>
                         </label>
                         <div class="grom">Grooming</div>
                    </div>
@@ -168,9 +232,9 @@
                 <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
                     <div class="service-pic service-pic3" id="three" value="60">
-                    <div class="walkink align_services">
+                    <div class="walkinks align_services pic3">
                         <input type="checkbox" class="checkbox" name="category[]" value="Walking" id="cb3" />
-                        <label for="cb3"  ><img class="fit-image"  src="{{URL::asset('front-end/assets/images/lightgallery/Walking Orange.svg')}}"/>
+                        <label for="cb3"  ><img class="fit-image click_logo3"  src="{{URL::asset('front-end/assets/images/lightgallery/Walking Orange.svg')}}"/>
                         </label>
                         <div class="walk">Walking</div>
                     </div>
@@ -184,9 +248,9 @@
                 <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="service-pic service-pic4" id="four" value="60">
-                    <div class="breadink align_services">
+                    <div class="breadinks align_services pic4">
                         <input type="checkbox" class="checkbox" name="category[]" value="Breading" id="cb4" />
-                        <label for="cb4"  ><img class="fit-image"  src="{{URL::asset('front-end/assets/images/lightgallery/Breeding Yellow.svg')}}"/>
+                        <label for="cb4"  ><img class="fit-image click_logo4"  src="{{URL::asset('front-end/assets/images/lightgallery/Breeding Yellow.svg')}}"/>
                         </label> 
                         <div class="brea">Breading</div>
                     </div>
@@ -200,9 +264,9 @@
                 <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="service-pic service-pic5" id="five" value="60">
-                    <div class="trainink align_services">
+                    <div class="traininks align_services pic5">
                         <input type="checkbox" class="checkbox" name="category[]" value="Training" id="cb5" />
-                        <label for="cb5"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/lightgallery/Training Blue.svg')}}"/>
+                        <label for="cb5"  ><img class="fit-image click_logo5" src="{{URL::asset('front-end/assets/images/lightgallery/Training Blue.svg')}}"/>
                         </label> 
                         <div class="trai">Training</div>
                     </div>
@@ -216,9 +280,9 @@
                   <!-- Banner Start -->
                   <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                       <div class="service-pic service-pic6" id="six" value="60">
-                    <div class="photography align_services" >
+                    <div class="photographys align_services pic6" >
                         <input type="checkbox" class="checkbox" name="category[]" value="Photography" id="cb6" />
-                        <label for="cb6"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/lightgallery/Photography Blue.svg')}}" />
+                        <label for="cb6"  ><img class="fit-image click_logo6" src="{{URL::asset('front-end/assets/images/lightgallery/Photography Blue.svg')}}" />
                         </label>  
                         <div class="phot">Photography</div>
                     </div>
@@ -241,6 +305,30 @@
 
      @endsection
      @section('scripts')
+
+     <script>
+         $(".click_logo1").on("click", function(){
+          $(".pic1").toggleClass("sittink");
+    })
+    $(".click_logo2").on("click", function(){
+          $(".pic2").toggleClass("groomink");
+    })
+    $(".click_logo3").on("click", function(){
+          $(".pic3").toggleClass("walkink");
+    })
+    $(".click_logo4").on("click", function(){
+          $(".pic4").toggleClass("breadink");
+    })
+    $(".click_logo5").on("click", function(){
+          $(".pic5").toggleClass("trainink");
+    })
+    $(".click_logo6").on("click", function(){
+          $(".pic6").toggleClass("photography");
+    })
+        </script>
+
+
+
      {{-- <script>
      $(".service-pic1").on("click", function(){
         var one   = parseInt($("#one").val(), 10);

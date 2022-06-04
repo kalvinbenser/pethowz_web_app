@@ -76,15 +76,7 @@
                                     </li>
                                     
                                     <li class="has-children">
-                                        <a href="#">services</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{URL::asset('/sitting')}}">Sitting</a></li>
-                                            <li><a href="{{URL::asset('/grooming')}}">Grooming</a></li>
-                                            <li><a href="{{URL::asset('/walking')}}">Walking</a></li>
-                                            <li><a href="{{URL::asset('/breading')}}">Bredding</a></li>
-                                            <li><a href="{{URL::asset('/training')}}">Training</a></li>
-                                            <li><a href="{{URL::asset('/photography')}}">Photography</a></li>
-                                        </ul>
+                                        <a href="{{URL::asset('/service')}}">services</a>
                                       </li>
                                     <li>
                                         <a onclick="" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>

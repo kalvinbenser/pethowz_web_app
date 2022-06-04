@@ -2247,7 +2247,6 @@ input[type="checkbox"] {
 }
 .product-deal-content .btn {
     border-radius: 20px;
-    margin-top: 130px;
     margin-left: 320px;
 }
 
@@ -5867,22 +5866,22 @@ input[type="checkbox"] {
     padding: 20px;
     border-radius: 5px;
 }
-.sittink{
+.sittinks{
     border: 3px solid #A8E063;
 }
-.groomink{
+.groominks{
     border: 3px solid #5691E4;
 }
-.walkink {
+.walkinks {
     border: 3px solid #FFB870;
 }
-.breadink{
+.breadinks{
     border: 3px solid #FAD338;
 }
-.trainink{
+.traininks{
     border: 3px solid #01B3AF;
 }
-.photography{
+.photographys{
     border: 3px solid #205CA9;
 }
 .sitt{
@@ -5974,24 +5973,7 @@ input[type="checkbox"] {
 .form-check-label{
     font-size: smaller;
 }
-.sittink:hover{
-    background: linear-gradient(178deg, rgba(86,171,47,1) 0%, rgba(168,224,99,1) 100%);
-}
-.groomink:hover{
-    background: linear-gradient(178deg, rgba(54,209,220,1) 0%, rgba(91,134,229,1) 100%);
-}
-.walkink:hover{
-     background: linear-gradient(188deg, rgba(255,95,109,1) 0%, rgba(255,195,113,1) 75%);
-}
-.breadink:hover{
-    background: linear-gradient(188deg, rgba(250,214,55,1) 0%, rgba(231,176,77,1) 75%);
-}
-.trainink:hover{
-    background: linear-gradient(246deg, rgba(39,239,246,1) 0%, rgba(0,205,172,1) 75%);
-}
-.photography:hover{
-    background: linear-gradient(188deg, rgba(45,56,138,1) 0%, rgba(1,174,239,1) 75%);
-}
+
 .sitt:hover{
     color: #FFFFFF;
     
@@ -6262,9 +6244,8 @@ color:#ff986d;
   }
   .booking_button{
     width: 100%;
-    position: relative;
     text-align: end;
-    bottom: 100px;
+   
   }
   .profile_images{
       width: 100%;

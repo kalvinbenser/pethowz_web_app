@@ -1,4 +1,34 @@
 @extends('layouts.main')
+@section('styles')
+    <style>
+    .choices {
+    background-color: #ffffff;
+    padding: 7px 11px;
+    display: inline-block;
+    font-size: 16px;
+    font-family: century gothic;
+    font-weight: bold;
+    margin: 10px 4px;
+    cursor: pointer;
+    border-radius: 12px;
+    border: 2px solid #ff9062;
+    }
+    .checkbox{
+        display: none;
+    }
+
+    .choices:hover {
+      background: #ff9062;
+    }
+
+    input:checked+label>choices {
+      background: #ff9062 ;
+    }
+    input:checked+label>.choices {
+      background-color: #ff9062 !important;
+    }
+        </style>
+        @endsection
 @section('content')
                     <div class="section">
                         <div class="hero-slider swiper-container">
@@ -18,58 +48,64 @@
                                 <h1 class="registeration">Registration Details</h1>
                             <div class="login-wrapper">
                             
-                                <form action="" method="post" enctype="multipart/form-data">
+                                <form action="/insert_register" method="post" enctype="multipart/form-data">
+                                    @csrf
                             <div class="row" id="category">
                             <div class="deal-thumb col-md-3 m-b-15" data-aos="fade-up" data-aos-duration="1200">
                             <div class="single-input-item m-b-10" id="reg-img">
                            
                                   <div class="image-upload" id="image-upload">
-                                    <label for="file-input">
+                                    <label for="file-input" >
                                            <div class="upload-icon">
                                             <img class="icons" id="profil" src="{{URL::asset('front-end/assets/images/review/User white.svg')}}">
                                             <img class="prev" src="">
                                             </div>
                                           </label>
-                                    <input id="file-input" class="profile_pic" type="file" />
+                                    <input id="file-input" name="image" class="profile_pic" type="file" />
                                     <p class="pro-image">Upload Image</p>
-                                    <span id="profile_pic_error" class="text-danger"></span>
                                   </div>
                             </div>                             
                                    </div>
                             <div class="deal-thumb col-md-3 m-b-15" data-aos="fade-up" data-aos-duration="1200">
 
                             <div class="single-input-item m-b-10">
-                            <input type="text" id="name"class="profile_name" name="name" placeholder="Name" required="">
-                            <span id="profile_name_error" class="text-danger"></span>
+                            <input type="text" id="name" class="profile_name" name="name" placeholder="Name" required="">
+                        
                             </div>
                             <div class="single-input-item m-b-10">
                             <input type="email" id="mail " class="profile_email" name="mail" placeholder="E-mail" required="">
-                            <span id="profile_email_error" class="text-danger"></span>
+                     
                             </div>
                             </div>
                             <div class="deal-thumb col-md-3 m-b-15" data-aos="fade-up" data-aos-duration="1200">
                             <div class="single-input-item m-b-10">
                             <input type="number" id="number" class= "profile_number" name="number" placeholder="Mobile Number" required="">
-                            <span id="profile_number_error" class="text-danger"></span>
+                         
                             </div>
                             <div class="single-input-item m-b-10">
                                <textarea id="address" name="address" class=" profile_address" placeholder="Address" required=""></textarea>
-                               <span id="profile_address_error" class="text-danger"></span>
+                               
                                 </div>
                             </div>
                             <div class="deal-thumb col-md-3 m-b-15" data-aos="fade-up" data-aos-duration="1200">
                                 <div class="gender">
                                     <div class="row">                                   
                                             <div>
-                                            <span class="gender-text">Gender</span>
-                    
-                                                <button type="button" value="male" class="gender-btn"><span class="fa fa-mars"></span></button>
-                                                <button type="button" value="female"  class="gender-btn"><span class="fa fa-venus"></span></button>
+                                            
+                                            <input  type="radio" class="checkbox" name="gender" value=1 id="cb6" />
+                                            <label for="cb6">
+                                                <div class="choices"><span class="fa fa-mars"></span></div>
+                                                </label>
+                                                
+                                                <input  type="radio" class="checkbox" name="gender" value=0 id="cb5" />
+                                                <label for="cb5">
+                                                    <div class="choices"><span class="fa fa-venus"></span></div>
+                                                    </label>
+                                                
                                             </div>
-                                            <div >  
-                                                 
-                                                <button class="pro-submite"  id="booking_btn"  type="submit" value="Submit">Submit</button>
-                                            </div>
+                                            <div class="view-all">
+                                                <input type="submit" value="submit" class="submite" >
+                                           </div>
                                     </div>
                             </div>
                             </div>
@@ -114,116 +150,5 @@ readURL(this);
                 });
     </script>
     
-<script>
-    $('body').on('click','#booking_btn',function(e){
 
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-            }
-        }); 
-
-
-        e.preventDefault();
-        var profile_pic=$('.profile_pic').val();
-        var profile_name = $('.profile_name').val();
-        var profile_email= $('.profile_email').val();
-        var profile_number= $('.profile_number').val();
-        var profile_address= $('.profile_address').val();
-      
-      
-                          if(!profile_pic){
-                            profile_pic_error="profile is required";
-                             $('#profile_pic_error').html("");
-                             $('#profile_pic_error').html(profile_pic_error);
-                           }
-                           else{
-                            profile_pic_error="";
-                              $('#profile_pic_error').html("");
-                           }
-
-                           if(!profile_name){
-                             profile_name_error="name is required";
-                             $('#profile_name_error').html("");
-                             $('#profile_name_error').html(profile_name_error);
-                           }
-                           else{
-                               profile_name_error="";
-                              $('#profile_name_error').html("");
-                           }
-                           if(!profile_email){
-                            profile_email_error="email is required";
-                             $('#profile_email_error').html("");
-                             $('#profile_email_error').html(profile_email_error);
-                           }
-                           else{
-                            profile_email_error="";
-                              $('#profile_email_error').html("");
-                           }
-
-                           if(!profile_number){
-                            profile_number_error="mobile number is required";
-                             $('#profile_number_error').html("");
-                             $('#profile_number_error').html(profile_number_error);
-                           }
-                           else{
-                            profile_number_error="";
-                              $('#profile_number_error').html("");
-                           }
-
-                           if(! profile_address){
-                            profile_address_error="email is required";
-                             $('#profile_address_error').html("");
-                             $('#profile_address_error').html(profile_address_error);
-                           }
-                           else{
-                            profile_address_error="";
-                              $('#profile_address_error').html("");
-                           }
-                           
-
-                     
-
-
-                                 
-                           
-                           if(profile_pic_error !='' || profile_name_error !='' || profile_email_error !='' || profile_number_error || profile_address_error){
-                             return false;
-                           }
-                           else{
-                          //  alert(2);
-                           
-                              
-                            $.ajaxSetup({
-                                             headers: {
-                                                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                             }
-                                         });
-                                         $.ajax({
-                                            type:'POST',
-                                             url:"{{ url('insert_register_details') }}",
-                                             data:{
-                                                 profile_pic:profile_pic,
-                                                 profile_name:profile_name,
-                                                 profile_email:profile_email,
-                                                 profile_number:profile_number,
-                                                 profile_address:profile_address
-                                             //  no_of_days:no_of_days
-                                             },
-                                             success:function(data){
-                                                    // console.log(data.profile_pic,profile_name,profile_email,profile_number,profile_address);
-                                                    // alert(data.status);
-                                                    window.location.href = "{{url('/add')}}";
-                                             }
-                                             });
-
-
-                                                 }
-                                              }); 
-                                            
-                                            
-                                      
-                                      
-                      
-    </script>
 @endsection
