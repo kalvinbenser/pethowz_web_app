@@ -65,7 +65,7 @@ input[type="checkbox"]+label {
                  <div class="service-providers">
                     <div class="row">
                       <label class="about">Choose Location</label>
-                      <select class="form-select select_location" name="location[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                      <select class="form-select select_location" name="location" id="field1" >
                         <option value="1">T Nagar</option>
                         <option value="2">Nungambakkam</option>
                         <option value="3">Alwarpet</option>
@@ -78,8 +78,9 @@ input[type="checkbox"]+label {
                 <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                     <div class="service-providers">
                     <label class="about">Service Details</label>                 
-                        <textarea id="user-message" name="service_detail" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>                      
-                    </div>
+                        {{-- <textarea id="user-message" name="service_detail" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>                       --}}
+                        <input type="text" class="form-control service_details" name="servive_details" placeholder="">
+                      </div>
                     <div class="service-providers">
                         <div class="row">
                             <label class="about">Select the options which are applicable</label>
@@ -114,7 +115,7 @@ input[type="checkbox"]+label {
                           </div>
                         </div>                     
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                     <div class="service-providers">
                         <input type="file"  accept="image/*" name="image" id="file_input"  style="display: none;padding:15px;">
                         <label class="images" for="file_input"  style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>

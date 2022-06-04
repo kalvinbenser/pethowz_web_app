@@ -68,21 +68,18 @@
     <div class="section gallary-details">
         <div class="profile_images">
       <div class="row">
-        <div class="col-md-6 col-lg-5 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+        <div class="col-md-4 col-lg-5 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
             <div class="col-lg-12">
                      <img class="pro-images" src="{{URL::asset('front-end/assets/images/profile-images/Exc pet space pt2 image 1 in webscreen 4.png')}}" alt="Banner Image" />
             </div>
-         </div>
-         <div class="col-md-6 col-lg-7 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-            <div class="row">
-            <div class=" col-md-3 col-lg-6 m-b-30">  
+         </div>    
+            <div class=" col-md-4 col-lg-4 m-b-30">  
                   <div class="col-lg-12">                    
                     <img class="pro-images2" src="{{URL::asset('front-end/assets/images/profile-images/Exc pet space pt2 image 1 in webscreen 4.png')}}" alt="Banner Image" />
                   </div>
             </div>
-            <div class=" col-md-12 col-lg-6 m-b-30">  
-                <div class="">
-                <div class=" col-md-3 col-lg-12 m-b-30">  
+            <div class=" col-md-4 col-lg-3 m-b-30">  
+                <div class=" col-md-4 col-lg-12 m-b-30">  
                     <div class="col-lg-123">                    
                       <img class="pro-images3" src="{{URL::asset('front-end/assets/images/profile-images/Exc pet space pt2 image 1 in webscreen 4.png')}}" alt="Banner Image" />
                     </div>
@@ -95,12 +92,11 @@
                 </div>
                 </div>
           </div>
-                </div>
           </div>
              
                 
-         </div>
-         </div>
+         
+        
          </div>
       </div>
         </div>
@@ -111,18 +107,18 @@
             <div class="section profile-details">
                 <div class="testimonial-thumb text-center">
                 <div class="row m-b-n40">
-                                <div class="col-12 col-md-2 col-sm-4 col-lg-2 m-b-40 user_pic">
+                                <div class="col-12 col-md-2 col-sm-4 col-lg-2 user_pic">
                         
                             <img src="{{URL::asset('front-end/assets/images/testimonial/User Image.png')}}" alt="Testimonial Image"/>
                                 </div>
-                            <div class="col-12 col-sm-4 col-md-3 col-lg-7 m-b-40">
+                            <div class="col-12 col-sm-4 col-md-3 col-lg-3">
                                 <div class="name_details">
                                 <h3 class="thumb-title">Jonathon Jhon</h3>
                                 <h6 class="thumb-subtitle">joining date</h6>
                                 </div>
                            </div>
              
-                    <div class="col-12 col-sm-4 col-md-3 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1600">
+                    <div class="col-12 col-sm-4 col-md-3 col-lg-7" data-aos="fade-up" data-aos-duration="1600">
                         <div class="single-footer-widget booking_form_details">
                             <h3 class="rupee"> <i class="fa fa-rupee" style="font-size:24px"><span id="amound" value="100">100</span></i></h3>
                             <h6 class="rupee">Per Hour</h6>
