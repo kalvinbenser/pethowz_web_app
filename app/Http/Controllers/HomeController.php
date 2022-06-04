@@ -11,6 +11,35 @@ class HomeController extends Controller
 {
     // index view
       public function index(){
+
+
+         //*********************  Pet Space  ***************************\\
+
+         $petSpaceData=[
+            "pending"=>true,
+            "approved"=>false,
+            "rejected"=>false
+        ];
+        $petSpaceUrl= env('API').'getAllPetSpace';
+       
+        $petSpaceRequest = Http::post($petSpaceUrl,$petSpaceData);
+  
+        $petSpaceResponse = $petSpaceRequest->json();
+        
+        //dd($petSpaceResponse);
+
+        //************************** Pet Service  ****************************\\
+        $petServiceData=[
+            "pending"=>true,
+            "approved"=>false,
+            "rejected"=>false
+        ];
+        $petServiceUrl=env('API').'getAllPetService';
+      
+        $petServiceRequest=Http::post($petServiceUrl,$petServiceData);
+        $petServiceResponse=$petServiceRequest->json();
+        //dd($petServiceResponse);
+
         return view('home/index');
     }
   
@@ -121,7 +150,7 @@ class HomeController extends Controller
 
      //add-details
 
-     public function add(){
+     public function add_your_self(){
         return view('/add/add');
     }
 

@@ -14,98 +14,106 @@ class ServiceController extends Controller
 
     public function create_service(Request $request){
 
-        
-       
-        $venue=$request->venue;
-        $location=$request->location;
-        $service_detail=$request->service_detail;
-        $option=$request->option;
-        $select_service=$request->select_service;
-        $cost=$request->cost_per_hour;
-        $imageName = time().'.'.$request->file('image')->guessExtension();
-    //upload image
+        try {
 
-      $request->image->move(public_path('images/service'),$imageName);
-    //   $image_url='imap.com/'.$imageName;
-
-        $data=[
-            'venue'=>$venue,
-            'location'=>$location,
-            'service_detail'=>$service_detail,
-            'option'=>$option,
-            'select_service'=>$select_service,
-            'cost_per_hour'=>$cost,
-            'image'=>$imageName,
-        ];
-     
-
-
-        $response = Http::post('http://13.232.59.246:1337/api/v1/getAllPetService', [
+            $venue=$request->venue;
+            //$location=$request->location;
+            $location="anna nager";
+            $service_detail=$request->service_detail;
+            $options_id=$request->option;
+            $services_id=$request->select_service;
+            $cost=$request->cost_per_hour;
+            $user_id="123";
+    
+    
+               //image upload
            
-        "user_id"=> "369",
-        "venue_name"=>"ksksk",
-        "service_details"=>"test4",
-        "services_id"=>[
-            1,
-            2,
-            3
-        ],
-        "cost_per_hour"=> 1000,
-        "location"=> "test369",
-        "options_id"=> [
-            1,
-            2,
-            3
-        ],
-        "image"=> "test369",
-        ]);
-
-        return response()->json(["status"=>200,"data"=>"kalvin"]);
-
+               $imageName = time().'.'.$request->file('image')->guessExtension();
+                $request->image->move(public_path('images/service'),$imageName);
+    
+                //************************** Pet Service API****************************\\
+            $petServiceData=[
+                "user_id"=>$user_id,
+                "venue_name"=>$venue,
+                "service_details"=>$service_detail,
+                "services_id"=>$services_id,
+                "cost_per_hour"=>$cost,
+                "location"=>$location,
+                "options_id"=>$options_id,
+               "image"=>$imageName
+            ];
+            $petServiceUrl=env('API').'createPetService';
+          
+            $petServiceRequest=Http::post($petServiceUrl,$petServiceData);
+            $petServiceResponse=$petServiceRequest->json();
+            // dd($petServiceResponse);
+           
+           
+             return redirect('/service')->with('message','your Pet Service Added');
+          
+        }
+          catch(Exception $e) {
+            echo 'Message: ' .$e->getMessage();
+          }
+       
+       
     }
      //end service form
 
      // ******************************** petspace-form ******************************** \\
         //bookingform-details
 
-        public function bookingform(){
+        public function pet_space_form(){
             return view('/booking-details/petspace_form/petspace_form');
         }
 
-    public function booking_create(Request $request){
+    public function pet_space_create(Request $request){
 
-        $venue_category=$request->venue_category;
-        $select_service=$request->select_service;
-        $cost=$request->cost_per_hour;
-        $venue=$request->venue;
-        $servive_details=$request->servive_details;
-        $options=$request->options;
-        $location=$request->location;
-        $amenities=$request->amenities;
-       
-       
-       
-        $imageName = time().'.'.$request->file('image')->guessExtension();
-    //upload image
+        try{
+            $user_id="1234";
+            // /$venue_category=$request->venue_category;
+            $venue_category="snake";
+            // $select_service=$request->select_service;
+            $select_service=1;
+            $cost_per_hour=$request->cost_per_hour;
+            $venue_details=$request->venue;
+            $servive_details=$request->servive_details;
+            $options=$request->options;
+            //$location=$request->location;
+            $location="Ambature";
+            $amenities=$request->amenities;
+            
 
-      $request->image->move(public_path('images/petspace/images'),$imageName);
-    //   $image_url='imap.com/'.$imageName;
+            $imageName = time().'.'.$request->file('image')->guessExtension();
+        //upload image
+    
+          $request->image->move(public_path('images/petspace/images'),$imageName);
+        //   $image_url='imap.com/'.$imageName;
+    
+            $petSpaceData=[
+                "user_id"=> $user_id,
+                "venue_cat"=>$venue_category,
+                "venue_details"=> $venue_details,
+                "cost_per_hour"=> $cost_per_hour,
+                "amenities_id"=>$amenities,
+                "options_id"=>$options,
+                "location"=>$location,
+                "service"=> $servive_details,
+                "service_count"=> $select_service
+            ];
+           $petSpaceUrl=env('API').'createPetSpace';
+           $petSpaceRequest=Http::post($petSpaceUrl,$petSpaceData);
+           $petSpaceResponse=$petSpaceRequest->json();
+        //    dd($petSpaceResponse);
 
-        $data=[
-            'venue_category'=>$venue_category,
-            'select_service'=>$select_service,
-            'cost_per_hour'=>$cost,
-            'venue'=>$venue,
-            'servive_details'=>$servive_details,
-            'options'=>$options,
-            'location'=>$location,
-            'amenities'=>$amenities,          
-            'image'=>$imageName,
-        ];
-      //dd($data);
-   
+        
+        return redirect('/pethost/pethost')->with('message','your Pet Space Added');
+        }
+        catch(Exception $e){
+            echo 'message: '.$e->getMessage();
+        }
+
      
-         dd($data);
 
     }
 

@@ -28,20 +28,23 @@ class AuthController extends Controller
         //regiter form details
     
         function insert_register(Request $request){
-                $imageName = time().'.'.$request->file('image')->guessExtension();
-                //upload image
+
+            try{
+
                 $name=$request->name;
                 $mail=$request->mail;
                 $number=$request->number;
                 $address=$request->address;
                 $gender=$request->gender;
-               
-            
-                  $request->image->move(public_path('images/profile'),$imageName);
-                  $image_url='http://img/uk.com'.$imageName;
-            
-               
-                $data=[
+    
+    
+                    //upload image
+                
+                    $imageName = time().'.'.$request->file('image')->guessExtension();
+                    $request->image->move(public_path('images/profile'),$imageName);
+ 
+
+                   $data=[
                     'image'=>$imageName,
                     'name'=>$name,
                     'mail'=>$mail,
@@ -49,18 +52,31 @@ class AuthController extends Controller
                     'address'=>$address,
                     'gender'=>$gender
                 ];
-                // dd($data);
-        
-                $response = Http::post('http://13.232.59.246:1337/api/v1/createRegistration', [
-                    "user_id"=> "12312",
-                    "name"=> $name,
-                    "contact_number"=> $number,
-                    "img"=> $image_url,
-                    "gender"=> $gender,
-                    "email"=> $mail,
-                    "address"=>$address
-                ]);
+                   
+                    // dd($data);  
+                   
+                  //API for create Registeration
+                    $data=[
+                        "user_id"=> "12312",
+                        "name"=> $name,
+                        "contact_number"=> $number,
+                        "img"=> $imageName,
+                        "gender"=> $gender,
+                        "email"=> $mail,
+                        "address"=>$address
+                    ];
+                    $url=  env('API').'createRegistration';
+                    $request = Http::post($url,$data );
+                    $response=  $request->json();
+                    dd($response);
 
-                return response()->json(["status"=>200,"data"=>$data]);
+                 return redirect("/add_your_self")->with('message','registeration successfull');
+     
+
             }
+            catch(Exception $e){
+                echo 'message'.$e;
+            }
+
+                      }
 }

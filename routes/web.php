@@ -53,9 +53,7 @@ Route::get('/training',[HomeController::class,'training']);
 
 Route::get('/photography',[HomeController::class,'photography']);
 
-//service form
-Route::get('/service_form', [ServiceController::class,'service_form']);
-Route::post('/create_service', [ServiceController::class,'create_service']);
+
 
 //pethost
 
@@ -79,7 +77,7 @@ Route::get('/terms_condition',[HomeController::class,'terms_condition']);
 
 //petspace_details
 
-Route::get('/bookingdetails',[HomeController::class,'bookingdetails']);
+Route::get('/bookingdetails',[HomeController::class,'space_form']);
 
 // booking details
 
@@ -87,7 +85,7 @@ Route::get('/insert_booking_details',[HomeController::class,'insert_booking_deta
 
 //add_details
 
-Route::get('/add',[HomeController::class,'add']);
+Route::get('/add_your_self',[HomeController::class,'add_your_self']);
 
 
 
@@ -118,10 +116,14 @@ Route::post('/test_data',[HomeController::class,'test_data']);
 Route::post('/pet_host_details',[HomeController::class,'pet_host_details']);
 
 
+
+//service form
+Route::get('/service_form', [ServiceController::class,'service_form']);
+Route::post('/create_service', [ServiceController::class,'create_service']);
 //bookingform_details
 
-Route::get('/bookingform',[ServiceController::class,'bookingform']);
-Route::post('/booking_create', [ServiceController::class,'booking_create']);
+Route::get('/pet_space_form',[ServiceController::class,'pet_space_form']);
+Route::post('/booking_create', [ServiceController::class,'pet_space_create']);
 
 
 require __DIR__.'/Auth.php';

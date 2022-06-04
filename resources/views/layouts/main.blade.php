@@ -40,6 +40,8 @@
     <link rel="stylesheet" href="{{URL::asset('front-end/assets/css/plugins/plugins.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('front-end/assets/css/style.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('front-end/assets/css/model.css')}}">
+    <link rel="stylesheet" type="text/css" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 @yield('styles')
 
@@ -819,6 +821,7 @@
     <script src="{{URL::asset('front-end/assets/js/main.js')}}"></script>
      <!--Multiselect-->
     <script src="{{URL::asset('front-end/assets/js/multiselect-dropdown.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script>
         $('body').on('click','#booking_btn',function(e){
     
@@ -954,6 +957,46 @@
                                         }
                                 });
               </script> 
+
+              {{-- toaster --}}
+<script>
+    @if(Session::has('message'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+            toastr.success("{{ session('message') }}");
+    @endif
+  
+    @if(Session::has('error'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+            toastr.error("{{ session('error') }}");
+    @endif
+  
+    @if(Session::has('info'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+            toastr.info("{{ session('info') }}");
+    @endif
+  
+    @if(Session::has('warning'))
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+            toastr.warning("{{ session('warning') }}");
+    @endif
+  </script>
+
     @yield('scripts')
       
 </body>
