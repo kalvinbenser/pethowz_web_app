@@ -9,6 +9,21 @@ use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
+   public function test(){
+    $petServiceData=[
+        "pending"=>true,
+        "approved"=>false,
+        "rejected"=>false
+    ];
+    $petServiceUrl=env('API').'getAllPetService';
+  
+    $petServiceRequest=Http::post($petServiceUrl,$petServiceData);
+    $petServiceResponse=$petServiceRequest->json();
+    $pet=$petServiceResponse['data'];
+    // dd($pet);
+       return view('test',compact('pet'));
+   }
+
     // index view
       public function index(){
 
@@ -18,7 +33,9 @@ class HomeController extends Controller
          $petSpaceData=[
             "pending"=>true,
             "approved"=>false,
-            "rejected"=>false
+            "rejected"=>false,
+        
+           
         ];
         $petSpaceUrl= env('API').'getAllPetSpace';
        
@@ -26,7 +43,7 @@ class HomeController extends Controller
   
         $petSpaceResponse = $petSpaceRequest->json();
         
-        //dd($petSpaceResponse);
+        //dd($petSpaceResponse[data]);
 
         //************************** Pet Service  ****************************\\
         $petServiceData=[
