@@ -5830,7 +5830,7 @@ input[type="checkbox"] {
 }
 .view-all{
     position: relative;
-    bottom: 0px;
+    bottom: 10px;
     text-align: end;
 }
 .rupee{
@@ -5855,7 +5855,7 @@ input[type="checkbox"] {
     padding: 10px;
 }
 .service-providers{
-    padding: 20px;
+    padding: 40px;
 }
 .align_services{
     display: inline-flex;
@@ -6175,6 +6175,28 @@ color:#ff986d;
     margin-left: 30px;
     margin-top: -45px;
 }
+@media (max-width: 500px) {
+    .name_details{
+        text-align: center !important;
+    }
+    .booking_form_details {
+        text-align: center !important;
+    }
+    .booking-all {
+        position: relative;
+        bottom: 25px;
+        text-align: center !important;
+        padding: 20px;
+    }
+    .rupee {
+        color: #f6ab49;
+        margin-right: 0px !important;
+}
+}
+@media (max-width: 500px) {
+
+}
+    
 #user-profile{
     padding: 20px;
     text-align: -webkit-center;
@@ -6365,5 +6387,27 @@ color:#ff986d;
 }
 input[type=checkbox]:checked + label::before {
     border-color: red;
+  }
+  .petspace_service{
+    position: relative;
+    top: 5px;
+  }
+  .petspace_renge{
+      position: relative;
+      top: 20px;
+  }
+  .select_location{
+    height: 30px;
+    font-size: smaller;
+    padding: 0rem 0rem 0rem 1rem;
+  }
+  .service_details {
+      height: 50px;
+  }
+  .venue_details{
+      height: 50px;
+  }
+  .add_self{
+      width: 80%;
   }
   

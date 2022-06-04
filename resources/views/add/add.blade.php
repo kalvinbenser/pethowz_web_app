@@ -17,34 +17,34 @@
                         <div class="form-group">
                             <label for="user-message" class="about">Introduce yourself and why enjoy being with pets.
                             </label>
-                            <input type="text" name="your_self" class="form-control"/>
+                            <input type="text" name="your_self" class="form-control add_self"/>
                           </div><!--ends from group-->
                           <div class="form-group">
                             <label for="user-message" class="about">Tell us about the type of bet you have and your experience with if
                             </label>
                             
-                            <input type="text" name="experience" class="form-control"/>
+                            <input type="text" name="experience" class="form-control add_self"/>
                          
                           </div><!--ends from group-->
                           <div class="form-group">
                             <label for="user-message" class="about">How dose your service stand out?
                             </label>
                         
-                            <input type="text" name="service_your" class="form-control"/>
+                            <input type="text" name="service_your" class="form-control add_self"/>
                        
                           </div><!--ends from group-->
                           <div class="form-group">
                             <label for="user-message" class="about">What do you enjoy about the work you do?
                             </label>
                       
-                            <input type="text" name="work_enjoy" class="form-control"/>
+                            <input type="text" name="work_enjoy" class="form-control add_self"/>
                        
                           </div><!--ends from group-->
                           <div class="form-group">
                             <label for="user-message" class="about">What do you enjoy about the work you do?
                             </label>
                         
-                            <input type="text" name="enjoy_work" class="form-control"/>
+                            <input type="text" name="enjoy_work" class="form-control add_self"/>
                          
                           </div><!--ends from group-->
                      
