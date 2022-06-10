@@ -126,4 +126,7 @@ Route::get('/pet_space_form',[ServiceController::class,'pet_space_form']);
 Route::post('/booking_create', [ServiceController::class,'pet_space_create']);
 
 
+
+Route::get('/test',[HomeController::class,'test']);
+
 require __DIR__.'/Auth.php';
