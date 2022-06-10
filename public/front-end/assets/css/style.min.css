@@ -51,8 +51,8 @@ input[type="checkbox"] {
     object-fit: cover;
 }
 .container {
-    padding-right: var(--bs-gutter-x,  15px);
-    padding-left: var(--bs-gutter-x,  15px);
+    padding-right: var(--bs-gutter-x,  25px);
+    padding-left: var(--bs-gutter-x,  25px);
 }
 @media only screen and (min-width: 1600px),  only screen and (min-width: 1200px) and (max-width: 1599px) {
     .container {
@@ -82,7 +82,10 @@ input[type="checkbox"] {
 }
 }.section-padding {
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 0px;
+}
+.section-padding1 {
+    padding-top: 80px;
 }
 @media only screen and (max-width: 767px) {
     .section-padding {
@@ -90,8 +93,8 @@ input[type="checkbox"] {
     padding-bottom: 60px;
 }
 }.section-margin {
-    margin-top: 120px;
-    margin-bottom: 80px;
+    margin-top: 60px;
+    margin-bottom: 0px;
     background-color: #FFFFFF;
 }
 @media only screen and (max-width: 767px) {
@@ -152,7 +155,8 @@ input[type="checkbox"] {
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
 }
 .rating i {
     color: #f6ab49;
@@ -700,7 +704,7 @@ input[type="checkbox"] {
     color: #383838;
 }
 .main-menu>ul>li>a:hover, .main-menu>ul>li>a.active {
-    color: hsl(38, 25%, 94%);
+    color: hsl(38, 25%, 94%) !important;
 }
 .main-menu ul .has-children {
     position: relative;
@@ -1509,14 +1513,13 @@ input[type="checkbox"] {
 }
 .btn-primary {
     border-color: #FF9A71;
-    background-color: #FF9A71;
+    background-color: #FF9A71 !important;
     color: #ffffff;
     border: 1px solid transparent;
 }
 .btn-dark {
     border-color: #FF9A71;
-    background: rgb(255,95,109);
-    background: linear-gradient(177deg, rgba(255,95,109,1) 0%, rgba(255,195,113,1) 75%);
+    background: linear-gradient(177deg, rgba(255,95,109,1) 0%, rgba(255,195,113,1) 75%) !important;
     color: #ffffff;
 }
 .btn-heading-dark {
@@ -1726,6 +1729,12 @@ input[type="checkbox"] {
     padding: 50px;
     position: relative;
     z-index: 9;
+    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 100px;
+    align-items: center;
 }
 .hero-slide-content .sub-title {
     font-size: 26px;
@@ -1788,7 +1797,7 @@ input[type="checkbox"] {
 }.hero-slide-content .btn {
     margin-top: 40px;
     padding: 20px 45px;
-    border-radius: 0px;
+    border-radius: 25px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px),  only screen and (max-width: 767px) {
     .hero-slide-content .btn {
@@ -1886,17 +1895,10 @@ input[type="checkbox"] {
     opacity: 0;
     visibility: hidden;
 }
-.hero-slide-content>* {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-name: fadeOutUp;
-    animation-name: fadeOutUp;
-}
+
 .swiper-slide-active .hero-slide-content>* {
-    -webkit-animation-name: fadeInUp;
-    animation-name: fadeInUp;
+    -webkit-animation-name: auto;
+    animation-name: auto;
 }
 .swiper-slide-active .hero-slide-content>*:nth-child(1) {
     -webkit-animation-delay: 0.5s;
@@ -2029,8 +2031,8 @@ input[type="checkbox"] {
 }.product .badges {
     position: absolute;
     z-index: 8;
-    top: 20px;
-    left: 20px;
+    top: 0px;
+    right: 0px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2044,13 +2046,13 @@ input[type="checkbox"] {
 .product .badges span {
     font-size: 12px;
     font-weight: 400;
-    line-height: 1;
     display: block;
-    padding: 4px 12px;
+    padding: 1px 10px;
     text-align: center;
     text-transform: capitalize;
     color: #ffffff;
     border-radius: 3px;
+    box-shadow: 0 0 7px rgb(0 4 5 / 82%);
 }
 .product .badges span+span {
     margin-top: 6px;
@@ -2059,7 +2061,8 @@ input[type="checkbox"] {
     background-color: #f6ab49;
 }
 .product .badges span.sale {
-    background-color: #000000;
+    background: rgb(86,171,47);
+    background: linear-gradient(180deg, rgba(86,171,47,1) 0%, rgba(151,233,49,1) 100%);
 }
 .product .content {
     position: relative;
@@ -2073,7 +2076,7 @@ input[type="checkbox"] {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 30px 15px 0;
+    padding: 10px 15px 0;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -2084,15 +2087,12 @@ input[type="checkbox"] {
     font-size: 16px;
     font-weight: 600;
     line-height: 1.2;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     color: #383838;
 }
-.product .content .title a {
-    text-decoration: none;
-    color: #000000;
-}
-.product .content .title a:hover {
-    color: #f6ab49;
+.product .content .title p {
+    color: #FF9062;
+    text-align: justify;
 }
 .product .content .price {
     font-size: 18px;
@@ -2109,10 +2109,8 @@ input[type="checkbox"] {
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
-    justify-content: center;
-}
-.product .content .price:not(:last-child) {
-    margin-bottom: 20px;
+    justify-content:flex-start;
+    padding-bottom: 10px;
 }
 .product .content .price span.new {
     color: #000000;
@@ -2121,7 +2119,7 @@ input[type="checkbox"] {
     font-size: 16px;
     margin-left: 10px;
     text-decoration: line-through;
-    color: #DC3545;
+    color: #66595a;
     opacity: .5;
 }
 .product:hover .thumb .action-wrapper {
@@ -3513,7 +3511,7 @@ input[type="checkbox"] {
     transition: .3s;
 }
 .single-footer-widget .widget-title {
-    font-size: 18px;
+    font-size: 15px;
     color: #000000;
     margin-bottom: 25px;
     font-weight: 500;
@@ -5822,16 +5820,15 @@ input[type="checkbox"] {
     height: 100%;
     padding: 20px;
     border-radius: 30px;
-    margin-top: 60px;
 }
 .btn-warning {
     position: relative;
-    background-color: #FF9966;
+    background-color: #FF9966 !important;
 }
 .view-all{
     position: relative;
-    bottom: 10px;
     text-align: end;
+    padding: 10px;
 }
 .rupee{
     margin-right: 140px;
@@ -5929,45 +5926,45 @@ input[type="checkbox"] {
 }
 .sitti{
     position: absolute;
-    top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #FFFFFF;
+    bottom: -9px;
 }
 .groom{
     position: absolute;
-    top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color:#FFFFFF;
+    color: #FFFFFF;
+    bottom: -9px;
 }
 .walks{
     position: absolute;
-    top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #FFFFFF;
+    bottom: -9px;
 }
 .bread{
     position: absolute;
-    top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #FFFFFF;
+    bottom: -9px;
 }
 .train{
     position: absolute;
-    top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color:#FFFFFF;
+    color: #FFFFFF;
+    bottom: -9px;
 }
 .photog{
-        position: absolute;
-        top: 95%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #FFFFFF;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+    bottom: -9px;
     
 }
 .form-check-label{
@@ -6037,8 +6034,8 @@ background-color: #ddd;
 }
 .images{
     background-color: #FF9A71;
-    width: 250px;
-    border-color: #FF9A71 ;
+    width: 100%;
+    border-color: #FF9A71;
     border-radius: 5px;
     height: 30px;
     text-align: center;
@@ -6049,8 +6046,7 @@ background-color: #ddd;
     border-color:  #FF9A71 ;
     border-radius: 5px;
     color: white; 
-    margin-top: 200px;
-    margin-left: 200px;
+    margin-top: 25px;
 }
 #title{
     margin-top: 10px;
@@ -6260,6 +6256,7 @@ color:#ff986d;
     padding-bottom: 0;
     outline: none;
     font-size: 15px;
+    width: 100%;
   }
   .booking_form_details{
       text-align: end;
@@ -6370,10 +6367,11 @@ color:#ff986d;
     margin-left: -5px;
     margin-top: -1px;
   }
-  .booking-all{
+  .bookings-all{
     position: relative;
-    bottom: 25px;
+    bottom: 50px;
     text-align: end;
+    padding-right: 20px;
   }
   .name_details{
       text-align: initial;
@@ -6410,4 +6408,46 @@ input[type=checkbox]:checked + label::before {
   .add_self{
       width: 80%;
   }
+  .addicon{
+      padding: 5px;
+      font-size: 13px;
+  }
+  .addicon1{
+    padding: 5px;
+    font-size: 13px;
+  }
+  .addicon2{
+   display: flex;
+  }
+  .addicon3{
+    padding: 5px;
+    font-size: 13px; 
+    margin-left: 19px;
+  }
+  .view-allin{
+    position: relative;
+    bottom: 10px;
+    text-align: end;
+  }
+  .serv-pro{
+    font-size: 13px; 
+  }
+  .paytm{
+      width: 100px;
+  }
+  .gpay{
+      width: 100px;
+  }
+  .like{
+    color: #66595a;
+    position: absolute;
+    bottom: 2px;
+    right: 16px;
+  }
+  .pet_space{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+  
+  
   

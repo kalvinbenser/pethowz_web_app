@@ -5,7 +5,7 @@
     background: linear-gradient(178deg, rgba(86,171,47,1) 0%, rgba(168,224,99,1) 100%);
   
 }
-.groomink:hover{
+.groominks:hover{
     background: linear-gradient(178deg, rgba(54,209,220,1) 0%, rgba(91,134,229,1) 100%);
 }
 .walkink:hover{
@@ -59,6 +59,9 @@
 }
 .click_logo6{
     cursor: pointer;
+}
+.align_services input[type="checkbox"] {
+    display: none;
 }
 </style>
     
@@ -122,7 +125,7 @@
                         <div class="single-footer-widget booking_form_details">
                             <h3 class="rupee"> <i class="fa fa-rupee" style="font-size:24px"><span id="amound" value="100">100</span></i></h3>
                             <h6 class="rupee">Per Hour</h6>
-                            <div class="booking-all">
+                            <div class="bookings-all">
                                 <button  href="{{URL::asset('/bookingdetails')}}" id="btn"  class="btn btn-primary btn-sm mx-auto">Book</button>
                             </div>
                         </div>
@@ -229,7 +232,7 @@
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
                     <div class="service-pic service-pic3" id="three" value="60">
                     <div class="walkinks align_services pic3">
-                        <input type="checkbox" class="checkbox" name="category[]" value="Walking" id="cb3" />
+                        <input type="checkbox" class="checkbox" name="category[]" value="Walking" id="cb3"  />
                         <label for="cb3"  ><img class="fit-image click_logo3"  src="{{URL::asset('front-end/assets/images/lightgallery/Walking Orange.svg')}}"/>
                         </label>
                         <div class="walk">Walking</div>
@@ -322,58 +325,6 @@
           $(".pic6").toggleClass("photography");
     })
         </script>
-
-
-
-     {{-- <script>
-     $(".service-pic1").on("click", function(){
-        var one   = parseInt($("#one").val(), 10);
-        var seven  = parseInt($("#amound").val(), 10); 
-        var sum = seven + one;
-        $("#amound").text(sum);        // or $("#amound") since you gave it an ID
-    })
-    </script>
-    <script>
-        $(".service-pic2").on("click", function(){
-           var two   = parseInt($("#two").val(), 10); 
-           var seven  = parseInt($("#amound").val(), 10);
-           var sum = seven + one;
-           $("#amound").text(sum);        // or $("#amound") since you gave it an ID
-       })
-       </script>
-       <script>
-        $(".service-pic3").on("click", function(){
-          
-           var three = parseInt($("#three").val(), 10);
-           var seven  = parseInt($("#amound").val(), 10);
-           var sum = seven + three;
-           $("amound").text(sum);        // or $("#p") since you gave it an ID
-       })
-       </script>
-       <script>
-        $(".service-pic4").on("click", function(){
-           var four  = parseInt($("#four").val(), 10); 
-           var seven  = parseInt($("#amound").val(), 10); 
-           var sum = seven + four;
-           $("amound").text(sum);        // or $("#p") since you gave it an ID
-       })
-       </script>
-       <script>
-        $(".service-pic5").on("click", function(){
-           var five = parseInt($("#five").val(), 10);
-           var seven  = parseInt($("#amound").val(), 10); 
-           var sum = seven + five;
-           $("amound").text(sum);        // or $("#p") since you gave it an ID
-       })
-       </script>
-       <script>
-        $(".service-pic6").on("click", function(){
-           var six = parseInt($("#six").val(), 10);
-           var seven  = parseInt($("#amound").val(), 10); 
-           var sum = seven + six;
-           $("amound").text(sum);        // or $("#p") since you gave it an ID
-       })
-       </script>--}}
        <script>
           $("#btn").click(function(event){
             event.preventDefault();
@@ -395,7 +346,8 @@
                                               select_category:searchIDs
                                             },
                                             success:function(data){
-                                           console.log(data.select_category);
+                                          // console.log(data.select_category);
+                                          window.location = '/bookingdetails';
                                             }
                                            
                                             });

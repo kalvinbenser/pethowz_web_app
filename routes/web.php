@@ -77,7 +77,7 @@ Route::get('/terms_condition',[HomeController::class,'terms_condition']);
 
 //petspace_details
 
-Route::get('/bookingdetails',[HomeController::class,'space_form']);
+Route::get('/bookingdetails',[HomeController::class,'bookingdetails']);
 
 // booking details
 

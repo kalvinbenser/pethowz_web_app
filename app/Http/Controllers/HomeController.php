@@ -58,7 +58,21 @@ class HomeController extends Controller
     //main service
 
     public function service(){
-        return view('/service/service');
+
+          //************************** Pet Service  ****************************\\
+          $petServiceData=[
+            "pending"=>true,
+            "approved"=>false,
+            "rejected"=>false
+        ];
+        $petServiceUrl=env('API').'getAllPetService';
+      
+        $petServiceRequest=Http::post($petServiceUrl,$petServiceData);
+        $petServiceResponse=$petServiceRequest->json();
+        //dd($petServiceResponse['data']);
+
+        $pet_service=$petServiceResponse['data'];
+        return view('/service/service',compact('pet_service'));
     }
     //grooming service
 
@@ -111,6 +125,7 @@ class HomeController extends Controller
     //petspace_details
 
     public function petspace_details(){
+    
         return view('/petspace/pethost_details');
     }
 
@@ -127,16 +142,16 @@ class HomeController extends Controller
     }
     // insert booking details
     function insert_booking_details(Request $request){
-        $name=$request->name;
-        $contact=$request->contact;
-        $pet_name=$request->pet_name;
-        $pet_count=$request->pet_count;
-        $no_of_days=$request->no_of_days;
-        $select_service=$request->select_service;
-        $service_type=$request->service_type;
- 
+     try{   $name=$request->name;
+            $contact=$request->contact;
+            $pet_name=$request->pet_name;
+            $pet_count=$request->pet_count;
+            $no_of_days=$request->no_of_days;
+            $select_service=$request->select_service;
+            $service_type=$request->service_type;
+    
        
-        $data=[
+        $petSpaceData=[
             'name'=>$name,
             'contact'=>$contact,
             'pet_name'=>$pet_name,
@@ -145,7 +160,16 @@ class HomeController extends Controller
             'select_service'=>$select_service,
             'service_type'=>$service_type
         ];
-        dd($data);
+        $petSpaceUrl=env('API').'createPetSpace';
+        $petSpaceRequest=Http::post($petSpaceUrl,$petSpaceData);
+        $petSpaceResponse=$petSpaceRequest->json();
+      //  dd($data);
+      return redirect('/service')->with('message','your Pet Service Added');
+    }
+    catch(Exception $e) {
+      echo 'Message: ' .$e->getMessage();
+    }
+
     }
 
      //add-details
@@ -172,7 +196,8 @@ class HomeController extends Controller
             'enjoy_work'=>$enjoy_work,
             'category'=>$category
         ];
-        dd($data);
+      //  dd($data);
+      return redirect('/pet_space_form')->with('message','your Pet Service Added');
 
       
 
@@ -181,9 +206,12 @@ class HomeController extends Controller
   
   
     function insert_otp_details(Request $request){
-        $mobile_otp=$request->mobile_otp;
+        $mobile_otp1=$request->mobile_otp1;
+        $mobile_otp2=$request->mobile_otp2;
+        $mobile_otp3=$request->mobile_otp3;
+        $mobile_otp4=$request->mobile_otp4;
         
-       return response()->json(['status' => 'insert successfully','profile_name'=> $profile_name,'profile_email'=>$profile_email,'profile_number'=>$profile_number,'profile_address'=>$profile_address]);
+       return response()->json(['status' => 'insert successfully','mobile_otp1'=> $mobile_otp1,'mobile_otp2'=>$mobile_otp2,'mobile_otp3'=>$mobile_otp3,'mobile_otp4'=>$mobile_otp4]);
     }
 
         //profile-details
@@ -225,7 +253,7 @@ class HomeController extends Controller
                 'contact'=>$contact,
                  'pet name'=>$pet_name,
                  'pet count'=>$pet_count,
-                 'number of days'=>$no_of_days
+                 'number of days'=>$no_of_days 
      ]
      ); */
      return response()->json(['status' => 'insert successfully','select_category'=> $select_category]);

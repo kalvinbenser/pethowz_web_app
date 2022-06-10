@@ -101,11 +101,10 @@
                                                 <label for="cb5">
                                                     <div class="choices"><span class="fa fa-venus"></span></div>
                                                     </label>
-                                                
+                                                    <div class="view-all">
+                                                        <input type="submit" value="submit" class="submite" >
+                                                   </div>
                                             </div>
-                                            <div class="view-all">
-                                                <input type="submit" value="submit" class="submite" >
-                                           </div>
                                     </div>
                             </div>
                             </div>

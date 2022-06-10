@@ -1,6 +1,9 @@
 @extends('layouts.main')
 @section('styles')
     <style>
+.multiselect-dropdown-list input[type="checkbox"] {
+    display: none;
+}
       input[type="checkbox"]:checked+label:after {
     opacity: 1;
 }
@@ -48,6 +51,9 @@ input[type="checkbox"]+label {
     -webkit-transition: .3s;
     -o-transition: .3s;
     transition: .3s;
+}
+.multiselect-dropdown {
+    width: 100% !important;
 }
       </style>
 @endsection

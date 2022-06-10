@@ -66,7 +66,6 @@ class ServiceController extends Controller
         public function pet_space_form(){
             return view('/booking-details/petspace_form/petspace_form');
         }
-
     public function pet_space_create(Request $request){
 
         try{

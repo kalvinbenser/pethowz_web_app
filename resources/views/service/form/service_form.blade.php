@@ -120,9 +120,6 @@ input[type="checkbox"]+label {
                         <input type="file"  accept="image/*" name="image" id="file_input"  style="display: none;padding:15px;">
                         <label class="images" for="file_input"  style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>
                         <i class="fa fa-image " style="color:#FF9A71;font-size:20px;"></i><input id="title" class="pro_name select_profile" />
-                        <div class="">
-                       
-                        </div>
                 </div>
                     <div class="view-all">
                         <input type="submit" value="submit" class="submite" >

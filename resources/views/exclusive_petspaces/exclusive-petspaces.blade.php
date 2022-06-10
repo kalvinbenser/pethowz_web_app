@@ -25,7 +25,7 @@
                     <h1>Exclusive Pet Spaces</h1>
                 </div>
                 <div class="view-all col-12 col-sm-6 col-md-6 col-lg-6">
-                    <a href="/add" target="">
+                    <a href="/add_your_self" target="">
                          <i class="fa fa-plus-square"  style="font-size:28px;color:#FF9966"></i>
                        </a>
                  </div>

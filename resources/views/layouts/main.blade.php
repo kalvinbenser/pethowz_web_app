@@ -44,6 +44,12 @@
      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 @yield('styles')
+<style>
+    input[type="checkbox"] {
+    display: inline;
+}
+
+    </style>
 
 </head>
 
@@ -77,11 +83,11 @@
                                         <a href="{{URL::asset('/pethost/pethost')}}">Pet host</a>
                                     </li>
                                     
-                                    <li class="has-children">
+                                    <li>
                                         <a href="{{URL::asset('/service')}}">services</a>
                                       </li>
                                     <li>
-                                        <a onclick="" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+                                        <a onclick="" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer">Login</a>
                                     </li>
                                   
                                 </ul>
@@ -314,22 +320,22 @@
                 <div style="display: flex;justify-content: center" id="otp-container">
                   <input oninput="inputInsideOtpInput(this)"
                          maxlength="1" class="model-otp mobile_otp1" type="number">
-          
+                         
                   <input oninput="inputInsideOtpInput(this)"
                          maxlength="1" class="model-otp mobile_otp2" type="number">
-          
+                      
                   <input oninput="inputInsideOtpInput(this)"
                          maxlength="1" class="model-otp mobile_otp3" type="number">
-          
+                       
                   <input oninput="inputInsideOtpInput(this)"
                          maxlength="1" class="model-otp mobile_otp4" type="number">
+                      
               </div>
               </div>
-              <span id="mobile_otp_error" class="text-danger"></span>
               <p class="model-text-center mt-1">Did not receive the code? <span class="model-resend-text">Re-send</span></p>
-
+              <span id="mobile_otp_error" class="text-danger"></span>
               <div class="model-item-center">
-              <input type="submit" value="VERIFY" id="booking_btn" data-bs-toggle="modal" class="btn-model-verify" > 
+              <input type="submit" value="VERIFY" id="booking_btn2" data-bs-toggle="modal" class="btn-model-verify" > 
               </div>
 
             </div>
@@ -426,23 +432,23 @@
     <!-- Footer Section Start -->
     <footer class="section footer-section">
         <!-- Footer Top Start -->
-        <div class="footer-top bg-name-bright section-padding">
+        <div class="footer-top bg-name-bright section-padding1">
             <div class="container">
                 <div class="row m-b-n40">
                     <div class="col-12 col-sm-3 col-lg-4 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                         <div class="single-footer-widget">
                             <h1 class="widget-title">Head Office</h1>
                             <ul>
-                                <li><i class="fa fa-map-marker text-danger"></i> springboard, Gopala krishna complex,</li>
-                                <li> &nbsp;&nbsp;&nbsp;45/3 Residency Road,Mahatma Gandhi Rd,</li>
-                                <li> &nbsp;&nbsp;&nbsp;ShanthalamNagar,Ashok Nagar,</li>
-                                <li> &nbsp;&nbsp;&nbsp;Bengaluru,Karnadaka -560025</li>
-                                <li><i class="fa fa-phone text-danger"></i> <strong>098840 42119</strong></li>
-                                <li><i class="fa fa-envelope-o text-danger"></i> <strong>Support@pethows.com</strong></li>
+                                <li class="addicon2"><i class="fa fa-map-marker text-danger addicon1"></i><p class="addicon"> springboard, Gopala krishna complex,</span></li>
+                                <li class="addicon2"><p class="addicon3">45/3 Residency Road,Mahatma Gandhi Rd,</p></li>
+                                <li class="addicon2"><p class="addicon3">ShanthalamNagar,Ashok Nagar,</p></li>
+                                <li class="addicon2"><p class="addicon3">Bengaluru,Karnadaka -560025</p></li>
+                                <li class="addicon2"><i class="fa fa-phone text-danger addicon1"></i> <p class="addicon1"><strong>098840 42119</strong></p></li>
+                                <li class="addicon2"><i class="fa fa-envelope-o text-danger addicon1"></i><p class="addicon1"> <strong>Support@pethows.com</strong></p></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-3 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="col-12 col-sm-3 col-lg-2 m-b-40" data-aos="fade-up" data-aos-duration="1200">
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Site Links</h2>
                            
@@ -461,17 +467,17 @@
                             <!-- Social Link End -->
                         </div>
                     </div>
-                    <div class="col-12 col-sm-3 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1600">
+                    <div class="col-12 col-sm-3 col-lg-4 m-b-40" data-aos="fade-up" data-aos-duration="1600">
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Services We Provide</h2>
                             <div class="widget-body">
                                 <ul>
-                                    <li>Pet Sitting</li>
-                                    <li>Pet Training</li>
-                                    <li>Pet Walking</li>
-                                    <li> Pet Grooming</li>
-                                    <li>Pet Breading</li>
-                                    <li>Pet Photography</li>
+                                    <li><p class="serv-pro">Pet Sitting</p></li>
+                                    <li><p class="serv-pro">Pet Training</p></li>
+                                    <li><p class="serv-pro">Pet Walking</p></li>
+                                    <li><p class="serv-pro"> Pet Grooming</p></li>
+                                    <li><p class="serv-pro">Pet Breading</p></li>
+                                    <li><p class="serv-pro">Pet Photography</p></li>
                                         <ul>
                                 <!-- Newsletter Form Start -->
                                 <div class="newsletter-form-wrap p-t-5">                             
@@ -490,13 +496,17 @@
                     </div>
                 </div>
             </div>
-            <div class="app">
+            <div class="app ">
+                                             <div class="paytm">
                                             <a href="single-product.html" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/payment/App Store.svg')}}" alt="Product" />
                                             </a>
+                                             </div>
+                                             <div class="gpay">
                                             <a href="single-product.html" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/payment/Google Play.svg')}}" alt="Product" />
                                             </a>
+                                             </div>
                                       </div>
         </div>
         <!-- Footer Top End -->
@@ -512,8 +522,7 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
                         <div class="copyright-content">
-                            <span> <a href="{{URL::asset('/terms_condition')}}">Terms&Conditions &emsp;&emsp; Privacy</a></span>
-                          
+                            <span> <a href="{{URL::asset('/terms_condition')}}">Terms&Conditions &emsp;&emsp; Privacy</a></span>                          
                         </div>
                     </div>
                 </div>
@@ -711,15 +720,7 @@
                             </li>
                             
                             <li class="has-children">
-                                <a href="#">services</a>
-                                <ul class="sub-menu">
-                                    <li><a href="{{URL::asset('/sitting')}}">Sitting</a></li>
-                                    <li><a href="{{URL::asset('/grooming')}}">Grooming</a></li>
-                                    <li><a href="{{URL::asset('/walking')}}">Walking</a></li>
-                                    <li><a href="{{URL::asset('/breading')}}">Bredding</a></li>
-                                    <li><a href="{{URL::asset('/training')}}">Training</a></li>
-                                    <li><a href="{{URL::asset('/photography')}}">Photography</a></li>
-                                </ul>
+                                <a href="{{URL::asset('/service')}}">services</a>
                               </li>
                             <li>
                                 <a onclick="" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
@@ -729,30 +730,6 @@
                     </nav>
                 </div>
                 <!-- Mobile Menu End -->
-                <!-- Language, Currency & Link Start -->
-                <div class="offcanvas-lag-curr m-b-30">
-                    <div class="header-top-lan-curr-link">
-                        <div class="header-top-lan dropdown">
-                            <h4 class="title">Language:</h4>
-                            <button class="dropdown-toggle" data-bs-toggle="dropdown">English <i class="fa fa-angle-down"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a class="dropdown-item" href="#">English</a></li>
-                                <li><a class="dropdown-item" href="#">Japanese</a></li>
-                                <li><a class="dropdown-item" href="#">Arabic</a></li>
-                                <li><a class="dropdown-item" href="#">Romanian</a></li>
-                            </ul>
-                        </div>
-                        <div class="header-top-curr dropdown">
-                            <h4 class="title">Currency:</h4>
-                            <button class="dropdown-toggle" data-bs-toggle="dropdown">USD <i class="fa fa-angle-down"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a class="dropdown-item" href="#">USD</a></li>
-                                <li><a class="dropdown-item" href="#">Pound</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Language, Currency & Link End -->
 
                 <!-- Contact Links/Social Links Start -->
                 <div class="mt-auto bottom-0">
@@ -767,11 +744,10 @@
 
                     <!-- Social Widget Start -->
                     <div class="widget-social">
-                        <a title="Facebook" href="#"><i class="fa fa-facebook-f"></i></a>
-                        <a title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                        <a title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                        <a title="Youtube" href="#"><i class="fa fa-youtube"></i></a>
-                        <a title="Vimeo" href="#"><i class="fa fa-vimeo"></i></a>
+                        <a style="color: #ac2bac;" href="#!" role="button"><i class="fa fa-instagram fa-lg"></i></a>
+                        <a style="color: #dd4b39;" href="#!" role="button"><i class="fa fa-youtube fa-lg"></i></a>
+                        <a style="color: #3b5998;" href="#!" role="button"><i class="fa fa-facebook fa-lg"></i></a>
+                        <a style="color: #55acee;" href="#!" role="button"><i class="fa fa-twitter fa-lg"></i></a>
                     </div>
                     <!-- Social Widget Ende -->
                 </div>
@@ -874,7 +850,7 @@
                             });
           </script>
           <script>
-            $('body').on('click','#booking_btn',function(e){
+            $('body').on('click','#booking_btn2',function(e){
         
                 $.ajaxSetup({
                     headers: {
@@ -884,78 +860,80 @@
         
         
                 e.preventDefault();
-                var mobile_otp = $('.mobile_otp1').val();
-                var mobile_otp = $('.mobile_otp2').val();
-                var mobile_otp = $('.mobile_otp3').val();
-                var mobile_otp = $('.mobile_otp4').val();
-              
-        
-                                   if(!mobile_otp1){
-                                    mobile_otp_error="Mobile otp is required";
-                                     $('#mobile_otp_error').html("");
-                                     $('#mobile_otp_error').html(mobile_otp_error);
-                                   }
-                                   else{
-                                    mobile_otp_error="";
-                                      $('#mobile_otpr_error').html("");
-                                   }
-                                   if(!mobile_otp2){
-                                    mobile_otp_error="Mobile otp is required";
-                                     $('#mobile_otp_error').html("");
-                                     $('#mobile_otp_error').html(mobile_otp_error);
-                                   }
-                                   else{
-                                    mobile_otp_error="";
-                                      $('#mobile_otpr_error').html("");
-                                   }
-                                   if(!mobile_otp3){
-                                    mobile_otp_error="Mobile otp is required";
-                                     $('#mobile_otp_error').html("");
-                                     $('#mobile_otp_error').html(mobile_otp_error);
-                                   }
-                                   else{
-                                    mobile_otp_error="";
-                                      $('#mobile_otpr_error').html("");
-                                   }
-                                   if(!mobile_otp4){
-                                    mobile_otp_error="Mobile otp is required";
-                                     $('#mobile_otp_error').html("");
-                                     $('#mobile_otp_error').html(mobile_otp_error);
-                                   }
-                                   else{
-                                    mobile_otp_error="";
-                                      $('#mobile_otpr_error').html("");
-                                   }
-        
-                                   
-                                   
-                                   if( mobile_otp_error !=''){
-                                     return false;
-                                   }
-                                   else{
-                                $.ajaxSetup({
-                                                headers: {
-                                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                                }
-                                            });
-                                            $.ajax({
-                                                type:'POST',
-                                                url:"{{ url('insert_otp_details') }}",
-                                                data:{
-                                                    mobile_otp1:mobile_otp1
-                                                    mobile_otp2:mobile_otp2
-                                                    mobile_otp3:mobile_otp3
-                                                    mobile_otp4:mobile_otp4
-                                                },
-                                                success:function(data){
-                                                       // console.log(data.status);
-                                                      //alert(data.status);
-                                                      $('#exampleModal3').modal('show');
-                                                }
-                                                
-                                            });
-                                        }
-                                });
+                var mobile_otp1 = $('.mobile_otp1').val();
+                var mobile_otp2 = $('.mobile_otp2').val();
+                 var mobile_otp3 = $('.mobile_otp3').val();
+                 var mobile_otp4 = $('.mobile_otp4').val();
+                
+                if(!mobile_otp1){
+                    mobile_otp_error="Mobile otp number is required";
+                                 $('#mobile_otp_error').html("");
+                                 $('#mobile_otp_error').html(mobile_otp_error);
+                               }
+                               else{
+                                mobile_otp_error="";
+                                  $('#mobile_otp_error').html("");
+                               }
+                 if(!mobile_otp2){
+                    mobile_otp_error="Mobile otp number is required";
+                                 $('#mobile_otp_error').html("");
+                                 $('#mobile_otp_error').html(mobile_otp_error);
+                               }
+                               else{
+                                mobile_otp_error="";
+                                  $('#mobile_otp_error').html("");
+                               }
+
+
+                               if(!mobile_otp3){
+                    mobile_otp_error="Mobile otp number is required";
+                                 $('#mobile_otp_error').html("");
+                                 $('#mobile_otp_error').html(mobile_otp_error);
+                               }
+                               else{
+                                mobile_otp_error="";
+                                  $('#mobile_otp_error').html("");
+                               }
+                 if(!mobile_otp4){
+                    mobile_otp_error="Mobile otp number is required";
+                                 $('#mobile_otp_error').html("");
+                                 $('#mobile_otp_error').html(mobile_otp_error);
+                               }
+                               else{
+                                mobile_otp_error="";
+                                  $('#mobile_otp_error').html("");
+                               }
+    
+                               
+                               
+                               if( mobile_otp_error !=''){
+                                 return false;
+                               }
+                               else{
+                            $.ajaxSetup({
+                                            headers: {
+                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                            }
+                                        });
+                                        $.ajax({
+                                            type:'POST',
+                                            url:"{{ url('insert_otp_details') }}",
+                                            data:{
+                                                mobile_otp1:mobile_otp1,
+                                                mobile_otp2:mobile_otp2,
+                                                mobile_otp3:mobile_otp3,
+                                                mobile_otp4:mobile_otp4
+                                            },
+                                            success:function(data){
+                                                   //console.log(data.mobile_otp1,mobile_otp2,mobile_otp3,mobile_otp4);
+                                                  // console.log(data.mobile_otp2);
+                                                  // alert(data.status);
+                                                 $('#exampleModal3').modal('show');
+                                            }
+                                            
+                                        });
+                                    }
+                            });
               </script> 
 
               {{-- toaster --}}

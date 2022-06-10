@@ -36,10 +36,10 @@
             <!-- Section Title & Tab Start -->
             <div class="row " data-aos="fade-up" data-aos-duration="1000" >
                 <!-- Tab Start -->
-                <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-                    <h1>Exclusive Pet Spaces</h1>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-8">
+                    <h1 class="pet_space">Exclusive Pet Spaces</h1>
                 </div>
-                <div class="view-all col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="view-all col-12 col-sm-6 col-md-6 col-lg-4">
                     <a href="{{URL::asset('/exclusive_petspaces')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
                 </div>
                
@@ -65,26 +65,26 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-18%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                           
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">An Animal Album</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$80.50</span>
-                                            <span class="old">$85.80</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -100,25 +100,26 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 3.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="new">New</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                            
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Wait, You Need This</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$90.00</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -133,13 +134,19 @@
                                             <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 4.png')}}" alt="Product" />
                                             </a>
+                                            <span class="badges">
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Pet Food Corner</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -147,9 +154,7 @@
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$105.00</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -165,30 +170,28 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-18%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                            
 
-                                            <div class="countdown-area">
-                                                <div class="countdown-wrapper" data-countdown="2028/12/28"></div>
-                                            </div>
+                                            
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$47.50</span>
-                                            <span class="old">$50.00</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -204,26 +207,26 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 2 in webscreen 5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-20%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$58.50</span>
-                                            <span class="old">$62.85</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -239,25 +242,26 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 3 in webscreen 5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="new">New</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">This is the testing</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$78.50</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -272,23 +276,27 @@
                                             <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 1 in webscreen 5.png')}}" alt="Product" />
                                             </a>
+                                            <span class="badges">
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Basic Dog Trainning</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$55.00</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -304,15 +312,18 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 2.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-20%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                            
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Animal For Life</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -320,10 +331,7 @@
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$75.50</span>
-                                            <span class="old">$82.85</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -345,26 +353,26 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-18%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$47.50</span>
-                                            <span class="old">$50.00</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -380,26 +388,26 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/6.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-20%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$58.50</span>
-                                            <span class="old">$62.85</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -415,25 +423,26 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 3.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="new">New</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Wait, You Need This</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$90.00</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -449,25 +458,26 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/7.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="new">New</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                           
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">This is the testing</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$78.50</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -482,23 +492,27 @@
                                             <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/8.png')}}" alt="Product" />
                                             </a>
+                                            <span class="badges">
+                                                <span class="sale">4.5</span>
+                                                </span>
                                           
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Basic Dog Trainning</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$55.00</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -514,26 +528,26 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/1.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-18%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                          
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">An Animal Album</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$80.50</span>
-                                            <span class="old">$85.80</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -549,15 +563,18 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/2.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-20%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Animal For Life</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -565,10 +582,7 @@
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$75.50</span>
-                                            <span class="old">$82.85</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -583,13 +597,19 @@
                                             <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 4.png')}}" alt="Product" />
                                             </a>
+                                            <span class="badges">
+                                                <span class="sale">4.5</span>
+                                                </span>
                                          
                                         </div>
                                         <!-- Thumb End  -->
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Pet Food Corner</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -597,9 +617,7 @@
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$105.00</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -699,10 +717,10 @@
             <!-- Section Title & Tab Start -->
             <div class="row" data-aos="fade-up" data-aos-duration="1000">
                 <!-- Tab Start -->
-             <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-                    <h1>Independent House | Apartment</h1>
+             <div class="col-12 col-sm-6 col-md-6 col-lg-8">
+                    <h1 class="pet_space">Independent House | Apartment</h1>
                 </div>
-                <div class="view-all col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="view-all col-12 col-sm-6 col-md-6 col-lg-4">
                     <a  href="{{URL::asset('/house&apartment/house_apartment')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
                   </div>
               
@@ -723,25 +741,26 @@
                                             <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
                                            </a>
-                                            <span class="badges">
-                                            <span class="sale">-18%</span>
+                                           <span class="badges">
+                                            <span class="sale">4.5</span>
                                             </span>
                                           
                                        </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">An Animal Album</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$80.50</span>
-                                            <span class="old">$85.80</span>                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -756,23 +775,24 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 3.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="new">New</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                                                                    </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Wait, You Need This</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                           <span class="price">
-                                            <span class="new">$90.00</span>                                          
-                                         </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -786,12 +806,18 @@
                                             <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 4.png')}}" alt="Product" />
                                            </a>
+                                           <span class="badges">
+                                            <span class="sale">4.5</span>
+                                            </span>
                                             
                                        </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Pet Food Corner</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -799,9 +825,7 @@
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$105.00</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -816,26 +840,25 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-18%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                            
-                                            <div class="countdown-area">                                                <div class="countdown-wrapper" data-countdown="2028/12/28"></div>
-                                            </div>                                       </div>
+                                                                                  </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$47.50</span>
-                                            <span class="old">$50.00</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -850,25 +873,25 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 2 in webscreen 5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-20%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$58.50</span>
-                                            <span class="old">$62.85</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -883,24 +906,25 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 3 in webscreen 5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="new">New</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">This is the testing</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$78.50</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -914,22 +938,26 @@
                                             <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 1 in webscreen 5.png')}}" alt="Product" />
                                             </a>
+                                            <span class="badges">
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Basic Dog Trainning</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$55.00</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -944,14 +972,17 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 2.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-20%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                            
                                         </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Animal For Life</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -959,10 +990,7 @@
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$75.50</span>
-                                            <span class="old">$82.85</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -982,25 +1010,25 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/5.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-18%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$47.50</span>
-                                            <span class="old">$50.00</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -1016,25 +1044,25 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/6.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-20%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$58.50</span>
-                                            <span class="old">$62.85</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -1049,26 +1077,26 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 3.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="new">New</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Wait, You Need This</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$90.00</span>
-                                            </span>
-                                        </div>
-                                        <!-- Content End  -->
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
+                                        </div>ntent End  -->
                                     </div>
                                 </div>
                                 <!-- Product End -->
@@ -1081,24 +1109,25 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/7.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="new">New</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                           
                                         </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">This is the testing</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$78.50</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -1112,22 +1141,26 @@
                                             <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/8.png')}}" alt="Product" />
                                             </a>
+                                            <span class="badges">
+                                                <span class="sale">4.5</span>
+                                                </span>
                                           
                                         </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Basic Dog Trainning</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$55.00</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -1143,25 +1176,25 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/1.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-18%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                          
                                         </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">An Animal Album</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$80.50</span>
-                                            <span class="old">$85.80</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -1176,14 +1209,17 @@
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/2.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
-                                            <span class="sale">-20%</span>
-                                            </span>
+                                                <span class="sale">4.5</span>
+                                                </span>
                                             
                                         </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Animal For Life</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -1191,10 +1227,7 @@
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$75.50</span>
-                                            <span class="old">$82.85</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -1209,12 +1242,17 @@
                                             <a href="{{('/petspace_details')}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 4.png')}}" alt="Product" />
                                             </a>
-                                         
+                                            <span class="badges">
+                                                <span class="sale">4.5</span>
+                                                </span>
                                         </div>
                                         <!-- Thumb End  -->
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <h5 class="title"><a href="single-product.html">Pet Food Corner</a></h5>
+                                            <h5 class="title"><p>Pet Food Corner</p></h5>
+                                            <span class="price">
+                                                <span class="new">RS 250/Hr</span>
+                                                </span>
                                             <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -1222,9 +1260,7 @@
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                            <span class="price">
-                                            <span class="new">$105.00</span>
-                                            </span>
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -1253,7 +1289,7 @@
                     <div class="container">
                         <div class="hero-slide-content text-start">
                             <h2 class="title m-0" id="title-color">List your space for pets<br>and start earning</h2>
-                            <a href="shop.html" class="btn btn-dark btn-hover-primary">become a Pethost</a>
+                            <a href="/register" class="btn btn-dark btn-hover-primary">become a Pethost</a>
                         </div>
                     </div>
                 </div>

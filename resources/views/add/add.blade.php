@@ -2,7 +2,14 @@
 @section('content')
    <!-- Section Title Start -->
 <div class="container" id="yourself">
-
+  @yield('styles')
+  <style>
+  .Your_Category input[type="checkbox"] {
+      display: none !important;
+  }
+  
+      </style>
+  
     <h1 class="yourself">About Your Self</h1>
 
  <div class="product-deal-carousel arrow-outside-container">
@@ -55,19 +62,19 @@
                         
                             <h1 class="yourself">Select Your Category</h1>
                             <div class="row" id="category">
-                            <div class=" col-md-4 m-b-15" data-aos-duration="1200">
+                            <div class=" col-md-4 m-b-15  Your_Category" data-aos-duration="1200">
                                 <input type="checkbox" name="category[]" value="3" id="cb4" />
                                 <label for="cb4"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - Bird.png')}}" />
                                 </label> 
                                 <p class="about">Birds</p>
                             </div>
-                            <div class="col-md-4 m-b-15" data-aos-duration="1200">
+                            <div class="col-md-4 m-b-15 Your_Category" data-aos-duration="1200">
                                 <input type="checkbox" name="category[]" value="2" id="cb3" />
                                 <label for="cb3"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - cat.png')}}" />
                                 </label>  
                                 <p class="about">Cat</p>
                             </div>
-                            <div class=" col-md-4 m-b-15" data-aos-duration="1200">
+                            <div class=" col-md-4 m-b-15 Your_Category" data-aos-duration="1200">
                                     <input type="checkbox" name="category[]" value="1" id="cb2" />
                                         <label for="cb2"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - Dog.png')}}" />
                                         </label>                                   
@@ -91,62 +98,3 @@
 </div>
 <!-- Latest Blog Carousel End -->
 @endsection
-{{-- @section('scripts')
-<script>
-    $('body').on('click','#booking_btn',function(e){
-       
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-            }
-        }); 
-
-
-        e.preventDefault();
-        var pets_enjoy = $('.pets_enjoy').val();
-         alert(pets_enjoy);
-      
-                           if(!pets_enjoy){
-                            pets_enjoy_error="category is required";
-                             $('#pets_enjoy_error').html("");
-                             $('#pets_enjoy_error').html(pets_enjoy_error);
-                           }
-                           else{
-                            pets_enjoy_error="";
-                              $('#pets_enjoy_error').html("");
-                           }
-                           if(pets_enjoy_error !='' ){
-                             return false;
-                           }
-                           else{ 
-                           $.ajaxSetup({
-                                            headers: {
-                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                            }
-                                        });
-                                        $.ajax({
-                                            type:'POST',
-                                            url:"{{ url('insert_your_self_details') }}",
-                                            data:{
-                                        
-                                                pets_enjoy:pets_enjoy
-                                            },
-                                            success:function(data){
-                                              alert(1);
-                                                    // alert(data.pets_enjoy);
-                                                    // console.log(select_serv);
-                                                   // $('#exampleModal').modal('show');
-                                            }
-                                           
-                                            });
-
-
-                                                }
-                                              });
-                                            
-                                            
-                                      
-                                      
-                      
-    </script> --}}
-{{-- @endsection  --}}
