@@ -439,12 +439,12 @@
                         <div class="single-footer-widget">
                             <h1 class="widget-title">Head Office</h1>
                             <ul>
-                                <li class="addicon2"><i class="fa fa-map-marker text-danger addicon1"></i><p class="addicon"> springboard, Gopala krishna complex,</span></li>
+                                <li class="addicon2"><i class="fa fa-map-marker addicon4"></i><p class="addicon1"> springboard, Gopala krishna complex,</span></li>
                                 <li class="addicon2"><p class="addicon3">45/3 Residency Road,Mahatma Gandhi Rd,</p></li>
                                 <li class="addicon2"><p class="addicon3">ShanthalamNagar,Ashok Nagar,</p></li>
                                 <li class="addicon2"><p class="addicon3">Bengaluru,Karnadaka -560025</p></li>
-                                <li class="addicon2"><i class="fa fa-phone text-danger addicon1"></i> <p class="addicon1"><strong>098840 42119</strong></p></li>
-                                <li class="addicon2"><i class="fa fa-envelope-o text-danger addicon1"></i><p class="addicon1"> <strong>Support@pethows.com</strong></p></li>
+                                <li class="addicon2"><i class="fa fa-phone  addicon4"></i> <p class="addicon1"><strong>098840 42119</strong></p></li>
+                                <li class="addicon2"><i class="fa fa-envelope-o addicon4"></i><p class="addicon1"> <strong>Support@pethows.com</strong></p></li>
                             </ul>
                         </div>
                     </div>

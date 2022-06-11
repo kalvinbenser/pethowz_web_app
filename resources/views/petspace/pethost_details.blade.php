@@ -1,23 +1,23 @@
 @extends('layouts.main')
 @section('styles')
 <style>
-   .sittink:hover{
+   .sittinks:hover{
     background: linear-gradient(178deg, rgba(86,171,47,1) 0%, rgba(168,224,99,1) 100%);
   
 }
 .groominks:hover{
     background: linear-gradient(178deg, rgba(54,209,220,1) 0%, rgba(91,134,229,1) 100%);
 }
-.walkink:hover{
+.walkinks:hover{
      background: linear-gradient(188deg, rgba(255,95,109,1) 0%, rgba(255,195,113,1) 75%);
 }
-.breadink{
+.breadinks:hover{
     background: linear-gradient(188deg, rgba(250,214,55,1) 0%, rgba(231,176,77,1) 75%);
 }
-.trainink{
+.traininks:hover{
     background: linear-gradient(246deg, rgba(39,239,246,1) 0%, rgba(0,205,172,1) 75%);
 }
-.photography{
+.photographys:hover{
     background: linear-gradient(188deg, rgba(45,56,138,1) 0%, rgba(1,174,239,1) 75%);
 } 
 

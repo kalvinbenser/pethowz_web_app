@@ -49,6 +49,9 @@ input[type="checkbox"]+label {
     -o-transition: .3s;
     transition: .3s;
 }
+.multiselect-dropdown-list input[type="checkbox"] {
+    display: none;
+}
       </style>
 @endsection
 @section('content')      
@@ -58,7 +61,7 @@ input[type="checkbox"]+label {
                 @csrf
                   <div class="row m-b-n40">
                       <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="service-providers">
+                        <div class="service-providers1">
                           <label class="about">Venue Name</label>                 
                              <input type="text" name="venue" class="form-control" placeholder="Enter Name">
                         </div>
@@ -93,33 +96,32 @@ input[type="checkbox"]+label {
                         </div>    
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="service-providers">
-                        <div class="row">
-                            <label class="about">Select the Service</label>
-                            <select class="form-select select_amenities" name="select_service[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                              <option value="1">Sitting</option>
-                              <option value="2">Walking</option>
-                              <option value="3">Training</option>
-                              <option value="4">Grooming</option>
-                              <option value="5">Photography</option>
-                              <option value="6">Breading</option>
-                            </select>               
-                          </div>
-                         
-                        </div> 
-                        <div class="service-providers"> 
-                        <label class="about">Cost Per Hour</label>
-                        <div class="range-wrap">
-                            <div class="range-value" id="rangeV"></div>
-                            <input id="range" name="cost_per_hour" type="range" min="0" max="1000" value="0" step="1">
-                          </div>
+                  <div class="service-providers">
+                    <div class="row">
+                      <label class="about">Select the Service</label>
+                      <select class="form-select select_serv" name="select_service[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                        <option value="1">Sitting</option>
+                        <option value="2">Breading</option>
+                        <option value="3">Photography</option>
+                        <option value="4">Grooming</option>
+                        <option value="5">Waiking</option>
+                        <option value="6">Training</option>
+                      </select>               
+                    </div>
+                    </div>
+                        <div class="service-providers2"> 
+                          <input type="file"  accept="image/*" name="image" id="file_input"  style="display: none;padding:15px;">
+                          <label class="images" for="file_input"  style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>
+                          <i class="fa fa-image " style="color:#FF9A71;font-size:20px;"></i><input id="title" class="pro_name select_profile" />
                         </div>                     
                 </div>
                 <div class="col-12 col-sm-6 col-md-3 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                     <div class="service-providers">
-                        <input type="file"  accept="image/*" name="image" id="file_input"  style="display: none;padding:15px;">
-                        <label class="images" for="file_input"  style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>
-                        <i class="fa fa-image " style="color:#FF9A71;font-size:20px;"></i><input id="title" class="pro_name select_profile" />
+                      <label class="about">Cost Per Hour</label>
+                      <div class="range-wrap">
+                          <div class="range-value" id="rangeV"></div>
+                          <input id="range" name="cost_per_hour" type="range" min="0" max="1000" value="0" step="1">
+                        </div>
                 </div>
                     <div class="view-all">
                         <input type="submit" value="submit" class="submite" >
