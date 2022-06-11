@@ -70,7 +70,7 @@ class AuthController extends Controller
                     $response=  $request->json();
                   //  dd($response);
 
-                 return redirect("/add_your_self")->with('message','registeration successfull');
+                 return redirect("/home/index")->with('message','registeration successfull');
      
 
             }

@@ -139,7 +139,7 @@ class HomeController extends Controller
       //house_apartment
 
       public function house_apartment(){
-        return view('/house_apartment/house_apartment');
+        return view('/house&apartment/house_apartment');
     }
 
     //petspace_details
