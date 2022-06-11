@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
- 
+ use App\Support\Collection;
 
 
 class HomeController extends Controller
@@ -89,7 +89,10 @@ class HomeController extends Controller
         //dd($petServiceResponse['data']);
 
         $pet_service=$petServiceResponse['data'];
-        return view('/service/service',compact('pet_service'));
+
+        $collection = (new Collection($pet_service))->paginate(8);
+       // dd($collection);
+        return view('/service/service',compact('collection'));
     }
     //grooming service
 

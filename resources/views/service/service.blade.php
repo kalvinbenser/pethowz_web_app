@@ -1,4 +1,5 @@
 @extends('layouts.main')
+
 @section('content')
   <!-- Banner Section Start -->
   <div class="section section-margin">
@@ -89,13 +90,14 @@
   </div>
   <!-- Section Title & Tab End -->
   <!-- Products Tab Start -->
-  <div class="row" data-aos="fade-up" data-aos-duration="1100">
+  
+ <div class="row" data-aos="fade-up" data-aos-duration="1100">
       <div class="col-12">
           <div class="tab-content">
               <div class="tab-pane fade show active" id="tab-product-all">
                   <div class="row m-b-n40">
                       <!-- Product Start -->                     
-                  @foreach($pet_service as $pet_ser)
+                  @foreach($collection as $pet_ser)
                       <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
                           <div class="product">
                               <!-- Thumb Start  -->
@@ -129,12 +131,21 @@
                           </div>
                       </div>
                   @endforeach
-                      <!-- Product End -->                   
+                      <!-- Product End -->    
+                                   
                   </div>
+             
                 </div>
+                     
           </div>
+          
       </div>
+
   </div>
+  <div class="m-5">
+  {{  $collection->links('vendor.pagination.bootstrap-5')  }}
+  </div>
+
   <!-- Products Tab End --> 
 </div>
 </div>  
