@@ -116,4 +116,19 @@ class ServiceController extends Controller
 
     }
 
+    //create Booking
+
+    public function create_booking(Request $request){
+
+        $user_service=$request->user_service;
+        $user_amount=$request->user_amount;
+        $data=[
+            'service'=>$user_service,
+            'amount'=>$user_amount
+        ];
+        //dd($data);
+        return back()->with('message','booked successfully');
+
+    }
+
 }

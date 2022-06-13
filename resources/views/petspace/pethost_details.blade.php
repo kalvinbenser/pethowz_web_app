@@ -123,10 +123,19 @@
              
                     <div class="col-12 col-sm-4 col-md-3 col-lg-7" data-aos="fade-up" data-aos-duration="1600">
                         <div class="single-footer-widget booking_form_details">
-                            <h3 class="rupee"> <i class="fa fa-rupee" style="font-size:24px"><span id="amound" value="100">100</span></i></h3>
+                            <h3 class="rupee"> <i class="fa fa-rupee" style="font-size:24px"><span id="usertotal" >0</span></i></h3>
                             <h6 class="rupee">Per Hour</h6>
                             <div class="bookings-all">
-                                <button  href="{{URL::asset('/bookingdetails')}}" id="btn"  class="btn btn-primary btn-sm mx-auto">Book</button>
+                                {{-- form --}}
+                                <form action="/create_booking" method="post">
+                                    @csrf
+                                    <input type="hidden" name="user_service" id="userService">
+                                    <input type="hidden" name="user_amount" id="userAmount">
+                                    <button  class="btn btn-primary btn-sm mx-auto" id="btn">Book</button>
+                                </form>
+                                {{-- <button  href="{{URL::asset('/bookingdetails')}}" id="btn"  class="btn btn-primary btn-sm mx-auto">Book</button> --}}
+
+
                             </div>
                         </div>
                     </div>
@@ -200,7 +209,7 @@
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="service-pic service-pic1" id="one" value="Sitting">
                     <div class="align_services sittinks pic1">
-                        <input type="checkbox" class="checkbox" name="category[]" value="Sitting" id="cb1" />
+                        <input type="checkbox" value="10" class="checkbox" name="category[]" value="Sitting" id="cb1" />
                         <label for="cb1"  ><img class="fit-image click_logo1" src="{{URL::asset('front-end/assets/images/lightgallery/Sitting Green.svg')}}"/>
                         </label>
                         <div class="sitt">Sitting</div>
@@ -216,7 +225,7 @@
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="service-pic service-pic2" id="two" value="60">
                    <div class="groominks align_services pic2">
-                        <input type="checkbox" class="checkbox" name="category[]" value="Grooming" id="cb2" />
+                        <input type="checkbox" value="20" class="checkbox" name="category[]" value="Grooming" id="cb2" />
                         <label for="cb2"  ><img class="fit-image click_logo2" src="{{URL::asset('front-end/assets/images/lightgallery/Grooming Blue.svg')}}"/>
                         </label>
                         <div class="grom">Grooming</div>
@@ -232,7 +241,7 @@
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
                     <div class="service-pic service-pic3" id="three" value="60">
                     <div class="walkinks align_services pic3">
-                        <input type="checkbox" class="checkbox" name="category[]" value="Walking" id="cb3"  />
+                        <input type="checkbox" value="30" class="checkbox" name="category[]" value="Walking" id="cb3"  />
                         <label for="cb3"  ><img class="fit-image click_logo3"  src="{{URL::asset('front-end/assets/images/lightgallery/Walking Orange.svg')}}"/>
                         </label>
                         <div class="walk">Walking</div>
@@ -248,7 +257,7 @@
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="service-pic service-pic4" id="four" value="60">
                     <div class="breadinks align_services pic4">
-                        <input type="checkbox" class="checkbox" name="category[]" value="Breading" id="cb4" />
+                        <input type="checkbox" value="40" class="checkbox" name="category[]" value="Breading" id="cb4" />
                         <label for="cb4"  ><img class="fit-image click_logo4"  src="{{URL::asset('front-end/assets/images/lightgallery/Breeding Yellow.svg')}}"/>
                         </label> 
                         <div class="brea">Breading</div>
@@ -264,7 +273,7 @@
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                     <div class="service-pic service-pic5" id="five" value="60">
                     <div class="traininks align_services pic5">
-                        <input type="checkbox" class="checkbox" name="category[]" value="Training" id="cb5" />
+                        <input type="checkbox" value="50" class="checkbox" name="category[]" value="Training" id="cb5" />
                         <label for="cb5"  ><img class="fit-image click_logo5" src="{{URL::asset('front-end/assets/images/lightgallery/Training Blue.svg')}}"/>
                         </label> 
                         <div class="trai">Training</div>
@@ -280,7 +289,7 @@
                   <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                       <div class="service-pic service-pic6" id="six" value="60">
                     <div class="photographys align_services pic6" >
-                        <input type="checkbox" class="checkbox" name="category[]" value="Photography" id="cb6" />
+                        <input type="checkbox" value="60" class="checkbox" name="category[]" value="Photography" id="cb6" />
                         <label for="cb6"  ><img class="fit-image click_logo6" src="{{URL::asset('front-end/assets/images/lightgallery/Photography Blue.svg')}}" />
                         </label>  
                         <div class="phot">Photography</div>
@@ -327,30 +336,46 @@
         </script>
        <script>
           $("#btn").click(function(event){
-            event.preventDefault();
+            // event.preventDefault();
             var searchIDs = $("input:checkbox:checked").map(function(){
                 return this.value;
             }).toArray();
-
+            $('#userService').val(searchIDs)
          
-            $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-            }
-          }); 
-          $.ajax({
-                                            type:'POST',
-                                            url:"{{ url('pet_host_details') }}",
-                                            data:{
+        //     $.ajaxSetup({
+        //     headers: {
+        //         'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+        //     }
+        //   }); 
+        //   $.ajax({
+        //                                     type:'POST',
+        //                                     url:"{{ url('pet_host_details') }}",
+        //                                     data:{
                                         
-                                              select_category:searchIDs
-                                            },
-                                            success:function(data){
-                                          // console.log(data.select_category);
-                                          window.location = '/bookingdetails';
-                                            }
+        //                                       select_category:searchIDs
+        //                                     },
+        //                                     success:function(data){
+        //                                   // console.log(data.select_category);
+        //                                   window.location = '/bookingdetails';
+        //                                     }
                                            
-                                            });
+        //                                     });
             });
            </script>
+
+           
+ <script>
+    $('input:checkbox').change(function(){ 
+	var tot=0;
+
+$('input:checkbox:checked').each(function(){
+	tot+=parseInt($(this).val());
+});
+
+$('#usertotal').html(tot)
+$('#userAmount').val(tot)
+});
+ </script>
+
+
      @endsection 
