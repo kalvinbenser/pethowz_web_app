@@ -31,15 +31,10 @@ class HomeController extends Controller
          //********************* Index Pet Space  ***************************\\
 
          $petSpaceData=[
-            "pending"=>true,
-            "approved"=>false,
-            "rejected"=>false,
-        
-           
         ];
         $petSpaceUrl= env('API').'getAllPetSpace';
        
-        $petSpaceRequest = Http::post($petSpaceUrl,$petSpaceData);
+        $petSpaceRequest = Http::get($petSpaceUrl,$petSpaceData);
   
         $petSpaceResponse = $petSpaceRequest->json();
         
@@ -47,13 +42,10 @@ class HomeController extends Controller
 
         //**************************  Pet Service  ****************************\\
         $petServiceData=[
-            "pending"=>true,
-            "approved"=>false,
-            "rejected"=>false
         ];
         $petServiceUrl=env('API').'getAllPetService';
       
-        $petServiceRequest=Http::post($petServiceUrl,$petServiceData);
+        $petServiceRequest=Http::get($petServiceUrl,$petServiceData);
         $petServiceResponse=$petServiceRequest->json();
         //dd($petServiceResponse);
         $pet_service=$petServiceResponse['data'];
@@ -81,13 +73,11 @@ class HomeController extends Controller
 
           //************************** Pet Service  ****************************\\
           $petServiceData=[
-            "pending"=>true,
-            "approved"=>false,
-            "rejected"=>false
+           
         ];
         $petServiceUrl=env('API').'getAllPetService';
       
-        $petServiceRequest=Http::post($petServiceUrl,$petServiceData);
+        $petServiceRequest=Http::get($petServiceUrl,$petServiceData);
         $petServiceResponse=$petServiceRequest->json();
         //dd($petServiceResponse['data']);
 
@@ -139,15 +129,12 @@ class HomeController extends Controller
            //*********************  Pet Space  ***************************\\
 
            $petSpaceData=[
-            "pending"=>true,
-            "approved"=>false,
-            "rejected"=>false,
         
            
         ];
         $petSpaceUrl= env('API').'getAllPetSpace';
        
-        $petSpaceRequest = Http::post($petSpaceUrl,$petSpaceData);
+        $petSpaceRequest = Http::get($petSpaceUrl,$petSpaceData);
   
         $petSpaceResponse = $petSpaceRequest->json();
         
@@ -155,13 +142,11 @@ class HomeController extends Controller
 
         //************************** Pet Service  ****************************\\
         $petServiceData=[
-            "pending"=>true,
-            "approved"=>false,
-            "rejected"=>false
-        ];
+
+         ];
         $petServiceUrl=env('API').'getAllPetService';
       
-        $petServiceRequest=Http::post($petServiceUrl,$petServiceData);
+        $petServiceRequest=Http::get($petServiceUrl,$petServiceData);
         $petServiceResponse=$petServiceRequest->json();
         //dd($petServiceResponse);
         $pet_service=$petServiceResponse['data'];
@@ -177,15 +162,12 @@ class HomeController extends Controller
             //*********************  house & apartment ***************************\\
  
             $petSpaceData=[
-             "pending"=>true,
-             "approved"=>false,
-             "rejected"=>false,
-         
-            
-         ];
+        
+           
+            ];
          $petSpaceUrl= env('API').'getAllPetSpace';
         
-         $petSpaceRequest = Http::post($petSpaceUrl,$petSpaceData);
+         $petSpaceRequest = Http::get($petSpaceUrl,$petSpaceData);
    
          $petSpaceResponse = $petSpaceRequest->json();
          
@@ -193,13 +175,10 @@ class HomeController extends Controller
  
          //************************** Pet Service  ****************************\\
          $petServiceData=[
-             "pending"=>true,
-             "approved"=>false,
-             "rejected"=>false
-         ];
+ ];
          $petServiceUrl=env('API').'getAllPetService';
        
-         $petServiceRequest=Http::post($petServiceUrl,$petServiceData);
+         $petServiceRequest=Http::get($petServiceUrl,$petServiceData);
          $petServiceResponse=$petServiceRequest->json();
          //dd($petServiceResponse);
          $pet_service=$petServiceResponse['data'];
