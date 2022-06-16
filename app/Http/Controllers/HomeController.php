@@ -28,7 +28,7 @@ class HomeController extends Controller
       public function index(){
 
 
-         //*********************  Pet Space  ***************************\\
+         //********************* Index Pet Space  ***************************\\
 
          $petSpaceData=[
             "pending"=>true,
@@ -45,7 +45,7 @@ class HomeController extends Controller
         
         //dd($petSpaceResponse[data]);
 
-        //************************** Pet Service  ****************************\\
+        //**************************  Pet Service  ****************************\\
         $petServiceData=[
             "pending"=>true,
             "approved"=>false,
@@ -56,8 +56,11 @@ class HomeController extends Controller
         $petServiceRequest=Http::post($petServiceUrl,$petServiceData);
         $petServiceResponse=$petServiceRequest->json();
         //dd($petServiceResponse);
+        $pet_service=$petServiceResponse['data'];
 
-        return view('home/index');
+        $collection = (new Collection($pet_service))->paginate(8);
+       // dd($collection);
+        return view('home/index',compact('collection'));
     }
   
     //about
@@ -133,13 +136,77 @@ class HomeController extends Controller
      //exclusive_petspaces
 
      public function exclusive_petspaces(){
-        return view('/exclusive_petspaces/exclusive-petspaces');
+           //*********************  Pet Space  ***************************\\
+
+           $petSpaceData=[
+            "pending"=>true,
+            "approved"=>false,
+            "rejected"=>false,
+        
+           
+        ];
+        $petSpaceUrl= env('API').'getAllPetSpace';
+       
+        $petSpaceRequest = Http::post($petSpaceUrl,$petSpaceData);
+  
+        $petSpaceResponse = $petSpaceRequest->json();
+        
+        //dd($petSpaceResponse[data]);
+
+        //************************** Pet Service  ****************************\\
+        $petServiceData=[
+            "pending"=>true,
+            "approved"=>false,
+            "rejected"=>false
+        ];
+        $petServiceUrl=env('API').'getAllPetService';
+      
+        $petServiceRequest=Http::post($petServiceUrl,$petServiceData);
+        $petServiceResponse=$petServiceRequest->json();
+        //dd($petServiceResponse);
+        $pet_service=$petServiceResponse['data'];
+
+        $collection = (new Collection($pet_service))->paginate(8);
+       // dd($collection);
+        return view('/exclusive_petspaces/exclusive-petspaces',compact('collection'));
     }
 
       //house_apartment
 
       public function house_apartment(){
-        return view('/house&apartment/house_apartment');
+            //*********************  house & apartment ***************************\\
+ 
+            $petSpaceData=[
+             "pending"=>true,
+             "approved"=>false,
+             "rejected"=>false,
+         
+            
+         ];
+         $petSpaceUrl= env('API').'getAllPetSpace';
+        
+         $petSpaceRequest = Http::post($petSpaceUrl,$petSpaceData);
+   
+         $petSpaceResponse = $petSpaceRequest->json();
+         
+         //dd($petSpaceResponse[data]);
+ 
+         //************************** Pet Service  ****************************\\
+         $petServiceData=[
+             "pending"=>true,
+             "approved"=>false,
+             "rejected"=>false
+         ];
+         $petServiceUrl=env('API').'getAllPetService';
+       
+         $petServiceRequest=Http::post($petServiceUrl,$petServiceData);
+         $petServiceResponse=$petServiceRequest->json();
+         //dd($petServiceResponse);
+         $pet_service=$petServiceResponse['data'];
+ 
+         $collection = (new Collection($pet_service))->paginate(8);
+        // dd($collection);
+         return view('/house&apartment/house_apartment',compact('collection'));
     }
 
     //petspace_details

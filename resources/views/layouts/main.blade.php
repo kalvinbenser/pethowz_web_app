@@ -319,17 +319,16 @@
               <div class="model-item-center mt-2">
                 <div style="display: flex;justify-content: center" id="otp-container">
                   <input oninput="inputInsideOtpInput(this)"
-                         maxlength="1" class="model-otp mobile_otp1" type="number">
+                         maxlength="1" class="model-otp mobile_otp1" type="text">
                          
                   <input oninput="inputInsideOtpInput(this)"
-                         maxlength="1" class="model-otp mobile_otp2" type="number">
+                         maxlength="1" class="model-otp mobile_otp2" type="text">
                       
                   <input oninput="inputInsideOtpInput(this)"
-                         maxlength="1" class="model-otp mobile_otp3" type="number">
+                         maxlength="1" class="model-otp mobile_otp3" type="text">
                        
                   <input oninput="inputInsideOtpInput(this)"
-                         maxlength="1" class="model-otp mobile_otp4" type="number">
-                      
+                         maxlength="1" class="model-otp mobile_otp4" type="text">  
               </div>
               </div>
               <p class="model-text-center mt-1">Did not receive the code? <span class="model-resend-text">Re-send</span></p>
@@ -849,6 +848,14 @@
                                     }
                             });
           </script>
+        {{-- otp pass --}}
+          <script>
+              $(".model-otp").keyup(function () {
+                            if (this.value.length == this.maxLength) {
+                              $(this).next('.model-otp').focus();
+                            }
+                        });
+            </script>
           <script>
             $('body').on('click','#booking_btn2',function(e){
         

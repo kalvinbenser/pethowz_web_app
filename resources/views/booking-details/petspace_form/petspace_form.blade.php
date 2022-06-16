@@ -68,17 +68,14 @@ input[type="checkbox"]+label {
                     <div class="row">
                         <label class="about">Select Venue Category</label>
                         <select class="form-select select_category" name="venue_category[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                          <option value="1">Audi</option>
-                          <option value="2">BMW</option>
-                          <option value="3">Mercedes</option>
-                          <option value="4">Volvo</option>
-                          <option value="5">Lexus</option>
-                          <option value="6">Tesla</option>
+                          <option value="1">Exclusive Pet Space</option>
+                          <option value="2">House</option>
+                          <option value="3">Apartment</option>
                         </select>                                     
                       </div>
                      
                  </div>
-                 <div class="service-providers servive_details">
+                 <div class="service-providers servive_detail1">
                   <div class="form-outline">
                     <label class="about">Venue Details</label>                 
                         {{-- <textarea id="user-message" name="venue" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea> --}}
@@ -109,7 +106,7 @@ input[type="checkbox"]+label {
                     </select>               
                   </div>
                   </div>
-                    <div class="service-providers servive_details">
+                    <div class="service-providers servive_detail1">
                         <label for="user-message" class="about">Service Details</label>                    
                             {{-- <textarea id="user-message" name="servive_details" class="form-control serv_details" cols="5" rows="2" placeholder=""></textarea> --}}
                             <input type="text" class="form-control service_details" name="servive_details" placeholder="">

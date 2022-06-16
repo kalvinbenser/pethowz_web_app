@@ -79,7 +79,7 @@ input[type="checkbox"]+label {
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="service-providers">
+                    <div class="service-providers servive_detail2">
                     <label class="about">Service Details</label>                 
                         {{-- <textarea id="user-message" name="service_detail" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>                       --}}
                         <input type="text" class="form-control service_details" name="servive_details" placeholder="">

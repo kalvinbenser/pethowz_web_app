@@ -71,11 +71,11 @@ Route::get('/house&apartment/house_apartment',[HomeController::class,'house_apar
 
 Route::get('/petspace_details',[HomeController::class,'petspace_details']);
 
-//petspace_details
+//terms_condition
 
 Route::get('/terms_condition',[HomeController::class,'terms_condition']);
 
-//petspace_details
+//booking_details
 
 Route::get('/bookingdetails',[HomeController::class,'bookingdetails']);
 

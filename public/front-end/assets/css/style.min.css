@@ -50,6 +50,17 @@ input[type="checkbox"] {
     -o-object-fit: cover;
     object-fit: cover;
 }
+.fit-image2 {
+    padding: 5px;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.form-group1{
+    padding-top: 10px;
+    
+}
+
 .container {
     padding-right: var(--bs-gutter-x,  25px);
     padding-left: var(--bs-gutter-x,  25px);
@@ -401,7 +412,6 @@ input[type="checkbox"] {
     height: 40px;
     width: 40px;
     text-align: center;
-    color: #f6ab49;
 }
 .pagination .page-item .page-link.active {
     background: #f6ab49;
@@ -5945,42 +5955,42 @@ input[type="checkbox"] {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #FFFFFF;
-    bottom: -9px;
+    bottom: -12px;
 }
 .groom{
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #FFFFFF;
-    bottom: -9px;
+    bottom: -12px;
 }
 .walks{
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #FFFFFF;
-    bottom: -9px;
+    bottom: -12px;
 }
 .bread{
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #FFFFFF;
-    bottom: -9px;
+    bottom: -12px;
 }
 .train{
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #FFFFFF;
-    bottom: -9px;
+    bottom: -12px;
 }
 .photog{
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #FFFFFF;
-    bottom: -9px;
+    bottom: -12px;
     
 }
 .form-check-label{
@@ -6422,11 +6432,17 @@ input[type=checkbox]:checked + label::before {
     margin-bottom: 2px;
     display: inline-block;
   }
+  .servive_detail1{
+    padding: 35px 9px 10px 40px;
+  }
+  .servive_detail2{
+    padding:33px 9px 30px 40px;
+  }
   .service_details {
-      height: 50px;
+      height: 60px;
   }
   .venue_details{
-      height: 50px;
+      height: 60px;
   }
   .add_self{
       width: 80%;

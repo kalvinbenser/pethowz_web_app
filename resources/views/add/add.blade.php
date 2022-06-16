@@ -7,6 +7,15 @@
   .Your_Category input[type="checkbox"] {
       display: none !important;
   }
+  .birds{
+    border: 2px solid #ff9a71;
+  }
+  .cat{
+    border: 2px solid #ff9a71;
+  }
+  .dog{
+    border: 2px solid #ff9a71;
+  }
   
       </style>
   
@@ -26,28 +35,28 @@
                             </label>
                             <input type="text" name="your_self" class="form-control add_self"/>
                           </div><!--ends from group-->
-                          <div class="form-group">
+                          <div class="form-group form-group1">
                             <label for="user-message" class="about">Tell us about the type of bet you have and your experience with if
                             </label>
                             
                             <input type="text" name="experience" class="form-control add_self"/>
                          
                           </div><!--ends from group-->
-                          <div class="form-group">
+                          <div class="form-group form-group1">
                             <label for="user-message" class="about">How dose your service stand out?
                             </label>
                         
                             <input type="text" name="service_your" class="form-control add_self"/>
                        
                           </div><!--ends from group-->
-                          <div class="form-group">
+                          <div class="form-group form-group1">
                             <label for="user-message" class="about">What do you enjoy about the work you do?
                             </label>
                       
                             <input type="text" name="work_enjoy" class="form-control add_self"/>
                        
                           </div><!--ends from group-->
-                          <div class="form-group">
+                          <div class="form-group form-group1">
                             <label for="user-message" class="about">What do you enjoy about the work you do?
                             </label>
                         
@@ -63,22 +72,28 @@
                             <h1 class="yourself">Select Your Category</h1>
                             <div class="row" id="category">
                             <div class=" col-md-4 m-b-15  Your_Category" data-aos-duration="1200">
+                              <div class="pic11">
                                 <input type="checkbox" name="category[]" value="3" id="cb4" />
-                                <label for="cb4"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - Bird.png')}}" />
+                                <label for="cb4"  ><img class="fit-image2 click_logo1" src="{{URL::asset('front-end/assets/images/category/Select category  - Bird.png')}}" />
                                 </label> 
                                 <p class="about">Birds</p>
+                              </div>
                             </div>
-                            <div class="col-md-4 m-b-15 Your_Category" data-aos-duration="1200">
+                            <div class="col-md-4 m-b-15 Your_Category " data-aos-duration="1200">
+                              <div class="pic22">
                                 <input type="checkbox" name="category[]" value="2" id="cb3" />
-                                <label for="cb3"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - cat.png')}}" />
+                                <label for="cb3"  ><img class="fit-image2 click_logo2" src="{{URL::asset('front-end/assets/images/category/Select category  - cat.png')}}" />
                                 </label>  
                                 <p class="about">Cat</p>
+                              </div>
                             </div>
-                            <div class=" col-md-4 m-b-15 Your_Category" data-aos-duration="1200">
+                            <div class=" col-md-4 m-b-15 Your_Category " data-aos-duration="1200">
+                              <div class="pic33">
                                     <input type="checkbox" name="category[]" value="1" id="cb2" />
-                                        <label for="cb2"  ><img class="fit-image" src="{{URL::asset('front-end/assets/images/category/Select category  - Dog.png')}}" />
+                                        <label for="cb2"  ><img class="fit-image2 click_logo3" src="{{URL::asset('front-end/assets/images/category/Select category  - Dog.png')}}" />
                                         </label>                                   
                                 <p class="about">Dog</p>
+                              </div>
                             </div>
                               
                             <div class="form-group booking_button col-md-5">
@@ -98,3 +113,17 @@
 </div>
 <!-- Latest Blog Carousel End -->
 @endsection
+@section('scripts')
+
+<script>
+    $(".click_logo1").on("click", function(){
+     $(".pic11").toggleClass("birds");
+})
+$(".click_logo2").on("click", function(){
+     $(".pic22").toggleClass("cat");
+})
+$(".click_logo3").on("click", function(){
+     $(".pic33").toggleClass("dog");
+})
+   </script>
+   @endsection
