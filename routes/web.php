@@ -123,7 +123,7 @@ Route::post('/create_service', [ServiceController::class,'create_service']);
 //bookingform_details
 
 Route::get('/pet_space_form',[ServiceController::class,'pet_space_form']);
-Route::post('/booking_create', [ServiceController::class,'pet_space_create']);
+Route::post('/pet_space_create', [ServiceController::class,'pet_space_create']);
 //create booking
 Route::post('/create_booking',[ServiceController::class,'create_booking']);
 

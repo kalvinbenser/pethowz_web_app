@@ -59,20 +59,30 @@ input[type="checkbox"]+label {
 @endsection
 @section('content')      
     <div class="container">
+
+
+
             <h1 id="yourself">Pet Space</h1>
-              <form action="/booking_create" method="post" enctype="multipart/form-data">
+              <form action="/pet_space_create" method="post" enctype="multipart/form-data">
                 @csrf
                   <div class="row m-b-n40">
                       <div class="col-12 col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                  <div class="service-providers">
                     <div class="row">
+
+                           
+
+
                         <label class="about">Select Venue Category</label>
-                        <select class="form-select select_category" name="venue_category[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                        <select class="form-select select_category " name="venue_category[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
                           <option value="1">Exclusive Pet Space</option>
                           <option value="2">House</option>
                           <option value="3">Apartment</option>
-                        </select>                                     
+                        </select> 
+                                                        
                       </div>
+
+                   
                      
                  </div>
                  <div class="service-providers servive_detail1">
@@ -191,4 +201,8 @@ input[type="checkbox"]+label {
 document.addEventListener("DOMContentLoaded", setValue);
 range.addEventListener('input', setValue);
   </script>
+
+
+    
+
 @endsection 

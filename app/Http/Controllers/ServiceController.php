@@ -69,6 +69,20 @@ class ServiceController extends Controller
     public function pet_space_create(Request $request){
 
         try{
+          
+
+               $validated = $request->validate([
+               'venue_category' => 'required',
+                'venue' => 'required',
+                'cost_per_hour'=>'required',
+                'select_service'=>'required',
+                'servive_details'=>'required',
+                'options'=>'required',
+                'location'=>'required',
+                'amenities'=>'required',
+                'image'=>'required',
+            ]);
+
             $user_id="1234";
             // /$venue_category=$request->venue_category;
             $venue_category="snake";
@@ -100,9 +114,10 @@ class ServiceController extends Controller
                 "service"=> $servive_details,
                 "service_count"=> $select_service
             ];
-           $petSpaceUrl=env('API').'createPetSpace';
-           $petSpaceRequest=Http::post($petSpaceUrl,$petSpaceData);
-           $petSpaceResponse=$petSpaceRequest->json();
+              dd($petSpaceData);
+        //    $petSpaceUrl=env('API').'createPetSpace';
+        //    $petSpaceRequest=Http::post($petSpaceUrl,$petSpaceData);
+        //    $petSpaceResponse=$petSpaceRequest->json();
         //    dd($petSpaceResponse);
 
         
