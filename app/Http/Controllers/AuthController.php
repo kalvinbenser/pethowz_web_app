@@ -31,6 +31,15 @@ class AuthController extends Controller
 
             try{
 
+                $validated = $request->validate([
+                    'name' => 'required',
+                    'mail'=>'required',
+                    'number'=>'required',
+                    'address'=>'required',
+                    'gender'=>'required',
+                    'image'=>'required',
+                ]);
+
                 $name=$request->name;
                 $mail=$request->mail;
                 $number=$request->number;
@@ -42,19 +51,7 @@ class AuthController extends Controller
                 
                     $imageName = time().'.'.$request->file('image')->guessExtension();
                     $request->image->move(public_path('images/profile'),$imageName);
- 
-
-                   $data=[
-                    'image'=>$imageName,
-                    'name'=>$name,
-                    'mail'=>$mail,
-                    'number'=>$number,
-                    'address'=>$address,
-                    'gender'=>$gender
-                ];
-                   
-                    // dd($data);  
-                   
+                                       
                   //API for create Registeration
                     $data=[
                         "user_id"=> "12312",

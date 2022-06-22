@@ -1,8 +1,5 @@
 @extends('layouts.main')
-@section('content')
-   <!-- Section Title Start -->
-<div class="container" id="yourself">
-  @yield('styles')
+@section('styles')
   <style>
   .Your_Category input[type="checkbox"] {
       display: none !important;
@@ -18,7 +15,11 @@
   }
   
       </style>
-  
+      @endsection
+@section('content')
+ 
+     <!-- Section Title Start -->
+<div class="container" id="yourself">
     <h1 class="yourself">About Your Self</h1>
 
  <div class="product-deal-carousel arrow-outside-container">
@@ -57,10 +58,17 @@
                        
                           </div><!--ends from group-->
                           <div class="form-group form-group1">
-                            <label for="user-message" class="about">What do you enjoy about the work you do?
+                            <label for="user-message" class="about">Your skils and qualifications
                             </label>
                         
-                            <input type="text" name="enjoy_work" class="form-control add_self"/>
+                            <input type="text" name="skill_qualification" class="form-control add_self"/>
+                         
+                          </div><!--ends from group-->
+                          <div class="form-group form-group1">
+                            <label for="user-message" class="about">Other special skills with per or qualification ?
+                            </label>
+                        
+                            <input type="text" name="other_qualification" class="form-control add_self"/>
                          
                           </div><!--ends from group-->
                      

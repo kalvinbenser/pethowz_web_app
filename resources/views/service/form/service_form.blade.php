@@ -81,7 +81,7 @@ input[type="checkbox"]+label {
                 <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                     <div class="service-providers servive_detail2">
                     <label class="about">Service Details</label>                 
-                        {{-- <textarea id="user-message" name="service_detail" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>                       --}}
+                        <!-- <textarea id="user-message" name="service_detail" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>                      -->
                         <input type="text" class="form-control service_details" name="servive_details" placeholder="">
                       </div>
                     <div class="service-providers">
@@ -115,7 +115,7 @@ input[type="checkbox"]+label {
                           <i class="fa fa-image " style="color:#FF9A71;font-size:20px;"></i><input id="title" class="pro_name select_profile" />
                         </div>                     
                 </div>
-                <div class="col-12 col-sm-6 col-md-3 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                     <div class="service-providers">
                       <label class="about">Cost Per Hour</label>
                       <div class="range-wrap">
@@ -125,7 +125,6 @@ input[type="checkbox"]+label {
                 </div>
                     <div class="view-all">
                         <input type="submit" value="submit" class="submite" >
-                        {{-- id="booking_btn" class="submite"  --}}
                    </div>                     
         </div>
     </div>

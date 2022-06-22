@@ -239,22 +239,18 @@
     </div>
     <!-- Header Section End -->
 
-   @yield('content')
-   <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog model-center">
-      <div class="modal-content ">
+     @yield('content')
+      <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog model-center">
+         <div class="modal-content ">
       
         <div class="modal-body">
           <div class="model-item-center">
-            <div class="row">
-                
                   <div >
                     <img src="{{asset('front-end/assets/images/Web App/Icons/Pethowz logo.svg')}}" alt="" class="logo-size" /><br>
                     <img src="{{asset('front-end/assets/images/Web App/Icons/Pethowz.svg')}}" alt="" width="70px" />
                     
                   </div>
-
-              </div>
 
               </div>
 
@@ -285,11 +281,7 @@
       
 
      
-        </div>
-        {{-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div> --}}
+       </div>
       </div>
     </div>
 
@@ -302,7 +294,7 @@
       
         <div class="modal-body model-login-two">
           <div class="model-item-center">
-            <div class="row">
+                <div class="row">
                 
                   <div >
                     <img src="{{asset('front-end/assets/images/Web App/Icons/Pethowz logo.svg')}}" alt="" class="logo-size" /><br>
@@ -312,7 +304,7 @@
 
               </div>
 
-              </div>
+   </div>
 
               <p class="model-text-center mt-5">Enter the 4-Degit Verification Code</p>
 

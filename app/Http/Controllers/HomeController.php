@@ -9,20 +9,6 @@ use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
-   public function test(){
-    $petServiceData=[
-        "pending"=>true,
-        "approved"=>false,
-        "rejected"=>false
-    ];
-    $petServiceUrl=env('API').'getAllPetService';
-  
-    $petServiceRequest=Http::post($petServiceUrl,$petServiceData);
-    $petServiceResponse=$petServiceRequest->json();
-    $pet=$petServiceResponse['data'];
-    // dd($pet);
-       return view('test',compact('pet'));
-   }
 
     // index view
       public function index(){
@@ -208,13 +194,24 @@ class HomeController extends Controller
     }
     // insert booking details
     function insert_booking_details(Request $request){
-     try{   $name=$request->name;
+     try{  
+        
+        $validated = $request->validate([
+            'name' => 'required',
+             'contact' => 'required',
+             'pet_name'=>'required',
+             'pet_count'=>'required',
+             'no_of_days'=>'required',
+             'service_type'=>'required',
+         ]);
+            $name=$request->name;
             $contact=$request->contact;
             $pet_name=$request->pet_name;
             $pet_count=$request->pet_count;
             $no_of_days=$request->no_of_days;
-            $select_service=$request->select_service;
+           
             $service_type=$request->service_type;
+            // dd($service_type);
     
        
         $petSpaceData=[
@@ -223,7 +220,7 @@ class HomeController extends Controller
             'pet_name'=>$pet_name,
             'pet_count'=>$pet_count,
             'no_of_days'=>$no_of_days,
-            'select_service'=>$select_service,
+          
             'service_type'=>$service_type
         ];
         $petSpaceUrl=env('API').'createPetSpace';
@@ -247,25 +244,45 @@ class HomeController extends Controller
       // add details
     
       public function test_data(Request $request){
-        $your_self=$request->your_self;
-        $experience=$request->experience;
-        $service_your=$request->service_your;
-        $work_enjoy=$request->work_enjoy;
-        $enjoy_work=$request->enjoy_work;
-        $category=$request->category;
-       
-        $data=[
-            'your_self'=>$your_self,
-            'experience'=>$experience,
-            'service_your'=>$service_your,
-            'work_enjoy'=>$work_enjoy,
-            'enjoy_work'=>$enjoy_work,
-            'category'=>$category
-        ];
-      //  dd($data);
-      return redirect('/pet_space_form')->with('message','your Pet Service Added');
 
-      
+        try{  
+        
+            $validated = $request->validate([
+                'your_self' => 'required',
+                 'experience' => 'required',
+                 'service_your'=>'required|min:0',
+                 'work_enjoy'=>'required',
+                 'skill_qualification'=>'required',
+                 'other_qualification'=>'required',
+                 'category'=>'required',
+             ]);
+             $your_self=$request->your_self;
+             $experience=$request->experience;
+             $service_your=$request->service_your;
+             $work_enjoy=$request->work_enjoy;           
+             $skill_qualification=$request->skill_qualification;
+             $other_qualification=$request->other_qualification;
+             $category=$request->category;
+        
+           
+            $addSelfData=[
+                'your_self'=>$your_self,
+                'experience'=>$experience,
+                'service_your'=>$service_your,
+                'work_enjoy'=>$work_enjoy,
+                'skill_qualification'=>$skill_qualification,
+                'other_qualification'=>$other_qualification,
+                'category'=>$category
+            ];
+            $petSpaceUrl=env('API').'createSelfDescription';
+            $petSpaceRequest=Http::post($petSpaceUrl,$addSelfData);
+            $petSpaceResponse=$petSpaceRequest->json();
+           // dd($data);
+          return redirect('/pet_space_form')->with('message','your Pet Service Booking Added');
+        }
+        catch(Exception $e) {
+          echo 'Message: ' .$e->getMessage();
+        }
 
     }
 
@@ -283,7 +300,49 @@ class HomeController extends Controller
         //profile-details
 
         public function profile(){
-        return view('/profile/profile');
+              //************************** get profile ****************************\\
+           
+          $registrData=[  
+          
+         
+       ];
+        $registerDataUrl=env('API').'getRegistrationDetails/';
+      
+        $registerDetailsRequest=Http::get($registerDataUrl,$registrData);
+        $registerDetailsResponse=$registerDetailsRequest->json();
+       dd($registerDetailsResponse);
+
+       $register_data=$registerDetailsResponse['data'];
+
+        $collection = (new Collection($register_data));
+       // dd($collection);
+        return view('/profile/profile',compact('collection') );
+    }
+    
+    public function update_Profile(Request $request){
+
+        try{  
+             $update_mail=$request->update_mail;
+             $update_number=$request->update_number;
+             $update_address=$request->update_address;
+        
+           
+            $profileData=[
+                'update_mail'=>$update_mail,
+                'update_number'=>$update_number,
+                'update_address'=>$update_address
+               
+            ];
+            $editProfileUrl=env('API').'updateRegistrationDetails';
+            $editProfileRequest=Http::put($editProfileUrl,$profileData);
+            $editProfileResponse=$editProfileRequest->json();
+           // dd($data);
+          return redirect('/profile/profile')->with('message','your datas are updated Added');
+        }
+        catch(Exception $e) {
+          echo 'Message: ' .$e->getMessage();
+        }
+
     }
 
     //allimages-details
@@ -312,16 +371,6 @@ class HomeController extends Controller
     
     function pet_host_details(Request $request){
         $select_category=$request->select_category;
-      
-        
-       /* $response = Http::post('http://example.com',[
-                'name'=> $name,
-                'contact'=>$contact,
-                 'pet name'=>$pet_name,
-                 'pet count'=>$pet_count,
-                 'number of days'=>$no_of_days 
-     ]
-     ); */
      return response()->json(['status' => 'insert successfully','select_category'=> $select_category]);
     }
 

@@ -88,7 +88,7 @@ input[type="checkbox"]+label {
                  <div class="service-providers servive_detail1">
                   <div class="form-outline">
                     <label class="about">Venue Details</label>                 
-                        {{-- <textarea id="user-message" name="venue" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea> --}}
+                        <!-- <textarea id="user-message" name="venue" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>  -->
                         <input type="text" class="form-control venue_details" name="venue" placeholder="">
                     </div>
                       
@@ -98,7 +98,8 @@ input[type="checkbox"]+label {
                       <label class="about">Cost Per Hour</label>
                     <div class="range-wrap">
                       <div class="range-value" id="rangeV"></div>
-                      <input id="range" type="range" name="cost_per_hour" min="0" max="1000" value="0" step="1">
+                      <input id="range" type="range" name="cost_per_hour" min=0 max=1000 step=1 value=0 required="">
+                      <!-- <input type="hidden" id="textInput" value=""> -->
                     </div>
                     </div>
                 </div>
@@ -118,7 +119,7 @@ input[type="checkbox"]+label {
                   </div>
                     <div class="service-providers servive_detail1">
                         <label for="user-message" class="about">Service Details</label>                    
-                            {{-- <textarea id="user-message" name="servive_details" class="form-control serv_details" cols="5" rows="2" placeholder=""></textarea> --}}
+                            <!-- <textarea id="user-message" name="servive_details" class="form-control serv_details" cols="5" rows="2" placeholder=""></textarea> -->
                             <input type="text" class="form-control service_details" name="servive_details" placeholder="">
                     </div>
                 </div>
@@ -201,6 +202,11 @@ input[type="checkbox"]+label {
 document.addEventListener("DOMContentLoaded", setValue);
 range.addEventListener('input', setValue);
   </script>
+    <!-- <script>
+  function updateTextInput(val) {
+          document.getElementById('textInput').value=val; 
+        }
+        </script> -->
 
 
     

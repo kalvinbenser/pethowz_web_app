@@ -15,6 +15,16 @@ class ServiceController extends Controller
     public function create_service(Request $request){
 
         try {
+            $validated = $request->validate([
+                 'venue' => 'required',
+                 'cost_per_hour'=>'required|min:0|max:1000',
+                 'select_service'=>'required',
+                 'service_detail'=>'required',
+                 'option'=>'required',
+                 'location'=>'required',
+                 'amenities'=>'required',
+                 'image'=>'required',
+             ]);
 
             $venue=$request->venue;
             //$location=$request->location;
@@ -74,7 +84,7 @@ class ServiceController extends Controller
                $validated = $request->validate([
                'venue_category' => 'required',
                 'venue' => 'required',
-                'cost_per_hour'=>'required',
+                'cost_per_hour'=>'required|min:0',
                 'select_service'=>'required',
                 'servive_details'=>'required',
                 'options'=>'required',
@@ -89,6 +99,7 @@ class ServiceController extends Controller
             // $select_service=$request->select_service;
             $select_service=1;
             $cost_per_hour=$request->cost_per_hour;
+            // dd($cost_per_hour);
             $venue_details=$request->venue;
             $servive_details=$request->servive_details;
             $options=$request->options;
@@ -142,7 +153,10 @@ class ServiceController extends Controller
             'amount'=>$user_amount
         ];
         //dd($data);
-        return back()->with('message','booked successfully');
+
+        return redirect('/bookingdetails')->with('message','booked successfully');
+       
+        // return back()->with('message','booked successfully');
 
     }
 

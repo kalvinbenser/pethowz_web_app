@@ -57,7 +57,7 @@
                             <div class="row m-b-n40">
                                 <?php $count = 0; ?>
                                 @foreach ($collection as $item)
-                                    <?php if($count == 8) break; ?>
+                                <?php if($count == 8) break; ?>
                                     <?php $count++; ?>
                                 <!-- Product Start -->
                               <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">

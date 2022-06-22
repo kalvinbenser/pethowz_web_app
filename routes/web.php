@@ -92,7 +92,9 @@ Route::get('/add_your_self',[HomeController::class,'add_your_self']);
 
 //profile_details
 
-Route::get('/profile',[HomeController::class,'profile']);
+// Route::get('/profile',[HomeController::class,'profile']);
+Route::get('/profile/{_id}',[HomeController::class,'profile']);
+Route::put('/update_Profile/{reg_id}',[HomeController::class,'update_Profile']);
 
 //allimages_details
 

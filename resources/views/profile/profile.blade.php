@@ -1,5 +1,22 @@
 @extends('layouts.main')
-
+@section('styles')
+  <style>
+  #update{
+    background: #ffffff;
+    border-radius: 5px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #000000;
+    font-size: 14px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    border: 1px solid #ebebeb;
+  }
+      </style>
+      @endsection
 @section('content')
 <div class="section position-relative">
   <div class="row"  id="user-profile">
@@ -7,6 +24,7 @@
     <h3>Profile</h3>   
     </div>
       <div class="col-12 col-sm-6 col-lg-4 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+      @foreach ($collection as $item)
     <div class="profile-details">
         <form>
         <div class="image-upload">
@@ -19,17 +37,20 @@
                 </div> 
                 <input id="file-input" type="file" />
               </div>
-              <h1 style="font-size:medium;">john</h1>
-              <p style="font-size: small;"><a href="" ><i class="fa fa-pencil "></i>Edit</a></p>
-                <div class="single-footer-widget" id="pro-details">
-                  <div class="copyright-content">
-                    <p class="mb-0"><i class="fa fa-envelope-o " style="color:  #FF9A71"></i>&nbsp; Support@pethows.com</p>
-                  <p class="mb-0"><i class="fa fa-phone" style="color:  #FF9A71"></i> &nbsp; 098840 42119</p>
-              </div>
-              <div class="copyright-content">
-              <p class="desc-content"><i class="fa fa-map-marker" aria-hidden="true" style="color:  #FF9A71"> &nbsp; &nbsp;</i>91 springboard, Gopala krishna complex,<br>&nbsp; &nbsp; &nbsp;45/3 Residency Road,Mahatma Gandhi Rd,<br>&nbsp; &nbsp;&nbsp;ShanthalamNagar,Ashok Nagar,<br>&nbsp; &nbsp; &nbsp;Bengaluru,Karnadaka -560025</p>
-              </div>
-              </div>
+              <h1 style="font-size:medium;">{{$item['name']}}</h1>
+              <p style="font-size: small;"><a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa fa-pencil "></i>Edit</a></p>
+              <div class="single-footer-widget" id="pro-details">
+                            <ul>
+                                <li class="addicon2"><i class="fa fa-envelope-o addicon4" style="color:  #FF9A71"></i><p class="addicon1"> <strong>{{$item['email']}}</strong></p></li>
+                                <li class="addicon2"><i class="fa fa-phone  addicon4" style="color:  #FF9A71"></i> <p class="addicon1"><strong>{{$item['contact_number']}}</strong></p></li>
+                                <li class="addicon2"><i class="fa fa-map-marker addicon4" style="color:  #FF9A71"></i><p class="addicon1"> springboard, Gopala krishna complex,</span></li>
+                                <li class="addicon2"><p class="addicon3">45/3 Residency Road,Mahatma Gandhi Rd,</p></li>
+                                <li class="addicon2"><p class="addicon3">ShanthalamNagar,Ashok Nagar,</p></li>
+                                <li class="addicon2"><p class="addicon3">Bengaluru,Karnadaka -560025</p></li>
+                               
+                                
+                            </ul>
+                        </div>
         </form>
 
     </div>
@@ -631,7 +652,7 @@
             <!-- Banner Start -->
             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                 <div class="venue-booking">
-                    <a href="{{('')}}" class="banner">
+                    <a class="banner">
                         <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
                     </a>
                     <h1 style="font-size:medium;">john</h1>
@@ -641,7 +662,7 @@
            <!-- Banner Start -->
             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                <div class="venue-booking">
-                    <a href="{{('')}}" class="banner">
+                    <a class="banner">
                         <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
                     </a>
                     <h1 style="font-size:medium;">john</h1>
@@ -651,7 +672,7 @@
             <!-- Banner Start -->
             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
                 <div class="venue-booking">
-                    <a href="{{('')}}" class="banner">
+                    <a class="banner">
                         <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
                     </a>
                     <h1 style="font-size:medium;">john</h1>
@@ -661,33 +682,34 @@
             <!-- Banner Start -->
             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                 <div class="venue-booking">
-                    <a href="{{('')}}" class="banner">
+                    <a class="banner">
                         <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
                     </a>
                     <h1 style="font-size:medium;">john</h1>
                 </div>
             </div>
             <!-- Banner End -->
-            <!-- Banner Start -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+             <!-- Banner Start -->
+             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                 <div class="venue-booking">
-                    <a href="{{('')}}" class="banner">
+                    <a class="banner">
                         <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
                     </a>
                     <h1 style="font-size:medium;">john</h1>
                 </div>
             </div>
             <!-- Banner End -->
-              <!-- Banner Start -->
-              <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+             <!-- Banner Start -->
+             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                 <div class="venue-booking">
-                    <a href="{{('/')}}" class="banner">
+                    <a class="banner">
                         <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
                     </a>
                     <h1 style="font-size:medium;">john</h1>
                 </div>
             </div>
             <!-- Banner End -->
+            
 
         </div>
         <!-- Banners End -->
@@ -705,7 +727,7 @@
             <!-- Banner Start -->
             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                 <div class="service-booking">
-                    <a href="{{('')}}" class="banner">
+                    <a class="banner">
                         <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
                     </a>
                     <h1 style="font-size:medium;">john</h1>
@@ -718,7 +740,7 @@
            <!-- Banner Start -->
             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                <div class="service-booking">
-                    <a href="{{('')}}" class="banner">
+                    <a class="banner">
                         <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
                     </a>
                     <h1 style="font-size:medium;">john</h1>
@@ -744,8 +766,21 @@
             <!-- Banner Start -->
             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                 <div class="service-booking">
-                    <a href="{{('')}}" class="banner">
+                    <a  class="banner">
                         <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
+                    </a>
+                    <h1 style="font-size:medium;">john</h1>
+                </div>
+                <div class="px">
+                    <p>ddfgjdijdihidhi</p>
+                    </div>
+            </div>
+            <!-- Banner End -->
+             <!-- Banner Start -->
+             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
+                <div class="service-booking">
+                    <a class="banner">
+                        <img href="myFunction()" class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
                     </a>
                     <h1 style="font-size:medium;">john</h1>
                 </div>
@@ -757,7 +792,7 @@
             <!-- Banner Start -->
             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                 <div class="service-booking">
-                    <a href="{{('/')}}" class="banner">
+                    <a  class="banner">
                         <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
                     </a>
                     <h1 style="font-size:medium;">john</h1>
@@ -767,25 +802,46 @@
                     </div>
             </div>
             <!-- Banner End -->
-              <!-- Banner Start -->
-              <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-                <div class="service-booking">
-                    <a href="{{('')}}" class="banner">
-                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
-                    </a>
-                           <h1 style="font-size:medium;">john</h1>
-                </div>
-                <div class="px">
-                <p>ddfgjdijdihidhi</p>
-                </div>
-            </div>
-            <!-- Banner End -->
 
         </div>
         <!-- Banners End -->
     </div>
     </div>
 </div>
+<!-- Edit Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog model-center">
+      <div class="modal-content">    
+        <div class="modal-body model-login-two">
+              <p class="model-text-center mt-5">Edit Your Details</p>
+              <div class="model-item-center mt-2">
+                <div style="display: flex;justify-content: center" id="otp-container">
+                <form action="/update_Profile" method="post" enctype="multipart/form-data">
+                           <div class="single-input-item m-b-10">
+                            <input type="email" id="update" class="profile_email" name="update_mail" placeholder="Email" >                
+                            </div>
+                            <div class="single-input-item m-b-10">
+                            <input type="number" id="update" class="profile_name" name="update_number" placeholder="Mobile Number" >                       
+                            </div>
+                            <div class="single-input-item m-b-10">
+                               <textarea id="update" name="update_address" class=" profile_address" placeholder="Address" ></textarea>                         
+                                </div>
+                  </form>
+              </div>
+              </div>
+              <div class="model-item-center">
+              <input type="submit" value="Update" id="booking_btn2" > 
+              </div>
+
+            </div>
+      
+
+     
+        </div>
+    </div>
+    </div>
+    <!-- Edit Modal -->
+    
  
  @endsection
 @section('scripts')

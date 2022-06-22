@@ -49,7 +49,7 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                    <div class="form-check">
-                                    <input class="form-check-input" name="service_type[]" type="radio"  id="day" value="With in a Days" checked>
+                                    <input class="form-check-input" name="service_type[]" type="radio"  id="day" value="With in a Days" >
                                     <label class="form-check-label" for="exampleRadios1">
                                 With in a Days
                                     </label>
@@ -57,7 +57,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio"  name="service_type[]" id="day" value="With in a Weeks" checked>
+                                    <input class="form-check-input" type="radio"  name="service_type[]" id="day" value="With in a Weeks" >
                                     <label class="form-check-label" for="exampleRadios1">
                                 With in a Weeks
                                     </label>
@@ -65,7 +65,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                    <div class="form-check">
-                                    <input class="form-check-input" type="radio"  name="service_type[]" id="day" value=" With in a Month" checked>
+                                    <input class="form-check-input" type="radio"  name="service_type[]" id="day" value=" With in a Month" >
                                     <label class="form-check-label" for="exampleRadios1">
                                 With in a Month
                                     </label>
@@ -75,10 +75,10 @@
                         </div>
                 
                         <div class="col-lg-2">
-                        {{-- <div class="single-input-item single-item-button m-t-30">
+                        <!--  <div class="single-input-item single-item-button m-t-30">
                          <a  id="booking_btn" class="btn btn-primary">Submit</a>
                     
-                    </div> --}}
+                    </div>  -->
                     <div class="view-all">
                       <input type="submit" value="submit" class="submite" >
                  </div>

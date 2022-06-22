@@ -69,21 +69,21 @@
                             <div class="deal-thumb col-md-3 m-b-15" data-aos="fade-up" data-aos-duration="1200">
 
                             <div class="single-input-item m-b-10">
-                            <input type="text" id="name" class="profile_name" name="name" placeholder="Name" required="">
+                            <input type="text" id="name" class="profile_name" name="name" placeholder="Name" >
                         
                             </div>
                             <div class="single-input-item m-b-10">
-                            <input type="email" id="mail " class="profile_email" name="mail" placeholder="E-mail" required="">
+                            <input type="email" id="mail " class="profile_email" name="mail" placeholder="E-mail" >
                      
                             </div>
                             </div>
                             <div class="deal-thumb col-md-3 m-b-15" data-aos="fade-up" data-aos-duration="1200">
                             <div class="single-input-item m-b-10">
-                            <input type="number" id="number" class= "profile_number" name="number" placeholder="Mobile Number" required="">
+                            <input type="number" id="number" class= "profile_number" name="number" placeholder="Mobile Number" >
                          
                             </div>
                             <div class="single-input-item m-b-10">
-                               <textarea id="address" name="address" class=" profile_address" placeholder="Address" required=""></textarea>
+                               <textarea id="address" name="address" class=" profile_address" placeholder="Address" ></textarea>
                                
                                 </div>
                             </div>

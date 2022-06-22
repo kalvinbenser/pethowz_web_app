@@ -160,14 +160,20 @@
                        <p class="about">Tell potential customers why they should choose you about others</p>
                        <p class="about"><b>What do you enjoy about the work you do ?</b></p>
                        <p class="about">Discribe what makes you enjoy what you do.</p>
+                       <p class="about"><b>Your Skills and qualifications</b></p>
+                       <p class="about">Discribe what makes you enjoy what you do.</p>
+                       <p class="about"><b>Other special skills with per or qualification ?</b></p>
+                       <p class="about">Discribe what makes you enjoy what you do.</p>
+                       
                        </div>
                 </div>
                 
-                <div class="col-md-6 col-12 m-b-30" data-aos="fade-up" data-aos-duration="1400">
+                <div class="col-md-6 col-12  m-b-30" data-aos="fade-up" data-aos-duration="1400">
                
-                                    <h2><img src="{{URL::asset('front-end/assets/images/logo/Venue.svg')}}"  alt="Smiley face" height="32px" width="42px">Venue Details<h2>
+                                    <h2><img src="{{URL::asset('front-end/assets/images/logo/Venue.svg')}}"  alt="Smiley face" height="32px" width="42px">Venue Details</h2>
                                         <div class="venue">
-                            <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1200">
+                                            <div class="row">
+                     <div class="col-12 col-sm-6 col-lg-6 m-b-40" data-aos="fade-up" data-aos-duration="1200">
                               <div class="single-footer-widget">
                                   <p class="about">Category<p>
                                  <p class="about">Venue <p>
@@ -175,10 +181,10 @@
                                  <p class="about">Applicable <p>
                                     <p class="about">Location<p>
                                 </div>
-                             </div>
                          </div>
-                        <div class="venue_det">
-                            <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1200">
+
+                
+                            <div class="col-12 col-sm-6 col-lg-6 m-b-40" data-aos="fade-up" data-aos-duration="1200">
                                 <div class="single-footer-widget">
                                  <p class="about">Cat<p>
                                  <p class="about"> Apartment<p>
