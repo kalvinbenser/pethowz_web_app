@@ -35,7 +35,8 @@ class HomeController extends Controller
         $petServiceResponse=$petServiceRequest->json();
         //dd($petServiceResponse);
         $pet_service=$petServiceResponse['data'];
-
+        // dd($pet_service);
+        //
         $collection = (new Collection($pet_service))->paginate(8);
        // dd($collection);
         return view('home/index',compact('collection'));
@@ -140,7 +141,15 @@ class HomeController extends Controller
         $collection = (new Collection($pet_service))->paginate(8);
        // dd($collection);
         return view('/exclusive_petspaces/exclusive-petspaces',compact('collection'));
-    }
+    //   return collection($pet_service);
+    //  // dd($collection);
+    //     $collect=collection();
+    //     $newCollect -> filter( function ($value,$key) {
+    //           $key='venue_category';
+    //           $value==1;
+    //           return true;
+    //     });
+     }
 
       //house_apartment
 
@@ -298,26 +307,24 @@ class HomeController extends Controller
     }
 
         //profile-details
+     
+         //************************** get profile ****************************\\
 
-        public function profile(){
-              //************************** get profile ****************************\\
-           
-          $registrData=[  
-          
-         
-       ];
-        $registerDataUrl=env('API').'getRegistrationDetails/';
+        public function profile( $reg_id){
+        $registerDataUrl=env('API').'getRegistrationDetails/62b026923bd337e11267dbf0';
       
-        $registerDetailsRequest=Http::get($registerDataUrl,$registrData);
+        $registerDetailsRequest=Http::get($registerDataUrl);
         $registerDetailsResponse=$registerDetailsRequest->json();
-       dd($registerDetailsResponse);
+      // dd($registerDetailsResponse);
 
        $register_data=$registerDetailsResponse['data'];
 
         $collection = (new Collection($register_data));
        // dd($collection);
-        return view('/profile/profile',compact('collection') );
+        return view('/profile/profile',compact('collection'));
+    
     }
+    
     
     public function update_Profile(Request $request){
 
@@ -336,7 +343,7 @@ class HomeController extends Controller
             $editProfileUrl=env('API').'updateRegistrationDetails';
             $editProfileRequest=Http::put($editProfileUrl,$profileData);
             $editProfileResponse=$editProfileRequest->json();
-           // dd($data);
+            dd($data);
           return redirect('/profile/profile')->with('message','your datas are updated Added');
         }
         catch(Exception $e) {

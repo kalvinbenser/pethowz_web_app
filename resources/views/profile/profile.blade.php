@@ -24,9 +24,9 @@
     <h3>Profile</h3>   
     </div>
       <div class="col-12 col-sm-6 col-lg-4 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-      @foreach ($collection as $item)
     <div class="profile-details">
         <form>
+            <input type="hidden" value="" name="" id="">
         <div class="image-upload">
            
                  
@@ -37,12 +37,12 @@
                 </div> 
                 <input id="file-input" type="file" />
               </div>
-              <h1 style="font-size:medium;">{{$item['name']}}</h1>
+              <h1 style="font-size:medium;">{{$collection['name']}}</h1>
               <p style="font-size: small;"><a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa fa-pencil "></i>Edit</a></p>
               <div class="single-footer-widget" id="pro-details">
                             <ul>
-                                <li class="addicon2"><i class="fa fa-envelope-o addicon4" style="color:  #FF9A71"></i><p class="addicon1"> <strong>{{$item['email']}}</strong></p></li>
-                                <li class="addicon2"><i class="fa fa-phone  addicon4" style="color:  #FF9A71"></i> <p class="addicon1"><strong>{{$item['contact_number']}}</strong></p></li>
+                                <li class="addicon2"><i class="fa fa-envelope-o addicon4" style="color:  #FF9A71"></i><p class="addicon1"> <strong>{{$collection['email']}}</strong></p></li>
+                                <li class="addicon2"><i class="fa fa-phone  addicon4" style="color:  #FF9A71"></i> <p class="addicon1"><strong>{{$collection['contact_number']}}</strong></p></li>
                                 <li class="addicon2"><i class="fa fa-map-marker addicon4" style="color:  #FF9A71"></i><p class="addicon1"> springboard, Gopala krishna complex,</span></li>
                                 <li class="addicon2"><p class="addicon3">45/3 Residency Road,Mahatma Gandhi Rd,</p></li>
                                 <li class="addicon2"><p class="addicon3">ShanthalamNagar,Ashok Nagar,</p></li>
@@ -54,6 +54,7 @@
         </form>
 
     </div>
+
       </div>
       <div class="col-12 col-sm-6 col-lg-3 m-b-40" id="profile2" data-aos="fade-up" data-aos-duration="1000">
         <p><span><a href=""><img src="{{URL::asset('front-end/assets/images/banner/Help.svg')}}" >Help&nbsp;&nbsp;&nbsp;</a></span><span><a href=""><i class="fa fa-sign-out" style="color:#FF9A71;font-size:25px;"></i>Logout</a></span></p>
@@ -816,22 +817,25 @@
               <p class="model-text-center mt-5">Edit Your Details</p>
               <div class="model-item-center mt-2">
                 <div style="display: flex;justify-content: center" id="otp-container">
-                <form action="/update_Profile" method="post" enctype="multipart/form-data">
+                <form action="{{('/update_Profile/{reg_id}')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
                            <div class="single-input-item m-b-10">
-                            <input type="email" id="update" class="profile_email" name="update_mail" placeholder="Email" >                
+                            <input type="email" id="update" class="profile_email" value="{{$collection['email']}}" name="update_mail" placeholder="Email" >                
                             </div>
                             <div class="single-input-item m-b-10">
-                            <input type="number" id="update" class="profile_name" name="update_number" placeholder="Mobile Number" >                       
+                            <input type="number" id="update" class="profile_number" value="{{$collection['contact_number']}}" name="update_number" placeholder="Mobile Number" >                       
                             </div>
                             <div class="single-input-item m-b-10">
-                               <textarea id="update" name="update_address" class=" profile_address" placeholder="Address" ></textarea>                         
+                               <textarea id="update" name="update_address" value="{{$collection['address']}}" class="profile_address" placeholder="Address" ></textarea>                         
                                 </div>
+                       <div class="model-item-center">
+                        <input type="submit" value="Update" > 
+                        </div>
                   </form>
               </div>
               </div>
-              <div class="model-item-center">
-              <input type="submit" value="Update" id="booking_btn2" > 
-              </div>
+              
 
             </div>
       

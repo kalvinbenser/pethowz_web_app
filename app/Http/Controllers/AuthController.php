@@ -65,9 +65,11 @@ class AuthController extends Controller
                     $url=  env('API').'createRegistration';
                     $request = Http::post($url,$data );
                     $response=  $request->json();
-                  //  dd($response);
+                 //   dd($response);
+                   $response->session()->get('reg_id');
 
-                 return redirect("/home/index")->with('message','registeration successfull');
+             return redirect("/home/index")->with('message','registeration successfull');
+                //  return view('home/index',compact('response'));
      
 
             }
