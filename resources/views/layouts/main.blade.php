@@ -115,7 +115,7 @@
                                 <!-- Header Action Search Button End -->
 
                                 <!-- Header My Account Button Start -->
-                                <a href="{{URL::asset('/profile/{_id}/show')}}" class="header-action-btn header-action-btn-wishlist">
+                                <a href="{{URL::asset('/profile/{reg_id}/show')}}" class="header-action-btn header-action-btn-wishlist">
                                     <i class="icon-user icons"></i>
                                 </a>
                                 <!-- Header My Account Button End -->
