@@ -64,7 +64,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="{{('/petspace_details')}}" class="image">
+                                            <a href="/pet_space_booking/{{$item['_id']}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
@@ -187,11 +187,12 @@
                     <h1 class="pet_space">Independent House | Apartment</h1>
                 </div>
                 <div class="view-all col-12 col-sm-6 col-md-6 col-lg-4">
-                    <a  href="{{URL::asset('/house&apartment/house_apartment')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
+                    <a  href="{{URL::asset('/exclusive_petspaces')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
                   </div>
               
                 <!-- Tab End -->
             </div>
+          
             <!-- Section Title & Tab End -->
             <!-- Products Tab Start -->
             <div class="row" data-aos="fade-up" data-aos-duration="1100">
@@ -209,7 +210,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="{{('/petspace_details')}}" class="image">
+                                            <a href="{{('/pet_space_booking')}}/{{$item['_id']}}" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">

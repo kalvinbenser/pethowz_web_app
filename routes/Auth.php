@@ -24,4 +24,4 @@ Route::get('/register',[AuthController::class,'register']);
 // insert register details
 
 Route::post('/insert_register',[AuthController::class,'insert_register']);
-
+Route::post('/create_register',[AuthController::class,'create_register']);

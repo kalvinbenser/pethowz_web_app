@@ -1,3 +1,5 @@
+
+
 @extends('layouts.main')
 @section('styles')
   <style>
@@ -32,7 +34,11 @@
                  
                 <div class="upload-icon">
                   <img class="prev" src="">
-                  <img class="profile-pic" id="profils" src="{{URL::asset('front-end/assets/images/review/User Image.png')}}">
+                  {{-- <img class="profile-pic" id="profils" src="{{URL::asset('front-end/assets/images/review/User Image.png')}}"> --}}
+
+                  <img class="profile-pic" id="profils" >
+
+
                   <label for="file-input" style="cursor: pointer">  <span class="pro-img"><i class="fa fa-camera"></i></span>  </label>
                 </div> 
                 <input id="file-input" type="file" />
@@ -43,10 +49,12 @@
                             <ul>
                                 <li class="addicon2"><i class="fa fa-envelope-o addicon4" style="color:  #FF9A71"></i><p class="addicon1"> <strong>{{$collection['email']}}</strong></p></li>
                                 <li class="addicon2"><i class="fa fa-phone  addicon4" style="color:  #FF9A71"></i> <p class="addicon1"><strong>{{$collection['contact_number']}}</strong></p></li>
-                                <li class="addicon2"><i class="fa fa-map-marker addicon4" style="color:  #FF9A71"></i><p class="addicon1"> springboard, Gopala krishna complex,</span></li>
-                                <li class="addicon2"><p class="addicon3">45/3 Residency Road,Mahatma Gandhi Rd,</p></li>
+                                
+                                <li class="addicon2"><i class="fa fa-map-marker addicon4" style="color:  #FF9A71"></i><p class="addicon1">{{$collection['address']}}</span></li>
+                               
+                               {{--     <li class="addicon2"><p class="addicon3">45/3 Residency Road,Mahatma Gandhi Rd,</p></li>
                                 <li class="addicon2"><p class="addicon3">ShanthalamNagar,Ashok Nagar,</p></li>
-                                <li class="addicon2"><p class="addicon3">Bengaluru,Karnadaka -560025</p></li>
+                                <li class="addicon2"><p class="addicon3">Bengaluru,Karnadaka -560025</p></li> --}}
                                
                                 
                             </ul>
@@ -57,13 +65,15 @@
 
       </div>
       <div class="col-12 col-sm-6 col-lg-3 m-b-40" id="profile2" data-aos="fade-up" data-aos-duration="1000">
-        <p><span><a href=""><img src="{{URL::asset('front-end/assets/images/banner/Help.svg')}}" >Help&nbsp;&nbsp;&nbsp;</a></span><span><a href=""><i class="fa fa-sign-out" style="color:#FF9A71;font-size:25px;"></i>Logout</a></span></p>
+        <p><span><a href=""><img src="{{URL::asset('front-end/assets/images/banner/Help.svg')}}" >Help&nbsp;&nbsp;&nbsp;</a></span><span><a  href="/user_logout" style="cursor: pointer"><i class="fa fa-sign-out" style="color:#FF9A71;font-size:25px;"></i>Logout</a></span></p>
       </div>
  </div>
 </div>
 <div class="section position-relative">
   <div class="container">
-
+       {{-- @if(session()->has('user_id'))
+       <h1>{{session()->get('user_id')}}</h1>
+       @endif --}}
       <!-- Section Title & Tab Start -->
       <div class="row " data-aos="fade-up" data-aos-duration="1000" >
           <!-- Tab Start -->
@@ -812,12 +822,13 @@
 <!-- Edit Modal -->
 <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog model-center">
+  
       <div class="modal-content">    
         <div class="modal-body model-login-two">
               <p class="model-text-center mt-5">Edit Your Details</p>
               <div class="model-item-center mt-2">
                 <div style="display: flex;justify-content: center" id="otp-container">
-                <form action="{{('/update_Profile/{reg_id}')}}" method="post" enctype="multipart/form-data">
+                <form action="{{('/update_Profile')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                            <div class="single-input-item m-b-10">
@@ -827,7 +838,7 @@
                             <input type="number" id="update" class="profile_number" value="{{$collection['contact_number']}}" name="update_number" placeholder="Mobile Number" >                       
                             </div>
                             <div class="single-input-item m-b-10">
-                               <textarea id="update" name="update_address" value="{{$collection['address']}}" class="profile_address" placeholder="Address" ></textarea>                         
+                               <textarea id="update" name="update_address"  class="profile_address" placeholder="Address" >{{$collection['address']}}</textarea>                         
                                 </div>
                        <div class="model-item-center">
                         <input type="submit" value="Update" > 
@@ -846,7 +857,7 @@
     </div>
     <!-- Edit Modal -->
     
- 
+
  @endsection
 @section('scripts')
 <script src="{{URL::asset('front-end/assets/js/jquery.min.js')}}"></script>
@@ -887,6 +898,31 @@ readURL(this);
       });
     }
     </script>
+
+
+<script>
+       function getImage(){
+      var storage    = firebase.storage();
+var storageRef = storage.ref();
+//var spaceRef = storageRef.child('images/photo_1.png');
+
+storageRef.child('user/1656479213056-index.jpeg').getDownloadURL().then(function(url) {
+
+
+ var test = url;
+ 
+ document.querySelector('#profils').src = test;
+
+}).catch(function(error) {
+     alert(error);
+});
+
+
+     }
+
+
+     window.onload = getImage;
+</script>
 
 
 @endsection

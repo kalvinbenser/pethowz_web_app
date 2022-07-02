@@ -2,8 +2,9 @@
 @section('content')
     <div class="myaccount-content">
         <h3 class="title" id="title1">Booking Details</h3>
+       
         <div class="account-details-form">
-            <form action="/insert_booking_details" mehod="post">
+            <form action="/create_pet_service_booking" method="post">
               @csrf
                 <div class="row">
                     <div class="col-lg-3">
@@ -49,7 +50,7 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                    <div class="form-check">
-                                    <input class="form-check-input" name="service_type[]" type="radio"  id="day" value="With in a Days" >
+                                    <input class="form-check-input" name="service_type" type="radio"  id="day" value="days" >
                                     <label class="form-check-label" for="exampleRadios1">
                                 With in a Days
                                     </label>
@@ -57,7 +58,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio"  name="service_type[]" id="day" value="With in a Weeks" >
+                                    <input class="form-check-input" type="radio"  name="service_type" id="day" value="weeks" >
                                     <label class="form-check-label" for="exampleRadios1">
                                 With in a Weeks
                                     </label>
@@ -65,12 +66,20 @@
                                     </div>
                                     <div class="col-sm-6">
                                    <div class="form-check">
-                                    <input class="form-check-input" type="radio"  name="service_type[]" id="day" value=" With in a Month" >
+                                    <input class="form-check-input" type="radio"  name="service_type" id="day" value="months" >
                                     <label class="form-check-label" for="exampleRadios1">
                                 With in a Month
                                     </label>
                                   </div>
                                     </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-check">
+                                         <input class="form-check-input" type="radio"  name="service_type" id="day" value="immediate" >
+                                         <label class="form-check-label" for="exampleRadios1">
+                                            immediate
+                                         </label>
+                                       </div>
+                                         </div>
                             </div>
                         </div>
                 

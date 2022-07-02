@@ -5,11 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
+
 class ServiceController extends Controller
 {
+
+    public function test(){
+        return view("test");
+    }
     // ******************************** service-form ******************************** \\
-    public function service_form(){
-        return view('/service/form/service_form');
+    public function service_form( Request $request){
+
+        if(!$request->session()->get('user_id')){
+            return redirect('/')->with('warning','Please Login First');
+        }
+        else{
+            return view('/service/form/service_form');
+        }
+        
+     
     }
 
     public function create_service(Request $request){
@@ -17,23 +30,22 @@ class ServiceController extends Controller
         try {
             $validated = $request->validate([
                  'venue' => 'required',
-                 'cost_per_hour'=>'required|min:0|max:1000',
+                 'cost_per_hour'=>'required',
                  'select_service'=>'required',
                  'service_detail'=>'required',
                  'option'=>'required',
                  'location'=>'required',
-                 'amenities'=>'required',
+               
                  'image'=>'required',
              ]);
 
             $venue=$request->venue;
-            //$location=$request->location;
-            $location="anna nager";
+            $location=$request->location;
             $service_detail=$request->service_detail;
             $options_id=$request->option;
             $services_id=$request->select_service;
             $cost=$request->cost_per_hour;
-            $user_id="123";
+            $user_id=$request->session()->get('user_id');;
     
     
                //image upload
@@ -52,14 +64,15 @@ class ServiceController extends Controller
                 "options_id"=>$options_id,
                "image"=>$imageName
             ];
+    
             $petServiceUrl=env('API').'createPetService';
           
             $petServiceRequest=Http::post($petServiceUrl,$petServiceData);
             $petServiceResponse=$petServiceRequest->json();
-            // dd($petServiceResponse);
+            //dd($petServiceResponse);
            
            
-             return redirect('/service')->with('message','your Pet Service Added');
+             return redirect('/')->with('message','your Pet Service Added');
           
         }
           catch(Exception $e) {
@@ -73,8 +86,15 @@ class ServiceController extends Controller
      // ******************************** petspace-form ******************************** \\
         //bookingform-details
 
-        public function pet_space_form(){
-            return view('/booking-details/petspace_form/petspace_form');
+        public function pet_space_form(Request $request){
+
+            if(!$request->session()->get('user_id')){
+                return redirect('/')->with('warning','Please Login First');
+            }
+            else{
+                return view('/booking-details/petspace_form/petspace_form');
+            }
+            
         }
     public function pet_space_create(Request $request){
 
@@ -84,30 +104,27 @@ class ServiceController extends Controller
                $validated = $request->validate([
                'venue_category' => 'required',
                 'venue' => 'required',
-                'cost_per_hour'=>'required|min:0',
+                'cost_per_hour'=>'required',
                 'select_service'=>'required',
-                'servive_details'=>'required',
+                'service_cost'=>'required',
                 'options'=>'required',
                 'location'=>'required',
                 'amenities'=>'required',
                 'image'=>'required',
             ]);
 
-            $user_id="1234";
-            // /$venue_category=$request->venue_category;
-            $venue_category="snake";
-            // $select_service=$request->select_service;
-            $select_service=1;
+            $user_id=$request->session()->get('user_id');
+            $venue_category=$request->venue_category;
+         //   dd($venue_category);
+            $select_service=$request->select_service;
             $cost_per_hour=$request->cost_per_hour;
-            // dd($cost_per_hour);
             $venue_details=$request->venue;
-            $servive_details=$request->servive_details;
+            $service_cost=$request->service_cost;
             $options=$request->options;
-            //$location=$request->location;
-            $location="Ambature";
+            $location=$request->location;
             $amenities=$request->amenities;
             
-
+             // dd($venue_category);
             $imageName = time().'.'.$request->file('image')->guessExtension();
         //upload image
     
@@ -116,23 +133,32 @@ class ServiceController extends Controller
     
             $petSpaceData=[
                 "user_id"=> $user_id,
-                "venue_cat"=>$venue_category,
-                "venue_details"=> $venue_details,
+                "venue_category"=>$venue_category,
+                "venue_name"=> $venue_details,
+               
                 "cost_per_hour"=> $cost_per_hour,
                 "amenities_id"=>$amenities,
                 "options_id"=>$options,
                 "location"=>$location,
-                "service"=> $servive_details,
-                "service_count"=> $select_service
+                "service_cost"=> $service_cost,
+                "service_id"=> $select_service,
+                "image"=>$imageName
             ];
-              dd($petSpaceData);
-        //    $petSpaceUrl=env('API').'createPetSpace';
-        //    $petSpaceRequest=Http::post($petSpaceUrl,$petSpaceData);
-        //    $petSpaceResponse=$petSpaceRequest->json();
+              //dd($petSpaceData);
+           $petSpaceUrl=env('API').'createPetSpace';
+           $petSpaceRequest=Http::post($petSpaceUrl,$petSpaceData);
+           $petSpaceResponse=$petSpaceRequest->json();
         //    dd($petSpaceResponse);
-
+           if($petSpaceResponse['Message']=="SUCCESS"){
+            return redirect('/')->with('message','your Pet Space Added');
+           }
+           else{
+           
+            return redirect()->back()->with('error',"Pet spaces added failed");
+           }
+          
         
-        return redirect('/pethost/pethost')->with('message','your Pet Space Added');
+     
         }
         catch(Exception $e){
             echo 'message: '.$e->getMessage();
@@ -142,22 +168,7 @@ class ServiceController extends Controller
 
     }
 
-    //create Booking
+  
 
-    public function create_booking(Request $request){
-
-        $user_service=$request->user_service;
-        $user_amount=$request->user_amount;
-        $data=[
-            'service'=>$user_service,
-            'amount'=>$user_amount
-        ];
-        //dd($data);
-
-        return redirect('/bookingdetails')->with('message','booked successfully');
-       
-        // return back()->with('message','booked successfully');
-
-    }
 
 }

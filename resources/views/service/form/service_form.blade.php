@@ -54,8 +54,10 @@ input[type="checkbox"]+label {
 }
       </style>
 @endsection
-@section('content')      
+@section('content')    
+
     <div class="container">
+  
             <h1 id="yourself">List Your Pet Services</h1>
               <form action="/create_service" method="post" enctype="multipart/form-data">
                 @csrf
@@ -82,7 +84,7 @@ input[type="checkbox"]+label {
                     <div class="service-providers servive_detail2">
                     <label class="about">Service Details</label>                 
                         <!-- <textarea id="user-message" name="service_detail" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>                      -->
-                        <input type="text" class="form-control service_details" name="servive_details" placeholder="">
+                        <input type="text" class="form-control service_details" name="service_detail" placeholder="">
                       </div>
                     <div class="service-providers">
                         <div class="row">

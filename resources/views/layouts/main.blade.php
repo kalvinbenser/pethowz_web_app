@@ -43,6 +43,12 @@
     <link rel="stylesheet" type="text/css" 
      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
+
+  
+     <!-- Font Awesome -->
+
+
+
 @yield('styles')
 <style>
     input[type="checkbox"] {
@@ -80,15 +86,18 @@
                                    </li>  
                                    <li><a href="{{URL::asset('/about/about')}}">About</a></li>                                  
                                    <li>
-                                        <a href="{{URL::asset('/pethost/pethost')}}">Pet host</a>
+                                        <a href="{{URL::asset('/exclusive_petspaces')}}">Pet host</a>
                                     </li>
                                     
                                     <li>
                                         <a href="{{URL::asset('/service')}}">services</a>
                                       </li>
+                                   
+                                   @if(!session()->has('user_id'))
                                     <li>
-                                        <a onclick="" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer">Login</a>
+                                        <a onclick="" data-bs-toggle="modal" data-bs-target="#loginModal" style="cursor: pointer">Login</a>
                                     </li>
+                                    @endif
                                   
                                 </ul>
                             </div>
@@ -115,9 +124,11 @@
                                 <!-- Header Action Search Button End -->
 
                                 <!-- Header My Account Button Start -->
-                                <a href="{{URL::asset('/profile/{_id}/show')}}" class="header-action-btn header-action-btn-wishlist">
+                                @if(session()->has('user_id'))
+                                <a href="{{URL::asset('/profile')}}" class="header-action-btn header-action-btn-wishlist">
                                     <i class="icon-user icons"></i>
                                 </a>
+                                @endif
                                 <!-- Header My Account Button End -->
 
                                 <!-- Header Action Button Start -->
@@ -239,13 +250,15 @@
     </div>
     <!-- Header Section End -->
 
-     @yield('content')
-      <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-       <div class="modal-dialog model-center">
-         <div class="modal-content ">
+   @yield('content')
+   <div class="modal fade " id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog model-center">
+      <div class="modal-content ">
       
         <div class="modal-body">
           <div class="model-item-center">
+            <div class="row">
+                
                   <div >
                     <img src="{{asset('front-end/assets/images/Web App/Icons/Pethowz logo.svg')}}" alt="" class="logo-size" /><br>
                     <img src="{{asset('front-end/assets/images/Web App/Icons/Pethowz.svg')}}" alt="" width="70px" />
@@ -254,14 +267,20 @@
 
               </div>
 
+              </div>
+
               <p class="model-text-center mt-2">You will get One Time Password<br>to this number</p>
 
               <div class="model-item-center">
-                <input type="text" class="model-input-text mobile_number" placeholder="Mobile Number">
+                <input type="text" class="model-input-text mobile_number" id="loginNumber" placeholder="+91">
               </div>
               <span id="mobile_number_error" class="text-danger"></span>
+              <div class="p-4 d-flex justify-content-center">
+                <div id="recaptcha-container"></div>
+              </div>
+             
               <div class="model-item-center mt-2">
-              <input type="submit" id="booking_btn" value="SUBMIT" data-bs-toggle="modal" class="btn-model">
+              <input type="submit" id="booking_btn" onclick="phoneSendAuth();" value="SUBMIT" data-bs-toggle="modal" class="btn-model" data-bs-target="#loginModal2">
               </div>
 
               <p class="model-text-center mt-2">Or Login With</p>
@@ -281,20 +300,24 @@
       
 
      
-       </div>
+        </div>
+        {{-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> --}}
       </div>
     </div>
 
 
 
   
-  <div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade " id="loginModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog model-center">
       <div class="modal-content">
       
         <div class="modal-body model-login-two">
           <div class="model-item-center">
-                <div class="row">
+            <div class="row">
                 
                   <div >
                     <img src="{{asset('front-end/assets/images/Web App/Icons/Pethowz logo.svg')}}" alt="" class="logo-size" /><br>
@@ -304,13 +327,14 @@
 
               </div>
 
-   </div>
+              </div>
 
               <p class="model-text-center mt-5">Enter the 4-Degit Verification Code</p>
 
               <div class="model-item-center mt-2">
                 <div style="display: flex;justify-content: center" id="otp-container">
-                  <input oninput="inputInsideOtpInput(this)"
+                    <input type="text" id="verificationCode"/>
+                  {{-- <input oninput="inputInsideOtpInput(this)"
                          maxlength="1" class="model-otp mobile_otp1" type="text">
                          
                   <input oninput="inputInsideOtpInput(this)"
@@ -320,13 +344,13 @@
                          maxlength="1" class="model-otp mobile_otp3" type="text">
                        
                   <input oninput="inputInsideOtpInput(this)"
-                         maxlength="1" class="model-otp mobile_otp4" type="text">  
+                         maxlength="1" class="model-otp mobile_otp4" type="text">   --}}
               </div>
               </div>
               <p class="model-text-center mt-1">Did not receive the code? <span class="model-resend-text">Re-send</span></p>
               <span id="mobile_otp_error" class="text-danger"></span>
               <div class="model-item-center">
-              <input type="submit" value="VERIFY" id="booking_btn2" data-bs-toggle="modal" class="btn-model-verify" > 
+              <input type="submit" value="VERIFY" id="booking_btn2" onclick="codeverify();" data-bs-toggle="modal" class="btn-model-verify" data-bs-target="#exampleModal3"> 
               </div>
 
             </div>
@@ -341,7 +365,7 @@
    
   <div class="modal fade " id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog model-center">
-      <div class="modal-content">
+      <div class="modal-content " style="height: 480px">
       
   
           
@@ -355,7 +379,7 @@
                  <p class="model-terms-heading">Terms And Conditions</p>
 
              
-              <div class="modal-body  modal-content-overflow">
+              <div class="modal-body  modal-content-overflow ">
                 
                 
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus orci sit amet lacus lobortis viverra a tincidunt nunc. Morbi elementum ipsum eu lectus gravida fermentum. Maecenas vel luctus nisl. Donec lacinia dolor sit amet neque dapibus, eget semper enim placerat. Vestibulum congue, purus quis semper imperdiet, diam mi ultrices purus, sit amet posuere diam arcu at ligula. Fusce id vestibulum magna. Quisque vitae bibendum dolor. Praesent arcu urna, fringilla non consectetur sollicitudin, porttitor quis quam. Suspendisse viverra ex maximus arcu elementum consequat. Sed tortor purus, interdum a dapibus quis, laoreet ut nulla. Integer eu vulputate est, nec pellentesque nunc. Curabitur tempor congue arcu, vitae consectetur lacus congue ut.
@@ -406,12 +430,16 @@
 
 
              
-              <form action="{{('/register')}}">
-                <input type="checkbox" id="terms" name="terms" value="ok" required>
+              {{-- <form action="{{('/register')}}">
+                @csrf
+                <input type="checkbox" id="terms" name="terms" style="margin-left: 30px;margin-top:20px" value="ok" required>
                 <label for="terms">I accept the <u>Terms and Conditions</u></label><br>
-             <button class="btn" >submit</button>
-              </form>
-           
+                <div class="p-4 d-flex justify-content-center">
+                    <button class="btn-model" onclick="clodeModel()" >submit</button>
+                </div>
+             
+              </form> --}}
+              <button class="btn-model" onclick="clodeModel()" >submit</button>
       
 
      
@@ -755,14 +783,13 @@
 
     <!-- Vendor JS -->
 
-
-    <!-- 
+    <script src="{{URL::asset('front-end/assets/js/vendor/jquery-3.6.0.min.js')}}"></script>
     <script src="{{URL::asset('front-end/assets/js/vendor/popper.min.js')}}"></script>
     <script src="{{URL::asset('front-end/assets/js/vendor/bootstrap.min.js')}}"></script>
-    <script src="{{URL::asset('front-end/assets/js/vendor/jquery-3.6.0.min.js')}}"></script>
+  
     <script src="{{URL::asset('front-end/assets/js/vendor/jquery-migrate-3.3.2.min.js')}}"></script>
     <script src="{{URL::asset('front-end/assets/js/vendor/modernizr-3.11.2.min.js')}}"></script>   
-    -->
+    
 
 
     <!-- Plugins JS -->
@@ -789,151 +816,123 @@
      <!--Multiselect-->
     <script src="{{URL::asset('front-end/assets/js/multiselect-dropdown.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
     <script>
-        $('body').on('click','#booking_btn',function(e){
+    // var firebaseConfig = {
+    // apiKey: "AIzaSyBPdVwUIYOY0qRr9kbIMTnxKpFw_nkneYk",
+    // authDomain: "itdemo-push-notification.firebaseapp.com",
+    // databaseURL: "https://itdemo-push-notification.firebaseio.com",
+    // projectId: "itdemo-push-notification",
+    // storageBucket: "itdemo-push-notification.appspot.com",
+    // messagingSenderId: "257055232313",
+    // appId: "1:257055232313:web:3f09127acdda7298dfd8e8",
+    // measurementId: "G-VMJ68DFLXL"
+    // };
     
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-                }
-            }); 
+    
+    const firebaseConfig = {
+      apiKey: "AIzaSyAlCo1n1jNYbvD0DEAjKepE27FcdZqkfmY",
+      authDomain: "pethouse-otp.firebaseapp.com",
+      projectId: "pethouse-otp",
+      storageBucket: "pethouse-otp.appspot.com",
+      messagingSenderId: "589343176814",
+      appId: "1:589343176814:web:5e6e291ee9ab25be6e0e7f",
+      measurementId: "G-4VQD1X0NDR"
+    };
     
     
-            e.preventDefault();
-            var mobile_number = $('.mobile_number').val();
-          
-    
-                               if(!mobile_number){
-                                mobile_number_error="Mobile number is required";
-                                 $('#mobile_number_error').html("");
-                                 $('#mobile_number_error').html(mobile_number_error);
-                               }
-                               else{
-                                mobile_number_error="";
-                                  $('#mobile_number_error').html("");
-                               }
-    
-                               
-                               
-                               if( mobile_number_error !=''){
-                                 return false;
-                               }
-                               else{
-                            $.ajaxSetup({
+    firebase.initializeApp(firebaseConfig);
+    </script>
+    <script type="text/javascript">
+    window.onload=function () {
+    render();
+    };
+    function render() {
+    window.recaptchaVerifier=new firebase.auth.RecaptchaVerifier('recaptcha-container');
+    recaptchaVerifier.render();
+    }
+    function phoneSendAuth() {
+    var number = $("#loginNumber").val();
+    console.log(number);
+    firebase.auth().signInWithPhoneNumber(number,window.recaptchaVerifier).then(function (confirmationResult) {
+    window.confirmationResult=confirmationResult;
+    coderesult=confirmationResult;
+    console.log(coderesult);
+    $("#sentSuccess").text("number Sent Successfully.");
+    $("#sentSuccess").show();
+
+       
+
+    }).catch(function (error) {
+    $("#mobile_number_error").text(error.message);
+    // $("#error").show();
+  
+   
+    });
+    }
+    function codeverify() {
+    var code = $("#verificationCode").val();
+    coderesult.confirm(code).then(function (result) {
+     var user=result.user;
+     var userId=user.uid;
+ 
+       if(userId){
+        // localStorage.setItem("user_id",userId);
+
+
+          // start
+                   
+          $.ajaxSetup({
                                             headers: {
                                                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                                             }
                                         });
                                         $.ajax({
                                             type:'POST',
-                                            url:"{{ url('insert_login_details') }}",
+                                            url:"{{ url('user_login') }}",
                                             data:{
-                                                mobile_number:mobile_number
+                                              user_id:userId,
+                                             
                                             },
                                             success:function(data){
-                                                   // console.log(data.mobile_number);
-                                                  // alert(data.status);
-                                                  $('#exampleModal2').modal('show');
+                                            if(data.user_id){
+                                                // $("#loginModal").modal('hide');
+                                                // $("#loginModal2").modal('hide');
+                                                // toastr.success(data.status);
                                             }
-                                            
+                                            }
                                         });
-                                    }
-                            });
-          </script>
-        {{-- otp pass --}}
-          <script>
-              $(".model-otp").keyup(function () {
-                            if (this.value.length == this.maxLength) {
-                              $(this).next('.model-otp').focus();
-                            }
-                        });
-            </script>
-          <script>
-            $('body').on('click','#booking_btn2',function(e){
-        
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-                    }
-                }); 
-        
-        
-                e.preventDefault();
-                var mobile_otp1 = $('.mobile_otp1').val();
-                var mobile_otp2 = $('.mobile_otp2').val();
-                 var mobile_otp3 = $('.mobile_otp3').val();
-                 var mobile_otp4 = $('.mobile_otp4').val();
-                
-                if(!mobile_otp1){
-                    mobile_otp_error="Mobile otp number is required";
-                                 $('#mobile_otp_error').html("");
-                                 $('#mobile_otp_error').html(mobile_otp_error);
-                               }
-                               else{
-                                mobile_otp_error="";
-                                  $('#mobile_otp_error').html("");
-                               }
-                 if(!mobile_otp2){
-                    mobile_otp_error="Mobile otp number is required";
-                                 $('#mobile_otp_error').html("");
-                                 $('#mobile_otp_error').html(mobile_otp_error);
-                               }
-                               else{
-                                mobile_otp_error="";
-                                  $('#mobile_otp_error').html("");
-                               }
+                                    
 
 
-                               if(!mobile_otp3){
-                    mobile_otp_error="Mobile otp number is required";
-                                 $('#mobile_otp_error').html("");
-                                 $('#mobile_otp_error').html(mobile_otp_error);
-                               }
-                               else{
-                                mobile_otp_error="";
-                                  $('#mobile_otp_error').html("");
-                               }
-                 if(!mobile_otp4){
-                    mobile_otp_error="Mobile otp number is required";
-                                 $('#mobile_otp_error').html("");
-                                 $('#mobile_otp_error').html(mobile_otp_error);
-                               }
-                               else{
-                                mobile_otp_error="";
-                                  $('#mobile_otp_error').html("");
-                               }
-    
-                               
-                               
-                               if( mobile_otp_error !=''){
-                                 return false;
-                               }
-                               else{
-                            $.ajaxSetup({
-                                            headers: {
-                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                            }
-                                        });
-                                        $.ajax({
-                                            type:'POST',
-                                            url:"{{ url('insert_otp_details') }}",
-                                            data:{
-                                                mobile_otp1:mobile_otp1,
-                                                mobile_otp2:mobile_otp2,
-                                                mobile_otp3:mobile_otp3,
-                                                mobile_otp4:mobile_otp4
-                                            },
-                                            success:function(data){
-                                                   //console.log(data.mobile_otp1,mobile_otp2,mobile_otp3,mobile_otp4);
-                                                  // console.log(data.mobile_otp2);
-                                                  // alert(data.status);
-                                                 $('#exampleModal3').modal('show');
-                                            }
-                                            
-                                        });
-                                    }
-                            });
-              </script> 
+
+          //end
+
+      
+       }
+      console.log(userId);
+
+
+
+
+
+    }).catch(function (error) {
+    // $("#error").text(error.message);
+    // $("#error").show();
+    toastr.error(error.message);
+    });
+    }
+    </script>
+
+
+
+
+
+
+
 
               {{-- toaster --}}
 <script>
@@ -955,6 +954,8 @@
             toastr.error("{{ session('error') }}");
     @endif
   
+
+    
     @if(Session::has('info'))
     toastr.options =
     {
@@ -985,8 +986,32 @@
     @endif
 </script>
 
+<script>
+     @if(Session::has('custom_error'))
+     
+          @foreach(Session::get('custom_error') as $test)
+          toastr.error("{{ $test }}");     
+           @endforeach
+    
+    
+            @php
+                Session::forget('custom_error');
+            @endphp
+       
+        @endif
+</script>
 
 
+  
+
+<script>
+
+function closeModel(){
+    $("#loginModal").modal('hide');
+    $("#loginModal2").modal('hide');
+    $("#exampleModal3").modal('hide');
+   }
+</script>
     @yield('scripts')
       
 </body>

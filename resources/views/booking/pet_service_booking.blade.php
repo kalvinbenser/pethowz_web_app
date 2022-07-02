@@ -68,7 +68,7 @@
 @endsection
 @section('content')
       <!-- Hero/Intro Slider Start -->
-     <div class="section gallary-details">
+      <div class="section gallary-details">
         <div class="profile_images">
       <div class="row">
         <div class="col-md-4 col-lg-5 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
@@ -103,7 +103,7 @@
          </div>
       </div>
         </div> 
- 
+
 
 
 
@@ -126,14 +126,15 @@
              
                     <div class="col-12 col-sm-4 col-md-3 col-lg-7" data-aos="fade-up" data-aos-duration="1600">
                         <div class="single-footer-widget booking_form_details">
-                            <h3 class="rupee"> <i class="fa fa-rupee" style="font-size:24px"><span id="usertotal" >0</span></i></h3>
+                            <h3 class="rupee"> <i class="fa fa-rupee" style="font-size:24px"><span id="usertotal" >{{$detail['cost_per_hour']}}</span></i></h3>
                             <h6 class="rupee">Per Hour</h6>
                             <div class="bookings-all">
                                 {{-- form --}}
-                                <form action="/create_booking" method="post">
+                                <form action="/create_pet_service_booking_form" method="post">
                                     @csrf
+                                    <input type="hidden" name="venue_name" value="{{ $detail['venue_name']}}" >
                                     <input type="hidden" name="user_service" id="userService">
-                                    <input type="hidden" name="user_amount" id="userAmount" value=0>
+                                    <input type="hidden" name="user_amount" id="userAmount" value={{$detail['cost_per_hour']}}>
                                     <input type="hidden" name="ser_cart_id" value={{$detail['_id']}}>
                                     <button  class="btn btn-primary btn-sm mx-auto" id="btn">Book</button>
                                 </form>
@@ -180,20 +181,30 @@
                      <div class="col-12 col-sm-6 col-lg-6 m-b-40" data-aos="fade-up" data-aos-duration="1200">
                               <div class="single-footer-widget">
                                     
-                                @if($detail['venue_category'])
-                                <p class="about">Category<p>
+                                @if($detail['venue_name'])
+                                <p class="about">Venue Name<p>
                                 @endif
                                     
-                                    @if($detail['venue_name'])
-                                      <p class="about">Venue <p>
+                                    @if($detail['service_details'])
+                                      <p class="about">Service Details <p>
                                     @endif
 
-                                    @if($detail['amenities_id'])
-                                      <p class="about">Amenities <p>
+                                    @if(isset($detail['services_id']))
+                                    <p class="about">Service  <p>
+                                  @endif
+
+                                  @if(isset($detail['options_id']))
+                                  <p class="about">Option <p>
+                                @endif
+
+                                    @if($detail['cost_per_hour'])
+                                      <p class="about">Cost per Hour <p>
                                     @endif
 
-                                 <p class="about">Applicable <p>
-                                    <p class="about">Location<p>
+                              
+                                    @if($detail['location'])
+                                    <p class="about">Location <p>
+                                  @endif
                                 </div>
                          </div>
 
@@ -210,11 +221,27 @@
                                  <p class="about">{{ $detail['venue_name']}}<p>
                                 @endif    
 
-                                {{-- @if($detail['amenities_id'])
-                                 <p class="about">$detail['amenities_id']<p>
-                                @endif     --}}
+                                @if($detail['service_details'])
+                                 <p class="about">{{$detail['service_details']}}<p>
+                                @endif   
+                                
+                                @foreach($detail['services_id'] as $ser) 
+                                <div class="d-flex">
+                                    <p class="about">{{$ser}}<p>
+                                    </div>   
+                                @endforeach
 
-                                    <p class="about">Play Area,CCTV<p>
+                                @foreach($detail['options_id'] as $opt) 
+                                <div class="d-flex">
+                                    <p class="about">{{$opt}}<p>
+                                    </div>   
+                                @endforeach
+
+                                @if($detail['cost_per_hour'])
+                                <p class="about">{{$detail['cost_per_hour']}}<p>
+                               @endif   
+
+                                 
 
                                  @if($detail['location'])       
                                       <p class="about">{{$detail['location']}}<p>
@@ -241,9 +268,9 @@
 
                 <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-                    <div class="service-pic service-pic1" id="one" value="Sitting">
+                    <div class="service-pic service-pic1" id="one">
                     <div class="align_services sittinks pic1">
-                        <input type="checkbox" value={{$detail['cost_per_hour']}} class="checkbox" name="category[]" value="Sitting" id="cb1" />
+                        <input type="checkbox"  class="checkbox" name="category[]" value=1 id="cb1" />
                         <label for="cb1"  ><img class="fit-image click_logo1" src="{{URL::asset('front-end/assets/images/lightgallery/Sitting Green.svg')}}"/>
                         </label>
                         <div class="sitt">Sitting</div>
@@ -257,15 +284,15 @@
               <!-- Banner End -->
                <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-                    <div class="service-pic service-pic2" id="two" value="60">
+                    <div class="service-pic service-pic2" id="two" >
                    <div class="groominks align_services pic2">
-                        <input type="checkbox" value={{$detail['cost_per_hour']}} class="checkbox" name="category[]" value="Grooming" id="cb2" />
+                        <input type="checkbox"  class="checkbox" name="category[]" value=2 id="cb2" />
                         <label for="cb2"  ><img class="fit-image click_logo2" src="{{URL::asset('front-end/assets/images/lightgallery/Grooming Blue.svg')}}"/>
                         </label>
                         <div class="grom">Grooming</div>
                    </div>
                    <div>
-                    <h3  class="rupee1"><i class="fa fa-rupee">60</i></h3> 
+                    <h3  class="rupee1"><i class="fa fa-rupee">{{$detail['cost_per_hour']}}</i></h3> 
                     <h5 class="rupee2">Per Hour</h5>
                     </div>
                     </div>
@@ -273,9 +300,9 @@
                 <!-- Banner End -->
                 <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
-                    <div class="service-pic service-pic3" id="three" value="60">
+                    <div class="service-pic service-pic3" id="three">
                     <div class="walkinks align_services pic3">
-                        <input type="checkbox" value={{$detail['cost_per_hour']}} class="checkbox" name="category[]" value="Walking" id="cb3"  />
+                        <input type="checkbox"  class="checkbox" name="category[]" value=3 id="cb3"  />
                         <label for="cb3"  ><img class="fit-image click_logo3"  src="{{URL::asset('front-end/assets/images/lightgallery/Walking Orange.svg')}}"/>
                         </label>
                         <div class="walk">Walking</div>
@@ -289,9 +316,9 @@
                 <!-- Banner End -->
                 <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-                    <div class="service-pic service-pic4" id="four" value="60">
+                    <div class="service-pic service-pic4" id="four" >
                     <div class="breadinks align_services pic4">
-                        <input type="checkbox" value={{$detail['cost_per_hour']}} class="checkbox" name="category[]" value="Breading" id="cb4" />
+                        <input type="checkbox" class="checkbox" name="category[]" value=4 id="cb4" />
                         <label for="cb4"  ><img class="fit-image click_logo4"  src="{{URL::asset('front-end/assets/images/lightgallery/Breeding Yellow.svg')}}"/>
                         </label> 
                         <div class="brea">Breading</div>
@@ -305,9 +332,9 @@
                 <!-- Banner End -->
                 <!-- Banner Start -->
                 <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-                    <div class="service-pic service-pic5" id="five" value="60">
+                    <div class="service-pic service-pic5" id="five" >
                     <div class="traininks align_services pic5">
-                        <input type="checkbox" value={{$detail['cost_per_hour']}} class="checkbox" name="category[]" value="Training" id="cb5" />
+                        <input type="checkbox" class="checkbox" name="category[]" value=5 id="cb5" />
                         <label for="cb5"  ><img class="fit-image click_logo5" src="{{URL::asset('front-end/assets/images/lightgallery/Training Blue.svg')}}"/>
                         </label> 
                         <div class="trai">Training</div>
@@ -321,9 +348,9 @@
                 <!-- Banner End -->
                   <!-- Banner Start -->
                   <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-                      <div class="service-pic service-pic6" id="six" value="60">
+                      <div class="service-pic service-pic6" id="six">
                     <div class="photographys align_services pic6" >
-                        <input type="checkbox" value={{$detail['cost_per_hour']}} class="checkbox" name="category[]" value="Photography" id="cb6" />
+                        <input type="checkbox"  class="checkbox" name="category[]" value=6 id="cb6" />
                         <label for="cb6"  ><img class="fit-image click_logo6" src="{{URL::asset('front-end/assets/images/lightgallery/Photography Blue.svg')}}" />
                         </label>  
                         <div class="phot">Photography</div>
@@ -386,7 +413,7 @@
             });
            </script>
 
-           
+{{--            
  <script>
     $('input:checkbox').change(function(){ 
 	var tot=0;
@@ -399,7 +426,7 @@ $('input:checkbox:checked').each(function(){
 $('#usertotal').html(tot)
 $('#userAmount').val(tot)
 });
- </script>
+ </script> --}}
 
 
      @endsection 

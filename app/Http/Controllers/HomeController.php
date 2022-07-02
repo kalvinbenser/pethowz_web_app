@@ -16,28 +16,26 @@ class HomeController extends Controller
 
          //********************* Index Pet Space  ***************************\\
 
-         $petSpaceData=[
-        ];
+       
         $petSpaceUrl= env('API').'getAllPetSpace';
        
-        $petSpaceRequest = Http::get($petSpaceUrl,$petSpaceData);
+        $petSpaceRequest = Http::get($petSpaceUrl);
   
         $petSpaceResponse = $petSpaceRequest->json();
-        
-        //dd($petSpaceResponse[data]);
+        $pet_space=$petSpaceResponse['data'];
+       // dd($petSpaceResponse[data]);
 
         //**************************  Pet Service  ****************************\\
-        $petServiceData=[
-        ];
-        $petServiceUrl=env('API').'getAllPetService';
+       
+        // $petServiceUrl=env('API').'getAllPetService';
       
-        $petServiceRequest=Http::get($petServiceUrl,$petServiceData);
-        $petServiceResponse=$petServiceRequest->json();
-        //dd($petServiceResponse);
-        $pet_service=$petServiceResponse['data'];
-        // dd($pet_service);
+        // $petServiceRequest=Http::get($petServiceUrl);
+        // $petServiceResponse=$petServiceRequest->json();
+        // //dd($petServiceResponse);
+        // $pet_service=$petServiceResponse['data'];
+        // // dd($pet_service);
         //
-        $collection = (new Collection($pet_service))->paginate(8);
+        $collection = (new Collection($pet_space))->paginate(8);
        // dd($collection);
         return view('home/index',compact('collection'));
     }
@@ -59,18 +57,25 @@ class HomeController extends Controller
     public function service(){
 
           //************************** Pet Service  ****************************\\
-          $petServiceData=[
-           
-        ];
+       
         $petServiceUrl=env('API').'getAllPetService';
       
-        $petServiceRequest=Http::get($petServiceUrl,$petServiceData);
+        $petServiceRequest=Http::get($petServiceUrl);
         $petServiceResponse=$petServiceRequest->json();
         //dd($petServiceResponse['data']);
-
+           
         $pet_service=$petServiceResponse['data'];
+                
+        $PetServiceCollection = collect($pet_service);
 
-        $collection = (new Collection($pet_service))->paginate(8);
+        $filtered = $PetServiceCollection->filter(function ($value, $key) {
+            return $value['approved']==true;
+        });
+    
+        //dd($filtered->all());
+
+
+        $collection = (new Collection($filtered->all()))->paginate(8);
        // dd($collection);
         return view('/service/service',compact('collection'));
     }
@@ -115,40 +120,20 @@ class HomeController extends Controller
      public function exclusive_petspaces(){
            //*********************  Pet Space  ***************************\\
 
-           $petSpaceData=[
-        
-           
-        ];
         $petSpaceUrl= env('API').'getAllPetSpace';
        
-        $petSpaceRequest = Http::get($petSpaceUrl,$petSpaceData);
+        $petSpaceRequest = Http::get($petSpaceUrl);
   
         $petSpaceResponse = $petSpaceRequest->json();
         
-        //dd($petSpaceResponse[data]);
+        $pet_space=$petSpaceResponse['data'];
 
-        //************************** Pet Service  ****************************\\
-        $petServiceData=[
-
-         ];
-        $petServiceUrl=env('API').'getAllPetService';
       
-        $petServiceRequest=Http::get($petServiceUrl,$petServiceData);
-        $petServiceResponse=$petServiceRequest->json();
-        //dd($petServiceResponse);
-        $pet_service=$petServiceResponse['data'];
 
-        $collection = (new Collection($pet_service))->paginate(8);
+        $collection = (new Collection($pet_space))->paginate(8);
        // dd($collection);
         return view('/exclusive_petspaces/exclusive-petspaces',compact('collection'));
-    //   return collection($pet_service);
-    //  // dd($collection);
-    //     $collect=collection();
-    //     $newCollect -> filter( function ($value,$key) {
-    //           $key='venue_category';
-    //           $value==1;
-    //           return true;
-    //     });
+
      }
 
       //house_apartment
@@ -183,12 +168,7 @@ class HomeController extends Controller
          return view('/house&apartment/house_apartment',compact('collection'));
     }
 
-    //petspace_details
-
-    public function petspace_details(){
-    
-        return view('/petspace/pethost_details');
-    }
+   
 
     //terms_coditions
 
@@ -198,59 +178,89 @@ class HomeController extends Controller
 
      //booking-details
 
-     public function bookingdetails(){
-        return view('/booking-details/bookingdeteils');
-    }
-    // insert booking details
-    function insert_booking_details(Request $request){
-     try{  
-        
-        $validated = $request->validate([
-            'name' => 'required',
-             'contact' => 'required',
-             'pet_name'=>'required',
-             'pet_count'=>'required',
-             'no_of_days'=>'required',
-             'service_type'=>'required',
-         ]);
-            $name=$request->name;
-            $contact=$request->contact;
-            $pet_name=$request->pet_name;
-            $pet_count=$request->pet_count;
-            $no_of_days=$request->no_of_days;
-           
-            $service_type=$request->service_type;
-            // dd($service_type);
-    
-       
-        $petSpaceData=[
-            'name'=>$name,
-            'contact'=>$contact,
-            'pet_name'=>$pet_name,
-            'pet_count'=>$pet_count,
-            'no_of_days'=>$no_of_days,
-          
-            'service_type'=>$service_type
-        ];
-        $petSpaceUrl=env('API').'createPetSpace';
-        $petSpaceRequest=Http::post($petSpaceUrl,$petSpaceData);
-        $petSpaceResponse=$petSpaceRequest->json();
-      //  dd($data);
-      return redirect('/service')->with('message','your Pet Service Added');
-    }
-    catch(Exception $e) {
-      echo 'Message: ' .$e->getMessage();
-    }
+     public function bookingdetails(Request $request){
+        // if(!$request->session()->get('user_id')){
+        //     return redirect('/')->with('warning','Please Login First');
+        // }
+        // else{
+        //     return view('/booking-details/bookingdeteils');
+        // }
 
+        return view('/booking-details/bookingdeteils');
+      
     }
+  
 
      //add-details
 
-     public function add_your_self(){
-        return view('/add/add');
+     public function add_your_self(Request $request){
+        if(!$request->session()->get('user_id')){
+            return redirect('/')->with('warning','Please Login First');
+        }
+        else{
+
+            return view('/add/add');
+        }
+        
+    }
+
+    public function create_your_self(Request $request){
+                   
+        $validated = $request->validate([
+            'content1' => 'required',
+             'content2' => 'required',
+             'content3'=>'required',
+             'content4'=>'required',
+             'content5'=>'required',
+             'content6'=>'required',
+             'category'=>'required'
+         ]);
+
+                $user_id=$request->session()->get('user_id');
+                $content1=$request->content1;
+                $content2=$request->content2;
+                $content3=$request->content3;
+                $content4=$request->content4;
+                $content5=$request->content5;
+                $content6=$request->content6;
+                $category=$request->category;
+                $data=[
+                    'user_id'=>$user_id,
+                    'content1'=>$content1,
+                    'content2'=>$content2,
+                    'content3'=>$content3,
+                    'content4'=>$content4,
+                    'content5'=>$content5,
+                    'content6'=>$content6,
+                    'category'=>$category
+                ];
+                //dd($data);
+              
+
+                try{
+                    $yourSelfUrl=env('API').'createSelfDescription';
+                    $yourSelfRequest=Http::post($yourSelfUrl,$data);
+                    $yourSelfResponse=$yourSelfRequest->json();
+                    //dd( $yourSelfResponse);
+                    if($yourSelfResponse['Success']==true){
+                        return redirect('pet_space_form')->with('message','self intro added successfully');
+                    }
+                    else{
+                       
+                        $request->session()->put('custom_error',$yourSelfResponse['Message']);
+                        return redirect()->back();
+                    }
+                   
+                }
+                catch(Exception $e){
+                    echo 'Message: ' .$e->getMessage();
+                }
     }
 
       // add details
+      public function welcome(){
+        return view('welcome');
+      }
     
       public function test_data(Request $request){
 
@@ -310,18 +320,47 @@ class HomeController extends Controller
      
          //************************** get profile ****************************\\
 
-        public function profile( $reg_id){
-        $registerDataUrl=env('API').'getRegistrationDetails/62b026923bd337e11267dbf0';
+        public function profile(Request $request ){
+                     
+        $user_id=$request->session()->get('user_id');
+       
+                     
+        if(!$user_id){
+
+
+
+            return redirect('/')->with('warning','Please Login First');
+        }
+        else{
+            $request->session()->put('register_id',"62bbdded7bf9325ca18a6caf");
+            $reg_id=  $request->session()->get('register_id');
+          
+           // dd($reg_id);
+             //$request->session()->put('register_id',"62bbdded7bf9325ca18a6caf");
+         $registerDataUrl=env('API').'getRegistrationDetails/'.$reg_id;
       
         $registerDetailsRequest=Http::get($registerDataUrl);
         $registerDetailsResponse=$registerDetailsRequest->json();
-      // dd($registerDetailsResponse);
+     
+              $profile_data= $registerDetailsResponse['data'];
+              dd($profile_data);
+              if($registerDetailsResponse['Success']==false){
+                return redirect('/register');
+              }
+                   
+              $data['collection'] = (new Collection($profile_data));
+              
+               return view('/profile/profile',$data);
+        }
 
-       $register_data=$registerDetailsResponse['data'];
+   
 
-        $collection = (new Collection($register_data));
+    //    $register_data=$registerDetailsResponse['data'];
+
+    //     $collection = (new Collection($register_data));
        // dd($collection);
-        return view('/profile/profile',compact('collection'));
+      
+        
     
     }
     
@@ -332,19 +371,22 @@ class HomeController extends Controller
              $update_mail=$request->update_mail;
              $update_number=$request->update_number;
              $update_address=$request->update_address;
-        
+             $reg_id =$request->session()->get('register_id');
            
             $profileData=[
+                'reg_id'=>$reg_id,
                 'update_mail'=>$update_mail,
                 'update_number'=>$update_number,
                 'update_address'=>$update_address
                
             ];
-            $editProfileUrl=env('API').'updateRegistrationDetails';
+            $reg_id=$request->session()->get('register_id');
+            $editProfileUrl=env('API').'updateRegistrationDetails/'.$reg_id;
+            dd($editProfileUrl);
             $editProfileRequest=Http::put($editProfileUrl,$profileData);
             $editProfileResponse=$editProfileRequest->json();
-            dd($data);
-          return redirect('/profile/profile')->with('message','your datas are updated Added');
+            //dd($editProfileResponse);
+          return redirect('/profile')->with('message','your datas are updated Added');
         }
         catch(Exception $e) {
           echo 'Message: ' .$e->getMessage();

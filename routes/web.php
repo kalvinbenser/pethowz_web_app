@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +30,7 @@ Route::get('/about/about',[HomeController::class,'about']);
 
 Route::get('/sitting',[HomeController::class,'sitting']);
 
-//main service
 
-Route::get('/service',[HomeController::class,'service']);
 
 //grooming service
 
@@ -67,34 +66,26 @@ Route::get('/exclusive_petspaces',[HomeController::class,'exclusive_petspaces'])
 
 Route::get('/house&apartment/house_apartment',[HomeController::class,'house_apartment']);
 
-//petspace_details
 
-Route::get('/petspace_details',[HomeController::class,'petspace_details']);
 
 //terms_condition
 
 Route::get('/terms_condition',[HomeController::class,'terms_condition']);
 
-//booking_details
-
-Route::get('/bookingdetails',[HomeController::class,'bookingdetails']);
-
-// booking details
-
-Route::get('/insert_booking_details',[HomeController::class,'insert_booking_details']);
 
 //add_details
 
 Route::get('/add_your_self',[HomeController::class,'add_your_self']);
-
+Route::post('/create_your_self',[HomeController::class,'create_your_self']);
 
 
 
 //profile_details
 
 // Route::get('/profile',[HomeController::class,'profile']);
-Route::get('/profile/{reg_id}/show',[HomeController::class,'profile']);
-Route::put('/update_Profile/{reg_id}',[HomeController::class,'update_Profile']);
+// Route::get('/profile/{reg_id}/show',[HomeController::class,'profile']);
+Route::get('/profile',[HomeController::class,'profile']);
+Route::put('/update_Profile',[HomeController::class,'update_Profile']);
 
 //allimages_details
 
@@ -119,9 +110,18 @@ Route::post('/pet_host_details',[HomeController::class,'pet_host_details']);
 
 
 
-//service form
-Route::get('/service_form', [ServiceController::class,'service_form']);
+// ********************* pet service *************************\\ 
+
+
+Route::get('/service',[HomeController::class,'service']);
+Route::get('/pet_service_form', [ServiceController::class,'service_form']);
 Route::post('/create_service', [ServiceController::class,'create_service']);
+
+
+//********************** end pet service ***********************\\
+
+
+
 //bookingform_details
 
 Route::get('/pet_space_form',[ServiceController::class,'pet_space_form']);
@@ -130,6 +130,13 @@ Route::post('/pet_space_create', [ServiceController::class,'pet_space_create']);
 Route::post('/create_booking',[ServiceController::class,'create_booking']);
 
 
-Route::get('/test',[HomeController::class,'test']);
+Route::get('/test',[ServiceController::class,'test']);
+
+//user session set
+
+Route::post('/user_login',[AuthController::class,'user_login']);
+Route::get('/user_logout',[AuthController::class,'user_logout']);
+
 
 require __DIR__.'/Auth.php';
+require __DIR__.'/Booking.php';

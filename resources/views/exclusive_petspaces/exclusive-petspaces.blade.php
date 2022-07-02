@@ -16,7 +16,7 @@
 </div>
     <!-- pet Section Start -->
     <div class="section position-relative">
-        <div class="container">
+         <div class="container">
 
             <!-- Section Title & Tab Start -->
             <div class="row " data-aos="fade-up" data-aos-duration="1000" >
@@ -47,8 +47,12 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="{{('/petspace_details')}}" class="image">
-                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
+                                            <a href="{{('/pet_space_booking')}}/{{$item['_id']}}" class="image">
+                                              
+                                                {{-- <img class="fit-image" src="https://firebasestorage.googleapis.com/v0/b/pethouse-otp.appspot.com/o/user%2F1656477109457-images.jpeg?alt=media" alt="Product" />
+                                             --}}
+                                               
+                                                <img class="fit-image" src="{{  URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">4.5</span>

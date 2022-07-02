@@ -11,6 +11,11 @@
    <div class="col-12 col-sm-6 col-md-6 col-lg-6">
           <h1>All Services</h1>
       </div>
+      <div class="view-all col-12 col-sm-6 col-md-6 col-lg-6">
+        <a href="/pet_service_form" target="">
+             <i class="fa fa-plus-square"  style="font-size:28px;color:#FF9966"></i>
+           </a>
+     </div>
     
       <!-- Tab End -->
   </div>
@@ -28,7 +33,7 @@
                           <div class="product">
                               <!-- Thumb Start  -->
                               <div class="thumb">
-                                  <a href="{{('/petspace_details')}}" class="image">
+                                  <a href="{{('/pet_service_booking')}}/{{$pet_ser['_id']}}" class="image">
                                       <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
                                  </a>
                                   <span class="badges">
