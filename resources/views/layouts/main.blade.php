@@ -124,8 +124,12 @@
                                 <!-- Header Action Search Button End -->
 
                                 <!-- Header My Account Button Start -->
+<<<<<<< HEAD
                                 @if(session()->has('user_id'))
                                 <a href="{{URL::asset('/profile')}}" class="header-action-btn header-action-btn-wishlist">
+=======
+                                <a href="{{URL::asset('/profile/{reg_id}/show')}}" class="header-action-btn header-action-btn-wishlist">
+>>>>>>> 87120bb6178713542ab558090f99c2ea85e353cc
                                     <i class="icon-user icons"></i>
                                 </a>
                                 @endif
