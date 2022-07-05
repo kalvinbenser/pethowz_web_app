@@ -124,12 +124,8 @@
                                 <!-- Header Action Search Button End -->
 
                                 <!-- Header My Account Button Start -->
-<<<<<<< HEAD
                                 @if(session()->has('user_id'))
                                 <a href="{{URL::asset('/profile')}}" class="header-action-btn header-action-btn-wishlist">
-=======
-                                <a href="{{URL::asset('/profile/{reg_id}/show')}}" class="header-action-btn header-action-btn-wishlist">
->>>>>>> 87120bb6178713542ab558090f99c2ea85e353cc
                                     <i class="icon-user icons"></i>
                                 </a>
                                 @endif
@@ -284,7 +280,7 @@
               </div>
              
               <div class="model-item-center mt-2">
-              <input type="submit" id="booking_btn" onclick="phoneSendAuth();" value="SUBMIT" data-bs-toggle="modal" class="btn-model" data-bs-target="#loginModal2">
+              <input type="submit" id="booking_btn" onclick="phoneSendAuth();" value="SUBMIT"  class="btn-model" >
               </div>
 
               <p class="model-text-center mt-2">Or Login With</p>
@@ -367,7 +363,7 @@
 
 
    
-  <div class="modal fade " id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade " id="loginModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog model-center">
       <div class="modal-content " style="height: 480px">
       
@@ -433,17 +429,18 @@
 
 
 
-             
-              {{-- <form action="{{('/register')}}">
-                @csrf
+              <div>
                 <input type="checkbox" id="terms" name="terms" style="margin-left: 30px;margin-top:20px" value="ok" required>
                 <label for="terms">I accept the <u>Terms and Conditions</u></label><br>
                 <div class="p-4 d-flex justify-content-center">
                     <button class="btn-model" onclick="clodeModel()" >submit</button>
                 </div>
+              </div>
              
-              </form> --}}
-              <button class="btn-model" onclick="clodeModel()" >submit</button>
+              
+             
+              
+              {{-- <button class="btn-model" onclick="clodeModel()" >submit</button> --}}
       
 
      
@@ -868,7 +865,8 @@
     $("#sentSuccess").text("number Sent Successfully.");
     $("#sentSuccess").show();
 
-       
+    $("#loginModal").modal('hide');
+    $("#loginModal2").modal('show');
 
     }).catch(function (error) {
     $("#mobile_number_error").text(error.message);
@@ -903,8 +901,9 @@
                                             },
                                             success:function(data){
                                             if(data.user_id){
-                                                // $("#loginModal").modal('hide');
-                                                // $("#loginModal2").modal('hide');
+                                             $("#loginModal").modal('hide');
+                                             $("#loginModal2").modal('hide');
+                                             $("#loginModal3").modal('show');
                                                 // toastr.success(data.status);
                                             }
                                             }

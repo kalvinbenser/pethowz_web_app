@@ -1,7 +1,7 @@
 @extends('layouts.main')
-@section('styles')
 
-@endsection
+
+
 @section('content')
     <!-- Exclusive Pet Spaces in service cender -->
       <!-- pet Section Start -->
@@ -31,12 +31,12 @@
                   <div class="row m-b-n40">
                       <!-- Product Start -->                     
                   @foreach($collection as $pet_ser)
-                      <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40 ">
+                      <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
                           <div class="product">
                               <!-- Thumb Start  -->
                               <div class="thumb">
                                   <a href="{{('/pet_service_booking')}}/{{$pet_ser['_id']}}" class="image">
-                                      <img class="fit-image " src="{{$pet_ser['image']}}"   alt="Product" style="height: 50px" />
+                                    <img class="fit-image" style="width: 100%;height: 15vw;object-fit: cover;" src="{{$pet_ser['image']}}" alt="Product" />
                                  </a>
                                   <span class="badges">
                                   <span class="sale">4.5</span>

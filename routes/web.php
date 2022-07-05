@@ -34,23 +34,23 @@ Route::get('/sitting',[HomeController::class,'sitting']);
 
 //grooming service
 
-Route::get('/grooming',[HomeController::class,'grooming']);
+// Route::get('/grooming',[HomeController::class,'grooming']);
 
-//walking service
+// //walking service
 
-Route::get('/walking',[HomeController::class,'walking']);
+// Route::get('/walking',[HomeController::class,'walking']);
 
-//breading service
+// //breading service
 
-Route::get('/breading',[HomeController::class,'breading']);
+// Route::get('/breading',[HomeController::class,'breading']);
 
-//training service
+// //training service
 
-Route::get('/training',[HomeController::class,'training']);
+// Route::get('/training',[HomeController::class,'training']);
 
-//photography service
+// //photography service
 
-Route::get('/photography',[HomeController::class,'photography']);
+// Route::get('/photography',[HomeController::class,'photography']);
 
 
 
@@ -137,6 +137,8 @@ Route::get('/test',[ServiceController::class,'test']);
 Route::post('/user_login',[AuthController::class,'user_login']);
 Route::get('/user_logout',[AuthController::class,'user_logout']);
 
+// service category
+Route::get('/service_category',[ServiceController::class,'service_category']);
 
 require __DIR__.'/Auth.php';
 require __DIR__.'/Booking.php';

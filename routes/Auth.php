@@ -19,7 +19,9 @@ Route::get("/login",[AuthController::class,'login']);
 
 //register_details
 
-Route::get('/register',[AuthController::class,'register']);
+Route::get('/register_view',[AuthController::class,'register_view']);
+
+Route::post('/register',[AuthController::class,'register']);
 
 // insert register details
 

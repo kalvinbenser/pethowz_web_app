@@ -36,10 +36,10 @@
                   <img class="prev" src="">
                   {{-- <img class="profile-pic" id="profils" src="{{URL::asset('front-end/assets/images/review/User Image.png')}}"> --}}
 
-                  <img class="profile-pic" id="profils" >
+                  <img class="profile-pic" id="profils" src="{{$collection['img']}}" alt="profile">
 
 
-                  <label for="file-input" style="cursor: pointer">  <span class="pro-img"><i class="fa fa-camera"></i></span>  </label>
+                  {{-- <label for="file-input" style="cursor: pointer">  <span class="pro-img"><i class="fa fa-camera"></i></span>  </label> --}}
                 </div> 
                 <input id="file-input" type="file" />
               </div>
@@ -51,7 +51,7 @@
                                 <li class="addicon2"><i class="fa fa-phone  addicon4" style="color:  #FF9A71"></i> <p class="addicon1"><strong>{{$collection['contact_number']}}</strong></p></li>
                                 
                                 <li class="addicon2"><i class="fa fa-map-marker addicon4" style="color:  #FF9A71"></i><p class="addicon1">{{$collection['address']}}</span></li>
-                               
+                           
                                {{--     <li class="addicon2"><p class="addicon3">45/3 Residency Road,Mahatma Gandhi Rd,</p></li>
                                 <li class="addicon2"><p class="addicon3">ShanthalamNagar,Ashok Nagar,</p></li>
                                 <li class="addicon2"><p class="addicon3">Bengaluru,Karnadaka -560025</p></li> --}}
@@ -85,7 +85,7 @@
       </div>
       <!-- Section Title & Tab End -->
 
-      <!-- Products Tab Start -->
+      <!-- Pet space Tab Start -->
       <div class="row" data-aos="fade-up" data-aos-duration="1100">
           <div class="col-12">
               <div class="tab-content">
@@ -94,23 +94,24 @@
                       <div class="row m-b-n40">
 
                           <!-- Product Start -->
+                          @foreach($my_venue as $venue)
                           <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
                               <div class="product">
                                   <!-- Thumb Start  -->
                                   <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
+                                      <a href="#" class="image">
+                                          <img class="fit-image" src="{{$venue['image']}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
                                       </a>
-                                      <span class="badges">
+                                      {{-- <span class="badges">
                                       <span class="sale">-18%</span>
-                                      </span>
+                                      </span> --}}
                                     
                                   </div>
                                   <!-- Thumb End  -->
 
                                   <!-- Content Start  -->
                                   <div class="content">
-                                      <h5 class="title"><a href="single-product.html">An Animal Album</a></h5>
+                                      <h5 class="title"><a href="single-product.html">{{$venue['venue_name']}}</a></h5>
                                       <span class="rating">
                                       <i class="fa fa-star-o"></i>
                                       <i class="fa fa-star-o"></i>
@@ -119,529 +120,17 @@
                                       <i class="fa fa-star-o"></i>
                                   </span>
                                       <span class="price">
-                                      <span class="new">$80.50</span>
-                                      <span class="old">$85.80</span>
+                                      <span class="new">₹{{$venue['cost_per_hour']}}</span>
+                                      <span class="old">₹2000</span>
                                       </span>
                                   </div>
                                   <!-- Content End  -->
                               </div>
                           </div>
+                          @endforeach
                           <!-- Product End -->
 
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 3.png')}}" alt="Product" />
-                                      </a>
-                                      <span class="badges">
-                                      <span class="new">New</span>
-                                      </span>
-                                     
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">Wait, You Need This</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star-half-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$90.00</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
-
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 4.png')}}" alt="Product" />
-                                      </a>
-                                      
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">Pet Food Corner</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star-half-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$105.00</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
-
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 5.png')}}" alt="Product" />
-                                      </a>
-                                      <span class="badges">
-                                      <span class="sale">-18%</span>
-                                      </span>
-                                     
-
-                                      <div class="countdown-area">
-                                          <div class="countdown-wrapper" data-countdown="2028/12/28"></div>
-                                      </div>
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star-half-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$47.50</span>
-                                      <span class="old">$50.00</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
-
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 2 in webscreen 5.png')}}" alt="Product" />
-                                      </a>
-                                      <span class="badges">
-                                      <span class="sale">-20%</span>
-                                      </span>
-                                      
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star-half-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$58.50</span>
-                                      <span class="old">$62.85</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
-
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 3 in webscreen 5.png')}}" alt="Product" />
-                                      </a>
-                                      <span class="badges">
-                                      <span class="new">New</span>
-                                      </span>
-                                      
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">This is the testing</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star-half-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$78.50</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
-
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space pt1 image 1 in webscreen 5.png')}}" alt="Product" />
-                                      </a>
-                                      
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">Basic Dog Trainning</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star-half-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$55.00</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
-
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 2.png')}}" alt="Product" />
-                                      </a>
-                                      <span class="badges">
-                                      <span class="sale">-20%</span>
-                                      </span>
-                                     
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">Animal For Life</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star-half-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$75.50</span>
-                                      <span class="old">$82.85</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
-
-                      </div>
-                  </div>
-
-                  <div class="tab-pane fade" id="tab-product-featured">
-                      <div class="row m-b-n40">
-
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/5.png')}}" alt="Product" />
-                                      </a>
-                                      <span class="badges">
-                                      <span class="sale">-18%</span>
-                                      </span>
-                                      
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star-half-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$47.50</span>
-                                      <span class="old">$50.00</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
-
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/6.png')}}" alt="Product" />
-                                      </a>
-                                      <span class="badges">
-                                      <span class="sale">-20%</span>
-                                      </span>
-                                      
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">Pet Leaving House</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star-half-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$58.50</span>
-                                      <span class="old">$62.85</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
-
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 3.png')}}" alt="Product" />
-                                      </a>
-                                      <span class="badges">
-                                      <span class="new">New</span>
-                                      </span>
-                                      
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">Wait, You Need This</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star-half-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$90.00</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
-
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/7.png')}}" alt="Product" />
-                                      </a>
-                                      <span class="badges">
-                                      <span class="new">New</span>
-                                      </span>
-                                    
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">This is the testing</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star-half-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$78.50</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
-
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/8.png')}}" alt="Product" />
-                                      </a>
-                                    
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">Basic Dog Trainning</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star-half-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$55.00</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
-
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/1.png')}}" alt="Product" />
-                                      </a>
-                                      <span class="badges">
-                                      <span class="sale">-18%</span>
-                                      </span>
-                                   
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">An Animal Album</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$80.50</span>
-                                      <span class="old">$85.80</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
-
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/2.png')}}" alt="Product" />
-                                      </a>
-                                      <span class="badges">
-                                      <span class="sale">-20%</span>
-                                      </span>
-                                      
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">Animal For Life</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star-half-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$75.50</span>
-                                      <span class="old">$82.85</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
-
-                          <!-- Product Start -->
-                          <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
-                              <div class="product">
-                                  <!-- Thumb Start  -->
-                                  <div class="thumb">
-                                      <a href="{{('/petspace_details')}}" class="image">
-                                          <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 4.png')}}" alt="Product" />
-                                      </a>
-                                   
-                                  </div>
-                                  <!-- Thumb End  -->
-
-                                  <!-- Content Start  -->
-                                  <div class="content">
-                                      <h5 class="title"><a href="single-product.html">Pet Food Corner</a></h5>
-                                      <span class="rating">
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star"></i>
-                                      <i class="fa fa-star-half-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                      <i class="fa fa-star-o"></i>
-                                  </span>
-                                      <span class="price">
-                                      <span class="new">$105.00</span>
-                                      </span>
-                                  </div>
-                                  <!-- Content End  -->
-                              </div>
-                          </div>
-                          <!-- Product End -->
+                       
 
                       </div>
                   </div>
@@ -649,212 +138,116 @@
               </div>
           </div>
       </div>
-      <!-- Products Tab End -->
+      <!-- Pet space Tab End -->
+  
+      <div class="row " data-aos="fade-up" data-aos-duration="1000" >
+        <!-- Tab Start -->
+        <div class="col-12 my-3">
+            <h1>My Services</h1>
+        </div>
+        
+        <!-- Tab End -->
+    </div>
+       <!-- Pet service Tab Start -->
+       <div class="row" data-aos="fade-up" data-aos-duration="1100">
+        <div class="col-12">
+            <div class="tab-content">
+
+                <div class="tab-pane fade show active" id="tab-product-all">
+                    <div class="row m-b-n40">
+
+                        <!-- Product Start -->
+                        @foreach($my_service as $service)
+                        <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
+                            <div class="product">
+                                <!-- Thumb Start  -->
+                                <div class="thumb">
+                                    <a href="#" class="image">
+                                        <img class="fit-image" src="{{$service['image']}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
+                                    </a>
+                                    {{-- <span class="badges">
+                                    <span class="sale">-18%</span>
+                                    </span> --}}
+                                  
+                                </div>
+                                <!-- Thumb End  -->
+
+                                <!-- Content Start  -->
+                                <div class="content">
+                                    <h5 class="title"><a href="single-product.html">{{$service['venue_name']}}</a></h5>
+                                    <span class="rating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </span>
+                                    <span class="price">
+                                    <span class="new">₹{{$service['cost_per_hour']}}</span>
+                                    <span class="old">₹2080</span>
+                                    </span>
+                                </div>
+                                <!-- Content End  -->
+                            </div>
+                        </div>
+                        @endforeach
+                        <!-- Product End -->
+
+                     
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Pet service Tab End -->
+
+
+   <!-- Edit Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog model-center">
+      
+          <div class="modal-content">    
+            <div class="modal-body model-login-two">
+                  <p class="model-text-center mt-5">Edit Your Details</p>
+                  <div class="model-item-center mt-2">
+                    <div style="display: flex;justify-content: center" id="otp-container">
+                    <form action="{{('/update_Profile')}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                               <div class="single-input-item m-b-10">
+                                <input type="email" id="update" class="profile_email" value="{{$collection['email']}}" name="update_mail" placeholder="Email" >                
+                                </div>
+                                <div class="single-input-item m-b-10">
+                                <input type="number" id="update" class="profile_number" value="{{$collection['contact_number']}}" name="update_number" placeholder="Mobile Number" >                       
+                                </div>
+                                <div class="single-input-item m-b-10">
+                                   <textarea id="update" name="update_address"  class="profile_address" placeholder="Address" >{{$collection['address']}}</textarea>                         
+                                    </div>
+    
+                                    {{-- <div class="single-input-item m-b-10">
+                                        <input type="file">                       
+                                        </div>
+                                     --}}
+                           <div class="model-item-center">
+                            <input type="submit" class="submite" value="Update" > 
+                            </div>
+                      </form>
+                  </div>
+                  </div>
+                  
+    
+                </div>
+          
+    
+         
+            </div>
+
+
   </div>
 </div>
-  <!-- Banner Section Start -->
-  <div class="section section-margin">
-    <div class="container" >
-        <div class="service-providers">
-    <h1>Venue Booking</h1>
-        <!-- Banners Start -->
-        <div class="row m-b-n30">
-
-            <!-- Banner Start -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-                <div class="venue-booking">
-                    <a class="banner">
-                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
-                    </a>
-                    <h1 style="font-size:medium;">john</h1>
-                </div>  
-            </div>
-          <!-- Banner End -->
-           <!-- Banner Start -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-               <div class="venue-booking">
-                    <a class="banner">
-                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
-                    </a>
-                    <h1 style="font-size:medium;">john</h1>
-               </div>
-            </div>
-            <!-- Banner End -->
-            <!-- Banner Start -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
-                <div class="venue-booking">
-                    <a class="banner">
-                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
-                    </a>
-                    <h1 style="font-size:medium;">john</h1>
-                </div>
-            </div>
-            <!-- Banner End -->
-            <!-- Banner Start -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-                <div class="venue-booking">
-                    <a class="banner">
-                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
-                    </a>
-                    <h1 style="font-size:medium;">john</h1>
-                </div>
-            </div>
-            <!-- Banner End -->
-             <!-- Banner Start -->
-             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-                <div class="venue-booking">
-                    <a class="banner">
-                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
-                    </a>
-                    <h1 style="font-size:medium;">john</h1>
-                </div>
-            </div>
-            <!-- Banner End -->
-             <!-- Banner Start -->
-             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-                <div class="venue-booking">
-                    <a class="banner">
-                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
-                    </a>
-                    <h1 style="font-size:medium;">john</h1>
-                </div>
-            </div>
-            <!-- Banner End -->
-            
-
-        </div>
-        <!-- Banners End -->
-    </div>
-    </div>
-</div>
-  <!-- Banner Section Start -->
-  <div class="serv-booking">
-    <div class="container" >
-        <div class="service-providers">
-    <h1>Service  Booking</h1>
-        <!-- Banners Start -->
-        <div class="row m-b-n30">
-
-            <!-- Banner Start -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-                <div class="service-booking">
-                    <a class="banner">
-                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
-                    </a>
-                    <h1 style="font-size:medium;">john</h1>
-                </div>  
-                <div class="px">
-                    <p>ddfgjdijdihidhi</p>
-                    </div>
-            </div>
-          <!-- Banner End -->
-           <!-- Banner Start -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-               <div class="service-booking">
-                    <a class="banner">
-                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
-                    </a>
-                    <h1 style="font-size:medium;">john</h1>
-               </div>
-               <div class="px">
-                <p>ddfgjdijdihidhi</p>
-                </div>
-            </div>
-            <!-- Banner End -->
-            <!-- Banner Start -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
-                <div class="service-booking">
-                    <a class="banner">
-                        <img href="myFunction()" class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
-                    </a>
-                    <h1 style="font-size:medium;">john</h1>
-                </div>
-                <div class="px">
-                    <p>ddfgjdijdihidhi</p>
-                    </div>
-            </div>
-            <!-- Banner End -->
-            <!-- Banner Start -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-                <div class="service-booking">
-                    <a  class="banner">
-                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
-                    </a>
-                    <h1 style="font-size:medium;">john</h1>
-                </div>
-                <div class="px">
-                    <p>ddfgjdijdihidhi</p>
-                    </div>
-            </div>
-            <!-- Banner End -->
-             <!-- Banner Start -->
-             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
-                <div class="service-booking">
-                    <a class="banner">
-                        <img href="myFunction()" class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
-                    </a>
-                    <h1 style="font-size:medium;">john</h1>
-                </div>
-                <div class="px">
-                    <p>ddfgjdijdihidhi</p>
-                    </div>
-            </div>
-            <!-- Banner End -->
-            <!-- Banner Start -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-                <div class="service-booking">
-                    <a  class="banner">
-                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
-                    </a>
-                    <h1 style="font-size:medium;">john</h1>
-                </div>
-                <div class="px">
-                    <p>ddfgjdijdihidhi</p>
-                    </div>
-            </div>
-            <!-- Banner End -->
-
-        </div>
-        <!-- Banners End -->
-    </div>
-    </div>
-</div>
-<!-- Edit Modal -->
-<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog model-center">
-  
-      <div class="modal-content">    
-        <div class="modal-body model-login-two">
-              <p class="model-text-center mt-5">Edit Your Details</p>
-              <div class="model-item-center mt-2">
-                <div style="display: flex;justify-content: center" id="otp-container">
-                <form action="{{('/update_Profile')}}" method="post" enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
-                           <div class="single-input-item m-b-10">
-                            <input type="email" id="update" class="profile_email" value="{{$collection['email']}}" name="update_mail" placeholder="Email" >                
-                            </div>
-                            <div class="single-input-item m-b-10">
-                            <input type="number" id="update" class="profile_number" value="{{$collection['contact_number']}}" name="update_number" placeholder="Mobile Number" >                       
-                            </div>
-                            <div class="single-input-item m-b-10">
-                               <textarea id="update" name="update_address"  class="profile_address" placeholder="Address" >{{$collection['address']}}</textarea>                         
-                                </div>
-                       <div class="model-item-center">
-                        <input type="submit" value="Update" > 
-                        </div>
-                  </form>
-              </div>
-              </div>
-              
-
-            </div>
-      
-
-     
-        </div>
-    </div>
-    </div>
+ 
     <!-- Edit Modal -->
     
 
@@ -898,15 +291,17 @@ readURL(this);
       });
     }
     </script>
-
+{{-- 
 
 <script>
        function getImage(){
       var storage    = firebase.storage();
 var storageRef = storage.ref();
 //var spaceRef = storageRef.child('images/photo_1.png');
+ //var img_name_url=;
+ //alert("{{$collection['img']}}")
 
-storageRef.child('user/1656479213056-index.jpeg').getDownloadURL().then(function(url) {
+storageRef.child("user/{{$collection['img']}}").getDownloadURL().then(function(url) {
 
 
  var test = url;
@@ -922,7 +317,7 @@ storageRef.child('user/1656479213056-index.jpeg').getDownloadURL().then(function
 
 
      window.onload = getImage;
-</script>
+</script> --}}
 
 
 @endsection

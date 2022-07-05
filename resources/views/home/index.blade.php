@@ -65,7 +65,7 @@
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
                                             <a href="/pet_space_booking/{{$item['_id']}}" class="image">
-                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
+                                                <img class="fit-image" src="{{$item['image']}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">4.5</span>
@@ -76,7 +76,9 @@
 
                                         <!-- Content Start  -->
                                         <div class="content">
+                                            <a href="/pet_space_booking/{{$item['_id']}}" class="image">
                                             <h5 class="title"><p>{{$item['venue_name']}}</p></h5>
+                                            </a>
                                             <span class="price">
                                                 <span class="new">RS {{$item['cost_per_hour']}}/Hr</span>
                                                 </span>
@@ -211,7 +213,7 @@
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
                                             <a href="{{('/pet_space_booking')}}/{{$item['_id']}}" class="image">
-                                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
+                                                <img class="fit-image" src="{{$item['image']}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">4.5</span>
@@ -222,7 +224,9 @@
 
                                         <!-- Content Start  -->
                                         <div class="content">
+                                            <a href="{{('/pet_space_booking')}}/{{$item['_id']}}" class="image">
                                             <h5 class="title"><p>{{$item['venue_name']}}</p></h5>
+                                            </a>
                                             <span class="price">
                                                 <span class="new">RS {{$item['cost_per_hour']}}/Hr</span>
                                                 </span>
@@ -517,6 +521,7 @@
             <!-- Products Tab End -->
         </div>
     </div>  
+   
     <!-- Product Deal Section End -->
     <!-- Testimonial Section Start -->
     <div class="section bg-name-bright section-padding section-margin">

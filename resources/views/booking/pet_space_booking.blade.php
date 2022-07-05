@@ -157,17 +157,17 @@
                    <h2> <i class="fa fa-user" style="color:#f6ab49;font-size:50px"></i>About Me</h2>
                        <div class="about-us">
                        <p class="about"><b>Introduce yourself and why you enjoy being with pets.</b></p>
-                       <p class="about">e.g. I'm a pet lover and i love pets as they are absolutely adorable</p>
+                       <p class="about">{{$self['content1']}}</p>
                        <p class="about"><b>Tell us about the type of pet you have and your experience with it.</b></p>
-                       <p class="about">e.g. I own a German Shepard since i was 18, it's a wonderful pet an takes care of me and my family.I walk with her daily </p>
+                       <p class="about">{{$self['content2']}} </p>
                        <p class="about"><b>How dose your service stand out ?</b></p>
-                       <p class="about">Tell potential customers why they should choose you about others</p>
+                       <p class="about">{{$self['content3']}}</p>
                        <p class="about"><b>What do you enjoy about the work you do ?</b></p>
-                       <p class="about">Discribe what makes you enjoy what you do.</p>
+                       <p class="about">{{$self['content4']}}</p>
                        <p class="about"><b>Your Skills and qualifications</b></p>
-                       <p class="about">Discribe what makes you enjoy what you do.</p>
+                       <p class="about">{{$self['content5']}}</p>
                        <p class="about"><b>Other special skills with per or qualification ?</b></p>
-                       <p class="about">Discribe what makes you enjoy what you do.</p>
+                       <p class="about">{{$self['content6']}}</p>
                        
                        </div>
                 </div>

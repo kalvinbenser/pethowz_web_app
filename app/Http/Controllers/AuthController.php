@@ -22,7 +22,7 @@ public function user_login(Request $request){
 }
 
 public function user_logout(Request $request){
-    if($request->session()->get('user_id')){
+    if($request->session()->has('user_id')){
         $request->session()->forget('user_id');
         return redirect('/');
     }
@@ -34,11 +34,30 @@ public function user_logout(Request $request){
             return redirect('/')->with('warning','Please Login First');
         }
         else{
-            
-            return view('/register/register');
+            $user_id=  $request->session()->get('user_id');
+          
+            $registerDataUrl=env('API').'getRegistrationDetails/'.$user_id;
+         
+           $registerDetailsRequest=Http::get($registerDataUrl);
+           $registerDetailsResponse=$registerDetailsRequest->json();
+        
+                 $profile_data= $registerDetailsResponse['data'];
+                 //dd($profile_data);
+                 if($registerDetailsResponse['Success']==false){
+                   return redirect('/register_view');
+                 }
+                 else{
+                     return redirect('/');
+                 }
+
         }
 
        // return view('/register/register');
+        }
+
+
+        public function register_view(){
+            return view('/register/register');
         }
     
         //regiter form details

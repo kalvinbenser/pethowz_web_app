@@ -219,6 +219,7 @@ readURL(this);
             else{
 
 
+   
               const firebaseConfig = {
      apiKey: "AIzaSyAlCo1n1jNYbvD0DEAjKepE27FcdZqkfmY",
      authDomain: "pethouse-otp.firebaseapp.com",
@@ -241,23 +242,13 @@ readURL(this);
          const metadata = {
            contentType: file.type
          };
-         const task = ref.child('/user/'+Imagename).put(file, metadata);
+         const task = ref.child('/users/'+Imagename).put(file, metadata);
          task
            .then(snapshot => snapshot.ref.getDownloadURL())
            .then(url => {
              console.log(url);
-                   
-               
-           })
-           .catch(console.error);
-       
-            }
-           
 
-            // alert(Imagename);
-     
-           
-           
+                             
                    
           // start
                    
@@ -270,7 +261,7 @@ readURL(this);
                                             type:'POST',
                                             url:"{{ url('create_register') }}",
                                             data:{
-                                              image:Imagename,
+                                              image:url,
                                               name:profile_name,
                                               mail:profile_mail,
                                               number:profile_number,
@@ -301,31 +292,21 @@ readURL(this);
 
                                           
 
-         
-                                    
+               
+           })
+           .catch(console.error);
+       
+            }
+           
 
-
+            // alert(Imagename);
+     
+           
+  
 
           //end
 
-                            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
-                              
+                                  
                               
   });
 

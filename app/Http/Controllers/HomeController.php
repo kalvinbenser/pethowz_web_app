@@ -69,7 +69,8 @@ class HomeController extends Controller
         $PetServiceCollection = collect($pet_service);
 
         $filtered = $PetServiceCollection->filter(function ($value, $key) {
-            return $value['approved']==true;
+            // return $value['approved']==true;
+            return $value['approved']==false;
         });
     
         //dd($filtered->all());
@@ -77,7 +78,7 @@ class HomeController extends Controller
 
         $collection = (new Collection($filtered->all()))->paginate(8);
        // dd($collection);
-        return view('/service/service',compact('collection'));
+        return view('/petservice/pet_service',compact('collection'));
     }
     //grooming service
 
@@ -332,23 +333,40 @@ class HomeController extends Controller
             return redirect('/')->with('warning','Please Login First');
         }
         else{
-            $request->session()->put('register_id',"62bbdded7bf9325ca18a6caf");
-            $reg_id=  $request->session()->get('register_id');
-          
-           // dd($reg_id);
-             //$request->session()->put('register_id',"62bbdded7bf9325ca18a6caf");
-         $registerDataUrl=env('API').'getRegistrationDetails/'.$reg_id;
+
+            $user_id=  $request->session()->get('user_id');
+          //profile
+         $registerDataUrl=env('API').'getRegistrationDetails/'.$user_id;
       
         $registerDetailsRequest=Http::get($registerDataUrl);
         $registerDetailsResponse=$registerDetailsRequest->json();
      
               $profile_data= $registerDetailsResponse['data'];
-              dd($profile_data);
+              //dd($profile_data);
               if($registerDetailsResponse['Success']==false){
                 return redirect('/register');
               }
                    
               $data['collection'] = (new Collection($profile_data));
+              
+              //my venue
+              $myVenueUrl=env('API').'getPetSpaceMobileListById/'.$user_id;
+              $myVenueRequest=Http::get($myVenueUrl);
+              $myVenueResponse=$myVenueRequest->json();
+              $data['my_venue']=$myVenueResponse['data'];
+              //dd( $data['my_venue']);
+
+
+
+              //my service
+
+              $myServiceUrl=env('API').'getPetServiceMobileListById/'.$user_id;
+              $myServiceRequest=Http::get($myServiceUrl);
+              $myServiceResponse=$myServiceRequest->json();
+              $data['my_service']=$myServiceResponse['data'];
+              //dd( $data['my_service']);
+
+
               
                return view('/profile/profile',$data);
         }
@@ -371,22 +389,31 @@ class HomeController extends Controller
              $update_mail=$request->update_mail;
              $update_number=$request->update_number;
              $update_address=$request->update_address;
-             $reg_id =$request->session()->get('register_id');
-           
+             $user_id =$request->session()->get('user_id');
+           // dd($user_id);
             $profileData=[
-                'reg_id'=>$reg_id,
-                'update_mail'=>$update_mail,
-                'update_number'=>$update_number,
-                'update_address'=>$update_address
+                'user_id'=>$user_id,
+                'email'=>$update_mail,
+                'contact_number'=>$update_number,
+                'address'=>$update_address
                
             ];
-            $reg_id=$request->session()->get('register_id');
-            $editProfileUrl=env('API').'updateRegistrationDetails/'.$reg_id;
-            dd($editProfileUrl);
+            //dd($profileData);
+
+            // "user_id": "wfLB4hhiZaWISswbtPAGmAhwDm52",
+            // "name": "uthayakumar",
+            // "contact_number": "9042973776",
+            // "img": "http://img/uk.com",
+            // "gender": 0,
+            // "email": "uthaya363@gmail.com",
+            // "address": "New address"
+        
+            $editProfileUrl=env('API').'updateRegistrationDetails';
+           // dd($editProfileUrl);
             $editProfileRequest=Http::put($editProfileUrl,$profileData);
             $editProfileResponse=$editProfileRequest->json();
             //dd($editProfileResponse);
-          return redirect('/profile')->with('message','your datas are updated Added');
+          return redirect('/profile')->with('message','your profile updated');
         }
         catch(Exception $e) {
           echo 'Message: ' .$e->getMessage();

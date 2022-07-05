@@ -25,7 +25,7 @@
                     <h1>Exclusive Pet Spaces</h1>
                 </div>
                 <div class="view-all col-12 col-sm-6 col-md-6 col-lg-6">
-                    <a href="/add_your_self" target="">
+                    <a href="/pet_space_form" target="">
                          <i class="fa fa-plus-square"  style="font-size:28px;color:#FF9966"></i>
                        </a>
                  </div>
@@ -52,7 +52,7 @@
                                                 {{-- <img class="fit-image" src="https://firebasestorage.googleapis.com/v0/b/pethouse-otp.appspot.com/o/user%2F1656477109457-images.jpeg?alt=media" alt="Product" />
                                              --}}
                                                
-                                                <img class="fit-image" src="{{  URL::asset('front-end/assets/images/products/medium-product/Exc pet space image 1.png')}}" alt="Product" />
+                                                <img class="fit-image" src="{{$item['image']}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">4.5</span>
@@ -63,7 +63,9 @@
 
                                         <!-- Content Start  -->
                                         <div class="content">
+                                            <a href="{{('/pet_space_booking')}}/{{$item['_id']}}" class="image">
                                             <h5 class="title"><p>{{$item['venue_name']}}</p></h5>
+                                            </a>
                                             <span class="price">
                                                 <span class="new">RS {{$item['cost_per_hour']}}/Hr</span>
                                                 </span>
