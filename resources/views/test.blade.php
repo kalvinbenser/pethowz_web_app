@@ -1,52 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
 <body>
-   
-<div id="calculator">
-  <div class="inputbox">
-    <input type="checkbox" id="option1">
-    <label for="option1">Services1</label><span class="license_price bold"> €29</span>
+
+<!-- <h2 style="text-align:center">Slideshow Gallery</h2> -->
+
+<div class="container"  >
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="https://i.picsum.photos/id/876/200/300.jpg?hmac=goKRzVFKqeXwTjZFK6d58HDkfv32_d-P_bPCS3Mtlf4" style="width:100%" >
   </div>
-  <div class="inputbox">
-    <input type="checkbox" id="option2">
-    <label for="option2">Services2</label><span class="license_price bold"> €39</span>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="https://mlpxhq8ztvyc.i.optimole.com/QgmSm9c.1pLW~44a4f/w:700/h:700/q:100/https://thrivethemes.com/wp-content/uploads/2018/05/photo-jpeg-example.jpg" style="width:100%">
   </div>
-  <div class="inputbox">
-    <input type="checkbox" id="option3">
-    <label for="option3">Services3</label><span class="license_price bold"> €49</span>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="img_mountains_wide.jpg" style="width:100%">
   </div>
-  <div class="inputbox">
-    <input type="checkbox" id="option4">
-    <label for="option4">Services4</label><span class="license_price bold"> €59</span>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="img_lights_wide.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="img_nature_wide.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="img_snow_wide.jpg" style="width:100%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+ 
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="https://i.picsum.photos/id/876/200/300.jpg?hmac=goKRzVFKqeXwTjZFK6d58HDkfv32_d-P_bPCS3Mtlf4" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://mlpxhq8ztvyc.i.optimole.com/QgmSm9c.1pLW~44a4f/w:700/h:700/q:100/https://thrivethemes.com/wp-content/uploads/2018/05/photo-jpeg-example.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img_mountains.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img_nature.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="img_snow.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+    </div>
   </div>
 </div>
-<span>$<span class="total">56</span></span>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function() {
-  var originalPrice = +$('.total').html();
-  $("input[type='checkbox']").click(function() {
-    var priceTotal = originalPrice;
-    $("#calculator input[type='checkbox']:checked").each(function() {
-      priceTotal += parseInt($(this).siblings('.license_price.bold').html().replace("€", ''), 10);
-    });
-    $('.total').html(priceTotal);
-  });
-});
+let slideIndex = 1;
+showSlides(slideIndex);
 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-$(window).load(function() {
-     alert("hi 2");
-});
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
 </script>
-
+    
 </body>
 </html>

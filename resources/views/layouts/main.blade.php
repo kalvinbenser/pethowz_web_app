@@ -84,9 +84,9 @@
                                     <li>
                                         <a href="{{URL::asset('/home/index')}}">Home</a>                                        
                                    </li>  
-                                   <li><a href="{{URL::asset('/about/about')}}">About</a></li>                                  
+                                   <!-- <li><a href="{{URL::asset('/about/about')}}">About</a></li>                                   -->
                                    <li>
-                                        <a href="{{URL::asset('/exclusive_petspaces')}}">Pet host</a>
+                                        <a href="{{URL::asset('/pet_host')}}">Pet host</a>
                                     </li>
                                     
                                     <li>
@@ -276,7 +276,7 @@
               </div>
               <span id="mobile_number_error" class="text-danger"></span>
               <div class="p-4 d-flex justify-content-center">
-                <div id="recaptcha-container"></div>
+                <div id="recaptcha-container" ></div>
               </div>
              
               <div class="model-item-center mt-2">
@@ -329,28 +329,18 @@
 
               </div>
 
-              <p class="model-text-center mt-5">Enter the 4-Degit Verification Code</p>
+              <p class=" model-text-center mt-5">Enter the 4-Degit Verification Code</p>
 
               <div class="model-item-center mt-2">
                 <div style="display: flex;justify-content: center" id="otp-container">
-                    <input type="text" id="verificationCode"/>
-                  {{-- <input oninput="inputInsideOtpInput(this)"
-                         maxlength="1" class="model-otp mobile_otp1" type="text">
-                         
-                  <input oninput="inputInsideOtpInput(this)"
-                         maxlength="1" class="model-otp mobile_otp2" type="text">
-                      
-                  <input oninput="inputInsideOtpInput(this)"
-                         maxlength="1" class="model-otp mobile_otp3" type="text">
-                       
-                  <input oninput="inputInsideOtpInput(this)"
-                         maxlength="1" class="model-otp mobile_otp4" type="text">   --}}
+                    <input type="text" class="form-control" id="verificationCode"/>
+           
               </div>
               </div>
               <p class="model-text-center mt-1">Did not receive the code? <span class="model-resend-text">Re-send</span></p>
               <span id="mobile_otp_error" class="text-danger"></span>
               <div class="model-item-center">
-              <input type="submit" value="VERIFY" id="booking_btn2" onclick="codeverify();" data-bs-toggle="modal" class="btn-model-verify" data-bs-target="#exampleModal3"> 
+              <input type="submit" value="VERIFY" id="booking_btn2" onclick="codeverify();"  class="btn-model-verify" > 
               </div>
 
             </div>
@@ -361,7 +351,9 @@
     </div>
   </div>
 
-
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal3">
+  test
+</button> -->
    
   <div class="modal fade " id="loginModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog model-center">
@@ -433,7 +425,7 @@
                 <input type="checkbox" id="terms" name="terms" style="margin-left: 30px;margin-top:20px" value="ok" required>
                 <label for="terms">I accept the <u>Terms and Conditions</u></label><br>
                 <div class="p-4 d-flex justify-content-center">
-                    <button class="btn-model" onclick="clodeModel()" >submit</button>
+                    <button class="btn-model" data-bs-dismiss="modal">submit</button>
                 </div>
               </div>
              
@@ -537,7 +529,7 @@
                 <div class="row align-items-center m-b-n20">
                     <div class="col-md-6 text-center text-md-start order-2 order-md-2 m-b-20">
                         <div class="copyright-content">
-                            <span class="mb-0">© 2022 <strong>Pethows.</strong>All rights reserved. <a href="https://sales@paladinsoftwares.com/">HasThemes.</a></span>
+                            <span class="mb-0">© 2022 <strong>Pethows.</strong>All rights reserved. </span>
                         </div>
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
@@ -658,7 +650,7 @@
                             <div class="cart-btn action-btn m-b-30">
                                 <div class="action-cart-btn-wrapper d-flex justify-content-start">
                                     <div class="add-to_cart">
-                                        <a class="btn btn-primary btn-hover-dark rounded-0" href="cart.html">Add to cart</a>
+                                        <!-- <a class="btn btn-primary btn-hover-dark rounded-0" href="#">test</a> -->
                                     </div>
                                     <a href="wishlist.html" title="Wishlist" class="action"><i class="ti-heart"></i></a>
                                 </div>
@@ -834,15 +826,27 @@
     // };
     
     
+    // const firebaseConfig = {
+    //   apiKey: "AIzaSyAlCo1n1jNYbvD0DEAjKepE27FcdZqkfmY",
+    //   authDomain: "pethouse-otp.firebaseapp.com",
+    //   projectId: "pethouse-otp",
+    //   storageBucket: "pethouse-otp.appspot.com",
+    //   messagingSenderId: "589343176814",
+    //   appId: "1:589343176814:web:5e6e291ee9ab25be6e0e7f",
+    //   measurementId: "G-4VQD1X0NDR"
+    // };
+
+
     const firebaseConfig = {
-      apiKey: "AIzaSyAlCo1n1jNYbvD0DEAjKepE27FcdZqkfmY",
-      authDomain: "pethouse-otp.firebaseapp.com",
-      projectId: "pethouse-otp",
-      storageBucket: "pethouse-otp.appspot.com",
-      messagingSenderId: "589343176814",
-      appId: "1:589343176814:web:5e6e291ee9ab25be6e0e7f",
-      measurementId: "G-4VQD1X0NDR"
+      apiKey:"{{env('API_KEY')}}",
+      authDomain:"{{env('AUTH_DOMAIN')}}",
+      projectId:"{{env('PROJECT_ID')}}",
+      storageBucket:"{{env('STORAGE_BUGET')}}",
+      messagingSenderId: "{{env('MESS_SENDER_ID')}}",
+      appId: "{{env('APP_ID')}}",
+      measurementId: "{{env('MEASUREMENT_ID')}}"
     };
+    
     
     
     firebase.initializeApp(firebaseConfig);
@@ -901,7 +905,7 @@
                                             },
                                             success:function(data){
                                             if(data.user_id){
-                                             $("#loginModal").modal('hide');
+                                      
                                              $("#loginModal2").modal('hide');
                                              $("#loginModal3").modal('show');
                                                 // toastr.success(data.status);
@@ -1007,14 +1011,7 @@
 
   
 
-<script>
 
-function closeModel(){
-    $("#loginModal").modal('hide');
-    $("#loginModal2").modal('hide');
-    $("#exampleModal3").modal('hide');
-   }
-</script>
     @yield('scripts')
       
 </body>

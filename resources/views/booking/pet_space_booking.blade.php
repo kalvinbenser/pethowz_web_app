@@ -68,34 +68,27 @@
 @endsection
 @section('content')
       <!-- Hero/Intro Slider Start -->
-     <div class="section gallary-details">
+      <div class="section gallary-details">
         <div class="profile_images">
       <div class="row">
-        <div class="col-md-4 col-lg-5 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-            <div class="col-lg-12">
-                     <img class="pro-images" src="{{URL::asset('front-end/assets/images/profile-images/Exc pet space pt2 image 1 in webscreen 4.png')}}" alt="Banner Image" />
-            </div>
-         </div>    
+      
+         <div class=" col-md-4 col-lg-4 m-b-30">  
+                  <div class="col-lg-12">                    
+                    <img class="pro-images2" src="{{URL::asset('front-end/assets/gallery/pet1.jpg')}}" alt="Banner Image" />
+                  </div>
+            </div> 
             <div class=" col-md-4 col-lg-4 m-b-30">  
                   <div class="col-lg-12">                    
-                    <img class="pro-images2" src="{{URL::asset('front-end/assets/images/profile-images/Exc pet space pt2 image 1 in webscreen 4.png')}}" alt="Banner Image" />
+                    <img class="pro-images2" src="{{URL::asset('front-end/assets/gallery/pet1.jpg')}}" alt="Banner Image" />
                   </div>
             </div>
-            <div class=" col-md-4 col-lg-3 m-b-30">  
-                <div class=" col-md-4 col-lg-12 m-b-30">  
-                    <div class="col-lg-123">                    
-                      <img class="pro-images3" src="{{URL::asset('front-end/assets/images/profile-images/Exc pet space pt2 image 1 in webscreen 4.png')}}" alt="Banner Image" />
-                    </div>
-              </div>
-               <div class=" col-md-3 col-lg-12 m-b-30">  
-                <div class="col-lg-12">                    
-                  <img class="pro-images3" src="{{URL::asset('front-end/assets/images/profile-images/Exc pet space pt2 image 1 in webscreen 4.png')}}" alt="Banner Image" />
-                  <div class="view-allpic">
-                    <a  href="{{URL::asset('/allimages')}}">More Images</a>
-                </div>
-                </div>
-          </div>
-          </div>
+            <div class=" col-md-4 col-lg-4 m-b-30">  
+                  <div class="col-lg-12">                    
+                    <img class="pro-images2" src="{{URL::asset('front-end/assets/gallery/pet1.jpg')}}" alt="Banner Image" />
+                  </div>
+            </div>
+             
+         
              
                 
          
@@ -103,6 +96,7 @@
          </div>
       </div>
         </div> 
+           <!-- end hero -->
 
 
 
@@ -134,7 +128,7 @@
                                 <input type="hidden" name="user_service" id="userService">
                                 <input type="hidden" name="venue_name" value="{{ $detail['venue_name']}}" >
                                 <input type="hidden" name="user_amount" id="userAmount" value={{$detail['cost_per_hour']}}>
-                                <input type="hidden" name="ser_cart_id" value={{$detail['_id']}}>
+                             
                                 <button  class="btn btn-primary btn-sm mx-auto" id="btn">Book</button>
                             </form>
                             {{-- <button  href="{{URL::asset('/bookingdetails')}}" id="btn"  class="btn btn-primary btn-sm mx-auto">Book</button> --}}
@@ -202,7 +196,7 @@
 
                                  
                                     @if($detail['options_id'])
-                                      <p class="about">Amenities <p>
+                                      <p class="about">Options<p>
                                     @endif
                                     <p class="about">Location<p>
                                 </div>
@@ -211,11 +205,26 @@
                 
                             <div class="col-12 col-sm-6 col-lg-6 m-b-40" data-aos="fade-up" data-aos-duration="1200">
                                 <div class="single-footer-widget">
+                                  <!-- //demo -->
+                                  <p class="about">Apartment<p>
+                                  <p class="about">Cat<p>
+                                  <p class="about">Cage,Caretaker<p>
+                               
+                                  <p class="about">Play area , cctv<p>
+                                  <p class="about">test1<p>
+                                  <p class="about">Chennai<p>
 
-                              
+                                  <!-- end demo -->
+
+                                   
+
+
+
+<!--                               
                                 @if($detail['venue_name'])
                                  <p class="about">{{ $detail['venue_name']}}<p>
                                 @endif  
+
                                 
                                 @foreach($detail['venue_category'] as $cat) 
                                 <div class="d-flex">
@@ -252,7 +261,7 @@
                                  @if($detail['location'])       
                                       <p class="about">{{$detail['location']}}<p>
                                 </div>
-                                @endif 
+                                @endif  -->
                              </div>
                         </div>
         

@@ -71,31 +71,22 @@
       <div class="section gallary-details">
         <div class="profile_images">
       <div class="row">
-        <div class="col-md-4 col-lg-5 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-            <div class="col-lg-12">
-                     <img class="pro-images" src="{{URL::asset('front-end/assets/images/profile-images/Exc pet space pt2 image 1 in webscreen 4.png')}}" alt="Banner Image" />
-            </div>
-         </div>    
+      
+         <div class=" col-md-4 col-lg-4 m-b-30">  
+                  <div class="col-lg-12">                    
+                    <img class="pro-images2" src="{{URL::asset('front-end/assets/gallery/pet1.jpg')}}" alt="Banner Image" />
+                  </div>
+            </div> 
             <div class=" col-md-4 col-lg-4 m-b-30">  
                   <div class="col-lg-12">                    
-                    <img class="pro-images2" src="{{URL::asset('front-end/assets/images/profile-images/Exc pet space pt2 image 1 in webscreen 4.png')}}" alt="Banner Image" />
+                    <img class="pro-images2" src="{{URL::asset('front-end/assets/gallery/pet1.jpg')}}" alt="Banner Image" />
                   </div>
             </div>
-            <div class=" col-md-4 col-lg-3 m-b-30">  
-                <div class=" col-md-4 col-lg-12 m-b-30">  
-                    <div class="col-lg-123">                    
-                      <img class="pro-images3" src="{{URL::asset('front-end/assets/images/profile-images/Exc pet space pt2 image 1 in webscreen 4.png')}}" alt="Banner Image" />
-                    </div>
-              </div>
-               <div class=" col-md-3 col-lg-12 m-b-30">  
-                <div class="col-lg-12">                    
-                  <img class="pro-images3" src="{{URL::asset('front-end/assets/images/profile-images/Exc pet space pt2 image 1 in webscreen 4.png')}}" alt="Banner Image" />
-                  <div class="view-allpic">
-                    <a  href="{{URL::asset('/allimages')}}">More Images</a>
-                </div>
-                </div>
-          </div>
-          </div>
+            <div class=" col-md-4 col-lg-4 m-b-30">  
+                  <div class="col-lg-12">                    
+                    <img class="pro-images2" src="{{URL::asset('front-end/assets/gallery/pet1.jpg')}}" alt="Banner Image" />
+                  </div>
+            </div>
              
                 
          
@@ -216,8 +207,16 @@
                                  <p class="about">{{$cat->venue_category}}<p>
                                 @endforeach
                              --}}
+
+                             <p class="about">pet shop<p>
+                                  <p class="about">Cat<p>
+                                  <p class="about">Walking,Breading<p>
+                               
+                                  <p class="about">Play area , cctv<p>
+                                  <p class="about">1000<p>
+                                  <p class="about">Chennai<p>
                                 
-                                @if($detail['venue_name'])
+                                <!-- @if($detail['venue_name'])
                                  <p class="about">{{ $detail['venue_name']}}<p>
                                 @endif    
 
@@ -239,14 +238,14 @@
 
                                 @if($detail['cost_per_hour'])
                                 <p class="about">{{$detail['cost_per_hour']}}<p>
-                               @endif   
+                               @endif    -->
 
                                  
 
-                                 @if($detail['location'])       
+                                 <!-- @if($detail['location'])       
                                       <p class="about">{{$detail['location']}}<p>
                                 </div>
-                                @endif 
+                                @endif  -->
                              </div>
                         </div>
         

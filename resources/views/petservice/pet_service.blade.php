@@ -50,7 +50,7 @@
                                   <h5 class="title"><p>{{$pet_ser['venue_name']}}</p></h5>
                                 </a>
                                   <span class="price">
-                                  <span class="new">RS {{$pet_ser['cost_per_hour']}}/Hr</span>
+                                  <span class="new">₹ {{$pet_ser['cost_per_hour']}}/Hr</span>
                                                                           
                                 </span>
                                 <span class="rating">

@@ -450,4 +450,24 @@ class HomeController extends Controller
      return response()->json(['status' => 'insert successfully','select_category'=> $select_category]);
     }
 
+    function pet_host(Request $request){
+
+        $petSpaceUrl= env('API').'getAllPetSpace';
+       
+        $petSpaceRequest = Http::get($petSpaceUrl);
+  
+        $petSpaceResponse = $petSpaceRequest->json();
+        
+        $pet_space=$petSpaceResponse['data'];
+
+      
+
+        $collection = (new Collection($pet_space))->paginate(8);
+       // dd($collection);
+        return view('petspace/pet_host',compact('collection'));
+      
+    }
+
+
+
 }

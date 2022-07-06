@@ -107,6 +107,7 @@ Route::post('/test_data',[HomeController::class,'test_data']);
 //pethost details
 
 Route::post('/pet_host_details',[HomeController::class,'pet_host_details']);
+Route::get('/pet_host',[HomeController::class,'pet_host']);
 
 
 
