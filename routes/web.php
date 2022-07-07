@@ -140,6 +140,10 @@ Route::get('/user_logout',[AuthController::class,'user_logout']);
 
 // service category
 Route::get('/service_category',[ServiceController::class,'service_category']);
+//close model
+
+Route::post('/closeModel',[HomeController::class,'closeModel']);
+
 
 require __DIR__.'/Auth.php';
 require __DIR__.'/Booking.php';

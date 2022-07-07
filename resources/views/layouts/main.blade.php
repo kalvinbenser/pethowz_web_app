@@ -351,9 +351,9 @@
     </div>
   </div>
 
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal3">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal3">
   test
-</button> -->
+</button>
    
   <div class="modal fade " id="loginModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog model-center">
@@ -419,15 +419,25 @@
 
 
 
+             
+               <form action="{{('/closeModel')}}" method="post">
+                @csrf
+                <input type="checkbox" id="terms" name="terms" value="ok" required>
+                <label for="terms">I accept the <u>Terms and Conditions</u></label><br>
+                <input type="submit" class="btn-model-verify mt-2 mb-2" value="submit" />
+              </form>
+           
 
-
+<!-- 
               <div>
                 <input type="checkbox" id="terms" name="terms" style="margin-left: 30px;margin-top:20px" value="ok" required>
                 <label for="terms">I accept the <u>Terms and Conditions</u></label><br>
                 <div class="p-4 d-flex justify-content-center">
-                    <button class="btn-model" data-bs-dismiss="modal">submit</button>
+                   
+                    <button class="btn-model" type="submit" onclick="closeModel()">submit</button>
+          
                 </div>
-              </div>
+              </div> -->
              
               
              
@@ -814,27 +824,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
     <script>
-    // var firebaseConfig = {
-    // apiKey: "AIzaSyBPdVwUIYOY0qRr9kbIMTnxKpFw_nkneYk",
-    // authDomain: "itdemo-push-notification.firebaseapp.com",
-    // databaseURL: "https://itdemo-push-notification.firebaseio.com",
-    // projectId: "itdemo-push-notification",
-    // storageBucket: "itdemo-push-notification.appspot.com",
-    // messagingSenderId: "257055232313",
-    // appId: "1:257055232313:web:3f09127acdda7298dfd8e8",
-    // measurementId: "G-VMJ68DFLXL"
-    // };
     
-    
-    // const firebaseConfig = {
-    //   apiKey: "AIzaSyAlCo1n1jNYbvD0DEAjKepE27FcdZqkfmY",
-    //   authDomain: "pethouse-otp.firebaseapp.com",
-    //   projectId: "pethouse-otp",
-    //   storageBucket: "pethouse-otp.appspot.com",
-    //   messagingSenderId: "589343176814",
-    //   appId: "1:589343176814:web:5e6e291ee9ab25be6e0e7f",
-    //   measurementId: "G-4VQD1X0NDR"
-    // };
 
 
     const firebaseConfig = {
@@ -1009,7 +999,11 @@
 </script>
 
 
-  
+  <!-- <script>
+    closeModel(){
+        window.location.href="{{url('/')}}";
+    }
+  </script> -->
 
 
     @yield('scripts')

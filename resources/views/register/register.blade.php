@@ -46,7 +46,9 @@
                         <div class="container">
                           
                             <div class="row">
-                                <h1 class="registeration">Registration Details</h1>
+                                <!-- <h1 class="registeration">Registration Details</h1> -->
+                                <h1 class="registeration">Additional Details</h1>
+                              
                             <div class="login-wrapper">
                             
                                
@@ -274,7 +276,9 @@ readURL(this);
                                                 console.log(data.datas);
                                                 console.log(data.response);
                                                 if(data.response.Success==true){
-                                                  toastr.success("Registered successfully");
+                                                
+                                                  window.location.href="{{url('/')}}";
+                                                  toastr.success("Registeration successfully");
                                                 }
                                                 else{
                                                   toastr.error("Registeration failed");

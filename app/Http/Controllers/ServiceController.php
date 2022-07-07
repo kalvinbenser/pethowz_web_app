@@ -10,8 +10,30 @@ use App\Support\Collection;
 class ServiceController extends Controller
 {
 
-    public function test(){
-        return view("test");
+    public function test(Request $request){
+
+        $user_id=$request->session()->get('user_id');
+        if($user_id){
+
+            $registerDataUrl=env('API').'getRegistrationDetails/'.$user_id;
+         
+            $registerDetailsRequest=Http::get($registerDataUrl);
+            $registerDetailsResponse=$registerDetailsRequest->json();
+             //dd($registerDetailsResponse);
+             if($registerDetailsResponse['Success']==true){
+                
+                return view("test");
+             }
+             else{
+                return redirect('register_view');
+             }
+
+        }
+        else{
+            return redirect()->back()-with('message','login first');
+        }
+       
+        
     }
     // ******************************** service-form ******************************** \\
     public function service_form( Request $request){

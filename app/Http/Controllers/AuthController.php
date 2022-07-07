@@ -56,8 +56,15 @@ public function user_logout(Request $request){
         }
 
 
-        public function register_view(){
-            return view('/register/register');
+        public function register_view(Request $request){
+            $user_id=$request->session()->get('user_id');
+            if($user_id){
+                return view('/register/register');
+            }
+            else{
+               return redirect('/')->with('Login First');  
+            }
+            
         }
     
         //regiter form details
