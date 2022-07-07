@@ -329,7 +329,7 @@
 
               </div>
 
-              <p class=" model-text-center mt-5">Enter the 4-Degit Verification Code</p>
+              <p class=" model-text-center mt-5">Enter the 4-Digit Verification Code</p>
 
               <div class="model-item-center mt-2">
                 <div style="display: flex;justify-content: center" id="otp-container">
