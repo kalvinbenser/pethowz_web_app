@@ -82,16 +82,16 @@
                             <div class="main-menu">
                                 <ul>
                                     <li>
-                                        <a href="{{URL::asset('/home/index')}}">Home</a>                                        
+                                        <a href="{{URL::asset('/')}}">Home</a>                                        
                                    </li>  
                                    <!-- <li><a href="{{URL::asset('/about/about')}}">About</a></li>                                   -->
                                    <li>
                                         <a href="{{URL::asset('/pet_host')}}">Pet host</a>
                                     </li>
-<!--                                     
+                                    
                                     <li>
                                         <a href="{{URL::asset('/service')}}">services</a>
-                                      </li> -->
+                                      </li>
                                    
                                    @if(!session()->has('user_id'))
                                     <li>
@@ -734,16 +734,16 @@
                     <nav>
                         <ul class="mobile-menu">
                             <li>
-                                <a href="{{URL::asset('/home/index')}}">Home</a>                                        
-                           </li>  
+                                <a href="{{URL::asset('/')}}">Home</a>                                        
+                           <!-- </li>  
                            <li><a href="{{URL::asset('/about/about')}}">About</a></li>                                  
-                           <li>
-                                <a href="{{URL::asset('/pethost/pethost')}}">Pet host</a>
+                           <li> -->
+                                <a href="{{URL::asset('/pet_host')}}">Pet host</a>
                             </li>
                             
                             <li class="has-children">
                                 <a href="{{URL::asset('/service')}}">services</a>
-                              </li>
+                            </li>
                             <li>
                                 <a onclick="" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
                             </li>

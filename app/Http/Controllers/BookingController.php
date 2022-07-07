@@ -167,23 +167,28 @@ class BookingController extends Controller
 
 
    public function pet_service_booking(Request $request,$s_id){
-               // self intro
-               $user_id=$request->session()->get('user_id');
-               $selfIntroUrl= env('API').'getSelfDescription/'.$user_id;
-               $selfIntroRequest = Http::get($selfIntroUrl);
-               $selfIntroResponse=$selfIntroRequest->json();
-               //dd($selfIntroResponse['data']);
-               $data['self']=$selfIntroResponse['data'];   
+               
 
        // $petSpaceUrl= env('API').'getPetSpaceById/'.$s_id;
        $petServiceUrl= env('API').'getPetServiceById/'.$s_id;
       
        $petServiceRequest = Http::get($petServiceUrl);
  
-       $petServiceResponse = $petServiceRequest->json();
+       $details = $petServiceRequest->json();
+      // dd($petServiceResponse);
+
+       if(isset($details['data'][0]['SelfDescriptionDetails'])){
+        $data['self']=  $details['data'][0]['SelfDescriptionDetails'];
+    }
+
+    if(isset($details['data'][0]['RegistrationDetails'])){
+        $data['reg']=$details['data'][0]['RegistrationDetails'];
+    }
+
+   //  dd($data['reg']);
        $data['s_id']=$s_id;
        //dd($petServiceResponse);
-       $data['detail']=$petServiceResponse['data'][0];
+       $data['detail']=$details['data'][0];
        //dd($petSpaceResponse);
        return view('/booking/pet_service_booking',$data);
       

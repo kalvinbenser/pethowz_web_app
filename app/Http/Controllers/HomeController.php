@@ -352,43 +352,47 @@ class HomeController extends Controller
         public function profile(Request $request ){
 
               $user_id=$request->session()->get('user_id');
-        if($user_id){
+              //dd($user_id);
+        if(isset($user_id)){
 
             $registerDataUrl=env('API').'getRegistrationDetails/'.$user_id;
          
             $registerDetailsRequest=Http::get($registerDataUrl);
             $registerDetailsResponse=$registerDetailsRequest->json();
-            $profile_data=$registerDetailsResponse['data'];
+            //$profile_data=$registerDetailsResponse['data'];
              //dd($registerDetailsResponse);
-             if($registerDetailsResponse['Success']==true){
+             if($registerDetailsResponse['Success']==false){
                 
-                         $data['collection'] = (new Collection($profile_data));
-              
-              //my venue
-              $myVenueUrl=env('API').'getPetSpaceMobileListById/'.$user_id;
-              $myVenueRequest=Http::get($myVenueUrl);
-              $myVenueResponse=$myVenueRequest->json();
-              $data['my_venue']=$myVenueResponse['data'];
-              //dd( $data['my_venue']);
-
-
-
-              //my service
-
-              $myServiceUrl=env('API').'getPetServiceMobileListById/'.$user_id;
-              $myServiceRequest=Http::get($myServiceUrl);
-              $myServiceResponse=$myServiceRequest->json();
-              $data['my_service']=$myServiceResponse['data'];
-              //dd( $data['my_service']);
-
-
-              
-              return view('/profile/profile',$data);
-
+               
+              return redirect('register_view');
 
              }
              else{
-                return redirect('register_view');
+                $profile_data=$registerDetailsResponse['data'];
+
+                $data['collection'] = (new Collection($profile_data));
+              
+                //my venue
+                $myVenueUrl=env('API').'getPetSpaceMobileListById/'.$user_id;
+                $myVenueRequest=Http::get($myVenueUrl);
+                $myVenueResponse=$myVenueRequest->json();
+                $data['my_venue']=$myVenueResponse['data'];
+                //dd( $data['my_venue']);
+  
+  
+  
+                //my service
+  
+                $myServiceUrl=env('API').'getPetServiceMobileListById/'.$user_id;
+                $myServiceRequest=Http::get($myServiceUrl);
+                $myServiceResponse=$myServiceRequest->json();
+                $data['my_service']=$myServiceResponse['data'];
+                //dd( $data['my_service']);
+  
+  
+                
+                return view('/profile/profile',$data);
+              
              }
 
         }

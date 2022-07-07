@@ -72,21 +72,21 @@
         <div class="profile_images">
       <div class="row">
       
+      @if($detail['image'])
+         <div class=" col-md-4 col-lg-4 m-b-30">  
+                  <div class="col-lg-12">                    
+                    <img class="pro-images2" src="{{$detail['image']}}" alt="Banner Image" />
+                  </div>
+            </div> 
+         @else
+
          <div class=" col-md-4 col-lg-4 m-b-30">  
                   <div class="col-lg-12">                    
                     <img class="pro-images2" src="{{URL::asset('front-end/assets/gallery/pet1.jpg')}}" alt="Banner Image" />
                   </div>
-            </div> 
-            <div class=" col-md-4 col-lg-4 m-b-30">  
-                  <div class="col-lg-12">                    
-                    <img class="pro-images2" src="{{URL::asset('front-end/assets/gallery/pet1.jpg')}}" alt="Banner Image" />
-                  </div>
             </div>
-            <div class=" col-md-4 col-lg-4 m-b-30">  
-                  <div class="col-lg-12">                    
-                    <img class="pro-images2" src="{{URL::asset('front-end/assets/gallery/pet1.jpg')}}" alt="Banner Image" />
-                  </div>
-            </div>
+            
+         @endif
              
                 
          
@@ -104,15 +104,22 @@
             <div class="section profile-details">
                 <div class="testimonial-thumb text-center">
                 <div class="row m-b-n40">
-                                <div class="col-12 col-md-2 col-sm-4 col-lg-2 user_pic">
-                        
-                            <img src="{{URL::asset('front-end/assets/images/testimonial/User Image.png')}}" alt="Testimonial Image"/>
-                                </div>
-                            <div class="col-12 col-sm-4 col-md-3 col-lg-3">
-                                <div class="name_details">
-                                <h3 class="thumb-title">Jonathon Jhon</h3>
-                                <h6 class="thumb-subtitle">joining date</h6>
-                                </div>
+                <div class="col-12 col-md-2 col-sm-4 col-lg-2 user_pic">
+                        @if(isset($reg['img']))
+                        <img src="{{$reg['img']}}" alt=" Image"/>
+                        @else
+                        <img  alt=" Image"/>
+                        @endif
+                            </div>
+                        <div class="col-12 col-sm-4 col-md-3 col-lg-3">
+                            <div class="name_details">
+                            @if(isset($reg['name']))
+                            <h3 class="thumb-title">{{$reg['name']}}</h3>
+                            @else
+                            <h3 class="thumb-title">Name</h3>
+                            @endif
+                            <!-- <h6 class="thumb-subtitle">joining date</h6> -->
+                            </div>
                            </div>
              
                     <div class="col-12 col-sm-4 col-md-3 col-lg-7" data-aos="fade-up" data-aos-duration="1600">
@@ -149,119 +156,36 @@
                    <h2> <i class="fa fa-user" style="color:#f6ab49;font-size:50px"></i>About Me</h2>
                        <div class="about-us">
                        <p class="about"><b>Introduce yourself and why you enjoy being with pets.</b></p>
-                       @if($self['content1'])
+                       @if(isset($self['content1']))
                        <p class="about">{{$self['content1']}}</p>
                        @endif
                        <p class="about"><b>Tell us about the type of pet you have and your experience with it.</b></p>
-                       @if($self['content2'])
+                       @if(isset($self['content2']))
                        <p class="about">{{$self['content2']}} </p>
                        @endif
                        <p class="about"><b>How dose your service stand out ?</b></p>
-                       @if($self['content3'])
+                       @if(isset($self['content3']))
                        <p class="about">{{$self['content3']}}</p>
                        @endif
                        <p class="about"><b>What do you enjoy about the work you do ?</b></p>
-                       @if($self['content4'])
+                       @if(isset($self['content4']))
                        <p class="about">{{$self['content4']}}</p>
                        @endif
                        <p class="about"><b>Your Skills and qualifications</b></p>
-                       @if($self['content5'])
+                       @if(isset($self['content5']))
                        <p class="about">{{$self['content5']}}</p>
                        @endif
                        <p class="about"><b>Other special skills with per or qualification ?</b></p>
-                       @if($self['content6'])
+                       @if(isset($self['content6']))
                        <p class="about">{{$self['content6']}}</p>
                        @endif
+                       
                        
                        </div>
                 </div>
                 
-                <div class="col-md-6 col-12  m-b-30" data-aos="fade-up" data-aos-duration="1400">
-               
-                                    <h2><img src="{{URL::asset('front-end/assets/images/logo/Venue.svg')}}"  alt="Smiley face" height="32px" width="42px">Venue Details</h2>
-                                        <div class="venue">
-                                            <div class="row">
-                     <div class="col-12 col-sm-6 col-lg-6 m-b-40" data-aos="fade-up" data-aos-duration="1200">
-                              <div class="single-footer-widget">
-                                    
-                                @if($detail['venue_name'])
-                                <p class="about">Venue Name<p>
-                                @endif
-                                    
-                                    @if($detail['service_details'])
-                                      <p class="about">Service Details <p>
-                                    @endif
-
-                                    @if(isset($detail['services_id']))
-                                    <p class="about">Service  <p>
-                                  @endif
-
-                                  @if(isset($detail['options_id']))
-                                  <p class="about">Option <p>
-                                @endif
-
-                                    @if($detail['cost_per_hour'])
-                                      <p class="about">Cost per Hour <p>
-                                    @endif
-
-                              
-                                    @if($detail['location'])
-                                    <p class="about">Location <p>
-                                  @endif
-                                </div>
-                         </div>
-
                 
-                            <div class="col-12 col-sm-6 col-lg-6 m-b-40" data-aos="fade-up" data-aos-duration="1200">
-                                <div class="single-footer-widget">
-
-                                 {{-- @foreach($detail['venue_category'] as $cat)    
-                                 <p class="about">{{$cat->venue_category}}<p>
-                                @endforeach
-                             --}}
-
-                             <p class="about">pet shop<p>
-                                  <p class="about">Cat<p>
-                                  <p class="about">Walking,Breading<p>
-                               
-                                  <p class="about">Play area , cctv<p>
-                                  <p class="about">1000<p>
-                                  <p class="about">Chennai<p>
-                                
-                                <!-- @if($detail['venue_name'])
-                                 <p class="about">{{ $detail['venue_name']}}<p>
-                                @endif    
-
-                                @if($detail['service_details'])
-                                 <p class="about">{{$detail['service_details']}}<p>
-                                @endif   
-                                
-                                @foreach($detail['services_id'] as $ser) 
-                                <div class="d-flex">
-                                    <p class="about">{{$ser}}<p>
-                                    </div>   
-                                @endforeach
-
-                                @foreach($detail['options_id'] as $opt) 
-                                <div class="d-flex">
-                                    <p class="about">{{$opt}}<p>
-                                    </div>   
-                                @endforeach
-
-                                @if($detail['cost_per_hour'])
-                                <p class="about">{{$detail['cost_per_hour']}}<p>
-                               @endif    -->
-
-                                 
-
-                                 <!-- @if($detail['location'])       
-                                      <p class="about">{{$detail['location']}}<p>
-                                </div>
-                                @endif  -->
-                             </div>
-                        </div>
-        
-             
+                
                 </div>
               </div>
            
