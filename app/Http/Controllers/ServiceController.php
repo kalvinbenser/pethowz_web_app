@@ -37,13 +37,22 @@ class ServiceController extends Controller
     }
     // ******************************** service-form ******************************** \\
     public function service_form( Request $request){
-
-        // if(!$request->session()->get('user_id')){
-        //     return redirect('/')->with('warning','Please Login First');
-        // }
-        // else{
-            return view('/petservice/pet_service_form');
-        // }
+        $user_id=$request->session()->get('user_id');
+        if(isset($user_id)){
+            $petSelfUrl=env('API').'getSelfDescription/'.$user_id;
+          
+            $petSelfRequest=Http::get($petSelfUrl);
+            $petSelfResponse=$petSelfRequest->json();
+            if($petSelfResponse['Success']==false){
+                return redirect('add_your_self');
+            }
+            else{
+                return view('/petservice/pet_service_form');
+            }
+        }
+        else{
+           return redirect()->back()->with('warning','Please Login');
+        }
         
      
     }
@@ -109,12 +118,23 @@ class ServiceController extends Controller
 
         public function pet_space_form(Request $request){
 
-            if(!$request->session()->get('user_id')){
-                return redirect('/')->with('warning','Please Login First');
+            $user_id=$request->session()->get('user_id');
+            if(isset($user_id)){
+                $petSelfUrl=env('API').'getSelfDescription/'.$user_id;
+              
+                $petSelfRequest=Http::get($petSelfUrl);
+                $petSelfResponse=$petSelfRequest->json();
+                if($petSelfResponse['Success']==false){
+                    return redirect('add_your_self');
+                }
+                else{
+                    return view('/petspace/pet_space_form');
+                }
             }
             else{
-                return view('/petspace/pet_space_form');
+                return redirect()->back()->with('warning','Please Login');
             }
+             
             
         }
     public function pet_space_create(Request $request){
