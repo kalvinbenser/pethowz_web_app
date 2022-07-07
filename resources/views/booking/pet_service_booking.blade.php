@@ -148,18 +148,30 @@
                 <div class="col-md-6 col-12 m-b-30" data-aos="fade-up" data-aos-duration="1000">
                    <h2> <i class="fa fa-user" style="color:#f6ab49;font-size:50px"></i>About Me</h2>
                        <div class="about-us">
-                        <p class="about"><b>Introduce yourself and why you enjoy being with pets.</b></p>
-                        <p class="about">{{$self['content1']}}</p>
-                        <p class="about"><b>Tell us about the type of pet you have and your experience with it.</b></p>
-                        <p class="about">{{$self['content2']}} </p>
-                        <p class="about"><b>How dose your service stand out ?</b></p>
-                        <p class="about">{{$self['content3']}}</p>
-                        <p class="about"><b>What do you enjoy about the work you do ?</b></p>
-                        <p class="about">{{$self['content4']}}</p>
-                        <p class="about"><b>Your Skills and qualifications</b></p>
-                        <p class="about">{{$self['content5']}}</p>
-                        <p class="about"><b>Other special skills with per or qualification ?</b></p>
-                        <p class="about">{{$self['content6']}}</p>
+                       <p class="about"><b>Introduce yourself and why you enjoy being with pets.</b></p>
+                       @if($self['content1'])
+                       <p class="about">{{$self['content1']}}</p>
+                       @endif
+                       <p class="about"><b>Tell us about the type of pet you have and your experience with it.</b></p>
+                       @if($self['content2'])
+                       <p class="about">{{$self['content2']}} </p>
+                       @endif
+                       <p class="about"><b>How dose your service stand out ?</b></p>
+                       @if($self['content3'])
+                       <p class="about">{{$self['content3']}}</p>
+                       @endif
+                       <p class="about"><b>What do you enjoy about the work you do ?</b></p>
+                       @if($self['content4'])
+                       <p class="about">{{$self['content4']}}</p>
+                       @endif
+                       <p class="about"><b>Your Skills and qualifications</b></p>
+                       @if($self['content5'])
+                       <p class="about">{{$self['content5']}}</p>
+                       @endif
+                       <p class="about"><b>Other special skills with per or qualification ?</b></p>
+                       @if($self['content6'])
+                       <p class="about">{{$self['content6']}}</p>
+                       @endif
                        
                        </div>
                 </div>

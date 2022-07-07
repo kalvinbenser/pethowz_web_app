@@ -88,10 +88,10 @@
                                    <li>
                                         <a href="{{URL::asset('/pet_host')}}">Pet host</a>
                                     </li>
-                                    
+<!--                                     
                                     <li>
                                         <a href="{{URL::asset('/service')}}">services</a>
-                                      </li>
+                                      </li> -->
                                    
                                    @if(!session()->has('user_id'))
                                     <li>
@@ -351,9 +351,9 @@
     </div>
   </div>
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal3">
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal3">
   test
-</button>
+</button> -->
    
   <div class="modal fade " id="loginModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog model-center">

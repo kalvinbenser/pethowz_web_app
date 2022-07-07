@@ -13,12 +13,12 @@ class BookingController extends Controller
 
      public function pet_space_booking(Request $request,$s_id){
             // self intro
-            $user_id=$request->session()->get('user_id');
-            $selfIntroUrl= env('API').'getSelfDescription/'.$user_id;
-            $selfIntroRequest = Http::get($selfIntroUrl);
-            $selfIntroResponse=$selfIntroRequest->json();
-            //dd($selfIntroResponse['data']);
-            $data['self']=$selfIntroResponse['data'];
+            // $user_id=$request->session()->get('user_id');
+            // $selfIntroUrl= env('API').'getSelfDescription/'.$user_id;
+            // $selfIntroRequest = Http::get($selfIntroUrl);
+            // $selfIntroResponse=$selfIntroRequest->json();
+            // //dd($selfIntroResponse['data']);
+            // $data['self']=$selfIntroResponse['data'];
 
             // pet space
             $petSpaceUrl= env('API').'getPetSpaceById/'.$s_id;
@@ -27,6 +27,16 @@ class BookingController extends Controller
             $petSpaceRequest = Http::get($petSpaceUrl);
       
             $details = $petSpaceRequest->json();
+           
+            if(isset($details['data'][0]['SelfDescriptionDetails'])){
+                $data['self']=  $details['data'][0]['SelfDescriptionDetails'];
+            }
+
+            if(isset($details['data'][0]['RegistrationDetails'])){
+                $data['reg']=$details['data'][0]['RegistrationDetails'];
+            }
+      
+            // /dd($data['reg']);
              $data['s_id']=$s_id;
             //dd($details['data'][0]);
             $data['detail']=$details['data'][0];

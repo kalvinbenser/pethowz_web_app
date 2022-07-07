@@ -71,13 +71,23 @@
       <div class="section gallary-details">
         <div class="profile_images">
       <div class="row">
-      
+         @if($detail['image'])
+         <div class=" col-md-4 col-lg-4 m-b-30">  
+                  <div class="col-lg-12">                    
+                    <img class="pro-images2" src="{{$detail['image']}}" alt="Banner Image" />
+                  </div>
+            </div> 
+         @else
+
          <div class=" col-md-4 col-lg-4 m-b-30">  
                   <div class="col-lg-12">                    
                     <img class="pro-images2" src="{{URL::asset('front-end/assets/gallery/pet1.jpg')}}" alt="Banner Image" />
                   </div>
-            </div> 
-            <div class=" col-md-4 col-lg-4 m-b-30">  
+            </div>
+            
+         @endif
+  
+            <!-- <div class=" col-md-4 col-lg-4 m-b-30">  
                   <div class="col-lg-12">                    
                     <img class="pro-images2" src="{{URL::asset('front-end/assets/gallery/pet1.jpg')}}" alt="Banner Image" />
                   </div>
@@ -86,7 +96,7 @@
                   <div class="col-lg-12">                    
                     <img class="pro-images2" src="{{URL::asset('front-end/assets/gallery/pet1.jpg')}}" alt="Banner Image" />
                   </div>
-            </div>
+            </div> -->
              
          
              
@@ -107,13 +117,20 @@
             <div class="testimonial-thumb text-center">
             <div class="row m-b-n40">
                             <div class="col-12 col-md-2 col-sm-4 col-lg-2 user_pic">
-                    
-                        <img src="{{URL::asset('front-end/assets/images/testimonial/User Image.png')}}" alt="Testimonial Image"/>
+                        @if(isset($reg['img']))
+                        <img src="{{$reg['img']}}" alt=" Image"/>
+                        @else
+                        <img  alt=" Image"/>
+                        @endif
                             </div>
                         <div class="col-12 col-sm-4 col-md-3 col-lg-3">
                             <div class="name_details">
-                            <h3 class="thumb-title">Jonathon Jhon</h3>
-                            <h6 class="thumb-subtitle">joining date</h6>
+                            @if(isset($reg['name']))
+                            <h3 class="thumb-title">{{$reg['name']}}</h3>
+                            @else
+                            <h3 class="thumb-title">Name</h3>
+                            @endif
+                            <!-- <h6 class="thumb-subtitle">joining date</h6> -->
                             </div>
                        </div>
          
@@ -151,17 +168,29 @@
                    <h2> <i class="fa fa-user" style="color:#f6ab49;font-size:50px"></i>About Me</h2>
                        <div class="about-us">
                        <p class="about"><b>Introduce yourself and why you enjoy being with pets.</b></p>
+                       @if(isset($self['content1']))
                        <p class="about">{{$self['content1']}}</p>
+                       @endif
                        <p class="about"><b>Tell us about the type of pet you have and your experience with it.</b></p>
+                       @if(isset($self['content2']))
                        <p class="about">{{$self['content2']}} </p>
+                       @endif
                        <p class="about"><b>How dose your service stand out ?</b></p>
+                       @if(isset($self['content3']))
                        <p class="about">{{$self['content3']}}</p>
+                       @endif
                        <p class="about"><b>What do you enjoy about the work you do ?</b></p>
+                       @if(isset($self['content4']))
                        <p class="about">{{$self['content4']}}</p>
+                       @endif
                        <p class="about"><b>Your Skills and qualifications</b></p>
+                       @if(isset($self['content5']))
                        <p class="about">{{$self['content5']}}</p>
+                       @endif
                        <p class="about"><b>Other special skills with per or qualification ?</b></p>
+                       @if(isset($self['content6']))
                        <p class="about">{{$self['content6']}}</p>
+                       @endif
                        
                        </div>
                 </div>
@@ -206,21 +235,19 @@
                             <div class="col-12 col-sm-6 col-lg-6 m-b-40" data-aos="fade-up" data-aos-duration="1200">
                                 <div class="single-footer-widget">
                                   <!-- //demo -->
-                                  <p class="about">Apartment<p>
+                                  <!-- <p class="about">Apartment<p>
                                   <p class="about">Cat<p>
                                   <p class="about">Cage,Caretaker<p>
                                
                                   <p class="about">Play area , cctv<p>
                                   <p class="about">test1<p>
-                                  <p class="about">Chennai<p>
+                                  <p class="about">Chennai<p> -->
 
                                   <!-- end demo -->
 
                                    
 
-
-
-<!--                               
+                           
                                 @if($detail['venue_name'])
                                  <p class="about">{{ $detail['venue_name']}}<p>
                                 @endif  
@@ -261,7 +288,7 @@
                                  @if($detail['location'])       
                                       <p class="about">{{$detail['location']}}<p>
                                 </div>
-                                @endif  -->
+                                @endif  
                              </div>
                         </div>
         
