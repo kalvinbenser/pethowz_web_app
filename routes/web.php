@@ -70,7 +70,7 @@ Route::get('/house&apartment/house_apartment',[HomeController::class,'house_apar
 
 //terms_condition
 
-Route::get('/terms_condition',[HomeController::class,'terms_condition']);
+Route::get('/terms_coditions',[HomeController::class,'terms_coditions']);
 
 
 //add_details

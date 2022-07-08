@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
+
+    
      public function closeModel(Request $request){
         $user_id=$request->session()->get('user_id');
        

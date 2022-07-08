@@ -529,7 +529,7 @@ platform. If not, your cancellation of the booking would not be considered effec
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
                         <div class="copyright-content">
-                            <span> <a href="{{URL::asset('/terms_condition')}}">Terms&Conditions &emsp;&emsp; Privacy</a></span>                          
+                            <span> <a href="{{URL::asset('/terms_coditions')}}">Terms&Conditions &emsp;&emsp; Privacy</a></span>                          
                         </div>
                     </div>
                 </div>
