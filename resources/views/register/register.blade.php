@@ -46,8 +46,8 @@
                         <div class="container">
                           
                             <div class="row">
-                                <!-- <h1 class="registeration">Registration Details</h1> -->
-                                <h1 class="registeration">Additional Details</h1>
+                                <h1 class="registeration">Registration Details</h1>
+                                <!-- <h1 class="registeration">Additional Details</h1> -->
                               
                             <div class="login-wrapper">
                             

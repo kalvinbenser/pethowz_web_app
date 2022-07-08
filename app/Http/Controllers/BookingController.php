@@ -39,7 +39,10 @@ class BookingController extends Controller
             // /dd($data['reg']);
              $data['s_id']=$s_id;
             //dd($details['data'][0]);
-            $data['detail']=$details['data'][0];
+            if(isset($details['data'][0])){
+                $data['detail']=$details['data'][0];
+            }
+         
             return view('booking/pet_space_booking',$data);
        
         
@@ -149,7 +152,7 @@ class BookingController extends Controller
          // dd($petSpaceResponse);
          if($petSpaceResponse['Success']==true){
                    
-            return redirect('/exclusive_petspaces')->with('message','Pet space booked successfuly');
+            return redirect('/')->with('message','Pet space booked successfuly');
          }
          else{
             $request->session()->put('custom_error',$petSpaceResponse['Message']);
@@ -188,7 +191,11 @@ class BookingController extends Controller
    //  dd($data['reg']);
        $data['s_id']=$s_id;
        //dd($petServiceResponse);
-       $data['detail']=$details['data'][0];
+   
+
+       if(isset($details['data'][0])){
+        $data['detail']=$details['data'][0];
+       }
        //dd($petSpaceResponse);
        return view('/booking/pet_service_booking',$data);
       
@@ -307,7 +314,7 @@ class BookingController extends Controller
 
               if($petServiceResponse['Success']==true){
                    
-                  return redirect('/service')->with('message','Pet service booked successfuly');
+                  return redirect('/')->with('message','Pet service booked successfuly');
                }
                else{
                     $request->session()->put('custom_error',$petServiceResponse['Message']);

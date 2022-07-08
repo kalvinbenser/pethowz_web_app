@@ -63,6 +63,10 @@
 .align_services input[type="checkbox"] {
     display: none;
 }
+
+
+
+
 </style>
     
 @endsection
@@ -71,7 +75,7 @@
       <div class="section gallary-details">
         <div class="profile_images">
       <div class="row">
-         @if($detail['image'])
+         @if(isset($detail['image']))
          <div class=" col-md-4 col-lg-4 m-b-30">  
                   <div class="col-lg-12">                    
                     <img class="pro-images2" src="{{$detail['image']}}" alt="Banner Image" />
@@ -136,7 +140,13 @@
          
                 <div class="col-12 col-sm-4 col-md-3 col-lg-7" data-aos="fade-up" data-aos-duration="1600">
                     <div class="single-footer-widget booking_form_details">
-                        <h3 class="rupee"> <i class="fa fa-rupee" style="font-size:24px"><span id="usertotal" >{{$detail['cost_per_hour']}}</span></i></h3>
+                        <h3 class="rupee"> <i class="fa fa-rupee" style="font-size:24px">
+                        @if(isset($detail['cost_per_hour']))
+                        <span id="usertotal" >{{$detail['cost_per_hour']}}</span>
+                        @else
+                        <span id="usertotal" >100</span>
+                        @endif
+                    </i></h3>
                         <h6 class="rupee">Per Hour</h6>
                         <div class="bookings-all">
                             {{-- form --}}
@@ -206,8 +216,9 @@
                                 @if($detail['venue_name'])
                                 <p class="about">Venue <p>
                               @endif
-                              
-                              
+                              @if($detail['location'])
+                              <p class="about">Location<p>
+                              @endif
                                 @if($detail['venue_category'])
                                 <p class="about">Category<p>
                                 @endif
@@ -227,7 +238,7 @@
                                     @if($detail['options_id'])
                                       <p class="about">Options<p>
                                     @endif
-                                    <p class="about">Location<p>
+                                 
                                 </div>
                          </div>
 
@@ -251,11 +262,16 @@
                                 @if($detail['venue_name'])
                                  <p class="about">{{ $detail['venue_name']}}<p>
                                 @endif  
-
+                                 
+                                @if($detail['location'])       
+                                      <p class="about">{{$detail['location']}}<p>
+                                </div>
+                                @endif 
                                 
                                 @foreach($detail['venue_category'] as $cat) 
                                 <div class="d-flex">
                                     <p class="about">{{$cat}}<p>
+                                        
                                     </div>   
                                  
                                 @endforeach
@@ -283,12 +299,10 @@
                                 @endforeach
 
 
-                             
+ 
 
-                                 @if($detail['location'])       
-                                      <p class="about">{{$detail['location']}}<p>
-                                </div>
-                                @endif  
+                             
+ 
                              </div>
                         </div>
         
