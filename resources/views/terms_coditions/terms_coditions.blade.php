@@ -2,18 +2,24 @@
 @section('styles')
 <style>
  .term-top{
-   margin-top:40px;
+   margin-top:40px ;
+   margin-left:80px !important;
    
  }
+ .terms{
+    margin-left:80px;
+   
+ }
+ 
  </style>
 
 @endsection
 @section('content')
 
 <div class=" ">
-    <div class="term-top">
+    <div class="">
 
-    <h1  class="">Terms Coditions</h1>
+    <h1  class="terms">Terms Coditions</h1>
     </div>
    
 
