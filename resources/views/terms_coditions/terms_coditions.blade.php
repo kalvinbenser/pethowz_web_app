@@ -7,7 +7,7 @@
    
  }
  .terms{
-    margin-left:80px;
+    margin-left:80px !important;
    
  }
  
@@ -15,12 +15,19 @@
 
 @endsection
 @section('content')
+<div class="section position-relative">
+        <div class="container">
+  <!-- Section Title & Tab Start -->
+  <div class="row" data-aos="fade-up" data-aos-duration="1000">
+      <!-- Tab Start -->
+   <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+          <h1 class="terms">Terms Coditions</h1>
+      </div>
+     
+    
+      <!-- Tab End -->
+  </div>
 
-<div class=" ">
-    <div class="">
-
-    <h1  class="terms">Terms Coditions</h1>
-    </div>
    
 
     <div class="term-top">
@@ -40,8 +47,7 @@ refunded, termination, formation and definition of anything in the policy.</p>
 <p>Cancellation platform- The cancellation policy obligates all the party to do booking cancellation via 
 platform. If not, your cancellation of the booking would not be considered effective.</p>
 </div>       
-                
-              </div>
+              
             
 
 @endsection
