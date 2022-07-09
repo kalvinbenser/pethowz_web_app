@@ -22,7 +22,7 @@ display:inline-block;
 <div class="wrapper-custom">
   <img src="..." class="img-custom"/>
   <img src="..." class="img-custom"/>
-
+<h1>nishanth</h1>
   </div>
 </body>
 </html>
