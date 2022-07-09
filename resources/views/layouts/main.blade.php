@@ -730,7 +730,7 @@ platform. If not, your cancellation of the booking would not be considered effec
                                 <a href="{{URL::asset('/service')}}">services</a>
                             </li>
                             <li>
-                                <a onclick="" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+                            <a onclick="" data-bs-toggle="modal" data-bs-target="#loginModal" style="cursor: pointer">Login</a>
                             </li>
                           
                         </ul>
