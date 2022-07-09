@@ -34,42 +34,44 @@
                         <div class="form-group">
                             <label for="user-message" class="about">Introduce yourself and why enjoy being with pets.
                             </label>
-                            <input type="text" name="content1" class="form-control add_self"/>
+                            <textarea id="address" name="content1" class="form-control add_self" placeholder="" ></textarea>
+                            <!-- <input type="text" name="content1" class="form-control add_self"/> -->
                           </div><!--ends from group-->
                           <div class="form-group form-group1">
                             <label for="user-message" class="about">Tell us about the type of pet you have and your experience with it.
                             </label>
-                            
-                            <input type="text" name="content2" class="form-control add_self"/>
+                            <textarea id="address" name="content2" class="form-control add_self" placeholder="" ></textarea>
+                            <!-- <input type="text" name="content2" class="form-control add_self"/> -->
                          
                           </div><!--ends from group-->
                           <div class="form-group form-group1">
                             <label for="user-message" class="about">How does your service stand out?
                             </label>
-                        
-                            <input type="text" name="content3" class="form-control add_self"/>
+                            <textarea id="address" name="content3" class="form-control add_self" placeholder="" ></textarea>
+                            <!-- <input type="text" name="content3" class="form-control add_self"/> -->
                        
                           </div><!--ends from group-->
                           <div class="form-group form-group1">
                             <label for="user-message" class="about">What do you enjoy about the work you do?
                             </label>
+                            <textarea id="address" name="content4" class="form-control add_self" placeholder="" ></textarea>
                       
-                            <input type="text" name="content4" class="form-control add_self"/>
+                            <!-- <input type="text" name="" class="form-control add_self"/> -->
                        
                           </div><!--ends from group-->
                           <div class="form-group form-group1">
                             <label for="user-message" class="about">Your skils and qualifications
                             </label>
-                        
-                            <input type="text" name="content5" class="form-control add_self"/>
+                            <textarea id="address" name="content5" class="form-control add_self" placeholder="" ></textarea>
+                            <!-- <input type="text" name="content5" class="form-control add_self"/> -->
                          
                           </div><!--ends from group-->
                           <div class="form-group form-group1">
                             <label for="user-message" class="about">Other special skills with per or qualification ?
                             </label>
-                        
-                            <input type="text" name="content6" class="form-control add_self"/>
-                         
+                            <textarea id="address" name="content6" class="form-control add_self" placeholder="" ></textarea>
+                            <!-- <input type="text" name="content6" class="form-control add_self"/>
+                          -->
                           </div><!--ends from group-->
                      
                     </div>
@@ -106,7 +108,7 @@
                               
                             <div class="form-group booking_button col-md-5">
 
-                                <button type="submit" class="btn btn-primary btn-sm mx-auto">Save</button>
+                                <button type="submit" class="btn btn-primary btn-sm mx-auto add-button">Next</button>
 
                             </div>
                 

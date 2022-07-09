@@ -84,7 +84,7 @@
                                     <li>
                                         <a href="{{URL::asset('/')}}">Home</a>                                        
                                    </li>  
-                                   <!-- <li><a href="{{URL::asset('/about/about')}}">About</a></li>                                   -->
+                                   <!-- <li><a href="">About</a></li>                                   -->
                                    <li>
                                         <a href="{{URL::asset('/pet_host')}}">Pet host</a>
                                     </li>
@@ -449,7 +449,7 @@ platform. If not, your cancellation of the booking would not be considered effec
                                 <li class="addicon2"><i class="fa fa-map-marker addicon4"></i><p class="addicon1"> Springboard, Gopala krishna complex,</span></li>
                                 <li class="addicon2"><p class="addicon3">45/3 Residency Road,Mahatma Gandhi Rd,</p></li>
                                 <li class="addicon2"><p class="addicon3">ShanthalamNagar,Ashok Nagar,</p></li>
-                                <li class="addicon2"><p class="addicon3">Bengaluru,Karnadaka -560025</p></li>
+                                <li class="addicon2"><p class="addicon3">Bengaluru,karnataka -560025</p></li>
                                 <li class="addicon2"><i class="fa fa-phone  addicon4"></i> <p class="addicon1"><strong>098840 42119</strong></p></li>
                                 <li class="addicon2"><i class="fa fa-envelope-o addicon4"></i><p class="addicon1"> <strong>Support@pethows.com</strong></p></li>
                             </ul>
@@ -529,7 +529,7 @@ platform. If not, your cancellation of the booking would not be considered effec
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
                         <div class="copyright-content">
-                            <span> <a href="{{URL::asset('/terms_coditions')}}">Terms&Conditions &emsp;&emsp; Privacy</a></span>                          
+                            <span> <a href="{{URL::asset('/terms_coditions')}}">Terms&Conditions &emsp;&emsp;</a> </span>                          
                         </div>
                     </div>
                 </div>
@@ -720,9 +720,9 @@ platform. If not, your cancellation of the booking would not be considered effec
                         <ul class="mobile-menu">
                             <li>
                                 <a href="{{URL::asset('/')}}">Home</a>                                        
-                           <!-- </li>  
-                           <li><a href="{{URL::asset('/about/about')}}">About</a></li>                                  
-                           <li> -->
+                           </li>  
+                           <li><a href="">About</a></li>                                  
+                           <li>
                                 <a href="{{URL::asset('/pet_host')}}">Pet host</a>
                             </li>
                             
@@ -730,7 +730,7 @@ platform. If not, your cancellation of the booking would not be considered effec
                                 <a href="{{URL::asset('/service')}}">services</a>
                             </li>
                             <li>
-                                <a onclick="" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+                            <a onclick="" data-bs-toggle="modal" data-bs-target="#loginModal" style="cursor: pointer">Login</a>
                             </li>
                           
                         </ul>

@@ -274,7 +274,7 @@ class HomeController extends Controller
                     $yourSelfResponse=$yourSelfRequest->json();
                     //dd( $yourSelfResponse);
                     if($yourSelfResponse['Success']==true){
-                        return redirect()->back()->with('message','self intro added successfully');
+                        return redirect('/pet_space_form')->with('message','self intro added successfully');
                     }
                     else{
                        
@@ -292,52 +292,8 @@ class HomeController extends Controller
       public function welcome(){
         return view('welcome');
       }
-    
-      public function test_data(Request $request){
-
-        try{  
-        
-            $validated = $request->validate([
-                'your_self' => 'required',
-                 'experience' => 'required',
-                 'service_your'=>'required|min:0',
-                 'work_enjoy'=>'required',
-                 'skill_qualification'=>'required',
-                 'other_qualification'=>'required',
-                 'category'=>'required',
-             ]);
-             $your_self=$request->your_self;
-             $experience=$request->experience;
-             $service_your=$request->service_your;
-             $work_enjoy=$request->work_enjoy;           
-             $skill_qualification=$request->skill_qualification;
-             $other_qualification=$request->other_qualification;
-             $category=$request->category;
-        
-           
-            $addSelfData=[
-                'your_self'=>$your_self,
-                'experience'=>$experience,
-                'service_your'=>$service_your,
-                'work_enjoy'=>$work_enjoy,
-                'skill_qualification'=>$skill_qualification,
-                'other_qualification'=>$other_qualification,
-                'category'=>$category
-            ];
-            $petSpaceUrl=env('API').'createSelfDescription';
-            $petSpaceRequest=Http::post($petSpaceUrl,$addSelfData);
-            $petSpaceResponse=$petSpaceRequest->json();
-           // dd($data);
-          return redirect('/pet_space_form')->with('message','your Pet Service Booking Added');
-        }
-        catch(Exception $e) {
-          echo 'Message: ' .$e->getMessage();
-        }
-
-    }
-
-  
-  
+      
+      // Mobile otp 
     function insert_otp_details(Request $request){
         $mobile_otp1=$request->mobile_otp1;
         $mobile_otp2=$request->mobile_otp2;

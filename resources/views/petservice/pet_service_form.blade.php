@@ -67,7 +67,7 @@ input[type="checkbox"]+label {
                              <input type="text" name="venue" class="form-control" placeholder="Enter Name">
                         </div>
                  <div class="service-providers">
-                    <div class="row">
+                    <div class="">
                       <label class="about">Choose Location</label>
                       <select class="form-select select_location" name="location" id="location" >
                         <option value="0" >--- Select Location ---</option>
@@ -87,7 +87,7 @@ input[type="checkbox"]+label {
                         <input type="text" class="form-control service_details" name="service_detail" id="service_detail" placeholder="">
                       </div>
                     <div class="service-providers">
-                        <div class="row">
+                        <div class="">
                             <label class="about">Select the options which are applicable</label>
                             <select class="form-select select_applicable" name="option[]" id="option" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
                               <option value="1">Play area</option>
@@ -99,7 +99,7 @@ input[type="checkbox"]+label {
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                   <div class="service-providers">
-                    <div class="row">
+                    <div class="">
                       <label class="about">Select the Service</label>
                       <select class="form-select select_serv" name="select_service[]" id="select_service" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
                         <option value="0">--- select service ---</option>

@@ -99,11 +99,6 @@ Route::post('/insert_login_details',[HomeController::class,'insert_login_details
 
 Route::post('/insert_otp_details',[HomeController::class,'insert_otp_details']);
 
-
-//about your selfe details
-
-Route::post('/test_data',[HomeController::class,'test_data']);
-
 //pethost details
 
 Route::post('/pet_host_details',[HomeController::class,'pet_host_details']);
