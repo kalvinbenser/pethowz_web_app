@@ -882,7 +882,15 @@ platform. If not, your cancellation of the booking would not be considered effec
                                             if(data.user_id){
                                       
                                              $("#loginModal2").modal('hide');
-                                             $("#loginModal3").modal('show');
+                                             if(localStorage.getItem("terms") == 1){
+                                                window.location.href = '/';
+                                             }
+                                             else{
+                                                localStorage.setItem("terms", 1);
+                                                $("#loginModal3").modal('show');
+                                             }
+                                            
+                                            
                                                 // toastr.success(data.status);
                                             }
                                             }
