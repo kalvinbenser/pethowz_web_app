@@ -6041,7 +6041,7 @@ color: #FFFFFF;
 
 }
 #yourself{
-    padding-top: 120px;
+    padding-top: 40px;
 }
 #yourservice{
 background-color: #ddd;
@@ -6119,7 +6119,7 @@ textarea{
     box-shadow: none;
     color: #000000;
     font-size: 14px;
-    height: 50px;
+    height: 75px;
     margin-bottom: 20px;
     padding-left: 10px;
     padding-right: 10px;
@@ -6156,6 +6156,10 @@ color:#ff986d;
     height: 60px;
     margin: 19px;
     cursor: pointer;
+  }
+  .service-provider{
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
   
   .prev {

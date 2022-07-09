@@ -64,7 +64,7 @@ Route::get('/exclusive_petspaces',[HomeController::class,'exclusive_petspaces'])
 
 //house_apartment
 
-Route::get('/house&apartment/house_apartment',[HomeController::class,'house_apartment']);
+Route::get('/house_apartment',[HomeController::class,'house_apartment']);
 
 
 

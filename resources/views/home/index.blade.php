@@ -106,7 +106,7 @@
     <!-- Banner Section Start -->
     <div class="section section-margin">
         <div class="container" >
-            <div class="service-providers">
+            <div class="service-provider">
         <h1>Pet Service Providers</h1>
             <!-- Banners Start -->
             <div class="row m-b-n30">
@@ -148,7 +148,7 @@
                     <a href="#" class="banner">
                         <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Breeding White.svg')}}" alt="Banner Image" />
                     </a>
-                    <div class="bread">Breading</div>
+                    <div class="bread">Breeding</div>
                 </div>
             </div>
             <!-- Banner End -->
@@ -189,7 +189,7 @@
                     <h1 class="pet_space">Independent House | Apartment</h1>
                 </div>
                 <div class="view-all col-12 col-sm-6 col-md-6 col-lg-4">
-                    <a  href="{{URL::asset('/exclusive_petspaces')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
+                    <a  href="{{URL::asset('/house_apartment')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
                   </div>
               
                 <!-- Tab End -->
@@ -537,7 +537,7 @@
                     <div class="container">
                         <div class="hero-slide-content text-start">
                             <h2 class="title m-0" id="title-color">List your space for pets<br>and start earning</h2>
-                            <a href="/register" class="btn btn-dark btn-hover-primary">become a Pethost</a>
+                            <a href="/register_view" class="btn btn-dark btn-hover-primary">become a Pethost</a>
                         </div>
                     </div>
                 </div>

@@ -93,9 +93,11 @@
                             </div>
                             <div class="deal-thumb col-md-3 m-b-15" data-aos="fade-up" data-aos-duration="1200">
                                 <div class="gender">
-                                    <div class="row">                                   
+                                
+                                    <div class="row"> 
+                                                                      
                                             <div>
-                                            
+                                            <h6>Gender</h6> 
                                             <input  type="radio" class="checkbox" name="gender" value=1 id="cb6" />
                                             <label for="cb6">
                                                 <div class="choices"><span class="fa fa-mars"></span></div>

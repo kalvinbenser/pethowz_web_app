@@ -72,7 +72,7 @@
                         <!-- Header Logo Start -->
                         <div class="col-lg-3 col-md-4 col-6">
                             <div class="header-logo">
-                                <a href="index.html"><img src="{{URL::asset('front-end/assets/images/logo/Pethowz logo with text.svg')}}" alt="Site Logo" /></a>
+                                <img src="{{URL::asset('front-end/assets/images/logo/Pethowz logo with text.svg')}}" alt="Site Logo" />
                             </div>
                         </div>
                         <!-- Header Logo End -->
@@ -133,22 +133,22 @@
 
                                 <!-- Header Action Button Start -->
                                 <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
-                                    <!-- <a class="cart-visible" href="javascript:void(0)">
+                                    <a class="cart-visible" href="javascript:void(0)">
                                         <i class="icon-bell icons"></i>
                                         <span class="header-action-num">3</span>
-                                    </a> -->
+                                    </a>
 
                                     <!-- Header Cart Content Start -->
-                                    <div class="header-cart-content">
+                                    <!-- <div class="header-cart-content"> -->
 
                                         <!-- Cart Procut Wrapper Start  -->
-                                        <div class="cart-product-wrapper">
+                                        <!-- <div class="cart-product-wrapper"> -->
 
                                             <!-- Cart Product/Price Start -->
-                                            <div class="cart-product-inner p-b-20 m-b-20 border-bottom">
+                                            <!-- <div class="cart-product-inner p-b-20 m-b-20 border-bottom"> -->
 
                                                 <!-- Single Cart Product Start -->
-                                                <div class="single-cart-product">
+                                                <!-- <div class="single-cart-product">
                                                     <div class="cart-product-thumb">
                                                         <a href="single-product.html"><img src="{{URL::asset('front-end/assets/images/header/header-cart/1.png')}}" alt="Cart Product"></a>
                                                     </div>
@@ -161,23 +161,23 @@
                                                             </span>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <!-- Single Cart Product End -->
 
                                                 <!-- Product Remove Start -->
-                                                <div class="cart-product-remove">
+                                                <!-- <div class="cart-product-remove">
                                                     <a href="#/"><i class="icon-close"></i></a>
-                                                </div>
+                                                </div> -->
                                                 <!-- Product Remove End -->
 
-                                            </div>
+                                            <!-- </div> -->
                                             <!-- Cart Product/Price End -->
 
                                             <!-- Cart Product/Price Start -->
-                                            <div class="cart-product-inner p-b-20 m-b-20 border-bottom">
+                                            <!-- <div class="cart-product-inner p-b-20 m-b-20 border-bottom"> -->
 
                                                 <!-- Single Cart Product Start -->
-                                                <div class="single-cart-product">
+                                                <!-- <div class="single-cart-product">
                                                     <div class="cart-product-thumb">
                                                         <a href="single-product.html"><img src="{{URL::asset('front-end/assets/images/header/header-cart/2.png')}}" alt="Cart Product"></a>
                                                     </div>
@@ -190,45 +190,45 @@
                                                             </span>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <!-- Single Cart Product End -->
 
                                                 <!-- Product Remove Start -->
-                                                <div class="cart-product-remove">
+                                                <!-- <div class="cart-product-remove">
                                                     <a href="#/"><i class="icon-close"></i></a>
-                                                </div>
+                                                </div> -->
                                                 <!-- Product Remove End -->
 
-                                            </div>
+                                            <!-- </div> -->
                                             <!-- Cart Product/Price End -->
 
-                                        </div>
+                                        <!-- </div> -->
                                         <!-- Cart Procut Wrapper -->
 
                                         <!-- Cart Product Total Start -->
-                                        <div class="cart-product-total p-b-20 m-b-20 border-bottom">
+                                        <!-- <div class="cart-product-total p-b-20 m-b-20 border-bottom">
                                             <span class="value">Total</span>
                                             <span class="price">200$</span>
-                                        </div>
+                                        </div> -->
                                         <!-- Cart Product Total End -->
 
                                         <!-- Cart Product Button Start -->
-                                        <div class="cart-product-btn m-t-20">
+                                        <!-- <div class="cart-product-btn m-t-20">
                                             <a href="cart.html" class="btn btn-outline-light btn-hover-primary w-100">View cart</a>
                                             <a href="checkout.html" class="btn btn-outline-light btn-hover-primary w-100 m-t-20">Checkout</a>
-                                        </div>
+                                        </div> -->
                                         <!-- Cart Product Button End -->
 
-                                    </div>
+                                    <!-- </div> -->
                                     <!-- Header Cart Content End -->
 
-                                </div>
+                                <!-- </div>
                                 <div class="header-action-btn header-action-btn-cart d-flex d-sm-none">
                                     <a href="cart.html">
                                         <i class="icon-handbag icons"></i>
                                         <span class="header-action-num">3</span>
                                     </a>
-                                </div>
+                                </div> -->
                                 <!-- Header Action Button End -->
 
                                 <!-- Mobile Menu Hambarger Action Button Start -->
@@ -446,7 +446,7 @@ platform. If not, your cancellation of the booking would not be considered effec
                         <div class="single-footer-widget">
                             <h1 class="widget-title">Head Office</h1>
                             <ul>
-                                <li class="addicon2"><i class="fa fa-map-marker addicon4"></i><p class="addicon1"> springboard, Gopala krishna complex,</span></li>
+                                <li class="addicon2"><i class="fa fa-map-marker addicon4"></i><p class="addicon1"> Springboard, Gopala krishna complex,</span></li>
                                 <li class="addicon2"><p class="addicon3">45/3 Residency Road,Mahatma Gandhi Rd,</p></li>
                                 <li class="addicon2"><p class="addicon3">ShanthalamNagar,Ashok Nagar,</p></li>
                                 <li class="addicon2"><p class="addicon3">Bengaluru,Karnadaka -560025</p></li>
