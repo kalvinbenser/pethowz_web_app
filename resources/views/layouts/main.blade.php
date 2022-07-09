@@ -84,7 +84,7 @@
                                     <li>
                                         <a href="{{URL::asset('/')}}">Home</a>                                        
                                    </li>  
-                                   <!-- <li><a href="{{URL::asset('/about/about')}}">About</a></li>                                   -->
+                                   <li><a href="">About</a></li>                                  
                                    <li>
                                         <a href="{{URL::asset('/pet_host')}}">Pet host</a>
                                     </li>
@@ -529,7 +529,7 @@ platform. If not, your cancellation of the booking would not be considered effec
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
                         <div class="copyright-content">
-                            <span> <a href="{{URL::asset('/terms_coditions')}}">Terms&Conditions &emsp;&emsp; Privacy</a></span>                          
+                            <span> <a href="{{URL::asset('/terms_coditions')}}">Terms&Conditions &emsp;&emsp;</a> <a>Privacy</a></span>                          
                         </div>
                     </div>
                 </div>
@@ -720,9 +720,9 @@ platform. If not, your cancellation of the booking would not be considered effec
                         <ul class="mobile-menu">
                             <li>
                                 <a href="{{URL::asset('/')}}">Home</a>                                        
-                           <!-- </li>  
-                           <li><a href="{{URL::asset('/about/about')}}">About</a></li>                                  
-                           <li> -->
+                           </li>  
+                           <li><a href="">About</a></li>                                  
+                           <li>
                                 <a href="{{URL::asset('/pet_host')}}">Pet host</a>
                             </li>
                             

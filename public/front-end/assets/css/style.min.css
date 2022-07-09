@@ -57,7 +57,7 @@ input[type="checkbox"] {
     object-fit: cover;
 }
 .form-group1{
-    padding-top: 10px;
+    padding-top: 5px;
     
 }
 
@@ -5866,9 +5866,9 @@ input[type="checkbox"] {
     padding: 10px;
 }
 .service-providers{
-    padding: 36px;
-    padding-right: 22px;
-    padding-left: 50px;
+    padding: 33px;
+    padding-right: 6px;
+    padding-left: 42px;
 }
 .service-providers1{
     padding-top: 39px;
@@ -6043,6 +6043,10 @@ color: #FFFFFF;
 #yourself{
     padding-top: 40px;
 }
+.add-button{
+    position: relative;
+    top: 100px;
+}
 #yourservice{
 background-color: #ddd;
 }
@@ -6119,7 +6123,7 @@ textarea{
     box-shadow: none;
     color: #000000;
     font-size: 14px;
-    height: 75px;
+    height: 60px;
     margin-bottom: 20px;
     padding-left: 10px;
     padding-right: 10px;
