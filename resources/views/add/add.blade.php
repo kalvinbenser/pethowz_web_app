@@ -37,14 +37,14 @@
                             <input type="text" name="content1" class="form-control add_self"/>
                           </div><!--ends from group-->
                           <div class="form-group form-group1">
-                            <label for="user-message" class="about">Tell us about the type of bet you have and your experience with if
+                            <label for="user-message" class="about">Tell us about the type of pet you have and your experience with it.
                             </label>
                             
                             <input type="text" name="content2" class="form-control add_self"/>
                          
                           </div><!--ends from group-->
                           <div class="form-group form-group1">
-                            <label for="user-message" class="about">How dose your service stand out?
+                            <label for="user-message" class="about">How does your service stand out?
                             </label>
                         
                             <input type="text" name="content3" class="form-control add_self"/>
