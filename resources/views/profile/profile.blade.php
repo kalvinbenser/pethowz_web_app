@@ -51,10 +51,10 @@
                                 <li class="addicon2"><i class="fa fa-phone  addicon4" style="color:  #FF9A71"></i> <p class="addicon1"><strong>{{$collection['contact_number']}}</strong></p></li>
                                 
                                 <li class="addicon2"><i class="fa fa-map-marker addicon4" style="color:  #FF9A71"></i><p class="addicon1">{{$collection['address']}}</span></li>
-                           
+<!--                            
                                {{--     <li class="addicon2"><p class="addicon3">45/3 Residency Road,Mahatma Gandhi Rd,</p></li>
                                 <li class="addicon2"><p class="addicon3">ShanthalamNagar,Ashok Nagar,</p></li>
-                                <li class="addicon2"><p class="addicon3">Bengaluru,Karnadaka -560025</p></li> --}}
+                                <li class="addicon2"><p class="addicon3">Bengaluru,Karnadaka -560025</p></li> --}} -->
                                
                                 
                             </ul>
@@ -65,7 +65,7 @@
 
       </div>
       <div class="col-12 col-sm-6 col-lg-3 m-b-40" id="profile2" data-aos="fade-up" data-aos-duration="1000">
-        <p><span><a href=""><img src="{{URL::asset('front-end/assets/images/banner/Help.svg')}}" >Help&nbsp;&nbsp;&nbsp;</a></span><span><a  href="/user_logout" style="cursor: pointer"><i class="fa fa-sign-out" style="color:#FF9A71;font-size:25px;"></i>Logout</a></span></p>
+        <p><span><a href=""><img src="{{URL::asset('front-end/assets/images/banner/Help.svg')}}" >&nbsp;Help&nbsp;&nbsp;&nbsp;</a></span>&nbsp;&nbsp;&nbsp;<span><a  href="/user_logout" style="cursor: pointer"><i class="fa fa-sign-out" style="color:#FF9A71;font-size:25px;"></i>&nbsp; Logout</a></span></p>
       </div>
  </div>
 </div>

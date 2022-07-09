@@ -73,7 +73,7 @@ input[type="checkbox"]+label {
                  
                  <div class="service-providers servive_detail1 servive" >
                   <div class="form-outline">
-                  <label for="user-message" class="about">Service Name</label>                    
+                  <label for="user-message" class="about">Venue Name</label>                    
                             <!-- <textarea id="user-message" name="servive_details" class="form-control serv_details" cols="5" rows="2" placeholder=""></textarea> -->
                             <input type="text" class="form-control" name="service_cost" placeholder="" id="service_cost">
                     </div>
@@ -81,20 +81,30 @@ input[type="checkbox"]+label {
                      
                     </div>
                     <div class="service-providers">
-                    <div class="">
+                    <!-- <div class="">
 
                            
 
-                    <label class="about">Venue Details</label>   
+                    <label class="about">Select Venue Category</label>    -->
                         <!-- <label class="about">Select Venue Category</label> -->
-                        <select class="form-select select_category" name="venue_category[]" id="venue_category" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                        <!-- <select class="form-select select_category" name="venue_category[]" id="venue_category" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
                           <option value="1">Exclusive Pet Space</option>
                           <option value="2">House</option>
                           <option value="3">Apartment</option>
                         </select> 
                                                         
-                      </div>
-
+                      </div> -->
+                      <label class="about">Select Venue Category</label>  
+                          <select class="select select_category" name="venue_category[]" id="venue_category" multiple id="basic-select" data-mdb-validation="true" data-mdb-valid-feedback="This value is valid" data-mdb-invalid-feedback="This value is invalid"  data-mdb-clear-button="true">
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                          <option value="4">Four</option>
+                          <option value="5">Five</option>
+                          <option value="6">Six</option>
+                          <option value="7">Seven</option>
+                          <option value="8">Eight</option>
+                        </select>
                    
                      
                  </div>
