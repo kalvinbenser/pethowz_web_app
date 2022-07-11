@@ -90,7 +90,10 @@
                                     </li>
                                     
                                     <li>
-                                        <a href="{{URL::asset('/service')}}">services</a>
+                                        <a href="{{URL::asset('/service')}}">Services</a>
+                                      </li>
+                                      <li>
+                                        <a href="{{URL::asset('/about')}}">About Us</a>
                                       </li>
                                    
                                    @if(!session()->has('user_id'))
@@ -529,7 +532,8 @@ platform. If not, your cancellation of the booking would not be considered effec
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
                         <div class="copyright-content">
-                            <span> <a href="{{URL::asset('/terms_coditions')}}">Terms&Conditions &emsp;&emsp;</a> </span>                          
+                            <span> <a href="{{URL::asset('/terms_coditions')}}">Terms&Conditions &emsp;&emsp;</a> </span> 
+                            <span> <a href="{{URL::asset('/privacy')}}">Privacy Policy &emsp;&emsp;</a> </span>                          
                         </div>
                     </div>
                 </div>
@@ -727,7 +731,11 @@ platform. If not, your cancellation of the booking would not be considered effec
                             </li>
                             
                             <li class="has-children">
-                                <a href="{{URL::asset('/service')}}">services</a>
+                                <a href="{{URL::asset('/service')}}">Services</a>
+                            </li>
+                               
+                            <li class="has-children">
+                                <a href="{{URL::asset('/about')}}">About Us</a>
                             </li>
                             <li>
                             <a onclick="" data-bs-toggle="modal" data-bs-target="#loginModal" style="cursor: pointer">Login</a>

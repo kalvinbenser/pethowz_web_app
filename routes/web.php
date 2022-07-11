@@ -23,7 +23,8 @@ Route::get('/home/index',[HomeController::class,'index']);
 
 //about
 
-Route::get('/about/about',[HomeController::class,'about']);
+Route::get('/about',[HomeController::class,'about']);
+Route::get('/privacy',[HomeController::class,'privacy']);
 
 
 //sitting service

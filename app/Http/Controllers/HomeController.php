@@ -76,6 +76,12 @@ class HomeController extends Controller
         return view('about/about');
     }
 
+      //about
+
+      public function privacy(){
+        return view('privacy/privacy');
+    }
+
     //sitting service
 
     public function sitting(){

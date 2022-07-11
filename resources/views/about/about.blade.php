@@ -1,219 +1,46 @@
 @extends('layouts.main')
+@section('styles')
+<style>
+ .term-top{
+   margin-top:40px ;
+   margin-left:80px !important;
+   
+ }
+ .terms{
+    margin-left:80px !important;
+   
+ }
+ 
+ </style>
+
+@endsection
 @section('content')
-
-    <!-- Breadcrumb Area Start -->
-    <div class="section breadcrumb-area bg-name-bright">
+<div class="section position-relative">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="breadcrumb-wrapper">
-                        <h2 class="breadcrumb-title">About Us</h2>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li>About Us</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb Area End -->
+  <!-- Section Title & Tab Start -->
+  <div class="row" data-aos="fade-up" data-aos-duration="1000">
+      <!-- Tab Start -->
+   <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+          <h3 class="terms">About Us</h3>
+      </div>
+     
+    
+      <!-- Tab End -->
+  </div>
 
-    <!-- About Section Start -->
-    <div class="section section-margin">
-        <div class="container">
-            <div class="row m-b-n30">
-                <div class="col-md-6 pe-lg-5 p-r-15 m-b-30" data-aos="fade-up" data-aos-duration="1000">
-                    <!-- About Thumb Start -->
-                    <div class="about-thumb">
-                        <img class="fit-image" src="{{URL::asset('front-end/assets/images/about/1.png')}}" alt="About Image">
-                    </div>
-                    <!-- About Thumb End -->
-                </div>
-                <div class="col-md-6 align-self-center m-b-30" data-aos="fade-up" data-aos-duration="1500">
-                    <!-- About Content Start -->
-                    <div class="about-content">
-                        <h2 class="title">About Amber</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididu ut labore et dolore magna aliqua. Ut enim ad minim quis nostrud exercitat ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <ul class="about-content-list">
-                            <li><span><i class="ti-angle-double-right"></i></span> There are many variation passages</li>
-                            <li><span><i class="ti-angle-double-right"></i></span> Contrary to popular belief not simply</li>
-                            <li><span><i class="ti-angle-double-right"></i></span> But I must explain to you how all this</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary btn-hover-dark">Contact Us</a>
-                    </div>
-                    <!-- About Content End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About Section End -->
+   
 
-    <!-- Testimonial Section Start -->
-    <div class="section bg-name-bright section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
+    <div class="term-top">
+<p>
+    Pethowz connects pet owners with service providers, especially pet hosts for home boarding, and kennel based boarding and various services for pets like Pet grooming, pet walking, pet training etc. Pethows provides a web-based and app-based platform to find cageless boarding and pet services based on location, cost and availability. </p>
 
-                    <!-- Testimonial Carousel Start -->
-                    <div class="testimonial-carousel">
+<p>Cageless Boarding:  The core focus area is about cageless boarding where pet owners can leave their pets in other pet owners or pet hosts house. Pet owners would have a choice of professional, semi professional but passionate pet hosts to choose from especially residential spaces or professional pet boarding spots.</p>
 
-                        <!-- Testimonial Gallery Top Start -->
-                        <div class="swiper-container testimonial-gallery-top" data-aos="fade-up" data-aos-duration="1000">
-                            <div class="swiper-wrapper">
+<p>Affordable and Luxury Stays: Pet boarding has become a very costly affair and also pet owners are looking for premier services too. So, focus would be to provide both affordable and also high end or luxury stays so that it caters to these diverse audiences. (in simple terms an Airbnb for Pets)</p>
 
-                                <!-- Single Swiper Slide Start -->
-                                <div class="swiper-slide">
+<p>KYC - Verified and Qualified Registrants: Pethows would verify qualified listings by phone authentication, google authentication, facebook authentication, physical visit etc to ensure customer happiness eventually.</p>
+</div>       
+              
+            
 
-                                    <!-- Testimonial Content Start -->
-                                    <div class="testimonial-content text-center">
-                                        <p>Lorem ipsum dolor sit amet, co adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercita ullamco laboris nisi ut aliquip ex ea commodo</p>
-                                    </div>
-                                    <!-- Testimonial Content End -->
-
-                                </div>
-                                <!-- Single Swiper Slide End -->
-
-                                <!-- Single Swiper Slide Start -->
-                                <div class="swiper-slide">
-
-                                    <!-- Testimonial Content Start -->
-                                    <div class="testimonial-content text-center">
-                                        <p>Vivamus a lobortis ipsum, vel condimentum magna. Etiam id turpis tortor. Nunc scelerisque, nisi a blandit varius, nunc purus venenatis ligula, sed venenatis orci augue nec sapien. Cum sociis natoque</p>
-                                    </div>
-                                    <!-- Testimonial Content End -->
-
-                                </div>
-                                <!-- Single Swiper Slide End -->
-                            </div>
-
-                        </div>
-                        <!-- Testimonial Gallery Top End -->
-
-                        <!-- Testimonial Gallery Thumb Start -->
-                        <div class="swiper-container testimonial-gallery-thumbs" data-aos="fade-up" data-aos-duration="1500">
-                            <div class="swiper-wrapper">
-
-                                <!-- Single Swiper Slide Start -->
-                                <div class="swiper-slide">
-                                    <!-- Testimonial Thumb Start -->
-                                    <div class="testimonial-thumb text-center">
-                                        <img src="{{URL::asset('front-end/assets/images/testimonial/1.png')}}" alt="Testimonial Image">
-                                        <h3 class="thumb-title">Jonathon Jhon</h3>
-                                        <h6 class="thumb-subtitle">Customer</h6>
-                                    </div>
-                                    <!-- Testimonial Thumb End -->
-                                </div>
-                                <!-- Single Swiper Slide End -->
-
-                                <!-- Single Swiper Slide Start -->
-                                <div class="swiper-slide">
-                                    <!-- Testimonial Thumb Start -->
-                                    <div class="testimonial-thumb text-center">
-                                        <img src="{{URL::asset('front-end/assets/images/testimonial/2.png')}}" alt="Testimonial Image">
-                                        <h3 class="thumb-title">Cristal Jerry</h3>
-                                        <h6 class="thumb-subtitle">Customer</h6>
-                                    </div>
-                                    <!-- Testimonial Thumb End -->
-                                </div>
-                                <!-- Single Swiper Slide End -->
-
-                            </div>
-
-                            <!-- Add Pagination -->
-                            <div class="swiper-pagination"></div>
-                        </div>
-                        <!-- Testimonial Gallery Thumb End -->
-
-                    </div>
-                    <!-- Testimonial Carousel End -->
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial Section End -->
-
-    <!-- Team section Start -->
-    <div class="section section-margin">
-        <div class="container">
-            <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 m-b-n30">
-
-                <div class="col m-b-30" data-aos="fade-up" data-aos-duration="1000">
-                    <!-- Single Team Wrapper Start -->
-                    <div class="single-team-wrapper">
-                        <div class="thumb">
-                            <a href="contact.html">
-                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/team/1.jpg')}}" alt="Team Image">
-                            </a>
-                            <!-- Social Shear Start -->
-                            <div class="social-share">
-                                <a title="Twitter" href="#/"><i class="ti-facebook"></i></a>
-                                <a title="Instagram" href="#/"><i class="ti-pinterest"></i></a>
-                                <a title="Linkedin" href="#/"><i class="ti-twitter-alt"></i></a>
-                                <a title="Skype" href="#/"><i class="ti-instagram"></i></a>
-                            </div>
-                            <!-- Social Shear End -->
-                        </div>
-                        <div class="content">
-                            <h4 class="title">Cristal Mile</h4>
-                            <h4 class="subtitle">Customer</h4>
-                        </div>
-                    </div>
-                    <!-- Single Team Wrapper End -->
-                </div>
-
-                <div class="col m-b-30" data-aos="fade-up" data-aos-duration="1500">
-                    <!-- Single Team Wrapper Start -->
-                    <div class="single-team-wrapper">
-                        <div class="thumb">
-                            <a href="contact.html">
-                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/team/2.jpg')}}" alt="Team Image">
-                            </a>
-                            <!-- Social Shear Start -->
-                            <div class="social-share">
-                                <a title="Twitter" href="#/"><i class="ti-facebook"></i></a>
-                                <a title="Instagram" href="#/"><i class="ti-pinterest"></i></a>
-                                <a title="Linkedin" href="#/"><i class="ti-twitter-alt"></i></a>
-                                <a title="Skype" href="#/"><i class="ti-instagram"></i></a>
-                            </div>
-                            <!-- Social Shear End -->
-                        </div>
-                        <div class="content">
-                            <h4 class="title">Jems Prince</h4>
-                            <h4 class="subtitle">CEO</h4>
-                        </div>
-                    </div>
-                    <!-- Single Team Wrapper End -->
-                </div>
-
-                <div class="col m-b-30" data-aos="fade-up" data-aos-duration="2000">
-                    <!-- Single Team Wrapper Start -->
-                    <div class="single-team-wrapper">
-                        <div class="thumb">
-                            <a href="contact.html">
-                                <img class="fit-image" src="{{URL::asset('front-end/assets/images/team/3.jpg')}}" alt="Team Image">
-                            </a>
-                            <!-- Social Shear Start -->
-                            <div class="social-share">
-                                <a title="Twitter" href="#/"><i class="ti-facebook"></i></a>
-                                <a title="Instagram" href="#/"><i class="ti-pinterest"></i></a>
-                                <a title="Linkedin" href="#/"><i class="ti-twitter-alt"></i></a>
-                                <a title="Skype" href="#/"><i class="ti-instagram"></i></a>
-                            </div>
-                            <!-- Social Shear End -->
-                        </div>
-                        <div class="content">
-                            <h4 class="title">Prety Pairy</h4>
-                            <h4 class="subtitle">Customer</h4>
-                        </div>
-                    </div>
-                    <!-- Single Team Wrapper End -->
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- Team section End -->
-
-    @endsection
+@endsection
