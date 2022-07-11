@@ -40,7 +40,7 @@
                     <h1 class="pet_space">Exclusive Pet Spaces</h1>
                 </div>
                 <div class="view-all col-12 col-sm-6 col-md-6 col-lg-4">
-                    <a href="{{URL::asset('/exclusive_petspaces')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
+                    <a href="{{URL::asset('/pet_host')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
                 </div>
                
                 
@@ -67,7 +67,7 @@
                                       
                                             <a href="/pet_space_booking/{{$item['_id']}}" class="image">
                                 
-                                                <img class="fits-image" src="{{$item['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
+                                                <img  src="{{$item['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
                             
                                             </a>
                                             <span class="badges">
@@ -85,14 +85,14 @@
                                             <span class="price">
                                                 <span class="new">₹ {{$item['cost_per_hour']}}/Hr</span>
                                                 </span>
-                                            <span class="rating">
+                                            <!-- <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>     -->
                                         </div>
                                         <!-- Content End  -->
                                     </div>
@@ -208,44 +208,42 @@
                             <div class="row m-b-n40">
                                 <?php $count = 0; ?>
                                 @foreach ($collection as $item)
-                                    <?php if($count == 8) break; ?>
+                                <?php if($count == 8) break; ?>
                                     <?php $count++; ?>
                                 <!-- Product Start -->
                               <div class="col-12 col-sm-6 col-lg-3 product-wrapper m-b-40">
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-
-                                            <a href="{{('/pet_space_booking')}}/{{$item['_id']}}" class="image">
-                                              
-                                                <img class="fits-image" src="{{$item['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
-                                             
-                                             
+                                      
+                                            <a href="/pet_space_booking/{{$item['_id']}}" class="image">
+                                
+                                                <img  src="{{$item['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
+                            
                                             </a>
-
                                             <span class="badges">
                                                 <span class="sale">4.5</span>
                                                 </span>
                                           
                                         </div>
                                         <!-- Thumb End  -->
-
+                                     
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <a href="{{('/pet_space_booking')}}/{{$item['_id']}}" class="image">
+                                            <a href="/pet_space_booking/{{$item['_id']}}" class="image">
                                             <h5 class="title"><p>{{$item['venue_name']}}</p></h5>
                                             </a>
                                             <span class="price">
                                                 <span class="new">₹ {{$item['cost_per_hour']}}/Hr</span>
                                                 </span>
-                                            <span class="rating">
+                                            <!-- <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>     -->
                                         </div>
                                         <!-- Content End  -->
                                     </div>
