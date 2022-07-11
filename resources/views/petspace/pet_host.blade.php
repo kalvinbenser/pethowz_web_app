@@ -52,7 +52,7 @@
                                                 {{-- <img class="fit-image" src="https://firebasestorage.googleapis.com/v0/b/pethouse-otp.appspot.com/o/user%2F1656477109457-images.jpeg?alt=media" alt="Product" />
                                              --}}
                                                
-                                                <img class="fits-image" src="{{$item['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
+                                                <img class="fits-image" src="{{$item['image'][0]}}"   alt="Product" />
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">4.5</span>
@@ -69,14 +69,14 @@
                                             <span class="price">
                                                 <span class="new">₹ {{$item['cost_per_hour']}}/Hr</span>
                                                 </span>
-                                            <span class="rating">
+                                            <!-- <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star-half-o"></i>
                                             <i class="fa fa-star-o"></i>
                                             <i class="fa fa-star-o"></i>
                                         </span>
-                                        <span class="like"><i class="fa fa-heart-o"></i></span>    
+                                        <span class="like"><i class="fa fa-heart-o"></i></span>     -->
                                         </div>
                                         <!-- Content End  -->
                                     </div>

@@ -67,7 +67,10 @@
                                       
                                             <a href="/pet_space_booking/{{$item['_id']}}" class="image">
                                 
-                                                <img  src="{{$item['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
+                                                <img class="fits-image"  src="{{$item['image'][0]}}" alt="Product" />
+
+<!-- 
+                                                <img class="fit-image"  src="{{$item['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" /> -->
                             
                                             </a>
                                             <span class="badges">
@@ -218,7 +221,7 @@
                                       
                                             <a href="/pet_space_booking/{{$item['_id']}}" class="image">
                                 
-                                                <img  src="{{$item['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
+                                                <img  class="fits-image" src="{{$item['image'][0]}}"  alt="Product" />
                             
                                             </a>
                                             <span class="badges">

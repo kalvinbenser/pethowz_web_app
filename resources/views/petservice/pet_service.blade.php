@@ -36,7 +36,7 @@
                               <!-- Thumb Start  -->
                               <div class="thumb">
                                   <a href="{{('/pet_service_booking')}}/{{$pet_ser['_id']}}" class="image">
-                                    <img class="fit-image" style="width: 100%;height: 15vw;object-fit: cover;" src="{{$pet_ser['image'][0]}}" alt="Product" />
+                                    <img  class="fits-image" src="{{$pet_ser['image'][0]}}" alt="Product" />
                                  </a>
                                   <span class="badges">
                                   <span class="sale">4.5</span>
@@ -53,14 +53,14 @@
                                   <span class="new">₹ {{$pet_ser['cost_per_hour']}}/Hr</span>
                                                                           
                                 </span>
-                                <span class="rating">
+                                <!-- <span class="rating">
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
                                 </span>
-                                <span class="like"><i class="fa fa-heart-o"></i></span>    
+                                <span class="like"><i class="fa fa-heart-o"></i></span>     -->
                               </div>
                               <!-- Content End  -->
                           </div>
