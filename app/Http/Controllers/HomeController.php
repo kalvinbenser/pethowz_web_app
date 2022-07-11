@@ -53,6 +53,15 @@ class HomeController extends Controller
   
         $petSpaceResponse = $petSpaceRequest->json();
         $pet_space=$petSpaceResponse['data'];
+        
+        $PetSpaceCollection = collect($pet_space);
+
+        $filtered = $PetSpaceCollection->filter(function ($value, $key) {
+            // return $value['approved']==true;
+            return $value['approved']==true;
+        });
+
+        //dd($pet_space);
        // dd($petSpaceResponse[data]);
 
         //**************************  Pet Service  ****************************\\
@@ -65,7 +74,7 @@ class HomeController extends Controller
         // $pet_service=$petServiceResponse['data'];
         // // dd($pet_service);
         //
-        $collection = (new Collection($pet_space))->paginate(8);
+        $collection = (new Collection($filtered->all()))->paginate(8);
        // dd($collection);
         return view('home/index',compact('collection'));
     }

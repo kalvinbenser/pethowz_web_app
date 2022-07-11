@@ -52,7 +52,7 @@
                                                 {{-- <img class="fit-image" src="https://firebasestorage.googleapis.com/v0/b/pethouse-otp.appspot.com/o/user%2F1656477109457-images.jpeg?alt=media" alt="Product" />
                                              --}}
                                                
-                                                <img class="fits-image" src="{{$item['image']}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
+                                                <img class="fits-image" src="{{$item['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">4.5</span>

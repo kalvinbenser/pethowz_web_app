@@ -64,8 +64,11 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
+                                      
                                             <a href="/pet_space_booking/{{$item['_id']}}" class="image">
-                                                <img class="fits-image" src="{{$item['image']}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
+                                
+                                                <img class="fits-image" src="{{$item['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
+                            
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">4.5</span>
@@ -73,7 +76,7 @@
                                           
                                         </div>
                                         <!-- Thumb End  -->
-
+                                     
                                         <!-- Content Start  -->
                                         <div class="content">
                                             <a href="/pet_space_booking/{{$item['_id']}}" class="image">
@@ -212,9 +215,14 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
+
                                             <a href="{{('/pet_space_booking')}}/{{$item['_id']}}" class="image">
-                                                <img class="fits-image" src="{{$item['image']}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
+                                              
+                                                <img class="fits-image" src="{{$item['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
+                                             
+                                             
                                             </a>
+
                                             <span class="badges">
                                                 <span class="sale">4.5</span>
                                                 </span>

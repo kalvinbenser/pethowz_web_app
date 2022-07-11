@@ -36,7 +36,7 @@
                               <!-- Thumb Start  -->
                               <div class="thumb">
                                   <a href="{{('/pet_service_booking')}}/{{$pet_ser['_id']}}" class="image">
-                                    <img class="fit-image" style="width: 100%;height: 15vw;object-fit: cover;" src="{{$pet_ser['image']}}" alt="Product" />
+                                    <img class="fit-image" style="width: 100%;height: 15vw;object-fit: cover;" src="{{$pet_ser['image'][0]}}" alt="Product" />
                                  </a>
                                   <span class="badges">
                                   <span class="sale">4.5</span>

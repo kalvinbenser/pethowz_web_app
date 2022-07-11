@@ -76,11 +76,13 @@
         <div class="profile_images">
       <div class="row">
          @if(isset($detail['image']))
+         @foreach($detail['image'] as $img)
          <div class=" col-md-4 col-lg-4 m-b-30">  
                   <div class="col-lg-12">                    
-                    <img class="pro-images2" src="{{$detail['image']}}" alt="Banner Image" />
+                    <img class="pro-images2" src="{{$img}}" alt="Banner Image" />
                   </div>
             </div> 
+            @endforeach
          @else
 
          <div class=" col-md-4 col-lg-4 m-b-30">  
