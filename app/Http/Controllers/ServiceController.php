@@ -22,6 +22,15 @@ class ServiceController extends Controller
         //      //dd($registerDetailsResponse);
         //      if($registerDetailsResponse['Success']==true){
                 
+           
+
+            // $filteredArray = Arr::where($myArray, function ($value, $key) {
+            //     return $value['type'] == 1;
+            // });
+                   
+
+            // dd($filteredArray);
+
                 return view("test");
         //      }
         //      else{

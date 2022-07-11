@@ -100,11 +100,12 @@ class HomeController extends Controller
 
         $filtered = $PetServiceCollection->filter(function ($value, $key) {
             // return $value['approved']==true;
-            return $value['approved']==false;
+            return $value['approved']==true;
         });
     
         //dd($filtered->all());
-
+        //dd($filtered->all());
+           
 
         $collection = (new Collection($filtered->all()))->paginate(8);
        // dd($collection);
@@ -500,12 +501,29 @@ class HomeController extends Controller
         $petSpaceRequest = Http::get($petSpaceUrl);
   
         $petSpaceResponse = $petSpaceRequest->json();
-        
-        $pet_space=$petSpaceResponse['data'];
-
       
 
-        $collection = (new Collection($pet_space))->paginate(8);
+
+        
+
+        
+        $pet_space=$petSpaceResponse['data'];
+        
+       
+        $PetSpaceCollection = collect($pet_space);
+        //dd($PetSpaceCollection);
+        $filtered = $PetSpaceCollection->filter(function ($value, $key) {
+               
+            return $value['approved']==true;
+        });
+    
+        //dd($filtered->all());
+        //dd($filtered->all());
+           
+
+        $collection = (new Collection($filtered->all()))->paginate(8);
+
+        // $collection = (new Collection($pet_space))->paginate(8);
        // dd($collection);
         return view('petspace/pet_host',compact('collection'));
       

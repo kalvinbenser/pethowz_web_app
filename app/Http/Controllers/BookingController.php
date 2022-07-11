@@ -56,10 +56,20 @@ class BookingController extends Controller
         $user_id=$request->session()->get('user_id');
         if($user_id){
         $user_service=$request->user_service;
+        $user_price=$request->user_price;
         $user_amount=$request->user_amount;
         $venue_name=$request->venue_name;
      
-      
+        $data=[
+            'user_service'=>$user_service,
+            'user_amount'=>$user_amount,
+            'user_price'=>$user_price,
+            
+            'venue_name'=>$venue_name
+
+        ];
+
+       // dd($data);
         if(!$user_service){
             return redirect()->back()->with('warning','please select service');
         }
@@ -211,13 +221,16 @@ class BookingController extends Controller
         $user_service=$request->user_service;
         $user_amount=$request->user_amount;
         $venue_name=$request->venue_name;
+        $user_price=$request->user_price;
         $data=[
             'user_service'=>$user_service,
             'user_amount'=>$user_amount,
+            'user_price'=>$user_price,
+            
             'venue_name'=>$venue_name
 
         ];
-        dd($data);
+        //dd($data);
 
         if(!$user_service){
             return redirect()->back()->with('warning','please select service');

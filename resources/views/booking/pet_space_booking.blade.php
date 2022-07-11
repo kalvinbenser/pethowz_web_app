@@ -142,9 +142,9 @@
                     <div class="single-footer-widget booking_form_details">
                         <h3 class="rupee"> <i class="fa fa-rupee" style="font-size:24px">
                         @if(isset($detail['cost_per_hour']))
-                        <span id="usertotal" >{{$detail['cost_per_hour']}}</span>
+                        <span id="usertotal" >0</span>
                         @else
-                        <span id="usertotal" >100</span>
+                        <span id="userAmount" >0</span>
                         @endif
                     </i></h3>
                         <h6 class="rupee">Per Hour</h6>
@@ -153,8 +153,9 @@
                             <form action="/create_pet_space_booking_form" method="post">
                                 @csrf
                                 <input type="hidden" name="user_service" id="userService">
+                                <input type="hidden" name="user_price" id="userPrice">
                                 <input type="hidden" name="venue_name" value="{{ $detail['venue_name']}}" >
-                                <input type="hidden" name="user_amount" id="userAmount" value={{$detail['cost_per_hour']}}>
+                                <input type="hidden" name="user_amount" id="userAmount">
                              
                                 <button  class="btn btn-primary btn-sm mx-auto" id="btn">Book</button>
                             </form>
@@ -326,11 +327,11 @@
                     <!-- Banner Start -->
                     <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                         <div class="service-pic service-pic1" id="one">
-                        <div class="align_services sittinks pic1">
-                            <input type="checkbox"  class="checkbox" name="category[]" value=1 id="cb1" />
+                        <div class="align_services sittinks pic1 div-service">
+                            <input type="checkbox"  class="checkbox price-service" name="category[]" value="{{$detail['cost_per_hour']}}" id="cb1" />
                             <label for="cb1"  ><img class="fit-image click_logo1" src="{{URL::asset('front-end/assets/images/lightgallery/Sitting Green.svg')}}"/>
                             </label>
-                            <div class="sitt">Sitting</div>
+                            <div class="sitt label-service">Sitting</div>
                         </div> 
                         <div>
                         <h3 class="rupee1"><i class="fa fa-rupee">{{$detail['cost_per_hour']}}</i></h3> 
@@ -342,11 +343,11 @@
                    <!-- Banner Start -->
                     <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                         <div class="service-pic service-pic2" id="two" >
-                       <div class="groominks align_services pic2">
-                            <input type="checkbox"  class="checkbox" name="category[]" value=2 id="cb2" />
+                       <div class="groominks align_services pic2 div-service">
+                            <input type="checkbox"  class="checkbox price-service" name="category[]" value="{{$detail['cost_per_hour']}}" id="cb2" />
                             <label for="cb2"  ><img class="fit-image click_logo2" src="{{URL::asset('front-end/assets/images/lightgallery/Grooming Blue.svg')}}"/>
                             </label>
-                            <div class="grom">Grooming</div>
+                            <div class="grom label-service">Grooming</div>
                        </div>
                        <div>
                         <h3  class="rupee1"><i class="fa fa-rupee">{{$detail['cost_per_hour']}}</i></h3> 
@@ -358,11 +359,11 @@
                     <!-- Banner Start -->
                     <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
                         <div class="service-pic service-pic3" id="three">
-                        <div class="walkinks align_services pic3">
-                            <input type="checkbox"  class="checkbox" name="category[]" value=3 id="cb3"  />
+                        <div class="walkinks align_services pic3 div-service">
+                            <input type="checkbox"  class="checkbox price-service" name="category[]" value="{{$detail['cost_per_hour']}}" id="cb3"  />
                             <label for="cb3"  ><img class="fit-image click_logo3"  src="{{URL::asset('front-end/assets/images/lightgallery/Walking Orange.svg')}}"/>
                             </label>
-                            <div class="walk">Walking</div>
+                            <div class="walk label-service">Walking</div>
                         </div>
                         <div>
                             <h3  class="rupee1"><i class="fa fa-rupee">{{$detail['cost_per_hour']}}</i></h3> 
@@ -374,11 +375,11 @@
                     <!-- Banner Start -->
                     <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                         <div class="service-pic service-pic4" id="four" >
-                        <div class="breadinks align_services pic4">
-                            <input type="checkbox" class="checkbox" name="category[]" value=4 id="cb4" />
+                        <div class="breadinks align_services pic4 div-service">
+                            <input type="checkbox" class="checkbox price-service" name="category[]" value="{{$detail['cost_per_hour']}}" id="cb4" />
                             <label for="cb4"  ><img class="fit-image click_logo4"  src="{{URL::asset('front-end/assets/images/lightgallery/Breeding Yellow.svg')}}"/>
                             </label> 
-                            <div class="brea">Breading</div>
+                            <div class="brea label-service" >Breading</div>
                         </div>
                         <div>
                             <h3  class="rupee1"><i class="fa fa-rupee">{{$detail['cost_per_hour']}}</i></h3> 
@@ -390,15 +391,15 @@
                     <!-- Banner Start -->
                     <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                         <div class="service-pic service-pic5" id="five" >
-                        <div class="traininks align_services pic5">
-                            <input type="checkbox" class="checkbox" name="category[]" value=5 id="cb5" />
+                        <div class="traininks align_services pic5 div-service" >
+                            <input type="checkbox" class="checkbox price-service" name="category[]" value="{{$detail['cost_per_hour']}}" id="cb5" />
                             <label for="cb5"  ><img class="fit-image click_logo5" src="{{URL::asset('front-end/assets/images/lightgallery/Training Blue.svg')}}"/>
                             </label> 
-                            <div class="trai">Training</div>
+                            <div class="trai label-service">Training</div>
                         </div>
                         <div>
                             <h3  class="rupee1"><i class="fa fa-rupee">{{$detail['cost_per_hour']}}</i></h3> 
-                            <h5 class="rupee2">Per Hour</h5>
+                            <h5 class="rupee2 ">Per Hour</h5>
                             </div>
                         </div>
                     </div>
@@ -406,11 +407,11 @@
                       <!-- Banner Start -->
                       <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                           <div class="service-pic service-pic6" id="six">
-                        <div class="photographys align_services pic6" >
-                            <input type="checkbox"  class="checkbox" name="category[]" value=6 id="cb6" />
+                        <div class="photographys align_services pic6 div-service" >
+                            <input type="checkbox"  class="checkbox price-service" name="category[]" value="{{$detail['cost_per_hour']}}" id="cb6" />
                             <label for="cb6"  ><img class="fit-image click_logo6" src="{{URL::asset('front-end/assets/images/lightgallery/Photography Blue.svg')}}" />
                             </label>  
-                            <div class="phot">Photography</div>
+                            <div class="phot label-service">Photography</div>
                         </div>
                         <div>
                             <h3  class="rupee1"><i class="fa fa-rupee">{{$detail['cost_per_hour']}}</i></h3> 
@@ -451,38 +452,32 @@
           $(".pic6").toggleClass("photography");
     })
         </script>
-       <script>
-          $("#btn").click(function(event){
-            // event.preventDefault();
-        
-                var searchIDs = $("input:checkbox:checked").map(function(){
-                return this.value;
-            }).toArray();
-            $('#userService').val(searchIDs)
-               
-              
-           
-
-         
-         
-       
-            });
-           </script>
+      
 
            
- {{-- <script>
+<script>
     $('input:checkbox').change(function(){ 
 	var tot=0;
-
+    var services = [];
+    var prices = [];
 $('input:checkbox:checked').each(function(){
 	tot+=parseInt($(this).val());
+
+    services.push($(this).closest('.div-service').find('.label-service').text());
+    prices.push($(this).closest('.div-service').find(".price-service").val());
 });
 
 
 $('#usertotal').html(tot)
 $('#userAmount').val(tot)
+$('#userService').val(services)
+$('#userPrice').val(prices)
+
+
+console.log(services);
+console.log(prices);
 });
- </script> --}}
+ </script> 
 
 
      @endsection 
