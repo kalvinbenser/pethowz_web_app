@@ -449,12 +449,12 @@ platform. If not, your cancellation of the booking would not be considered effec
                         <div class="single-footer-widget">
                             <h1 class="widget-title">Head Office</h1>
                             <ul>
-                                <li class="addicon2"><i class="fa fa-map-marker addicon4"></i><p class="addicon1"> Springboard, Gopala krishna complex,</span></li>
-                                <li class="addicon2"><p class="addicon3">45/3 Residency Road,Mahatma Gandhi Rd,</p></li>
-                                <li class="addicon2"><p class="addicon3">ShanthalamNagar,Ashok Nagar,</p></li>
-                                <li class="addicon2"><p class="addicon3">Bengaluru,karnataka -560025</p></li>
-                                <li class="addicon2"><i class="fa fa-phone  addicon4"></i> <p class="addicon1"><strong>098840 42119</strong></p></li>
-                                <li class="addicon2"><i class="fa fa-envelope-o addicon4"></i><p class="addicon1"> <strong>Support@pethows.com</strong></p></li>
+                                <li class="addicon2"><i class="fa fa-map-marker addicon4"></i><p class="addicon1"> Corporate Office - Business Hut,</span></li>
+                                <li class="addicon2"><p class="addicon3">133/2,4th floor Janardhan Towers,</p></li>
+                                <li class="addicon2"><p class="addicon3">Residency Road</p></li>
+                                <li class="addicon2"><p class="addicon3">Bengaluru,kKarnataka 560025</p></li>
+                                <li class="addicon2"><i class="fa fa-phone  addicon4"></i> <p class="addicon1"><strong>98840 42119</strong></p></li>
+                                <li class="addicon2"><i class="fa fa-envelope-o addicon4"></i><p class="addicon1"> <strong>pethowzindia@gmail.com</strong></p></li>
                             </ul>
                         </div>
                     </div>

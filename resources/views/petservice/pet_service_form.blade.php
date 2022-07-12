@@ -104,7 +104,7 @@ input[type="checkbox"]+label {
                       <select class="form-select select_serv" name="select_service[]" id="select_service" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
                         <option value="0">--- select service ---</option>
                         <option value="1">Sitting</option>
-                        <option value="2">Breading</option>
+                        <option value="2">Breeding</option>
                         <option value="3">Photography</option>
                         <option value="4">Grooming</option>
                         <option value="5">Waiking</option>
@@ -126,6 +126,7 @@ input[type="checkbox"]+label {
                           <input id="range" name="cost_per_hour" id="cost_per_hour" type="range" min="0" max="1000" value="0" step="1">
                         </div>
                 </div>
+                
                     <div class="view-all">
                         <input type="submit" id="pet_service_submit" value="submit" class="submite" >
                    </div>                     
@@ -241,7 +242,7 @@ input[type="checkbox"]+label {
            .then(url => {
              console.log(url);
 
-                  
+              
                    
           // start
           if(url){
@@ -272,7 +273,9 @@ input[type="checkbox"]+label {
                                                   toastr.success("pet service created successfully");
                                                 }
                                                 else{
-                                                  toastr.error(" failed");
+                                                  console.log(data.response);
+                                          
+                                                  toastr.error("failed");
                                                 }
                                             }
                                         });

@@ -343,9 +343,9 @@ class HomeController extends Controller
              }
              else{
                 $profile_data=$registerDetailsResponse['data'];
-
+                 
                 $data['collection'] = (new Collection($profile_data));
-              
+                 
                 //my venue
                 $myVenueUrl=env('API').'getPetSpaceMobileListById/'.$user_id;
                 $myVenueRequest=Http::get($myVenueUrl);
@@ -353,7 +353,7 @@ class HomeController extends Controller
                 $data['my_venue']=$myVenueResponse['data'];
                 //dd( $data['my_venue']);
   
-  
+                   //dd($user_id);
   
                 //my service
   
@@ -445,18 +445,40 @@ class HomeController extends Controller
     public function update_Profile(Request $request){
 
         try{  
-             $update_mail=$request->update_mail;
-             $update_number=$request->update_number;
-             $update_address=$request->update_address;
-             $user_id =$request->session()->get('user_id');
-           // dd($user_id);
-            $profileData=[
-                'user_id'=>$user_id,
-                'email'=>$update_mail,
-                'contact_number'=>$update_number,
-                'address'=>$update_address
+
+
+
+        //      $update_mail=$request->update_mail;
+        //      $update_number=$request->update_number;
+        //      $update_address=$request->update_address;
+        //      $user_id =$request->session()->get('user_id');
+        //    // dd($user_id);
+        //     $profileData=[
+        //         'user_id'=>$user_id,
+        //         'email'=>$update_mail,
+        //         'contact_number'=>$update_number,
+        //         'address'=>$update_address
                
-            ];
+        //     ];
+
+           // $name=$request->name;
+            $mail=$request->update_mail;
+            $number=$request->update_number;
+            $address=$request->update_address;
+           // $gender=$request->gender;
+
+            $datas=[
+               "user_id"=> $user_id,
+               //"name"=> $name,
+               "contact_number"=> $number,
+              // "img"=> $image,
+               //"gender"=> $gender,
+               "email"=> $mail,
+               "address"=>$address
+           ];
+           
+
+
             //dd($profileData);
 
             // "user_id": "wfLB4hhiZaWISswbtPAGmAhwDm52",

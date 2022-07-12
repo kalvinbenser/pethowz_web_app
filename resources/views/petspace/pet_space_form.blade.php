@@ -75,9 +75,9 @@ input[type="checkbox"]+label {
                   <div class="form-outline">
                   <label for="user-message" class="about">Venue Name</label>                    
                             <!-- <textarea id="user-message" name="servive_details" class="form-control serv_details" cols="5" rows="2" placeholder=""></textarea> -->
-                            <input type="text" class="form-control" name="service_cost" placeholder="" id="service_cost">
+                            <input type="text" class="form-control" name="venue" placeholder="" >
                     </div>
-                      
+                    <!-- <input type="number" class="form-control" placeholder="" id="service_cost"> -->
                      
                     </div>
                     <div class="service-providers">
@@ -188,6 +188,10 @@ input[type="checkbox"]+label {
                     <i class="fa fa-image " style="color:#FF9A71;font-size:20px;"></i><input id="title" class="pro_name select_profile" />
                     <div class="">
                     </div>
+                      <div>
+
+                      </div>
+
                     <div class="view-all">
                       <input type="submit" value="submit" id="pet_service_form" class="submite" >
                </div>

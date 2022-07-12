@@ -533,19 +533,19 @@
    
     <!-- Product Deal Section End -->
     <!-- Testimonial Section Start -->
-    <div class="section bg-name-bright section-padding section-margin">
+    <div class="section bg-name-bright section-padding section-margin fit-hero-section">
         <div class="container">
           <!-- ending Slider Start -->
-    <div class="section">
-        <div class="hero-slider swiper-container">
+    <div class="section ">
+        <div class="hero-slider swiper-container ">
             <div class="swiper-wrapper">
                 <div class="hero-slide-item swiper-slide">
                     <div class="hero-slide-bg">
-                        <img src="{{URL::asset('front-end/assets/images/slider/Footer Image.png')}}" alt="Slider Image" />
+                        <img class="" src="{{URL::asset('front-end/assets/images/slider/Footer Image.png')}}" alt="Slider Image" />
                    </div>
                     <div class="container">
                         <div class="hero-slide-content text-start">
-                            <h2 class="title m-0" id="title-color">List your space for pets<br>and start earning</h2>
+                            <h2 class="title m-0 " id="title-color">List your space for pets<br>and start earning</h2>
                             <a href="/register_view" class="btn btn-dark btn-hover-primary">become a Pethost</a>
                         </div>
                     </div>

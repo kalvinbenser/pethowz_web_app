@@ -30,7 +30,9 @@ class ServiceController extends Controller
                    
 
             // dd($filteredArray);
-
+             $data[]="string";
+             dd($data);
+   
                 return view("test");
         //      }
         //      else{
@@ -83,8 +85,10 @@ class ServiceController extends Controller
             $options_id=$request->option;
             $services_id=$request->select_service;
             $cost=$request->cost_per_hour;
-            $user_id=$request->session()->get('user_id');;
-            $image= $request->image;
+            $user_id=$request->session()->get('user_id');
+    
+            $image[]= $request->image;
+           
     
                //image upload
            
@@ -160,7 +164,7 @@ class ServiceController extends Controller
             //     'amenities'=>'required',
             //     'image'=>'required',
             // ]);
-            $venue= $request->venue;
+            //$venue= $request->venue;
                $user_id=$request->session()->get('user_id');
                $venue_category=$request->venue_category;
          // dd($venue_category);
@@ -168,12 +172,12 @@ class ServiceController extends Controller
             $service_cost=$request->service_cost;
             $cost_per_hour=$request->cost_per_hour;
             $venue_name=$request->venue;
-            // $service_cost=100;
+            $service_cost=100;
             //$service_cost=$request->service_cost;
             $options=$request->option;
             $location=$request->location;
             $amenities=$request->amenities;
-            $imageName=$request->image;
+            $imageName[]=$request->image;
             
    
     

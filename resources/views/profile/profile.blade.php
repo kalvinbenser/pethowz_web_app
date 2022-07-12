@@ -100,7 +100,7 @@
                                   <!-- Thumb Start  -->
                                   <div class="thumb">
                                       <a href="#" class="image">
-                                          <img class="fit-image" src="{{$venue['image']}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
+                                          <img class="fit-image" src="{{$venue['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
                                       </a>
                                       {{-- <span class="badges">
                                       <span class="sale">-18%</span>
@@ -163,7 +163,7 @@
                                 <!-- Thumb Start  -->
                                 <div class="thumb">
                                     <a href="#" class="image">
-                                        <img class="fit-image" src="{{$service['image']}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
+                                        <img class="fit-image" src="{{$service['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
                                     </a>
                                     {{-- <span class="badges">
                                     <span class="sale">-18%</span>
@@ -216,6 +216,9 @@
                     <form action="{{('/update_Profile')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
+                               <div class="single-input-item m-b-10">
+                                <input type="text" id="update" class="profile_email" value="{{$collection['name']}}" name="update_name" placeholder="Name" >                
+                                </div>
                                <div class="single-input-item m-b-10">
                                 <input type="email" id="update" class="profile_email" value="{{$collection['email']}}" name="update_mail" placeholder="Email" >                
                                 </div>
