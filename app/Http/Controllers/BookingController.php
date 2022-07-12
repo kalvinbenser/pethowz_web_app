@@ -35,8 +35,8 @@ class BookingController extends Controller
             if(isset($details['data'][0]['RegistrationDetails'])){
                 $data['reg']=$details['data'][0]['RegistrationDetails'];
             }
-      
-            // /dd($data['reg']);
+           
+            //dd($data['reg']);
              $data['s_id']=$s_id;
             //dd($details['data'][0]);
             if(isset($details['data'][0])){

@@ -86,7 +86,7 @@ Route::post('/create_your_self',[HomeController::class,'create_your_self']);
 // Route::get('/profile',[HomeController::class,'profile']);
 // Route::get('/profile/{reg_id}/show',[HomeController::class,'profile']);
 Route::get('/profile',[HomeController::class,'profile']);
-Route::put('/update_Profile',[HomeController::class,'update_Profile']);
+Route::post('/update_Profile',[HomeController::class,'update_Profile']);
 
 //allimages_details
 

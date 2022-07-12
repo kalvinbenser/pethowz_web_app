@@ -205,7 +205,7 @@
 
 
    <!-- Edit Modal -->
-<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog model-center">
       
           <div class="modal-content">    
@@ -251,7 +251,90 @@
 
   </div>
 </div>
+  -->
+
+
+
+
+
+  <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog model-center">
+      
+          <div class="modal-content">    
+            <div class="modal-body model-update">
+                  
+
+
+            <div>
+                <div>
+                <p>Edit Profile</p>
+                </div>
+
+                <div> 
+                 
+                    <p class="text-start">Name</p>
+                    <input type="text" name="name" id="name" class="form-control" value="{{$collection['name']}}"/>
+                </div>
+
+                <div>
+                    <p class="text-start">Email</p>
+                    <input type="email" name="mail" id="mail"  class="form-control" value="{{$collection['email']}}"/>
+                </div>
+
+                <div>
+                <p class="text-start">Phone Number</p>
+                    <input type="number" name="phone" id="phone" class="form-control" value="{{$collection['contact_number']}}" />
+                </div>
+
+                <div>
+                <p class="text-start">Address</p>
+                <textarea id="address" class="form-control">
+                    {{$collection['address']}}
+                </textarea>
+                </div>
+
+                <div>
+                <p class="text-start">Gender</p>
+                    <div class="d-flex">
+                <input type="radio" id="gender" name="gender" value=1 {{ $collection['gender'] == 1 ? 'checked' : '' }} >
+                 <label for="html">mail</label>
+                 <input type="radio" id="gender" name="gender" value=0 {{ $collection['gender'] == 0 ? 'checked' : '' }}>
+                 <label for="css">Femail</label>
+                      </div>
+                </div>
+              
+                   <div>
+                   <p class="text-start">Image</p>
+             
+                   <input type="file" name="files" id="files">
+                        
+            
+                   </div>
+
+                   <div>
+                    <button id="update-btn" class="btn-model">submit</button>
+                   </div>
+            </div>
+                    
+                  
+    
+           </div>
+          
+    
+         
+            </div>
+
+
+  </div>
+</div>
  
+
+
+
+
+
+
+
     <!-- Edit Modal -->
 
 
@@ -429,71 +512,192 @@
 
  @endsection
 @section('scripts')
-<script src="{{URL::asset('front-end/assets/js/jquery.min.js')}}"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+<!-- <script src="{{URL::asset('front-end/assets/js/jquery.min.js')}}"></script> -->
+
+
+
 <script>
-    function readURL(input) {
-var id = $(input).attr("id");
 
-if (input.files && input.files[0]) {
-var reader = new FileReader();
+  $('body').on('click','#update-btn',function(e){
+     
+     e.preventDefault();
+     console.log("update");
+             
 
-reader.onload = function(e) {
-$('label[for="' + id + '"] .upload-icon').css("border", "none");
-$('[for="' + id + '"] .profile-pic').hide();
-$('[for="' + id + '"] .prev').attr('src', e.target.result).show();
-}
 
-reader.readAsDataURL(input.files[0]);
-}
-}
 
-$("input[id^='file-input']").change(function() {
-readURL(this);
-});
-    </script>
- <script>
-    var coll = document.getElementsByClassName("service-booking");
-    var i;
+     var profile_name=$("input[name='name']").val();
+            var profile_mail=$("input[name='mail']").val();
+            var profile_number=$("input[name='phone']").val();
+            var profile_address=$("#address").val();
+            var profile_gender=$('[name=gender]:checked').val()
+            var profile_number=$("input[name='phone']").val();
+           var fileName=document.getElementById("files");
+            console.log(profile_mail);
+            console.log(profile_name);
+            console.log(profile_number);
+            console.log(profile_address);
+           console.log(profile_gender);
+            //console.log(file);
+            
+            
+            if(fileName.files.length != 0 ){
+                      
+                        
+
+   
+              const firebaseConfig = {
+     apiKey: "AIzaSyAlCo1n1jNYbvD0DEAjKepE27FcdZqkfmY",
+     authDomain: "pethouse-otp.firebaseapp.com",
+     databaseURL: "https://pethouse-otp-default-rtdb.firebaseio.com",
+     projectId: "pethouse-otp",
+     storageBucket: "pethouse-otp.appspot.com",
+     messagingSenderId: "589343176814",
+     appId: "1:589343176814:web:5e6e291ee9ab25be6e0e7f",
+     measurementId: "G-4VQD1X0NDR"
+   };
+       // Initialize Firebase
+       firebase.initializeApp(firebaseConfig);
+       console.log(firebase);
+   
+         const ref = firebase.storage().ref();
+         const file = document.querySelector("#files").files[0];
+         var Imagename = +new Date() + "-" + file.name;
+        
+          console.log(Imagename);
+         const metadata = {
+           contentType: file.type
+         };
+         const task = ref.child('/users/'+Imagename).put(file, metadata);
+         task
+           .then(snapshot => snapshot.ref.getDownloadURL())
+           .then(url => {
+             console.log(url);
+
+                             
+        
+
+
+                     
+          //start
+                   
+          $.ajaxSetup({
+                                            headers: {
+                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                            }
+                                        });
+                                        $.ajax({
+                                            type:'POST',
+                                            url:"{{ url('update_Profile') }}",
+                                            data:{
+                                              image:url,
+                                              name:profile_name,
+                                              mail:profile_mail,
+                                              number:profile_number,
+                                              address:profile_address,
+                                              gender:profile_gender
+                                             
+                                            },
+                                            success:function(data){
+                                                // alert(data.mail);
+                                                console.log(data.response);
+                                                if(data.response.Success==true){
+                                                
+                                                   $("#exampleModal").modal('hide');
+                                                   window.location.href = '{{"/profile"}}';
+                                                  toastr.success("update successfully");
+                                                 }
+                                                else{
+                                                   console.log(data.response.Message);
+                                                  data.response.Message.forEach(element => toastr.error(element));
+                                                 }
+                                                
+                                            }
+                                        });
+                                    
+
+
+
+        //  end
+
+
+                                          
+
+               
+           })
+           .catch(console.error);
+       
+            
     
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var px = this.nextElementSibling;
-        if (px.style.display === "block") {
-          px.style.display = "none";
-        } else {
-          px.style.display = "block";
-        }
-      });
-    }
-    </script>
-{{-- 
-
-<script>
-       function getImage(){
-      var storage    = firebase.storage();
-var storageRef = storage.ref();
-//var spaceRef = storageRef.child('images/photo_1.png');
- //var img_name_url=;
- //alert("{{$collection['img']}}")
-
-storageRef.child("user/{{$collection['img']}}").getDownloadURL().then(function(url) {
 
 
- var test = url;
- 
- document.querySelector('#profils').src = test;
 
-}).catch(function(error) {
-     alert(error);
+
+
+            }else{
+
+
+      
+            
+    
+                     
+          //start
+                   
+          $.ajaxSetup({
+                                            headers: {
+                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                            }
+                                        });
+                                        $.ajax({
+                                            type:'POST',
+                                            url:"{{ url('update_Profile') }}",
+                                            data:{
+                                            //   image:url,
+                                              name:profile_name,
+                                              mail:profile_mail,
+                                              number:profile_number,
+                                              address:profile_address,
+                                              gender:profile_gender
+                                             
+                                            },
+                                            success:function(data){
+                                                // alert(data.mail);
+                                               // console.log(data.datas);
+                                                console.log(data.response);
+                                                if(data.response.Success==true){
+                                                
+                                                   $("#exampleModal").modal('hide');
+                                                   window.location.href = '{{"/profile"}}';
+                                                  toastr.success("update successfully");
+                                                 }
+                                                else{
+                                                   console.log(data.response.Message);
+                                                  data.response.Message.forEach(element => toastr.error(element));
+                                                 }
+                                            }
+                                        });
+                                    
+
+
+
+        //  end
+
+
+
+
+
+            }
+            
+
+
+          
+
+
+
 });
-
-
-     }
-
-
-     window.onload = getImage;
-</script> --}}
-
+</script>
 
 @endsection

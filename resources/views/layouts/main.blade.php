@@ -55,7 +55,14 @@
     display: inline;
 }
 
+
+
+.resend-class{
+    cursor: pointer;
+}
     </style>
+
+
 
 </head>
 
@@ -340,7 +347,7 @@
            
               </div>
               </div>
-              <p class="model-text-center mt-1">Did not receive the code? <span class="model-resend-text">Re-send</span></p>
+              <p class="model-text-center mt-1">Did not receive the code? <span class="model-resend-text resend-class" onclick="resendOtp()" >Re-send</span></p>
               <span id="mobile_otp_error" class="text-danger"></span>
               <div class="model-item-center">
               <input type="submit" value="VERIFY" id="booking_btn2" onclick="codeverify();"  class="btn-model-verify" > 
@@ -353,10 +360,10 @@
         </div>
     </div>
   </div>
-<!-- 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal3">
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal2">
   test
-</button> -->
+</button> 
    
   <div class="modal fade " id="loginModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog model-center">
@@ -862,6 +869,8 @@ platform. If not, your cancellation of the booking would not be considered effec
    
     });
     }
+
+
     function codeverify() {
     var code = $("#verificationCode").val();
     coderesult.confirm(code).then(function (result) {

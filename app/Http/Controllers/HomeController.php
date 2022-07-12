@@ -290,7 +290,7 @@ class HomeController extends Controller
                     $yourSelfResponse=$yourSelfRequest->json();
                     //dd( $yourSelfResponse);
                     if($yourSelfResponse['Success']==true){
-                        return redirect('/pet_space_form')->with('message','self intro added successfully');
+                        return redirect()->back()->with('message','self intro added successfully');
                     }
                     else{
                        
@@ -448,34 +448,40 @@ class HomeController extends Controller
 
 
 
-        //      $update_mail=$request->update_mail;
-        //      $update_number=$request->update_number;
-        //      $update_address=$request->update_address;
-        //     
-        //    // dd($user_id);
-        //     $profileData=[
-        //         'user_id'=>$user_id,
-        //         'email'=>$update_mail,
-        //         'contact_number'=>$update_number,
-        //         'address'=>$update_address
-               
-        //     ];
         $user_id =$request->session()->get('user_id');
-            $name=$request->update_name;
-            $mail=$request->update_mail;
-            $number=$request->update_number;
-            $address=$request->update_address;
-           // $gender=$request->gender;
+            $name=$request->name;
+            $mail=$request->mail;
+            $number=$request->number;
+            $address=$request->address;
+           $gender=$request->gender;
+           $image=$request->image;
 
-            $datas=[
-               "user_id"=> $user_id,
-               "name"=> $name,
-               "contact_number"=> $number,
-              // "img"=> $image,
-               //"gender"=> $gender,
-               "email"=> $mail,
-               "address"=>$address
-           ];
+                if($image != null){
+                    $datas=[
+                        "user_id"=> $user_id,
+                        "name"=> $name,
+                        "contact_number"=> $number,
+                        "img"=> $image,
+                        "gender"=> $gender,
+                        "email"=> $mail,
+                        "address"=>$address
+                    ];
+                }
+                else{
+                    $datas=[
+                        "user_id"=> $user_id,
+                        "name"=> $name,
+                        "contact_number"=> $number,
+                  
+                        "gender"=> $gender,
+                        "email"=> $mail,
+                        "address"=>$address
+                    ];
+                }
+
+
+
+          
            
 
 
@@ -493,8 +499,9 @@ class HomeController extends Controller
            // dd($editProfileUrl);
             $editProfileRequest=Http::put($editProfileUrl,$datas);
             $editProfileResponse=$editProfileRequest->json();
-            dd($editProfileResponse);
-          return redirect('/profile')->with('message','your profile updated');
+           // dd($editProfileResponse);
+            return response()->json(['response'=> $editProfileResponse,'datas'=>$datas]);
+            //return response()->json(['datas'=>$datas]);
         }
         catch(Exception $e) {
           echo 'Message: ' .$e->getMessage();
