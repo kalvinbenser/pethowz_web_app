@@ -228,6 +228,7 @@
                                 <div class="single-input-item m-b-10">
                                    <textarea id="update" name="update_address"  class="profile_address" placeholder="Address" >{{$collection['address']}}</textarea>                         
                                     </div>
+                                
     
                                     {{-- <div class="single-input-item m-b-10">
                                         <input type="file">                       

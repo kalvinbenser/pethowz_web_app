@@ -75,7 +75,7 @@ input[type="checkbox"]+label {
                   <div class="form-outline">
                   <label for="user-message" class="about">Venue Name</label>                    
                             <!-- <textarea id="user-message" name="servive_details" class="form-control serv_details" cols="5" rows="2" placeholder=""></textarea> -->
-                            <input type="text" class="form-control" name="venue" placeholder="" >
+                            <input type="text" class="form-control" name="venue_name" placeholder="" >
                     </div>
                     <!-- <input type="number" class="form-control" placeholder="" id="service_cost"> -->
                      
@@ -134,9 +134,9 @@ input[type="checkbox"]+label {
                   </div>
                   </div>
                     <div class="service-providers servive_detail1">
-                    <label class="about">Venue Details</label>                 
+                    <label class="about">Service Cost</label>                 
                         <!-- <textarea id="user-message" name="venue" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>  -->
-                        <input type="text" class="form-control venue_details" name="venue" placeholder="">
+                        <input type="number" class="form-control service_cost" name="service_cost" id="service_cost" placeholder="">
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
@@ -241,7 +241,7 @@ range.addEventListener('input', setValue);
           // alert(profile_gender);
                
               var venue_category=$("#venue_category").val();
-              var venue=$("input[name='venue']").val();
+              var venue=$("input[name='venue_name']").val();
               var location=$("#location").val();
               var service_cost=$("#service_cost").val();
               var select_service=$("#select_service").val();
@@ -353,10 +353,18 @@ range.addEventListener('input', setValue);
                                                  console.log(data.response);
                                                 // alert(data.venue);
                                                 if(data.response.Success==true){
+                                                  window.location.href = "{{url('/')}}";
                                                   toastr.success("pet space created successfully");
                                                 }
                                                 else{
-                                                  toastr.error(" failed");
+                                                  console.log(data.response.Message);
+                                                  data.response.Message.forEach(element => toastr.error(element));
+                                                  // $.each(data.response.Message, function( key, value ) {
+                                                  //   toastr.error(value);
+                                                  //  });
+                                                  // toastr.error("failed");
+                                                
+                                                 
                                                 }
                                             }
                                         });

@@ -283,7 +283,8 @@ readURL(this);
                                                   toastr.success("Registeration successfully");
                                                 }
                                                 else{
-                                                  toastr.error("Registeration failed");
+                                                  console.log(data.response.Message);
+                                                  data.response.Message.forEach(element => toastr.error(element));
                                                 }
                                             }
                                         });

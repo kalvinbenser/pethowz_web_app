@@ -451,7 +451,7 @@ class HomeController extends Controller
         //      $update_mail=$request->update_mail;
         //      $update_number=$request->update_number;
         //      $update_address=$request->update_address;
-        //      $user_id =$request->session()->get('user_id');
+        //     
         //    // dd($user_id);
         //     $profileData=[
         //         'user_id'=>$user_id,
@@ -460,8 +460,8 @@ class HomeController extends Controller
         //         'address'=>$update_address
                
         //     ];
-
-           // $name=$request->name;
+        $user_id =$request->session()->get('user_id');
+            $name=$request->update_name;
             $mail=$request->update_mail;
             $number=$request->update_number;
             $address=$request->update_address;
@@ -469,7 +469,7 @@ class HomeController extends Controller
 
             $datas=[
                "user_id"=> $user_id,
-               //"name"=> $name,
+               "name"=> $name,
                "contact_number"=> $number,
               // "img"=> $image,
                //"gender"=> $gender,
@@ -491,9 +491,9 @@ class HomeController extends Controller
         
             $editProfileUrl=env('API').'updateRegistrationDetails';
            // dd($editProfileUrl);
-            $editProfileRequest=Http::put($editProfileUrl,$profileData);
+            $editProfileRequest=Http::put($editProfileUrl,$datas);
             $editProfileResponse=$editProfileRequest->json();
-            //dd($editProfileResponse);
+            dd($editProfileResponse);
           return redirect('/profile')->with('message','your profile updated');
         }
         catch(Exception $e) {

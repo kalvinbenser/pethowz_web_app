@@ -270,12 +270,12 @@ input[type="checkbox"]+label {
                                               
                                                 console.log(data.response);
                                                 if(data.response.Success==true){
+                                                  window.location.href = "{{url('/')}}";
                                                   toastr.success("pet service created successfully");
                                                 }
                                                 else{
-                                                  console.log(data.response);
-                                          
-                                                  toastr.error("failed");
+                                                  console.log(data.response.Message);
+                                                  data.response.Message.forEach(element => toastr.error(element));
                                                 }
                                             }
                                         });
