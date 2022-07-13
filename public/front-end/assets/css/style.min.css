@@ -1755,6 +1755,7 @@ input[type="checkbox"] {
 .hero-slide-bg img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 .hero-slide-content {
     padding: 50px;
@@ -5463,8 +5464,8 @@ input[type="checkbox"] {
 .order-notes textarea:focus {
     border: 1px solid #f6ab49;
 }
-.pets-details{
-    padding: 35px;
+.label-service{
+padding: 3px;
 }
 .your-order-area {
     padding: 30px 40px 30px;
@@ -6357,13 +6358,14 @@ color:#ff986d;
        width: 100%;
        height: 100%;
   }
-  .pro-images2{
+  .pro-images2 {
     width: 100%;
-    height: 472px;
+    height: 100%;
     object-fit: cover;
     object-position: bottom;
-    border-radius: 5px;
-  }
+    border-radius: 13px;
+    padding: 5px;
+}
   .pro-images3{
     max-width: 100% !important;
     height: 222px;
@@ -6372,16 +6374,20 @@ color:#ff986d;
     border-radius: 5px;
   }
   .gallary-details{
-      padding-left: 30px;
-      padding-top: 30px;
+      padding-left: 10px;
+      padding-top: 20px;
   }
   .rupee1{
       font-size: 20px;
       color: #ff9a71;
       padding: 5px;
   }
+  .profile-details{
+    height: 120px;
+}
   .rupee2{
       font-size: 15px;
+      padding-bottom: 5px;
   }
   .service-pic{
       width: 100%;
@@ -6560,6 +6566,9 @@ input[type=checkbox]:checked + label::before {
         line-height: 1;
         text-transform: uppercase;
         font-weight: 700;
+    }
+    .profile-details {
+        height: 200px;
     }
 }
 

@@ -77,7 +77,7 @@
       <div class="row">
          @if(isset($detail['image']))
          @foreach($detail['image'] as $img)
-         <div class=" col-md-4 col-lg-4 m-b-30">  
+         <div class=" col-md-4 col-lg-4 m-b-10">  
                   <div class="col-lg-12">                    
                     <img class="pro-images2" src="{{$img}}" alt="Banner Image" />
                   </div>
@@ -85,7 +85,7 @@
             @endforeach
          @else
 
-         <div class=" col-md-4 col-lg-4 m-b-30">  
+         <div class=" col-md-4 col-lg-4 m-b-10">  
                   <div class="col-lg-12">                    
                     <img class="pro-images2" src="{{URL::asset('front-end/assets/gallery/pet1.jpg')}}" alt="Banner Image" />
                   </div>
