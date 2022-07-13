@@ -1,0 +1,119 @@
+.model-center{
+    
+   top: 50% !important;
+  transform: translateY(-50%) !important;
+  border-bottom: 5px solid coral;
+  border-radius: 0.5em;
+ 
+}
+.model-login-two{
+  height:480px;
+}
+
+
+.logo-size{
+  width: 70px;
+  height:70px;
+}
+
+.model-item-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.model-text-center{
+  text-align: center;
+  font-size: 14px;
+}
+
+.model-btn{
+  border: none;
+  color: white !important;
+  /* padding: 15px 32px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color: coral !important;
+  margin-top: 10px;
+  height: 20px;
+  width: 600px;
+
+}
+
+.btn-orange{
+  
+  border: none;
+  color: white !important;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color: coral !important;
+
+}
+
+.btn-model{
+  margin-top: 10px;
+  background-color: coral;
+  color:white;
+  border:none;
+  border-radius: 9px;
+  width: 45%;
+  padding:3px;
+}
+
+.btn-model-verify{
+
+  background-color: coral;
+  color:white;
+  border:none;
+  border-radius: 15px;
+  width: 45%;
+  padding:3px;
+}
+
+.model-input-text{
+  border:1px solid lightgray;
+  background-color: white;
+  padding-left: 5px;
+ 
+}
+
+.model-resend-text{
+  color:coral;
+}
+
+.model-otp{
+  width: 30px;
+  margin-left:10px;
+  border:2px solid lightgray;
+}
+
+.model-login-two{
+padding: 30px;
+}
+
+.modal-content-overflow {
+  height:300px;
+  overflow:auto;
+}
+
+.model-terms-heading{
+  text-align: center;
+  color:coral;
+  margin-top: 20px;
+}
+
+.model-agree-box{
+  margin-top: 10px;
+  margin-left: 50px ;
+  align-items: center;
+}
+
+.model-update{
+  height:600px;
+  
+}
