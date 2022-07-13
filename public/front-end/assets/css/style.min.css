@@ -674,7 +674,17 @@ input[type="checkbox"] {
 }
 }.header-logo {
     max-width: 190px;
-    width: 100%}
+   }
+   .header-img{
+    width: 100%;
+    height: auto !important;
+    object-fit: cover;
+   }
+   @media only screen and (max-width: 576px) {
+    header-action-btn-search {
+   display: none !important;
+}
+   }
 @media only screen and (max-width: 479px) {
     .header-logo {
     max-width: 160px;
@@ -901,8 +911,12 @@ input[type="checkbox"] {
     width: 16px;
     height: 16px;
     top: 30%;
-    right: 2px;
+    right: 48px;
 }
+}
+.search-icon{
+ position: relative;
+ bottom: 5px;   
 }.header-actions.header-actions-width {
     display: -webkit-box;
     display: -webkit-flex;
