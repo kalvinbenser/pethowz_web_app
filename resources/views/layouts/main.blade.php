@@ -119,7 +119,7 @@
                             <div class="header-actions">
 
                                 <!-- Header Action Search Button Start -->
-                                <div class="header-action-btn header-action-btn-search d-none d-md-flex">
+                                <div class="header-action-btn header-action-btn-search d-none d-lg-flex">
                                     <div class="action-execute">
                                         <a class="action-search-open" href="javascript:void(0)"><i class="icon-magnifier icons"></i></a>
                                         <a class="action-search-close" href="javascript:void(0)"><i class="ti-close"></i></a>
@@ -242,7 +242,7 @@
                                 <!-- Header Action Button End -->
 
                                 <!-- Mobile Menu Hambarger Action Button Start -->
-                                <a href="javascript:void(0)" class="header-action-btn header-action-btn-menu d-lg-none d-md-flex">
+                                <a href="javascript:void(0)" class="header-action-btn header-action-btn-menu d-lg-none d-flex ">
                                     <i class="icon-menu"></i>
                                 </a>
                                 <!-- Mobile Menu Hambarger Action Button End -->

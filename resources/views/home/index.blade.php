@@ -545,7 +545,7 @@
                    </div>
                     <div class="container">
                         <div class="hero-slide-content text-start">
-                            <h5 class="title m-0" id="title-color">List your space for pets<br>and start earning</h5>
+                            <h5 class="title" id="title-color">List your space for pets<br>and start earning</h5>
                             <a href="/register_view" class="btn btn-dark btn-hover-primary">become a Pethost</a>
                         </div>
                     </div>
