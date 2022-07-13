@@ -459,7 +459,7 @@ platform. If not, your cancellation of the booking would not be considered effec
                                 <li class="addicon2"><i class="fa fa-map-marker addicon4"></i><p class="addicon1"> Corporate Office - Business Hut,</span></li>
                                 <li class="addicon2"><p class="addicon3">133/2,4th floor Janardhan Towers,</p></li>
                                 <li class="addicon2"><p class="addicon3">Residency Road</p></li>
-                                <li class="addicon2"><p class="addicon3">Bengaluru,kKarnataka 560025</p></li>
+                                <li class="addicon2"><p class="addicon3">Bengaluru,Karnataka 560025</p></li>
                                 <li class="addicon2"><i class="fa fa-phone  addicon4"></i> <p class="addicon1"><strong>98840 42119</strong></p></li>
                                 <li class="addicon2"><i class="fa fa-envelope-o addicon4"></i><p class="addicon1"> <strong>pethowzindia@gmail.com</strong></p></li>
                             </ul>
@@ -492,8 +492,8 @@ platform. If not, your cancellation of the booking would not be considered effec
                                     <li><p class="serv-pro">Pet Sitting</p></li>
                                     <li><p class="serv-pro">Pet Training</p></li>
                                     <li><p class="serv-pro">Pet Walking</p></li>
-                                    <li><p class="serv-pro"> Pet Grooming</p></li>
-                                    <li><p class="serv-pro">Pet Breading</p></li>
+                                    <li><p class="serv-pro">Pet Grooming</p></li>
+                                    <li><p class="serv-pro">Pet Breeding</p></li>
                                     <li><p class="serv-pro">Pet Photography</p></li>
                                         <ul>
                                 <!-- Newsletter Form Start -->
