@@ -318,7 +318,7 @@
       </div>
     </div>
 
-<h1>kalvin</h1>
+
 
   
   <div class="modal fade " id="loginModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
