@@ -318,7 +318,7 @@
       </div>
     </div>
 
-
+<h1>kalvin</h1>
 
   
   <div class="modal fade " id="loginModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -361,10 +361,10 @@
     </div>
   </div>
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal2">
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal2">
   test
 </button> 
-   
+    -->
   <div class="modal fade " id="loginModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog model-center">
       <div class="modal-content " style="height: 480px">
