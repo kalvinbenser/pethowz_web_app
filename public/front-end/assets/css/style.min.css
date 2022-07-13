@@ -6520,6 +6520,13 @@ input[type=checkbox]:checked + label::before {
     position: relative;
     top: 2px;
   }
+  .addicon5{
+    padding: 6px;
+    font-size: 13px;
+    color: #FF9062;
+    position: relative;
+    top: 2px;
+  }
   .view-allin{
     position: relative;
     bottom: 10px;
