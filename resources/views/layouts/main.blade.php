@@ -361,9 +361,9 @@
     </div>
   </div>
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal2">
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal2">
   test
-</button> 
+</button>  -->
    
   <div class="modal fade " id="loginModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog model-center">

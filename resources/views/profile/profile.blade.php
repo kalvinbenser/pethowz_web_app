@@ -112,13 +112,13 @@
                                   <!-- Content Start  -->
                                   <div class="content">
                                       <h5 class="title"><a href="single-product.html">{{$venue['venue_name']}}</a></h5>
-                                      <span class="rating">
+                                      <!-- <span class="rating">
                                       <i class="fa fa-star-o"></i>
                                       <i class="fa fa-star-o"></i>
                                       <i class="fa fa-star-o"></i>
                                       <i class="fa fa-star-o"></i>
                                       <i class="fa fa-star-o"></i>
-                                  </span>
+                                  </span> -->
                                       <span class="price">
                                       <span class="new">₹{{$venue['cost_per_hour']}}</span>
                                       <span class="old">₹2000</span>
@@ -175,13 +175,13 @@
                                 <!-- Content Start  -->
                                 <div class="content">
                                     <h5 class="title"><a href="single-product.html">{{$service['venue_name']}}</a></h5>
-                                    <span class="rating">
+                                    <!-- <span class="rating">
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
-                                </span>
+                                </span> -->
                                     <span class="price">
                                     <span class="new">₹{{$service['cost_per_hour']}}</span>
                                     <span class="old">₹2080</span>
