@@ -77,7 +77,7 @@
       <div class="row">
          @if(isset($detail['image']))
          @foreach($detail['image'] as $img)
-         <div class=" col-md-4 col-lg-4 m-b-30">  
+         <div class=" col-md-4 col-lg-4 m-b-10">  
                   <div class="col-lg-12">                    
                     <img class="pro-images2" src="{{$img}}" alt="Banner Image" />
                   </div>
@@ -85,7 +85,7 @@
             @endforeach
          @else
 
-         <div class=" col-md-4 col-lg-4 m-b-30">  
+         <div class=" col-md-4 col-lg-4 m-b-10">  
                   <div class="col-lg-12">                    
                     <img class="pro-images2" src="{{URL::asset('front-end/assets/gallery/pet1.jpg')}}" alt="Banner Image" />
                   </div>
@@ -213,40 +213,40 @@
                                     <h2><img src="{{URL::asset('front-end/assets/images/logo/Venue.svg')}}"  alt="Smiley face" height="32px" width="42px">Venue Details</h2>
                                         <div class="venue">
                                             <div class="row">
-                     <div class="col-12 col-sm-6 col-lg-6 m-b-40" data-aos="fade-up" data-aos-duration="1200">
+                     <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1200">
                               <div class="single-footer-widget">
                                 
                                 @if($detail['venue_name'])
                                 <p class="about">Venue <p>
                               @endif
                               @if($detail['location'])
-                              <p class="about">Location<p>
+                              <p class="about about1">Location<p>
                               @endif
                                 @if($detail['venue_category'])
-                                <p class="about">Category<p>
+                                <p class="about about2">Category<p>
                                 @endif
 
                                  
                                 @if($detail['service_id'])
-                                <p class="about">Service<p>
+                                <p class="about about3">Service<p>
                                 @endif
                                     
                                    
 
                                     @if($detail['amenities_id'])
-                                      <p class="about">Amenities <p>
+                                      <p class="about about4">Amenities <p>
                                     @endif
 
                                  
                                     @if($detail['options_id'])
-                                      <p class="about">Options<p>
+                                      <p class="about about5">Options<p>
                                     @endif
                                  
                                 </div>
                          </div>
 
                 
-                            <div class="col-12 col-sm-6 col-lg-6 m-b-40" data-aos="fade-up" data-aos-duration="1200">
+                            <div class="col-12 col-sm-6 col-lg-9 m-b-40" data-aos="fade-up" data-aos-duration="1200">
                                 <div class="single-footer-widget">
                                   <!-- //demo -->
                                   <!-- <p class="about">Apartment<p>
@@ -261,45 +261,46 @@
 
                                    
 
-                           
+                                  <div class="d-flex flex-row bd-highlight">
                                 @if($detail['venue_name'])
                                  <p class="about">{{ $detail['venue_name']}}<p>
                                 @endif  
-                                 
+</div>
+<div class="d-flex flex-row bd-highlight">
                                 @if($detail['location'])       
                                       <p class="about">{{$detail['location']}}<p>
                                 </div>
                                 @endif 
+</div>
+<div class="d-flex flex-row bd-highlight">
                                 
                                 @foreach($detail['venue_category'] as $cat) 
-                                <div class="d-flex">
-                                    <p class="about">{{$cat}}<p>
-                                        
-                                    </div>   
-                                 
+                                   <p class="about ml-2">{{$cat}}<p>&nbsp;<b>,</b>&nbsp;                               
                                 @endforeach
+</div>
+<div class="d-flex flex-row bd-highlight">
 
                                 @foreach($detail['service_id'] as $ser) 
-                                <div class="d-flex">
-                                    <p class="about">{{$ser}}<p>
-                                    </div>   
-                                 
+                                    <p class="about">{{$ser}}<p><b>,</b>                               
                                 @endforeach
                                
-
+</div>
+<div class="d-flex flex-row bd-highlight">
                                 @foreach($detail['amenities_id'] as $amen) 
-                                <div class="d-flex">
-                                    <p class="about">{{$amen}}<p>
-                                    </div>   
+                                
+                                    <p class="about">{{$amen}}<p>&nbsp;<b>,</b>&nbsp;
+                                       
                                  
                                 @endforeach
-
+</div>
+<div class="d-flex flex-row bd-highlight">
                                 @foreach($detail['options_id'] as $opt) 
-                                <div class="d-flex">
-                                    <p class="about">{{$opt}}<p>
-                                    </div>   
+                            
+                                    <p class="about">{{$opt}}<p>&nbsp;<b>,</b>&nbsp;
+                                    
                                  
                                 @endforeach
+</div>
 
 
  

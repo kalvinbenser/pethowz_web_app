@@ -281,7 +281,7 @@ class HomeController extends Controller
                     'content6'=>$content6,
                     'category'=>$category
                 ];
-                //dd($data);
+                dd($data);
               
 
                 try{
@@ -295,7 +295,7 @@ class HomeController extends Controller
                     else{
                        
                         $request->session()->put('custom_error',$yourSelfResponse['Message']);
-                        return redirect()->back();
+                        return redirect()->back()->withInput();
                     }
                    
                 }

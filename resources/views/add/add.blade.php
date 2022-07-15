@@ -34,27 +34,27 @@
                         <div class="form-group">
                             <label for="user-message" class="about">Introduce yourself and why enjoy being with pets.
                             </label>
-                            <textarea id="address" name="content1" class="form-control add_self" placeholder="" ></textarea>
+                            <textarea id="address" name="content1" class="form-control add_self" placeholder="" >{{old('content1')}}</textarea>
                             <!-- <input type="text" name="content1" class="form-control add_self"/> -->
                           </div><!--ends from group-->
                           <div class="form-group form-group1">
                             <label for="user-message" class="about">Tell us about the type of pet you have and your experience with it.
                             </label>
-                            <textarea id="address" name="content2" class="form-control add_self" placeholder="" ></textarea>
+                            <textarea id="address" name="content2" class="form-control add_self" placeholder="" >{{old('content2')}}</textarea>
                             <!-- <input type="text" name="content2" class="form-control add_self"/> -->
                          
                           </div><!--ends from group-->
                           <div class="form-group form-group1">
                             <label for="user-message" class="about">How does your service stand out?
                             </label>
-                            <textarea id="address" name="content3" class="form-control add_self" placeholder="" ></textarea>
+                            <textarea id="address" name="content3" class="form-control add_self" placeholder="" >{{old('content3')}}</textarea>
                             <!-- <input type="text" name="content3" class="form-control add_self"/> -->
                        
                           </div><!--ends from group-->
                           <div class="form-group form-group1">
                             <label for="user-message" class="about">What do you enjoy about the work you do?
                             </label>
-                            <textarea id="address" name="content4" class="form-control add_self" placeholder="" ></textarea>
+                            <textarea id="address" name="content4" class="form-control add_self" placeholder="" >{{old('content4')}}</textarea>
                       
                             <!-- <input type="text" name="" class="form-control add_self"/> -->
                        
@@ -62,14 +62,14 @@
                           <div class="form-group form-group1">
                             <label for="user-message" class="about">Your skils and qualifications
                             </label>
-                            <textarea id="address" name="content5" class="form-control add_self" placeholder="" ></textarea>
+                            <textarea id="address" name="content5" class="form-control add_self" placeholder="" >{{old('content5')}}</textarea>
                             <!-- <input type="text" name="content5" class="form-control add_self"/> -->
                          
                           </div><!--ends from group-->
                           <div class="form-group form-group1">
                             <label for="user-message" class="about">Other special skills with per or qualification ?
                             </label>
-                            <textarea id="address" name="content6" class="form-control add_self" placeholder="" ></textarea>
+                            <textarea id="address" name="content6" class="form-control add_self" placeholder="" >{{old('content6')}}</textarea>
                             <!-- <input type="text" name="content6" class="form-control add_self"/>
                           -->
                           </div><!--ends from group-->
@@ -83,7 +83,7 @@
                             <div class="row" id="category">
                             <div class=" col-md-4 m-b-15  Your_Category" data-aos-duration="1200">
                               <div class="pic11">
-                                <input type="checkbox" name="category[]" value=1 id="cb4" />
+                                <input type="checkbox" name="category[]" value=1 id="cb4"  />
                                 <label for="cb4"  ><img class="fit-image2 click_logo1" src="{{URL::asset('front-end/assets/images/category/Select category  - Bird.png')}}" />
                                 </label> 
                                 <p class="about">Birds</p>

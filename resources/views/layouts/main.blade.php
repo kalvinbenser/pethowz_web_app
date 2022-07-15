@@ -79,7 +79,7 @@
                         <!-- Header Logo Start -->
                         <div class="col-lg-3 col-md-4 col-6">
                             <div class="header-logo">
-                                <img src="{{URL::asset('front-end/assets/images/logo/Pethowz logo with text.svg')}}" alt="Site Logo" />
+                                <img class="header-img" src="{{URL::asset('front-end/assets/images/logo/Pethowz logo with text.svg')}}" alt="Site Logo" />
                             </div>
                         </div>
                         <!-- Header Logo End -->
@@ -119,9 +119,9 @@
                             <div class="header-actions">
 
                                 <!-- Header Action Search Button Start -->
-                                <div class="header-action-btn header-action-btn-search d-none d-md-flex">
+                                <div class="header-action-btn header-action-btn-search d-none d-lg-flex">
                                     <div class="action-execute">
-                                        <a class="action-search-open" href="javascript:void(0)"><i class="icon-magnifier icons"></i></a>
+                                        <a class="action-search-open" href="javascript:void(0)"><i class="icon-magnifier search-icon icons"></i></a>
                                         <a class="action-search-close" href="javascript:void(0)"><i class="ti-close"></i></a>
                                     </div>
                                     <!-- Search Form and Button Start -->
@@ -142,7 +142,7 @@
                                 <!-- Header My Account Button End -->
 
                                 <!-- Header Action Button Start -->
-                                <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
+                                <div class="header-action-btn header-action-btn-cart d-sm-flex">
                                     <a class="cart-visible" href="javascript:void(0)">
                                         <i class="icon-bell icons"></i>
                                         <span class="header-action-num">3</span>
@@ -242,7 +242,7 @@
                                 <!-- Header Action Button End -->
 
                                 <!-- Mobile Menu Hambarger Action Button Start -->
-                                <a href="javascript:void(0)" class="header-action-btn header-action-btn-menu d-lg-none d-md-flex">
+                                <a href="javascript:void(0)" class="header-action-btn header-action-btn-menu d-sm-flex d-lg-none">
                                     <i class="icon-menu"></i>
                                 </a>
                                 <!-- Mobile Menu Hambarger Action Button End -->
@@ -363,8 +363,8 @@
 
 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal2">
   test
-</button>  -->
-   
+</button> 
+    -->
   <div class="modal fade " id="loginModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog model-center">
       <div class="modal-content " style="height: 480px">
@@ -459,7 +459,7 @@ platform. If not, your cancellation of the booking would not be considered effec
                                 <li class="addicon2"><i class="fa fa-map-marker addicon4"></i><p class="addicon1"> Corporate Office - Business Hut,</span></li>
                                 <li class="addicon2"><p class="addicon3">133/2,4th floor Janardhan Towers,</p></li>
                                 <li class="addicon2"><p class="addicon3">Residency Road</p></li>
-                                <li class="addicon2"><p class="addicon3">Bengaluru,kKarnataka 560025</p></li>
+                                <li class="addicon2"><p class="addicon3">Bengaluru,Karnataka 560025</p></li>
                                 <li class="addicon2"><i class="fa fa-phone  addicon4"></i> <p class="addicon1"><strong>98840 42119</strong></p></li>
                                 <li class="addicon2"><i class="fa fa-envelope-o addicon4"></i><p class="addicon1"> <strong>pethowzindia@gmail.com</strong></p></li>
                             </ul>
@@ -492,8 +492,8 @@ platform. If not, your cancellation of the booking would not be considered effec
                                     <li><p class="serv-pro">Pet Sitting</p></li>
                                     <li><p class="serv-pro">Pet Training</p></li>
                                     <li><p class="serv-pro">Pet Walking</p></li>
-                                    <li><p class="serv-pro"> Pet Grooming</p></li>
-                                    <li><p class="serv-pro">Pet Breading</p></li>
+                                    <li><p class="serv-pro">Pet Grooming</p></li>
+                                    <li><p class="serv-pro">Pet Breeding</p></li>
                                     <li><p class="serv-pro">Pet Photography</p></li>
                                         <ul>
                                 <!-- Newsletter Form Start -->
