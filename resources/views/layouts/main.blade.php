@@ -9,6 +9,8 @@
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="{{URL::asset('front-end/assets/images/favicon.ico')}}">
+     <!-- Poppins -->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
     <!-- Vendor CSS (Icon Font) -->
 

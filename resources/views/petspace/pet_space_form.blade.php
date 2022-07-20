@@ -133,23 +133,13 @@ input[type="checkbox"]+label {
                     </select>               
                   </div>
                   </div>
-                    <div class="service-providers servive_detail1">
-                    <label class="about">Service Cost</label>                 
-                        <!-- <textarea id="user-message" name="venue" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>  -->
-                        <input type="number" class="form-control service_cost" name="service_cost" id="service_cost" placeholder="">
-                    </div>
+                  <div class="service-providers servive_detail2">
+                    <label class="about">Service Details</label>                 
+                        <!-- <textarea id="user-message" name="service_detail" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>                      -->
+                        <input type="text" class="form-control service_details" name="service_detail" id="service_detail" placeholder="">
+                      </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="service-providers">
-                    <div class="">
-                        <label class="about">Select the options which are applicable</label>
-                        <select class="form-select select_applicable" name="options[]" id="option" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                          <option value="1">Play Area</option>
-                          <option value="2">CCTV</option>
-                        </select>               
-                      </div>
-                      
-                    </div>
                     <div class="service-providers  petspace_service">
                       <div class="">
                         <label class="about">Choose Location</label>
@@ -246,7 +236,7 @@ range.addEventListener('input', setValue);
               var service_cost=$("#service_cost").val();
               var select_service=$("#select_service").val();
               var cost_per_hour=$("input[name='cost_per_hour']").val();
-              var option=$("#option").val();
+              // var option=$("#option").val();
               var amenities=$("#amenities").val();
               
               var imgfile = document.getElementById("file-input");
@@ -279,9 +269,9 @@ range.addEventListener('input', setValue);
                 toastr.error("select service  is required");
               } 
 
-              if(!option){
-                toastr.error("option  is required");
-              }
+              // if(!option){
+              //   toastr.error("option  is required");
+              // }
    
               if(imgfile.files.length == 0 ){
                 toastr.error("Image  is required");
@@ -291,7 +281,7 @@ range.addEventListener('input', setValue);
                 toastr.error("Cost Per Hour is required");
               }
 
-             if(imgfile.files.length == 0 || cost_per_hour==0 || !venue || !venue_category || !amenities || location==0  ||service_cost==0 || !option){
+             if(imgfile.files.length == 0 || cost_per_hour==0 || !venue || !venue_category || !amenities || location==0  ||service_cost==0 ){
                 return false;
               }
               else{
@@ -343,7 +333,7 @@ range.addEventListener('input', setValue);
                                                 location:location,
                                                 service_cost:service_cost,
                                                 select_service:select_service,
-                                                option:option,
+                                                // option:option,
                                                 cost_per_hour:cost_per_hour,
                                              
                                             },

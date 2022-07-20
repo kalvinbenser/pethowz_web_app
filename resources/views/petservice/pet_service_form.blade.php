@@ -52,6 +52,27 @@ input[type="checkbox"]+label {
 .multiselect-dropdown-list input[type="checkbox"] {
     display: none;
 }
+.button-success{
+  width: 60px;
+    height: 30px;
+    background-color: #FF9966 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+    font-size: 18px;
+}
+
+.button-danger{
+  width: 60px !important;
+    height: 30px !important;
+    background-color: #FF9966 !important;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    justify-content: center;
+
+}
       </style>
 @endsection
 @section('content')    
@@ -62,11 +83,12 @@ input[type="checkbox"]+label {
             
                   <div class="row m-b-n40">
                       <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="service-providers1">
+                        <div class="service-providers">
                           <label class="about">Venue Name</label>                 
                              <input type="text" name="venue" class="form-control" placeholder="Enter Name">
                         </div>
-                 <div class="service-providers">
+                       
+                 <div class="service-providers" >
                     <div class="">
                       <label class="about">Choose Location</label>
                       <select class="form-select select_location" name="location" id="location" >
@@ -77,8 +99,9 @@ input[type="checkbox"]+label {
                         <option value="4">Kodambakkam</option>
                         <option value="5">Teynampet</option>             
                       </select>               
-                    </div>                
+                    </div>   
                     </div>
+                  
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                     <div class="service-providers servive_detail2">
@@ -86,7 +109,7 @@ input[type="checkbox"]+label {
                         <!-- <textarea id="user-message" name="service_detail" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>                      -->
                         <input type="text" class="form-control service_details" name="service_detail" id="service_detail" placeholder="">
                       </div>
-                    <div class="service-providers">
+                    <!-- <div class="service-providers1">
                         <div class="">
                             <label class="about">Select the options which are applicable</label>
                             <select class="form-select select_applicable" name="option[]" id="option" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
@@ -95,37 +118,36 @@ input[type="checkbox"]+label {
                             </select>               
                           </div>
                          
-                        </div>    
+                        </div>     -->
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                   <div class="service-providers">
+                  <div id="service-providers">
                     <div class="">
                       <label class="about">Select the Service</label>
-                      <select class="form-select select_serv" name="select_service[]" id="select_service" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                      <select class="form-select select_location select_serv" name="select_service[]" id="select_service" onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
                         <option value="0">--- select service ---</option>
                         <option value="1">Sitting</option>
                         <option value="2">Breeding</option>
                         <option value="3">Photography</option>
                         <option value="4">Grooming</option>
-                        <option value="5">Waiking</option>
+                        <option value="5">Walking</option>
                         <option value="6">Training</option>
                       </select>               
                     </div>
+                    <div class="btn_success">
+                    <i class="fa fa-plus-square add-item-btn"  style="font-size:28px;color:#FF9966";></i><input type="number" class="form-control" name="cost_per_hour[value][]" placeholder="Cost Per Hour" id="cost_per_hour">             
                     </div>
-                        <div class="service-providers2"> 
+                    </div>
+                    </div>
+                                            
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                         <div class="service-providers2"> 
                           <input type="file"  accept="image/*" name="image" id="file-input"  style="display: none;padding:15px;">
                           <label class="images" for="file-input"  style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>
                           <i class="fa fa-image " style="color:#FF9A71;font-size:20px;"></i><input id="title" class="pro_name select_profile" />
-                        </div>                     
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="service-providers">
-                      <label class="about">Cost Per Hour</label>
-                      <div class="range-wrap">
-                          <div class="range-value" id="rangeV"></div>
-                          <input id="range" name="cost_per_hour" id="cost_per_hour" type="range" min="0" max="1000" value="0" step="1">
                         </div>
-                </div>
                 
                     <div class="view-all">
                         <input type="submit" id="pet_service_submit" value="submit" class="submite" >
@@ -140,6 +162,36 @@ input[type="checkbox"]+label {
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+                <script>
+                      $(document).ready(function(){
+                        $(".add-item-btn").click(function(e){
+                          e.preventDefault();
+                          $("#service-providers").prepend(` <div id="service-providers" >
+                          <div class="">
+                          <label class="about">Select the Service</label>
+                      <select class="form-select select_location select_serv" name="select_service[]" id="select_service" onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                        <option value="0">--- select service ---</option>
+                        <option value="1">Sitting</option>
+                        <option value="2">Breeding</option>
+                        <option value="3">Photography</option>
+                        <option value="4">Grooming</option>
+                        <option value="5">Walking</option>
+                        <option value="6">Training</option>
+                      </select>               
+                    </div>
+                    <div class="btn_danger">
+                    <i class="fa fa-minus-square remove-item-btn"  style="font-size:28px;color:#FF9966";></i><input type="number" class="form-control" name="cost_per_hour[value][]" placeholder="Cost Per Hour" id="cost_per_hour">             
+                    <div>
+                    </div>`);
+                        })
+                    // alert("dfsdf");
+                    $(document).on('click', '.remove-item-btn',function(e){
+                      e.preventDefault();
+                      let row_item = $(this).parent().parent();
+                      $(row_item).remove();
+                    })
+                      })
+                    </script>
 
 <script>
     const
@@ -162,7 +214,17 @@ input[type="checkbox"]+label {
    })
 </script>
 {{-- firebase --}}
+<script> 
+ 
+var myarr = []; 
+ 
+$('body').on('click','#pet_service_submit',function addTo() { 
+   myarr.push(document.getElementById("cost_per_hour").value); 
+   console.log(myarr); //to confirm it has been added to the array 
 
+} );
+ 
+</script>
   
 <script>
   $('body').on('click','#pet_service_submit',function(e){
@@ -170,17 +232,19 @@ input[type="checkbox"]+label {
          e.preventDefault();
           // alert(profile_gender);
                //alert("aaaaaaaaaaaaaaa");
+               
               var venue_name=$("input[name='venue']").val();
               var location=$("#location").val();
               var service_detail=$("#service_detail").val();
               var select_service=$("#select_service").val();
-              var option=$("#option").val();
-              var cost_per_hour=$("input[name='cost_per_hour']").val();
+              // var option=$("#option").val();
+              var cost_per_hour=$("input[name='cost_per_hour[value][]']").val();
               var imgfile = document.getElementById("file-input");
              // const file = document.querySelector("#file-input").files[0];
                 //console.log(file);
                 //alert(service_detail);
-                   console.log(select_service);
+                  // console.log(select_service);
+                //  console.log(cost_per_hour);
               if(!venue_name){
                 toastr.error("venue name  is required");
               }    
@@ -197,9 +261,9 @@ input[type="checkbox"]+label {
                 toastr.error("select service  is required");
               } 
 
-              if(!option){
-                toastr.error("option  is required");
-              }
+              // if(!option){
+              //   toastr.error("option  is required");
+              // }
    
               if(imgfile.files.length == 0 ){
                 toastr.error("Image  is required");
@@ -226,13 +290,13 @@ input[type="checkbox"]+label {
     };
        // Initialize Firebase
        firebase.initializeApp(firebaseConfig);
-       console.log(firebase);
+     //  console.log(firebase);
    
          const ref = firebase.storage().ref();
          const file = document.querySelector("#file-input").files[0];
          var Imagename = +new Date() + "-" + file.name;
         
-          console.log(Imagename);
+        //  console.log(Imagename);
          const metadata = {
            contentType: file.type
          };
@@ -240,7 +304,7 @@ input[type="checkbox"]+label {
          task
            .then(snapshot => snapshot.ref.getDownloadURL())
            .then(url => {
-             console.log(url);
+          //   console.log(url);
 
               
                    
@@ -261,20 +325,21 @@ input[type="checkbox"]+label {
                                                 location:location,
                                                 service_detail:service_detail,
                                                 select_service:select_service,
-                                                option:option,
+                                                // option:option,
                                                 cost_per_hour:cost_per_hour
                                              
                                             },
                                             success:function(data){
-                                                // alert(data.mail);
+                                                // alert(data.cost_per_hour);
+                                                // alert(data.select_service);
                                               
-                                                console.log(data.response);
+                                              //  console.log(data.response);
                                                 if(data.response.Success==true){
                                                   window.location.href = "{{url('/')}}";
                                                   toastr.success("pet service created successfully");
                                                 }
                                                 else{
-                                                  console.log(data.response.Message);
+                                                //  console.log(data.response.Message);
                                                   data.response.Message.forEach(element => toastr.error(element));
                                                 }
                                             }

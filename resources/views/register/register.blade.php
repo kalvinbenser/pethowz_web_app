@@ -94,26 +94,35 @@
                             <div class="deal-thumb col-md-3 m-b-15" data-aos="fade-up" data-aos-duration="1200">
                                 <div class="gender">
                                 
-                                    <div class="row"> 
+                                  
                                                                       
                                             <div>
-                                            <h6>Gender</h6> 
+                                            <h6 style="padding:20px; color:#FF9A71">Gender</h6>
+                                            <div class="row">
+                                         
+                                            <div class="col-md-6 male">
+                                            <label>Men</label>
                                             <input  type="radio" class="checkbox" name="gender" value=1 id="cb6" />
                                             <label for="cb6">
                                                 <div class="choices"><span class="fa fa-mars"></span></div>
                                                 </label>
-                                                
+                                            </div>
+
+                                           
+                                                <div class="col-md-6 female">
+                                                <label>Women</label>
                                                 <input  type="radio" class="checkbox" name="gender" value=0 id="cb5" />
                                                 <label for="cb5">
                                                     <div class="choices"><span class="fa fa-venus"></span></div>
                                                     </label>
+                                                    </div>
+                                                </div>
                                                     <div class="view-all">
                                                         <button  id="user_reg" class="submite" >submit</button>
                                                     
                                                    </div>
                                             </div>
                                     </div>
-                            </div>
                             </div>
                  
                       </div>

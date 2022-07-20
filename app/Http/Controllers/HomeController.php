@@ -281,7 +281,7 @@ class HomeController extends Controller
                     'content6'=>$content6,
                     'category'=>$category
                 ];
-                dd($data);
+                // dd($data);
               
 
                 try{
