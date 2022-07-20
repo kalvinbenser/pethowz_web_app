@@ -94,7 +94,33 @@ input[type="checkbox"]+label {
                         </select> 
                                                         
                       </div> -->
-                      <label class="about">Select Venue Category</label>  
+                     <label class="about">Select the Service</label>
+                    <select class="form-select select_serv" name="select_service[]" id="select_service" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                      <option value="1">Sitting</option>
+                      <option value="2">Breading</option>
+                      <option value="3">Photography</option>
+                      <option value="4">Grooming</option>
+                      <option value="5">Waiking</option>
+                      <option value="6">Training</option>
+                    </select> 
+                   
+                     
+                 </div>
+                    <div class="service-providers petspace_renge">
+                      <!-- <label class="about">Cost Per Hour</label>
+                    <div class="range-wrap">
+                      <div class="range-value" id="rangeV"></div>
+                      <input id="range" name="cost_per_hour" id="cost_per_hour" type="range" min="0" max="1000" value="0" step="1">
+                       <input type="hidden" id="textInput" value="">
+                    </div> -->
+                    </div> 
+
+                    
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                  <div class="service-providers">
+                  <div class="">
+                  <label class="about">Select Venue Category</label>  
                           <select class="select select_category" name="venue_category[]" id="venue_category" multiple id="basic-select" data-mdb-validation="true" data-mdb-valid-feedback="This value is valid" data-mdb-invalid-feedback="This value is invalid"  data-mdb-clear-button="true">
                           <option value="1">One</option>
                           <option value="2">Two</option>
@@ -104,33 +130,7 @@ input[type="checkbox"]+label {
                           <option value="6">Six</option>
                           <option value="7">Seven</option>
                           <option value="8">Eight</option>
-                        </select>
-                   
-                     
-                 </div>
-                    <div class="service-providers petspace_renge">
-                      <label class="about">Cost Per Hour</label>
-                    <div class="range-wrap">
-                      <div class="range-value" id="rangeV"></div>
-                      <input id="range" name="cost_per_hour" id="cost_per_hour" type="range" min="0" max="1000" value="0" step="1">
-                      <!-- <input type="hidden" id="textInput" value=""> -->
-                    </div>
-                    </div>
-
-                    
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                  <div class="service-providers">
-                  <div class="">
-                    <label class="about">Select the Service</label>
-                    <select class="form-select select_serv" name="select_service[]" id="select_service" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                      <option value="1">Sitting</option>
-                      <option value="2">Breading</option>
-                      <option value="3">Photography</option>
-                      <option value="4">Grooming</option>
-                      <option value="5">Waiking</option>
-                      <option value="6">Training</option>
-                    </select>               
+                        </select>              
                   </div>
                   </div>
                   <div class="service-providers servive_detail2">
