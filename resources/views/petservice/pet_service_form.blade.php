@@ -150,7 +150,7 @@ input[type="checkbox"]+label {
                         </div>
                 
                     <div class="view-all">
-                        <input type="submit" id="pet_service_submit" value="submit" class="submite" >
+                        <input type="submit" onclicl="addRecord();" id="pet_service_submit" value="submit" class="submite" >
                    </div>                     
         </div>
     </div>
@@ -216,13 +216,19 @@ input[type="checkbox"]+label {
 {{-- firebase --}}
 <script> 
  
-var myarr = []; 
+myarr = []; 
  
-$('body').on('click','#pet_service_submit',function addTo() { 
-   myarr.push(document.getElementById("cost_per_hour").value); 
-   console.log(myarr); //to confirm it has been added to the array 
+function addRecord() {
+  var inp = document.getElementById('cost_per_hour');
+  myarr.push(inp.value);
+  inp.value = "";  
+  console.log(myarr);
+}
+// $('body').on('click','#pet_service_submit',function addTo() { 
+//    myarr.push(document.getElementById("cost_per_hour").value); 
+//    console.log(myarr); //to confirm it has been added to the array 
 
-} );
+// } );
  
 </script>
   
