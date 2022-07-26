@@ -15,7 +15,8 @@ use App\Http\Controllers\AuthController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//search 
+Route::get('/search',[HomeController::class,'search']);
 //index view
 
 Route::get('/',[HomeController::class,'index']);

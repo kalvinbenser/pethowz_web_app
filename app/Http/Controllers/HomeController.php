@@ -574,5 +574,74 @@ class HomeController extends Controller
     }
 
 
+    //search
+
+    public  function search(Request $request){
+        $search_key=$request->search;
+        //pet service
+        $petSpaceUrl= env('API').'searchVenueAndService/'.$search_key;
+       
+        $petSpaceRequest = Http::get($petSpaceUrl);
+  
+        $petSpaceResponse = $petSpaceRequest->json();
+      
+
+
+        
+
+        
+        $pet_space=$petSpaceResponse['petSpace'];
+        
+     
+        $PetSpaceCollection = collect($pet_space);
+        //dd($PetSpaceCollection);
+        $filtered = $PetSpaceCollection->filter(function ($value, $key) {
+               
+            return $value['approved']==true;
+        });
+    
+        //dd($filtered->all());
+        //dd($filtered->all());
+           
+
+        $collection = (new Collection($filtered->all()))->paginate(8);
+
+
+        //pet service
+
+
+        $petServiceUrl= env('API').'searchVenueAndService/'.$search_key;
+       
+        $petServiceRequest = Http::get($petServiceUrl);
+  
+        $petServiceResponse = $petServiceRequest->json();
+      
+
+
+        
+
+        
+        $pet_service=$petServiceResponse['petService'];
+        
+     
+        $PetServiceCollection = collect($pet_service);
+        //dd($PetSpaceCollection);
+        $filtered1 = $PetServiceCollection->filter(function ($value, $key) {
+               
+            return $value['approved']==true;
+        });
+    
+        //dd($filtered->all());
+        //dd($filtered->all());
+           
+
+        $collection1 = (new Collection($filtered1->all()))->paginate(8);
+
+
+        // $collection = (new Collection($pet_space))->paginate(8);
+       // dd($collection);
+        return view('search/search',compact(['collection','collection1']));
+    }
+
 
 }

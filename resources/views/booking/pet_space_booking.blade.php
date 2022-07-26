@@ -222,26 +222,21 @@
                               @if($detail['location'])
                               <p class="about about1">Location<p>
                               @endif
-                                @if($detail['venue_category'])
+                                @if($venue_category_detail)
                                 <p class="about about2">Category<p>
                                 @endif
 
                                  
-                                @if($detail['service_id'])
+                                @if(isset($service_detail))
                                 <p class="about about3">Service<p>
                                 @endif
                                     
                                    
 
-                                    @if($detail['amenities_id'])
+                                    @if(isset($amenities_detail))
                                       <p class="about about4">Amenities <p>
                                     @endif
 
-                                 
-                                    @if($detail['options_id'])
-                                      <p class="about about5">Options<p>
-                                    @endif
-                                 
                                 </div>
                          </div>
 
@@ -274,34 +269,25 @@
 </div>
 <div class="d-flex flex-row bd-highlight">
                                 
-                                @foreach($detail['venue_category'] as $cat) 
-                                   <p class="about ml-2">{{$cat}}<p>&nbsp;<b>,</b>&nbsp;                               
+                                @foreach($venue_category_detail as $key) 
+                                   <p class="about ml-2">{{$key['venue_category_name']}}<p>&nbsp;<b>,</b>&nbsp;                               
                                 @endforeach
 </div>
 <div class="d-flex flex-row bd-highlight">
 
-                                @foreach($detail['service_id'] as $ser) 
-                                    <p class="about">{{$ser}}<p><b>,</b>                               
+                                @foreach($service_detail as $ser) 
+                                    <p class="about">{{$ser['service_name']}}<p><b>,</b>                               
                                 @endforeach
                                
 </div>
 <div class="d-flex flex-row bd-highlight">
-                                @foreach($detail['amenities_id'] as $amen) 
+                                @foreach($amenities_detail as $amen) 
                                 
-                                    <p class="about">{{$amen}}<p>&nbsp;<b>,</b>&nbsp;
+                                    <p class="about">{{$amen['amenities_name']}}<p>&nbsp;<b>,</b>&nbsp;
                                        
                                  
                                 @endforeach
 </div>
-<div class="d-flex flex-row bd-highlight">
-                                @foreach($detail['options_id'] as $opt) 
-                            
-                                    <p class="about">{{$opt}}<p>&nbsp;<b>,</b>&nbsp;
-                                    
-                                 
-                                @endforeach
-</div>
-
 
  
 

@@ -127,9 +127,9 @@
                                         <a class="action-search-close" href="javascript:void(0)"><i class="ti-close"></i></a>
                                     </div>
                                     <!-- Search Form and Button Start -->
-                                    <form class="header-search-form" action="#">
-                                        <input type="text" class="header-search-input" placeholder="Search Our Store">
-                                        <button class="header-search-button"><i class="icon-magnifier icons"></i></button>
+                                    <form class="header-search-form" action="/search" method="get">
+                                        <input type="text" class="header-search-input" name="search" placeholder="Search">
+                                        <button class="header-search-button" type="submit"><i class="icon-magnifier icons"></i></button>
                                     </form>
                                     <!-- Search Form and Button End -->
                                 </div>
