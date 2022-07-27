@@ -49,8 +49,7 @@
                                 <a href="{{('/pet_service_booking')}}/{{$pet_ser['_id']}}" class="image">
                                   <h5 class="title"><p>{{$pet_ser['venue_name']}}</p></h5>
                                 </a>
-                                  <span class="price">
-                                  <span class="new">₹ {{$pet_ser['cost_per_hour']}}/Hr</span>
+                                  
                                                                           
                                 </span>
                                 <!-- <span class="rating">

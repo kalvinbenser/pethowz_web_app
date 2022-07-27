@@ -96,7 +96,7 @@ input[type="checkbox"]+label {
                   <option value="Sitting">Sitting</option>
                   <option value="Breading">Breading</option>
                   <option value="Photography">Photography</option>
-                  <option value="Grooming">Grooming</option>
+                  <option value="Grooming">Grooming</option>  
                   <option value="Walking">Walking </option>
                   <option value="Training">Training</option>
                 </select>           

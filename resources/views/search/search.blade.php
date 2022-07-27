@@ -167,9 +167,9 @@
                                             <a href="{{('/pet_space_booking')}}/{{$item['_id']}}" class="image">
                                             <h5 class="title"><p>{{$item['venue_name']}}</p></h5>
                                             </a>
-                                            <span class="price">
+                                            <!-- <span class="price">
                                                 <span class="new">₹ {{$item['cost_per_hour']}}/Hr</span>
-                                                </span>
+                                                </span> -->
                                             <!-- <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
