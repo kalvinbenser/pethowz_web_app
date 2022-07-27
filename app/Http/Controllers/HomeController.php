@@ -290,7 +290,7 @@ class HomeController extends Controller
                     $yourSelfResponse=$yourSelfRequest->json();
                     //dd( $yourSelfResponse);
                     if($yourSelfResponse['Success']==true){
-                        return redirect()->back()->with('message','self intro added successfully');
+                        return redirect('/')->with('message','self intro added successfully');
                     }
                     else{
                        

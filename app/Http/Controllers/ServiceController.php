@@ -82,9 +82,10 @@ class ServiceController extends Controller
             $venue=$request->venue_name;
             $location=$request->location;
             $service_detail=$request->service_detail;
-            $options_id=$request->option;
-            $services_id=$request->select_service;
-            $cost=$request->cost_per_hour;
+        
+            $services=$request->service;
+            // $cost=$request->cost_per_hour;
+          
             $user_id=$request->session()->get('user_id');
     
             $image[]= $request->image;
@@ -100,10 +101,9 @@ class ServiceController extends Controller
                 "user_id"=>$user_id,
                 "venue_name"=>$venue,
                 "service_details"=>$service_detail,
-                "services_id"=>$services_id,
-                "cost_per_hour"=>$cost,
-                "location"=>$location,
-                "options_id"=>$options_id,
+                "services"=>$services,
+        
+                "location"=>$location,   
                 "image"=>$image
             ];
     
@@ -168,15 +168,22 @@ class ServiceController extends Controller
                $user_id=$request->session()->get('user_id');
                $venue_category=$request->venue_category;
          // dd($venue_category);
-            $select_service=$request->select_service;
-            $service_cost=$request->service_cost;
-            $cost_per_hour=$request->cost_per_hour;
+            $service=$request->service;
+            $service_detail=$request->service_detail;
+            $cost_per_hour=1;
             $venue_name=$request->venue;
             //$service_cost=100;
-            //$service_cost=$request->service_cost;
-            $options=$request->option;
+            $service_detail=$request->service_detail;
+
             $location=$request->location;
-            $amenities=$request->amenities;
+             $amenities=$request->amenities;
+
+        //   $amenities = [
+                
+        //             "amenities_id"=> "1",
+        //             "amenities_name"=> "test2"
+                
+        //     ];
             $imageName[]=$request->image;
             
    
@@ -186,11 +193,9 @@ class ServiceController extends Controller
                 "venue_category"=>$venue_category,
                 "venue_name"=> $venue,         
                 "cost_per_hour"=> $cost_per_hour,
-                "amenities_id"=>$amenities,
-                "options_id"=>$options,
+                "amenities"=>$amenities,
                 "location"=>$location,
-                "service_cost"=> $service_cost,
-                "service_id"=> $select_service,
+                "service"=> $service_detail,
                 "image"=>$imageName
             ];
             // dd($petSpaceData);

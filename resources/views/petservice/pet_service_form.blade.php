@@ -73,6 +73,14 @@ input[type="checkbox"]+label {
     justify-content: center;
 
 }
+.service-provide{
+  padding-left: 30px;
+  padding-right:30px;
+
+}
+.select_serv{
+  width: 285px;
+}
       </style>
 @endsection
 @section('content')    
@@ -87,8 +95,39 @@ input[type="checkbox"]+label {
                           <label class="about">Venue Name</label>                 
                              <input type="text" name="venue" class="form-control" placeholder="Enter Name">
                         </div>
-                       
-                 <div class="service-providers" >
+                        <div class="service-providers">
+                  <div class="row justify-content-md-center">
+                  <label class="about">Select the Service</label>
+                <select  id="service" class="select_serv form-select">
+                  <option value="Sitting">Sitting</option>
+                  <option value="Breading">Breading</option>
+                  <option value="Photography">Photography</option>
+                  <option value="Grooming">Grooming</option>
+                  <option value="Walking">Walking </option>
+                  <option value="Training">Training</option>
+                </select>           
+            </div>
+            <div class="to-do-output">
+              <table class="table table-striped mt-3 mb-0" id="addedtasklist">
+                
+              </table>
+             </div>
+                    </div>   
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="service-providers p-t-25">
+                    <label class="about">Service Details</label>                 
+                        <!-- <textarea id="user-message" name="service_detail" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>                      -->
+                        <input type="text" class="form-control service_details" name="service_detail" id="service_detail" placeholder="">
+                      </div>
+                      <div class="service-provide">
+                    <label class="about">Price Details</label>                 
+                        <!-- <textarea id="user-message" name="service_detail" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>                      -->
+                        <input type="number" class="form-control" placeholder="Enter your price" id="price" />
+                      </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                <div class="service-providers" >
                     <div class="">
                       <label class="about">Choose Location</label>
                       <select class="form-select select_location" name="location" id="location" >
@@ -101,46 +140,9 @@ input[type="checkbox"]+label {
                       </select>               
                     </div>   
                     </div>
-                  
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="service-providers servive_detail2">
-                    <label class="about">Service Details</label>                 
-                        <!-- <textarea id="user-message" name="service_detail" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>                      -->
-                        <input type="text" class="form-control service_details" name="service_detail" id="service_detail" placeholder="">
-                      </div>
-                    <!-- <div class="service-providers1">
-                        <div class="">
-                            <label class="about">Select the options which are applicable</label>
-                            <select class="form-select select_applicable" name="option[]" id="option" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                              <option value="1">Play area</option>
-                              <option value="2">CCTV</option>
-                            </select>               
-                          </div>
-                         
-                        </div>     -->
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                  <div class="service-providers">
-                  <div id="service-providers">
-                    <div class="">
-                      <label class="about">Select the Service</label>
-                      <select class="form-select select_location select_serv" name="select_service[]" id="select_service" onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                        <option value="0">--- select service ---</option>
-                        <option value="1">Sitting</option>
-                        <option value="2">Breeding</option>
-                        <option value="3">Photography</option>
-                        <option value="4">Grooming</option>
-                        <option value="5">Walking</option>
-                        <option value="6">Training</option>
-                      </select>               
-                    </div>
-                    <div class="btn_success">
-                    <i class="fa fa-plus-square add-item-btn"  style="font-size:28px;color:#FF9966";></i><input type="number" class="form-control" name="cost_per_hour[value][]" placeholder="Cost Per Hour" id="cost_per_hour">             
-                    </div>
-                    </div>
-                    </div>
-                                            
+                    <div class="service-provide p-t-25">
+                      <input type="button" value="+" class="btn btn-success submite" id="addtaskbtn" >
+                      </div>                                          
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                          <div class="service-providers2"> 
@@ -150,7 +152,7 @@ input[type="checkbox"]+label {
                         </div>
                 
                     <div class="view-all">
-                        <input type="submit" onclicl="addRecord();" id="pet_service_submit" value="submit" class="submite" >
+                        <input type="submit" id="pet_service_submit" value="submit" class="submite" >
                    </div>                     
         </div>
     </div>
@@ -159,6 +161,7 @@ input[type="checkbox"]+label {
 
 @endsection 
 @section('scripts')
+<script src="{{URL::asset('front-end/assets/js/vendor/mains.js')}}"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
@@ -216,14 +219,8 @@ input[type="checkbox"]+label {
 {{-- firebase --}}
 <script> 
  
-myarr = []; 
+var myarr = []; 
  
-function addRecord() {
-  var inp = document.getElementById('cost_per_hour');
-  myarr.push(inp.value);
-  inp.value = "";  
-  console.log(myarr);
-}
 // $('body').on('click','#pet_service_submit',function addTo() { 
 //    myarr.push(document.getElementById("cost_per_hour").value); 
 //    console.log(myarr); //to confirm it has been added to the array 
@@ -237,14 +234,14 @@ function addRecord() {
      
          e.preventDefault();
           // alert(profile_gender);
-               //alert("aaaaaaaaaaaaaaa");
+              // alert("aaaaaaaaaaaaaaa");
                
               var venue_name=$("input[name='venue']").val();
               var location=$("#location").val();
+              var service1=localStorage.getItem("localtask");
+              var service=JSON.parse(service1);
               var service_detail=$("#service_detail").val();
-              var select_service=$("#select_service").val();
-              // var option=$("#option").val();
-              var cost_per_hour=$("input[name='cost_per_hour[value][]']").val();
+     
               var imgfile = document.getElementById("file-input");
              // const file = document.querySelector("#file-input").files[0];
                 //console.log(file);
@@ -263,9 +260,6 @@ function addRecord() {
                 toastr.error("service details  is required");
               }   
 
-              if(select_service==0){
-                toastr.error("select service  is required");
-              } 
 
               // if(!option){
               //   toastr.error("option  is required");
@@ -275,11 +269,9 @@ function addRecord() {
                 toastr.error("Image  is required");
               }
 
-              if(cost_per_hour == 0 ){
-                toastr.error("Cost Per Hour is required");
-              }
+        
 
-             if(imgfile.files.length == 0 || cost_per_hour==0 || !venue_name || location==0 || !service_detail ||select_service==0 || !option){
+             if(imgfile.files.length == 0 ||  !venue_name || location==0 || !service_detail){
                 return false;
               }
               else{
@@ -330,9 +322,8 @@ function addRecord() {
                                                 venue_name:venue_name,
                                                 location:location,
                                                 service_detail:service_detail,
-                                                select_service:select_service,
-                                                // option:option,
-                                                cost_per_hour:cost_per_hour
+                                                service:service,
+                                      
                                              
                                             },
                                             success:function(data){
@@ -341,6 +332,7 @@ function addRecord() {
                                               
                                               //  console.log(data.response);
                                                 if(data.response.Success==true){
+                                                  localStorage.removeItem("localtask");
                                                   window.location.href = "{{url('/')}}";
                                                   toastr.success("pet service created successfully");
                                                 }
@@ -379,4 +371,4 @@ function addRecord() {
 
 </script> 
 
-@endsection 
+@endsection

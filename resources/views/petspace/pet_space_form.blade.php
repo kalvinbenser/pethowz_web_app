@@ -58,6 +58,15 @@ input[type="checkbox"]+label {
 .servive{
   padding-bottom: 30px;
 }
+.btn-success{
+  width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+.select_serv{
+  width: 285px;
+}
       </style>
 @endsection
 @section('content')      
@@ -66,8 +75,8 @@ input[type="checkbox"]+label {
 
 
             <h1 id="yourself">Pet Space</h1>
-              <form action="/pet_space_create" method="post" enctype="multipart/form-data">
-                @csrf
+              <!-- <form action="/pet_space_create" method="post" enctype="multipart/form-data">
+                @csrf -->
                   <div class="row m-b-n40">
                       <div class="col-12 col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                  
@@ -80,45 +89,27 @@ input[type="checkbox"]+label {
                     <!-- <input type="number" class="form-control" placeholder="" id="service_cost"> -->
                      
                     </div>
-                    <div class="service-providers">
-                    <!-- <div class="">
-
-                           
-
-                    <label class="about">Select Venue Category</label>    -->
-                        <!-- <label class="about">Select Venue Category</label> -->
-                        <!-- <select class="form-select select_category" name="venue_category[]" id="venue_category" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                          <option value="1">Exclusive Pet Space</option>
-                          <option value="2">House</option>
-                          <option value="3">Apartment</option>
-                        </select> 
-                                                        
-                      </div> -->
-                     <label class="about">Select the Service</label>
-                    <select class="form-select select_serv" name="select_service[]" id="select_service" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                      <option value="1">Sitting</option>
-                      <option value="2">Breading</option>
-                      <option value="3">Photography</option>
-                      <option value="4">Grooming</option>
-                      <option value="5">Waiking</option>
-                      <option value="6">Training</option>
-                    </select> 
-                   
-                     
-                 </div>
-                    <div class="service-providers petspace_renge">
-                      <!-- <label class="about">Cost Per Hour</label>
-                    <div class="range-wrap">
-                      <div class="range-value" id="rangeV"></div>
-                      <input id="range" name="cost_per_hour" id="cost_per_hour" type="range" min="0" max="1000" value="0" step="1">
-                       <input type="hidden" id="textInput" value="">
-                    </div> -->
-                    </div> 
-
-                    
+                    <div class="service-providers servive_detail1 servive">
+                  <div class="row justify-content-md-center">
+                  <label class="about">Select the Service</label>
+                <select  id="service" class="select_serv form-select">
+                  <option value="Sitting">Sitting</option>
+                  <option value="Breading">Breading</option>
+                  <option value="Photography">Photography</option>
+                  <option value="Grooming">Grooming</option>
+                  <option value="Walking">Walking </option>
+                  <option value="Training">Training</option>
+                </select>           
+            </div>
+            <div class="to-do-output">
+              <table class="table table-striped mt-3 mb-0" id="addedtasklist">
+                
+              </table>
+             </div>
+                 </div>     
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                  <div class="service-providers">
+                  <div class="service-providers servive_detail1 servive">
                   <div class="">
                   <label class="about">Select Venue Category</label>  
                           <select class="select select_category" name="venue_category[]" id="venue_category" multiple id="basic-select" data-mdb-validation="true" data-mdb-valid-feedback="This value is valid" data-mdb-invalid-feedback="This value is invalid"  data-mdb-clear-button="true">
@@ -130,17 +121,18 @@ input[type="checkbox"]+label {
                           <option value="6">Six</option>
                           <option value="7">Seven</option>
                           <option value="8">Eight</option>
-                        </select>              
+                        </select>     
+                             
                   </div>
                   </div>
                   <div class="service-providers servive_detail2">
-                    <label class="about">Service Details</label>                 
+                    <label class="about">Price Details</label>                 
                         <!-- <textarea id="user-message" name="service_detail" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>                      -->
-                        <input type="text" class="form-control service_details" name="service_detail" id="service_detail" placeholder="">
+                        <input type="number" class="form-control" placeholder="Enter your price" id="price" />
                       </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="service-providers  petspace_service">
+                    <div class="service-providers servive_detail1 servive">
                       <div class="">
                         <label class="about">Choose Location</label>
                         <select class="form-select select_location" name="location" id="location">
@@ -154,10 +146,13 @@ input[type="checkbox"]+label {
                       </div>
                     
                       </div>
+                      <div class="service-providers servive_detail2">
+                      <input type="button" value="+" class="btn btn-success submite" id="addtaskbtn" >
+                      </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 m-b-40 p-t-25" data-aos="fade-up" data-aos-duration="1000">
                    
-                        <div class="service-providers">
+                       <div class="service-providers">
                         <div class="">
                             <label class="about">Amenities</label>
                             <select class="form-select select_amenities" name="amenities[]" id="amenities" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
@@ -171,15 +166,13 @@ input[type="checkbox"]+label {
                             </select>               
                           </div>
                           <span id="select_amenities_error" class="text-danger"></span>
-                        </div>                       
-                    <div class="service-providers">
+                        </div>                        
+                      
+                    <div class="service-providers servive_detail1 servive">
                     <input type="file"  accept="image/*" name="image" id="file-input"  style="display: none;padding:15px;">
                     <label class="images" for="file-input"  style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>
                     <i class="fa fa-image " style="color:#FF9A71;font-size:20px;"></i><input id="title" class="pro_name select_profile" />
-                    <div class="">
-                    </div>
-                      <div>
-
+                      </div>
                       </div>
 
                     <div class="view-all">
@@ -188,11 +181,12 @@ input[type="checkbox"]+label {
             </div>
         </div>
     </div>
-  </form>
+  <!-- </form> -->
 </div>
 
 @endsection 
 @section('scripts')
+<script src="{{URL::asset('front-end/assets/js/vendor/mains.js')}}"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
@@ -229,16 +223,18 @@ range.addEventListener('input', setValue);
      
          e.preventDefault();
           // alert(profile_gender);
-               
+           
               var venue_category=$("#venue_category").val();
               var venue=$("input[name='venue_name']").val();
               var location=$("#location").val();
-              var service_cost=$("#service_cost").val();
-              var select_service=$("#select_service").val();
-              var cost_per_hour=$("input[name='cost_per_hour']").val();
+              // var service_cost=$("#service_cost").val();
+              // var select_service=$("#select_service").val();
+              // var cost_per_hour=$("input[name='cost_per_hour']").val();
               // var option=$("#option").val();
+              var service_detail1=localStorage.getItem("localtask");
+              var service_detail=JSON.parse(service_detail1);
               var amenities=$("#amenities").val();
-              
+              alert(amenities);
               var imgfile = document.getElementById("file-input");
             //  alert(venue_category);
              // const file = document.querySelector("#file-input").files[0];
@@ -261,13 +257,7 @@ range.addEventListener('input', setValue);
                 toastr.error("location  is required");
               }    
               
-              if(!service_cost){
-                toastr.error("service cost is required");
-              }   
-
-              if(select_service==0){
-                toastr.error("select service  is required");
-              } 
+        
 
               // if(!option){
               //   toastr.error("option  is required");
@@ -277,11 +267,9 @@ range.addEventListener('input', setValue);
                 toastr.error("Image  is required");
               }
 
-              if(cost_per_hour == 0 ){
-                toastr.error("Cost Per Hour is required");
-              }
+        
 
-             if(imgfile.files.length == 0 || cost_per_hour==0 || !venue || !venue_category || !amenities || location==0  ||service_cost==0 ){
+             if(imgfile.files.length == 0 ||  !venue || !venue_category || !amenities || location==0  ){
                 return false;
               }
               else{
@@ -331,10 +319,7 @@ range.addEventListener('input', setValue);
                                                 amenities:amenities,
                                                 venue_category:venue_category,
                                                 location:location,
-                                                service_cost:service_cost,
-                                                select_service:select_service,
-                                                // option:option,
-                                                cost_per_hour:cost_per_hour,
+                                                 service_detail:service_detail
                                              
                                             },
                                             success:function(data){
@@ -343,6 +328,7 @@ range.addEventListener('input', setValue);
                                                  console.log(data.response);
                                                 // alert(data.venue);
                                                 if(data.response.Success==true){
+                                                  localStorage.removeItem("localtask");
                                                   window.location.href = "{{url('/')}}";
                                                   toastr.success("pet space created successfully");
                                                 }
