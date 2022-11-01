@@ -326,7 +326,7 @@ class HomeController extends Controller
         public function profile(Request $request ){
 
               $user_id=$request->session()->get('user_id');
-              //dd($user_id);
+           
         if(isset($user_id)){
 
             $registerDataUrl=env('API').'getRegistrationDetails/'.$user_id;
@@ -335,22 +335,25 @@ class HomeController extends Controller
             $registerDetailsResponse=$registerDetailsRequest->json();
             //$profile_data=$registerDetailsResponse['data'];
              //dd($registerDetailsResponse);
-             if($registerDetailsResponse['Success']==false){
+             //dd($registerDetailsResponse);
+       
+             if(sizeof($registerDetailsResponse['data']) ==0){
                 
                
               return redirect('register_view');
 
              }
              else{
-                $profile_data=$registerDetailsResponse['data'];
+                $profile_data=$registerDetailsResponse['data'][0];
                  
                 $data['collection'] = (new Collection($profile_data));
-                 
+                 //dd( $data['collection']['img']);
                 //my venue
                 $myVenueUrl=env('API').'getPetSpaceMobileListById/'.$user_id;
                 $myVenueRequest=Http::get($myVenueUrl);
                 $myVenueResponse=$myVenueRequest->json();
                 $data['my_venue']=$myVenueResponse['data'];
+                
                 //dd( $data['my_venue']);
   
                    //dd($user_id);

@@ -269,24 +269,24 @@
 </div>
 <div class="d-flex flex-row bd-highlight">
                                 
-                                @foreach($venue_category_detail as $key) 
+                                {{-- @foreach($venue_category_detail as $key) 
                                    <p class="about ml-2">{{$key['venue_category_name']}}<p>&nbsp;<b>,</b>&nbsp;                               
-                                @endforeach
+                                @endforeach --}}
 </div>
 <div class="d-flex flex-row bd-highlight">
 
-                                @foreach($service_detail as $ser) 
+                                {{-- @foreach($service_detail as $ser) 
                                     <p class="about">{{$ser['service_name']}}<p><b>,</b>                               
                                 @endforeach
-                               
+                                --}}
 </div>
 <div class="d-flex flex-row bd-highlight">
-                                @foreach($amenities_detail as $amen) 
+                                {{-- @foreach($amenities_detail as $amen) 
                                 
                                     <p class="about">{{$amen['amenities_name']}}<p>&nbsp;<b>,</b>&nbsp;
                                        
                                  
-                                @endforeach
+                                @endforeach --}}
 </div>
 
  

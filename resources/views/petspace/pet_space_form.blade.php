@@ -113,14 +113,10 @@ input[type="checkbox"]+label {
                   <div class="">
                   <label class="about">Select Venue Category</label>  
                           <select class="select select_category" name="venue_category[]" id="venue_category" multiple id="basic-select" data-mdb-validation="true" data-mdb-valid-feedback="This value is valid" data-mdb-invalid-feedback="This value is invalid"  data-mdb-clear-button="true">
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                          <option value="4">Four</option>
-                          <option value="5">Five</option>
-                          <option value="6">Six</option>
-                          <option value="7">Seven</option>
-                          <option value="8">Eight</option>
+                          <option value="home">Home</option>
+                          <option value="Independent House">Independent House</option>
+                          <option value="Apartment">Apartment</option>
+                        
                         </select>     
                              
                   </div>
