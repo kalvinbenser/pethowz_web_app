@@ -183,7 +183,7 @@
                                     <i class="fa fa-star-o"></i>
                                 </span> -->
                                     <span class="price">
-                                    <span class="new">₹{{$service['cost_per_hour']}}</span>
+                                    {{-- <span class="new">₹{{$service['cost_per_hour']}}</span> --}}
                                     <span class="old">₹2080</span>
                                     </span>
                                 </div>

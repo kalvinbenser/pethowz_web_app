@@ -41,12 +41,13 @@ class BookingController extends Controller
             //dd($details['data'][0]);
             if(isset($details['data'][0])){
                 
-                $data['venue_category_detail']=$details['data'][0]['venue_category'];
+                $data['venue_category_detail']=$details['data'][0]['venue_category'] ;
+              //dd($data['venue_category_detail']);
                 $data['amenities_detail']=$details['data'][0]['amenities'];
                 $data['service_detail']=$details['data'][0]['service'];
                 $data['detail']=$details['data'][0];
             }
-          
+        
             return view('booking/pet_space_booking',$data);
        
         
