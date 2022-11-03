@@ -103,7 +103,7 @@ class HomeController extends Controller
 
           //************************** Pet Service  ****************************\\
        
-        $petServiceUrl=env('API').'getAllPetService';
+        $petServiceUrl=env('API').'getAllPetServiceList';
       
         $petServiceRequest=Http::get($petServiceUrl);
         $petServiceResponse=$petServiceRequest->json();
@@ -111,18 +111,18 @@ class HomeController extends Controller
            
         $pet_service=$petServiceResponse['data'];
                 
-        $PetServiceCollection = collect($pet_service);
+        // $PetServiceCollection = collect($pet_service);
 
-        $filtered = $PetServiceCollection->filter(function ($value, $key) {
-            // return $value['approved']==true;
-            return $value['approved']==true;
-        });
+        // $filtered = $PetServiceCollection->filter(function ($value, $key) {
+        //     // return $value['approved']==true;
+        //     return $value['approved']==true;
+        // });
     
         //dd($filtered->all());
         //dd($filtered->all());
            
 
-        $collection = (new Collection($filtered->all()))->paginate(8);
+        $collection = (new Collection($pet_service))->paginate(8);
        // dd($collection);
         return view('/petservice/pet_service',compact('collection'));
     }
@@ -271,6 +271,7 @@ class HomeController extends Controller
                 $content5=$request->content5;
                 $content6=$request->content6;
                 $category=$request->category;
+                $category=["dog"];
                 $data=[
                     'user_id'=>$user_id,
                     'content1'=>$content1,
@@ -279,7 +280,7 @@ class HomeController extends Controller
                     'content4'=>$content4,
                     'content5'=>$content5,
                     'content6'=>$content6,
-                    'category'=>$category
+                    'PetCategory'=>$category
                 ];
                 // dd($data);
               
@@ -543,32 +544,32 @@ class HomeController extends Controller
 
     function pet_host(Request $request){
 
-        $petSpaceUrl= env('API').'getAllPetSpace';
+        $petSpaceUrl= env('API').'getAllPetSpaceList';
        
         $petSpaceRequest = Http::get($petSpaceUrl);
   
         $petSpaceResponse = $petSpaceRequest->json();
-      
+     //dd($petSpaceResponse);
 
-
+    
         
 
         
-        $pet_space=$petSpaceResponse['data'];
+        // $pet_space=$petSpaceResponse['data'];
         
        
-        $PetSpaceCollection = collect($pet_space);
-        //dd($PetSpaceCollection);
-        $filtered = $PetSpaceCollection->filter(function ($value, $key) {
+        // $PetSpaceCollection = collect($pet_space);
+        // //dd($PetSpaceCollection);
+        // $filtered = $PetSpaceCollection->filter(function ($value, $key) {
                
-            return $value['approved']==true;
-        });
+        //     return $value['approved']==true;
+        // });
     
         //dd($filtered->all());
         //dd($filtered->all());
            
 
-        $collection = (new Collection($filtered->all()))->paginate(8);
+        $collection = (new Collection($petSpaceResponse['data']))->paginate(8);
 
         // $collection = (new Collection($pet_space))->paginate(8);
        // dd($collection);

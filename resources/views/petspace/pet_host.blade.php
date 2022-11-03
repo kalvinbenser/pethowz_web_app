@@ -47,7 +47,7 @@
                                     <div class="product">
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
-                                            <a href="{{('/pet_space_booking')}}/{{$item['_id']}}" class="image">
+                                            <a href="{{('/pet_space_booking')}}/{{$item['id']}}" class="image">
                                               
                                                 {{-- <img class="fit-image" src="https://firebasestorage.googleapis.com/v0/b/pethouse-otp.appspot.com/o/user%2F1656477109457-images.jpeg?alt=media" alt="Product" />
                                              --}}
@@ -63,7 +63,7 @@
 
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <a href="{{('/pet_space_booking')}}/{{$item['_id']}}" class="image">
+                                            <a href="{{('/pet_space_booking')}}/{{$item['id']}}" class="image">
                                             <h5 class="title"><p>{{$item['venue_name']}}</p></h5>
                                             </a>
                                             <span class="price">

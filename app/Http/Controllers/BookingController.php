@@ -28,24 +28,24 @@ class BookingController extends Controller
       
             $details = $petSpaceRequest->json();
            
-            if(isset($details['data'][0]['SelfDescriptionDetails'])){
-                $data['self']=  $details['data'][0]['SelfDescriptionDetails'];
-            }
+            // if(isset($details['data'])){
+            //     $data['self']=  $details['data'][0]['SelfDescriptionDetails'];
+            // }
 
-            if(isset($details['data'][0]['RegistrationDetails'])){
-                $data['reg']=$details['data'][0]['RegistrationDetails'];
-            }
+            // if(isset($details['data'][0]['RegistrationDetails'])){
+            //     $data['reg']=$details['data'][0]['RegistrationDetails'];
+            // }
            
             //dd($data['reg']);
              $data['s_id']=$s_id;
             //dd($details['data'][0]);
-            if(isset($details['data'][0])){
+            if(isset($details['data'])){
                 
-                $data['venue_category_detail']=$details['data'][0]['venue_category'] ;
+                $data['venue_category_detail']=$details['data']['venue_category'] ;
               //dd($data['venue_category_detail']);
-                $data['amenities_detail']=$details['data'][0]['amenities'];
-                $data['service_detail']=$details['data'][0]['service'];
-                $data['detail']=$details['data'][0];
+                $data['amenities_detail']=$details['data']['amenities'];
+                $data['service_detail']=$details['data']['service'];
+                $data['detail']=$details['data'];
             }
         
             return view('booking/pet_space_booking',$data);

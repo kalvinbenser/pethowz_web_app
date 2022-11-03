@@ -35,7 +35,7 @@
                           <div class="product">
                               <!-- Thumb Start  -->
                               <div class="thumb">
-                                  <a href="{{('/pet_service_booking')}}/{{$pet_ser['_id']}}" class="image">
+                                  <a href="{{('/pet_service_booking')}}/{{$pet_ser['id']}}" class="image">
                                     <img  class="fits-image" src="{{$pet_ser['image'][0]}}" alt="Product" />
                                  </a>
                                   <span class="badges">
@@ -46,7 +46,7 @@
                               <!-- Thumb End  -->
                               <!-- Content Start  -->
                               <div class="content">
-                                <a href="{{('/pet_service_booking')}}/{{$pet_ser['_id']}}" class="image">
+                                <a href="{{('/pet_service_booking')}}/{{$pet_ser['id']}}" class="image">
                                   <h5 class="title"><p>{{$pet_ser['venue_name']}}</p></h5>
                                 </a>
                                   
