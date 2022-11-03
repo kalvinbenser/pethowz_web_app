@@ -338,14 +338,14 @@ class HomeController extends Controller
              //dd($registerDetailsResponse);
              //dd($registerDetailsResponse);
        
-             if(sizeof($registerDetailsResponse['data']) ==0){
+             if(!$registerDetailsResponse['Success']){
                 
                
               return redirect('register_view');
 
              }
              else{
-                $profile_data=$registerDetailsResponse['data'][0];
+                $profile_data=$registerDetailsResponse['data'];
                  
                 $data['collection'] = (new Collection($profile_data));
                  //dd( $data['collection']['img']);
@@ -583,9 +583,9 @@ class HomeController extends Controller
     public  function search(Request $request){
         $search_key=$request->search;
         //pet service
-        $petSpaceUrl= env('API').'searchVenueAndService/'.$search_key;
+        $petSpaceUrl= env('API').'searchVenueAndService';
        
-        $petSpaceRequest = Http::get($petSpaceUrl);
+        $petSpaceRequest = Http::post($petSpaceUrl,['search'=> $search_key]);
   
         $petSpaceResponse = $petSpaceRequest->json();
       
@@ -595,55 +595,19 @@ class HomeController extends Controller
 
         
         $pet_space=$petSpaceResponse['petSpace'];
-        
-     
-        $PetSpaceCollection = collect($pet_space);
-        //dd($PetSpaceCollection);
-        $filtered = $PetSpaceCollection->filter(function ($value, $key) {
-               
-            return $value['approved']==true;
-        });
-    
-        //dd($filtered->all());
-        //dd($filtered->all());
-           
-
-        $collection = (new Collection($filtered->all()))->paginate(8);
-
-
-        //pet service
-
-
-        $petServiceUrl= env('API').'searchVenueAndService/'.$search_key;
-       
-        $petServiceRequest = Http::get($petServiceUrl);
-  
-        $petServiceResponse = $petServiceRequest->json();
+        $pet_service=$petSpaceResponse['petService'];
       
-
-
-        
-
-        
-        $pet_service=$petServiceResponse['petService'];
-        
-     
-        $PetServiceCollection = collect($pet_service);
-        //dd($PetSpaceCollection);
-        $filtered1 = $PetServiceCollection->filter(function ($value, $key) {
-               
-            return $value['approved']==true;
-        });
-    
-        //dd($filtered->all());
-        //dd($filtered->all());
            
 
-        $collection1 = (new Collection($filtered1->all()))->paginate(8);
+        $collection = (new Collection($pet_space))->paginate(8);
 
 
-        // $collection = (new Collection($pet_space))->paginate(8);
-       // dd($collection);
+      
+           
+
+        $collection1 = (new Collection($pet_service))->paginate(8);
+
+      
         return view('search/search',compact(['collection','collection1']));
     }
 
