@@ -222,18 +222,18 @@
                               @if($detail['location'])
                               <p class="about about1">Location<p>
                               @endif
-                                @if($venue_category_detail)
+                                @if($detail['venue_category'])
                                 <p class="about about2">Category<p>
                                 @endif
 
                                  
-                                @if(isset($service_detail))
+                                @if(isset($detail['service']))
                                 <p class="about about3">Service<p>
                                 @endif
                                     
                                    
 
-                                    @if(isset($amenities_detail))
+                                    @if(isset($detail['amenities']))
                                       <p class="about about4">Amenities <p>
                                     @endif
 
@@ -269,24 +269,24 @@
 </div>
 <div class="d-flex flex-row bd-highlight">
                                 
-                                {{-- @foreach($venue_category_detail as $key) 
-                                   <p class="about ml-2">{{$key['venue_category_name']}}<p>&nbsp;<b>,</b>&nbsp;                               
-                                @endforeach --}}
+                                @foreach($detail['venue_category'] as $key) 
+                                   <p class="about ml-2">{{$key}}<p>&nbsp;<b>,</b>&nbsp;                               
+                                @endforeach
 </div>
 <div class="d-flex flex-row bd-highlight">
 
-                                {{-- @foreach($service_detail as $ser) 
-                                    <p class="about">{{$ser['service_name']}}<p><b>,</b>                               
+                                @foreach($detail['service'] as $ser) 
+                                    <p class="about">{{$ser}}<p><b>,</b>                               
                                 @endforeach
-                                --}}
+                               
 </div>
 <div class="d-flex flex-row bd-highlight">
-                                {{-- @foreach($amenities_detail as $amen) 
+                                @foreach($detail['amenities'] as $amen) 
                                 
-                                    <p class="about">{{$amen['amenities_name']}}<p>&nbsp;<b>,</b>&nbsp;
+                                    <p class="about">{{$amen}}<p>&nbsp;<b>,</b>&nbsp;
                                        
                                  
-                                @endforeach --}}
+                                @endforeach
 </div>
 
  

@@ -12,42 +12,35 @@ class BookingController extends Controller
      //********************************    petspace booking ***********************************\\
 
      public function pet_space_booking(Request $request,$s_id){
-            // self intro
-            // $user_id=$request->session()->get('user_id');
-            // $selfIntroUrl= env('API').'getSelfDescription/'.$user_id;
-            // $selfIntroRequest = Http::get($selfIntroUrl);
-            // $selfIntroResponse=$selfIntroRequest->json();
-            // //dd($selfIntroResponse['data']);
-            // $data['self']=$selfIntroResponse['data'];
+          
 
             // pet space
             $petSpaceUrl= env('API').'getPetSpaceById/'.$s_id;
        
       
             $petSpaceRequest = Http::get($petSpaceUrl);
-      
-            $details = $petSpaceRequest->json();
-           
-            // if(isset($details['data'])){
-            //     $data['self']=  $details['data'][0]['SelfDescriptionDetails'];
-            // }
-
-            // if(isset($details['data'][0]['RegistrationDetails'])){
-            //     $data['reg']=$details['data'][0]['RegistrationDetails'];
-            // }
-           
-            //dd($data['reg']);
+            $petSpaceData=$petSpaceRequest->json();
+            $data['detail'] = $petSpaceData['data'];
+            $user_id= $data['detail']['user_id']; 
+          
+             // self intro
+          
+            $selfIntroUrl= env('API').'getSelfDescription/'.$user_id;
+            $selfIntroRequest = Http::get($selfIntroUrl);
+            $selfIntroResponse=$selfIntroRequest->json();
+          
+            $data['self']=$selfIntroResponse['data'];
+         
+            //user data
+            $regUrl= env('API').'getRegistrationDetails/'.$user_id;
+            $regRequest = Http::get($regUrl);
+            $regResponse=$regRequest->json();
+            //dd($selfIntroResponse['data']);
+            $data['reg']=$regResponse['data'];
+            // dd( $data['reg'] );
+            //s_id
              $data['s_id']=$s_id;
-            //dd($details['data'][0]);
-            if(isset($details['data'])){
-                
-                $data['venue_category_detail']=$details['data']['venue_category'] ;
-              //dd($data['venue_category_detail']);
-                $data['amenities_detail']=$details['data']['amenities'];
-                $data['service_detail']=$details['data']['service'];
-                $data['detail']=$details['data'];
-            }
-        
+          
             return view('booking/pet_space_booking',$data);
        
         
@@ -187,31 +180,33 @@ class BookingController extends Controller
    public function pet_service_booking(Request $request,$s_id){
                
 
-       // $petSpaceUrl= env('API').'getPetSpaceById/'.$s_id;
-       $petServiceUrl= env('API').'getPetServiceById/'.$s_id;
+            // pet space
+            $petServiceUrl= env('API').'getPetServiceById/'.$s_id;
+       
       
-       $petServiceRequest = Http::get($petServiceUrl);
- 
-       $details = $petServiceRequest->json();
-      // dd($petServiceResponse);
-
-       if(isset($details['data'][0]['SelfDescriptionDetails'])){
-        $data['self']=  $details['data'][0]['SelfDescriptionDetails'];
-    }
-
-    if(isset($details['data'][0]['RegistrationDetails'])){
-        $data['reg']=$details['data'][0]['RegistrationDetails'];
-    }
-
-   //  dd($data['reg']);
-       $data['s_id']=$s_id;
-       //dd($petServiceResponse);
-   
-
-       if(isset($details['data'][0])){
-        $data['detail']=$details['data'][0];
-       }
-       //dd($petSpaceResponse);
+            $petServiceRequest = Http::get($petServiceUrl);
+            $petServiceData=$petServiceRequest->json();
+            $data['detail'] = $petServiceData['data'];
+            $user_id= $data['detail']['user_id']; 
+            // dd( $data['detail']);
+             // self intro
+          
+            $selfIntroUrl= env('API').'getSelfDescription/'.$user_id;
+            $selfIntroRequest = Http::get($selfIntroUrl);
+            $selfIntroResponse=$selfIntroRequest->json();
+          
+            $data['self']=$selfIntroResponse['data'];
+         
+            //user data
+            $regUrl= env('API').'getRegistrationDetails/'.$user_id;
+            $regRequest = Http::get($regUrl);
+            $regResponse=$regRequest->json();
+            //dd($selfIntroResponse['data']);
+            $data['reg']=$regResponse['data'];
+            // dd( $data['reg'] );
+            //s_id
+             $data['s_id']=$s_id;
+    
        return view('/booking/pet_service_booking',$data);
       
    }

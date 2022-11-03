@@ -138,7 +138,7 @@
                                     <input type="hidden" name="user_price" id="userPrice">
                                     <input type="hidden" name="user_service" id="userService">
                                     <input type="hidden" name="user_amount" id="userAmount">
-                                    <input type="hidden" name="ser_cart_id" value={{$detail['_id']}}>
+                                    <input type="hidden" name="ser_cart_id" value={{$detail['id']}}>
                                     <button  class="btn btn-primary btn-sm mx-auto" id="btn">Book</button>
                                 </form>
                                 {{-- <button  href="{{URL::asset('/bookingdetails')}}" id="btn"  class="btn btn-primary btn-sm mx-auto">Book</button> --}}
