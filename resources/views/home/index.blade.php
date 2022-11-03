@@ -65,7 +65,7 @@
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
                                       
-                                            <a href="/pet_space_booking/{{$item['_id']}}" class="image">
+                                            <a href="/pet_space_booking/{{$item['id']}}" class="image">
                                 
                                                 <img class="fits-image"  src="{{$item['image'][0]}}" alt="Product" />
 
@@ -82,7 +82,7 @@
                                      
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <a href="/pet_space_booking/{{$item['_id']}}" class="image">
+                                            <a href="/pet_space_booking/{{$item['id']}}" class="image">
                                             <h5 class="title"><p>{{$item['venue_name']}}</p></h5>
                                             </a>
                                             <span class="price">
@@ -219,7 +219,7 @@
                                         <!-- Thumb Start  -->
                                         <div class="thumb">
                                       
-                                            <a href="/pet_space_booking/{{$item['_id']}}" class="image">
+                                            <a href="/pet_space_booking/{{$item['id']}}" class="image">
                                 
                                                 <img  class="fits-image" src="{{$item['image'][0]}}"  alt="Product" />
                             
@@ -233,7 +233,7 @@
                                      
                                         <!-- Content Start  -->
                                         <div class="content">
-                                            <a href="/pet_space_booking/{{$item['_id']}}" class="image">
+                                            <a href="/pet_space_booking/{{$item['id']}}" class="image">
                                             <h5 class="title"><p>{{$item['venue_name']}}</p></h5>
                                             </a>
                                             <span class="price">

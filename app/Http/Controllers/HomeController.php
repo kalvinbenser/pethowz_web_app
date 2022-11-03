@@ -47,19 +47,19 @@ class HomeController extends Controller
          //********************* Index Pet Space  ***************************\\
 
        
-        $petSpaceUrl= env('API').'getAllPetSpace';
+        $petSpaceUrl= env('API').'getAllPetSpaceList';
        
         $petSpaceRequest = Http::get($petSpaceUrl);
   
         $petSpaceResponse = $petSpaceRequest->json();
         $pet_space=$petSpaceResponse['data'];
-        
-        $PetSpaceCollection = collect($pet_space);
+    //     dd($pet_space);
+        // $PetSpaceCollection = collect($pet_space);
 
-        $filtered = $PetSpaceCollection->filter(function ($value, $key) {
-            // return $value['approved']==true;
-            return $value['approved']==true;
-        });
+        // $filtered = $PetSpaceCollection->filter(function ($value, $key) {
+        //     // return $value['approved']==true;
+        //     return $value['approved']==true;
+        // });
 
         //dd($pet_space);
        // dd($petSpaceResponse[data]);
@@ -74,7 +74,7 @@ class HomeController extends Controller
         // $pet_service=$petServiceResponse['data'];
         // // dd($pet_service);
         //
-        $collection = (new Collection($filtered->all()))->paginate(8);
+        $collection = (new Collection($pet_space))->paginate(8);
        // dd($collection);
         return view('home/index',compact('collection'));
     }
