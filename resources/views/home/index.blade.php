@@ -121,7 +121,7 @@
             <!-- Banner Start -->
             @foreach($serviceMaster as $service)
             <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
-                <div class="sitting align_service">
+                <div class="{{$service['service_name']}} align_service">
                     <a href="/getServiceProvider/{{$service['service_name']}}" class="banner">
                         <img class="fit-image" src="{{$service['image']}}" />
                     </a>

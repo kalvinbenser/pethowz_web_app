@@ -15,8 +15,8 @@ addtaskbtn.addEventListener("click", function () {
     }
     taskObj.push({
      
-      service: addServiceVal,
-       price: addPriceVal
+      service_master_id: addServiceVal,
+       cost: addPriceVal
 
     });
     // console.log(taskObj, 'Ashendra');
@@ -39,7 +39,7 @@ function showcase() {
   let addedtasklist = document.getElementById("addedtasklist");
   taskObj.forEach((item, index) => {
    
-      taskCompleteValue = `<td>${item.service}</td><td>${item.price}</td>`;
+      taskCompleteValue = `<td>${item.service_master_id}</td><td>${item.cost}</td>`;
       // <td><button type="button" onclick="deleteitem(${index})" class="text-danger"><i class="fa fa-trash"></i></button></td>
     html += `<tr>
                     <th scope="row">${index + 1}</th>
