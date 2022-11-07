@@ -40,7 +40,7 @@ class BookingController extends Controller
             // dd( $data['reg'] );
             //s_id
                //service slot
-               $slotUrl= env('API').'getSlotByPetServiceId/'.$s_id;
+               $slotUrl= env('API').'getSlotByPetSpaceId/'.$s_id;
                $slotRequest = Http::get($slotUrl);
                $slotResponse=$slotRequest->json();
                //dd($slotResponse);
