@@ -227,10 +227,10 @@
                                 @endif
 
                                  
-                                @if(isset($detail['service']))
+                                {{-- @if(isset($detail['service']))
                                 <p class="about about3">Service<p>
                                 @endif
-                                    
+                                     --}}
                                    
 
                                     @if(isset($detail['amenities']))
@@ -275,10 +275,10 @@
 </div>
 <div class="d-flex flex-row bd-highlight">
 
-                                @foreach($detail['service'] as $ser) 
+                                {{-- @foreach($detail['service'] as $ser) 
                                     <p class="about">{{$ser}}<p><b>,</b>                               
                                 @endforeach
-                               
+                                --}}
 </div>
 <div class="d-flex flex-row bd-highlight">
                                 @foreach($detail['amenities'] as $amen) 

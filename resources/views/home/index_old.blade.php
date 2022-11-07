@@ -119,18 +119,65 @@
 
                 
             <!-- Banner Start -->
-            @foreach($serviceMaster as $service)
             <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                 <div class="sitting align_service">
-                    <a href="/getServiceProvider/{{$service['service_name']}}" class="banner">
-                        <img class="fit-image" src="{{$service['image']}}" />
+                    <a href="#" class="banner">
+                        <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Group 18007.svg')}}" alt="Banner Image" />
                     </a>
-                    <div class="sitti">{{$service['service_name']}}</div>
+                    <div class="sitti">Sitting</div>
                 </div>  
             </div>
-            @endforeach
           <!-- Banner End -->
-       
+           <!-- Banner Start -->
+            <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+               <div class="grooming align_service">
+                    <a href="#" class="banner">
+                        <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Grooming white.svg')}}" alt="Banner Image" />
+                    </a>
+                    <div class="groom">Grooming</div>
+               </div>
+            </div>
+            <!-- Banner End -->
+            <!-- Banner Start -->
+            <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
+                <div class="walking align_service">
+                    <a href="#" class="banner">
+                        <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Walking White.svg')}}" alt="Banner Image" />
+                    </a>
+                    <div class="walks">Walking</div>
+                </div>
+            </div>
+            <!-- Banner End -->
+            <!-- Banner Start -->
+            <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+                <div class="breading align_service">
+                    <a href="#" class="banner">
+                        <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Breeding White.svg')}}" alt="Banner Image" />
+                    </a>
+                    <div class="bread">Breeding</div>
+                </div>
+            </div>
+            <!-- Banner End -->
+            <!-- Banner Start -->
+            <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+                <div class="training align_service">
+                    <a href="#" class="banner">
+                        <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Path 27524.svg')}}" alt="Banner Image" />
+                    </a>
+                    <div class="train">Training</div>
+                </div>
+            </div>
+            <!-- Banner End -->
+              <!-- Banner Start -->
+              <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+                <div class="photo align_service">
+                    <a href="#" class="banner">
+                        <img class="fit-image" src="{{URL::asset('front-end/assets/images/banner/Photography White.svg')}}" alt="Banner Image" />
+                    </a>
+                    <div class="photog">Photography</div>
+                </div>
+            </div>
+            <!-- Banner End -->
             </div>
             <!-- Banners End -->
         </div>
