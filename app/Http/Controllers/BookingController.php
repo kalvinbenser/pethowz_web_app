@@ -204,16 +204,16 @@ class BookingController extends Controller
             //dd($selfIntroResponse['data']);
             $data['reg']=$regResponse['data'];
              //service slot
-             $regUrl= env('API').'getRegistrationDetails/'.$user_id;
-             $regRequest = Http::get($regUrl);
-             $regResponse=$regRequest->json();
-             //dd($selfIntroResponse['data']);
-             $data['reg']=$regResponse['data'];
+             $slotUrl= env('API').'getSlotByPetServiceId/'.$s_id;
+             $slotRequest = Http::get($slotUrl);
+             $slotResponse=$slotRequest->json();
+             //dd($slotResponse);
+             $data['slot']=$slotResponse['data'];
              $data['s_id']=$s_id;
 
              
     
-       return view('/booking/pet_service_booking',$data);
+       return view('/booking/pet_service_booking',$data)->with("no",1);
       
    }
       
