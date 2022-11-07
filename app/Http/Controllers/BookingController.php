@@ -203,9 +203,15 @@ class BookingController extends Controller
             $regResponse=$regRequest->json();
             //dd($selfIntroResponse['data']);
             $data['reg']=$regResponse['data'];
-            // dd( $data['reg'] );
-            //s_id
+             //service slot
+             $regUrl= env('API').'getRegistrationDetails/'.$user_id;
+             $regRequest = Http::get($regUrl);
+             $regResponse=$regRequest->json();
+             //dd($selfIntroResponse['data']);
+             $data['reg']=$regResponse['data'];
              $data['s_id']=$s_id;
+
+             
     
        return view('/booking/pet_service_booking',$data);
       

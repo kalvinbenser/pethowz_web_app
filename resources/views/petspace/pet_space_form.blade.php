@@ -93,12 +93,15 @@ input[type="checkbox"]+label {
                   <div class="row justify-content-md-center">
                   <label class="about">Select the Service</label>
                 <select  id="service" class="select_serv form-select">
-                  <option value="Sitting">Sitting</option>
+                  @foreach($serviceMaster as $service)
+                  <option value={{$service['id']}}>{{$service['service_name']}}</option>
+                  @endforeach
+                  {{-- <option value="Sitting">Sitting</option>
                   <option value="Breading">Breading</option>
                   <option value="Photography">Photography</option>
                   <option value="Grooming">Grooming</option>  
                   <option value="Walking">Walking </option>
-                  <option value="Training">Training</option>
+                  <option value="Training">Training</option> --}}
                 </select>           
             </div>
             <div class="to-do-output">
@@ -133,11 +136,11 @@ input[type="checkbox"]+label {
                         <label class="about">Choose Location</label>
                         <select class="form-select select_location" name="location" id="location">
                           <option value="0">---Select Location---</option>
-                          <option value="1">T Nagar</option>
-                          <option value="2">Nungambakkam</option>
-                          <option value="3">Alwarpet</option>
-                          <option value="4">Kodambakkam</option>
-                          <option value="5">Teynampet</option>  
+                          <option value="T Nagar">T Nagar</option>
+                          <option value="Nungambakkam">Nungambakkam</option>
+                          <option value="Alwarpet">Alwarpet</option>
+                          <option value="Kodambakkam">Kodambakkam</option>
+                          <option value="Teynampet">Teynampet</option>  
                         </select>               
                       </div>
                     
@@ -153,12 +156,12 @@ input[type="checkbox"]+label {
                             <label class="about">Amenities</label>
                             <select class="form-select select_amenities" name="amenities[]" id="amenities" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
                               
-                              <option value="1"> park signs</option>
-                              <option value="2">water fountains</option>
-                              <option value="3">park benches</option>
-                              <option value="4">picnic tables</option>
-                              <option value="5">agility equipment</option>
-                              <option value="6">cage</option>
+                              <option value="park signs"> park signs</option>
+                              <option value="water fountains">water fountains</option>
+                              <option value="park benches">park benches</option>
+                              <option value="picnic tables">picnic tables</option>
+                              <option value="agility equipment">agility equipment</option>
+                              <option value="cage">cage</option>
                             </select>               
                           </div>
                           <span id="select_amenities_error" class="text-danger"></span>
@@ -230,7 +233,7 @@ range.addEventListener('input', setValue);
               var service_detail1=localStorage.getItem("localtask");
               var service_detail=JSON.parse(service_detail1);
               var amenities=$("#amenities").val();
-              alert(amenities);
+             // alert(amenities);
               var imgfile = document.getElementById("file-input");
             //  alert(venue_category);
              // const file = document.querySelector("#file-input").files[0];
@@ -315,7 +318,7 @@ range.addEventListener('input', setValue);
                                                 amenities:amenities,
                                                 venue_category:venue_category,
                                                 location:location,
-                                                 service_detail:service_detail
+                                                 service:service_detail
                                              
                                             },
                                             success:function(data){

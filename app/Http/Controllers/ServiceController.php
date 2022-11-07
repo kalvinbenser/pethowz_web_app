@@ -54,11 +54,26 @@ class ServiceController extends Controller
           
             $petSelfRequest=Http::get($petSelfUrl);
             $petSelfResponse=$petSelfRequest->json();
+                    
+            $petSelfUrl=env('API').'getSelfDescription/'.$user_id;
+          
+            $petSelfRequest=Http::get($petSelfUrl);
+            $petSelfResponse=$petSelfRequest->json();
+
+            //service master
+
+            $serviceMasterUrl = env('API') . 'getAllServiceList';
+
+            $serviceMasterRequest = Http::get($serviceMasterUrl);
+    
+            $serviceMasterResponse = $serviceMasterRequest->json();
+            $serviceMaster = $serviceMasterResponse['data'];
+            //dd($serviceMaster);
             if($petSelfResponse['Success']==false){
                 return redirect('add_your_self');
             }
             else{
-                return view('/petservice/pet_service_form');
+                return view('/petservice/pet_service_form',compact('serviceMaster'));
             }
         }
         else{
@@ -83,9 +98,9 @@ class ServiceController extends Controller
             $location=$request->location;
             $service_detail=$request->service_detail;
         
-            $services=$request->service;
+            $service=$request->service;
             // $cost=$request->cost_per_hour;
-          
+        //   dd($service);
             $user_id=$request->session()->get('user_id');
     
             $image[]= $request->image;
@@ -101,8 +116,7 @@ class ServiceController extends Controller
                 "user_id"=>$user_id,
                 "venue_name"=>$venue,
                 "service_details"=>$service_detail,
-                "services"=>$services,
-        
+                "service"=>$service,
                 "location"=>$location,   
                 "image"=>$image
             ];
@@ -115,7 +129,7 @@ class ServiceController extends Controller
            
            
             //  return redirect('/')->with('message','your Pet Service Added');
-            return response()->json(['response'=> $petServiceResponse]);
+            return response()->json(['response'=> $petServiceResponse,'service'=>$service]);
           
         }
           catch(Exception $e) {
@@ -137,11 +151,20 @@ class ServiceController extends Controller
               
                 $petSelfRequest=Http::get($petSelfUrl);
                 $petSelfResponse=$petSelfRequest->json();
+
+                           //service master
+
+            $serviceMasterUrl = env('API') . 'getAllServiceList';
+
+            $serviceMasterRequest = Http::get($serviceMasterUrl);
+    
+            $serviceMasterResponse = $serviceMasterRequest->json();
+            $serviceMaster = $serviceMasterResponse['data'];
                 if($petSelfResponse['Success']==false){
                     return redirect('add_your_self');
                 }
                 else{
-                    return view('/petspace/pet_space_form');
+                    return view('/petspace/pet_space_form',compact('serviceMaster'));
                 }
             }
             else{
@@ -172,7 +195,7 @@ class ServiceController extends Controller
             $service_detail=$request->service_detail;
             $cost_per_hour=1;
             $venue_name=$request->venue;
-            //$service_cost=100;
+            // $service=$request->service;
             $service_detail=$request->service_detail;
 
             $location=$request->location;
@@ -195,7 +218,7 @@ class ServiceController extends Controller
                 "cost_per_hour"=> $cost_per_hour,
                 "amenities"=>$amenities,
                 "location"=>$location,
-                "service"=> $service_detail,
+                "service"=> $service,
                 "image"=>$imageName
             ];
             // dd($petSpaceData);

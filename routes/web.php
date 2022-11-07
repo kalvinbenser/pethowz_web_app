@@ -18,6 +18,7 @@ use App\Http\Controllers\AuthController;
 //search 
 Route::get('/search',[HomeController::class,'search']);
 //index view
+Route::get('/getServiceProvider/{keyword}',[HomeController::class,'getServiceProvider']);
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/home/index',[HomeController::class,'index']);

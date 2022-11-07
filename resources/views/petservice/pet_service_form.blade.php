@@ -99,12 +99,15 @@ input[type="checkbox"]+label {
                   <div class="row justify-content-md-center">
                   <label class="about">Select the Service</label>
                 <select  id="service" class="select_serv form-select">
-                  <option value="Sitting">Sitting</option>
+                  @foreach($serviceMaster as $service)
+                  <option value={{$service['id']}}>{{$service['service_name']}}</option>
+                  @endforeach
+                  {{-- <option value="Sitting">Sitting</option>
                   <option value="Breading">Breading</option>
                   <option value="Photography">Photography</option>
                   <option value="Grooming">Grooming</option>
                   <option value="Walking">Walking </option>
-                  <option value="Training">Training</option>
+                  <option value="Training">Training</option> --}}
                 </select>           
             </div>
             <div class="to-do-output">
@@ -132,11 +135,11 @@ input[type="checkbox"]+label {
                       <label class="about">Choose Location</label>
                       <select class="form-select select_location" name="location" id="location" >
                         <option value="0" >--- Select Location ---</option>
-                        <option value="1">T Nagar</option>
-                        <option value="2">Nungambakkam</option>
-                        <option value="3">Alwarpet</option>
-                        <option value="4">Kodambakkam</option>
-                        <option value="5">Teynampet</option>             
+                        <option value="T Nagar">T Nagar</option>
+                        <option value="Nungambakkam">Nungambakkam</option>
+                        <option value="Alwarpet">Alwarpet</option>
+                        <option value="Kodambakkam">Kodambakkam</option>
+                        <option value="Teynampet">Teynampet</option>             
                       </select>               
                     </div>   
                     </div>
@@ -241,7 +244,7 @@ var myarr = [];
               var service1=localStorage.getItem("localtask");
               var service=JSON.parse(service1);
               var service_detail=$("#service_detail").val();
-     
+            
               var imgfile = document.getElementById("file-input");
              // const file = document.querySelector("#file-input").files[0];
                 //console.log(file);
