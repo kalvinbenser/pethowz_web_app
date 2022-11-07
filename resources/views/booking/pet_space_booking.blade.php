@@ -144,9 +144,9 @@
                     <div class="single-footer-widget booking_form_details">
                         <h3 class="rupee"> <i class="fa fa-rupee" style="font-size:24px">
                         @if(isset($detail['cost_per_hour']))
-                        <span id="usertotal" >0</span>
+                        <span id="usertotal" >{{$detail['cost_per_hour']}}</span>
                         @else
-                        <span id="userAmount" >0</span>
+                        <span id="userAmount" ></span>
                         @endif
                     </i></h3>
                         <h6 class="rupee">Per Hour</h6>
@@ -308,106 +308,123 @@
         <!-- Banner Section Start -->
         <div class="section section-margin">
             <div class="container" >
-                <div class="service-providers" id="yourservice">
+                <div class="service-providers " id="yourservice">
             <h1>Select Your Service</h1>
                 <!-- Banners Start -->
                 <div class="row m-b-n30">
-    
+                   @foreach($slot as $s)
                     <!-- Banner Start -->
+                    @if($s['service_name']=='Sitting')
                     <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                         <div class="service-pic service-pic1" id="one">
                         <div class="align_services sittinks pic1 div-service">
-                            <input type="checkbox"  class="checkbox price-service" name="category[]" value="{{$detail['cost_per_hour']}}" id="cb1" />
+                            <input type="checkbox"  class="checkbox price-service" name="category[]" value={{$s['cost']}} id="cb1" />
                             <label for="cb1"  ><img class="fit-image click_logo1" src="{{URL::asset('front-end/assets/images/lightgallery/Sitting Green.svg')}}"/>
                             </label>
                             <div class="sitt label-service">Sitting</div>
                         </div> 
                         <div>
-                        <h3 class="rupee1"><i class="fa fa-rupee">{{$detail['cost_per_hour']}}</i></h3> 
+                        <h3 class="rupee1"><i class="fa fa-rupee">{{$s['cost']}}</i></h3> 
                         <h5 class="rupee2">Per Hour</h5>
                         </div>
                         </div>
                     </div>
+                    @endif
                   <!-- Banner End -->
+    
                    <!-- Banner Start -->
+                   @if($s['service_name']=='Grooming')
                     <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                         <div class="service-pic service-pic2" id="two" >
                        <div class="groominks align_services pic2 div-service">
-                            <input type="checkbox"  class="checkbox price-service" name="category[]" value="{{$detail['cost_per_hour']}}" id="cb2" />
+                            <input type="checkbox"  class="checkbox price-service" name="category[]" value={{$s['cost']}} id="cb2" />
                             <label for="cb2"  ><img class="fit-image click_logo2" src="{{URL::asset('front-end/assets/images/lightgallery/Grooming Blue.svg')}}"/>
                             </label>
                             <div class="grom label-service">Grooming</div>
                        </div>
                        <div>
-                        <h3  class="rupee1"><i class="fa fa-rupee">{{$detail['cost_per_hour']}}</i></h3> 
+                        <h3  class="rupee1"><i class="fa fa-rupee">{{$s['cost']}}</i></h3> 
                         <h5 class="rupee2">Per Hour</h5>
                         </div>
                         </div>
                     </div>
+                   @endif
                     <!-- Banner End -->
                     <!-- Banner Start -->
+                    
+                    @if($s['service_name']=='Walking')
                     <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
                         <div class="service-pic service-pic3" id="three">
                         <div class="walkinks align_services pic3 div-service">
-                            <input type="checkbox"  class="checkbox price-service" name="category[]" value="{{$detail['cost_per_hour']}}" id="cb3"  />
+                            <input type="checkbox"  class="checkbox price-service" name="category[]" value={{$s['cost']}} id="cb3"  />
                             <label for="cb3"  ><img class="fit-image click_logo3"  src="{{URL::asset('front-end/assets/images/lightgallery/Walking Orange.svg')}}"/>
                             </label>
                             <div class="walk label-service">Walking</div>
                         </div>
                         <div>
-                            <h3  class="rupee1"><i class="fa fa-rupee">{{$detail['cost_per_hour']}}</i></h3> 
+                            <h3  class="rupee1"><i class="fa fa-rupee">{{$s['cost']}}</i></h3> 
                             <h5 class="rupee2">Per Hour</h5>
                             </div>
                         </div>
                     </div>
+                    @endif
                     <!-- Banner End -->
                     <!-- Banner Start -->
+                    @if($s['service_name']=='Breeding')
                     <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                         <div class="service-pic service-pic4" id="four" >
                         <div class="breadinks align_services pic4 div-service">
-                            <input type="checkbox" class="checkbox price-service" name="category[]" value="{{$detail['cost_per_hour']}}" id="cb4" />
+                            <input type="checkbox" class="checkbox price-service" name="category[]" value={{$s['cost']}} id="cb4" />
                             <label for="cb4"  ><img class="fit-image click_logo4"  src="{{URL::asset('front-end/assets/images/lightgallery/Breeding Yellow.svg')}}"/>
                             </label> 
-                            <div class="brea label-service" >Breading</div>
+                            <div class="brea label-service ">Breading</div>
                         </div>
                         <div>
-                            <h3  class="rupee1"><i class="fa fa-rupee">{{$detail['cost_per_hour']}}</i></h3> 
+                            <h3  class="rupee1"><i class="fa fa-rupee">{{$s['cost']}}</i></h3> 
                             <h5 class="rupee2">Per Hour</h5>
                             </div>
                         </div>
                         </div>
+                    <div>    
+                    @endif    
                     <!-- Banner End -->
                     <!-- Banner Start -->
+                    
+                    @if($s['service_name']=='Training')
                     <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                         <div class="service-pic service-pic5" id="five" >
-                        <div class="traininks align_services pic5 div-service" >
-                            <input type="checkbox" class="checkbox price-service" name="category[]" value="{{$detail['cost_per_hour']}}" id="cb5" />
+                        <div class="traininks align_services pic5 div-service">
+                            <input type="checkbox" class="checkbox price-service" name="category[]" value={{$s['cost']}} id="cb5" />
                             <label for="cb5"  ><img class="fit-image click_logo5" src="{{URL::asset('front-end/assets/images/lightgallery/Training Blue.svg')}}"/>
                             </label> 
                             <div class="trai label-service">Training</div>
                         </div>
                         <div>
-                            <h3  class="rupee1"><i class="fa fa-rupee">{{$detail['cost_per_hour']}}</i></h3> 
-                            <h5 class="rupee2 ">Per Hour</h5>
+                            <h3  class="rupee1"><i class="fa fa-rupee">{{$s['cost']}}</i></h3> 
+                            <h5 class="rupee2">Per Hour</h5>
                             </div>
                         </div>
                     </div>
+                    @endif
                     <!-- Banner End -->
                       <!-- Banner Start -->
+                      @if($s['service_name']=='Photography')
                       <div class="col-md-2 col-6 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
                           <div class="service-pic service-pic6" id="six">
                         <div class="photographys align_services pic6 div-service" >
-                            <input type="checkbox"  class="checkbox price-service" name="category[]" value="{{$detail['cost_per_hour']}}" id="cb6" />
+                            <input type="checkbox"  class="checkbox price-service" name="category[]" value={{$s['cost']}} id="cb6" />
                             <label for="cb6"  ><img class="fit-image click_logo6" src="{{URL::asset('front-end/assets/images/lightgallery/Photography Blue.svg')}}" />
                             </label>  
                             <div class="phot label-service">Photography</div>
                         </div>
                         <div>
-                            <h3  class="rupee1"><i class="fa fa-rupee">{{$detail['cost_per_hour']}}</i></h3> 
+                            <h3  class="rupee1"><i class="fa fa-rupee">{{$s['cost']}}</i></h3> 
                             <h5 class="rupee2">Per Hour</h5>
                             </div>
                         </div>
                       </div>
+                      @endif
+                      @endforeach
                     </div>
                     <!-- Banner End -->
     
@@ -446,7 +463,7 @@
            
 <script>
     $('input:checkbox').change(function(){ 
-	var tot=0;
+	var tot={{$detail['cost_per_hour']?$detail['cost_per_hour']:0}};
     var services = [];
     var prices = [];
 $('input:checkbox:checked').each(function(){
