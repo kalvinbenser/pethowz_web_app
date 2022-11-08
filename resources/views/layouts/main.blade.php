@@ -45,9 +45,13 @@
     <link rel="stylesheet" type="text/css" 
      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-
-  
-     <!-- Font Awesome -->
+      {{-- get country code --}}
+     <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+   
 
 
 
@@ -264,9 +268,9 @@
 
    @yield('content')
    <div class="modal fade " id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog model-center">
+    <div class="modal-dialog ">
       <div class="modal-content ">
-      
+   
         <div class="modal-body">
           <div class="model-item-center">
             <div class="row">
@@ -283,15 +287,18 @@
 
               <p class="model-text-center mt-2">You will get One Time Password<br>to this number</p>
 
+              <div class="model-item-center form-group">
+                <input type="text" class="model-input-text mobile_number form-control input-lg " id="loginNumber" >
+               
+              </div>
               <div class="model-item-center">
-                <input type="text" class="model-input-text mobile_number" id="loginNumber" placeholder="+91">
+          
+                <div id="recaptcha-container"  style=" transform: scale(0.7);transform-origin: -1 0;"  ></div>
               </div>
               <span id="mobile_number_error" class="text-danger"></span>
-              <div class="p-4 d-flex justify-content-center">
-                <div id="recaptcha-container" ></div>
-              </div>
+           
              
-              <div class="model-item-center mt-2">
+              <div class="model-item-center ">
               <input type="submit" id="booking_btn" onclick="phoneSendAuth();" value="SUBMIT"  class="btn-model" >
               </div>
 
@@ -313,6 +320,8 @@
 
      
         </div>
+
+     
         {{-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
@@ -322,7 +331,7 @@
 
 
 
-  
+   
   <div class="modal fade " id="loginModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog model-center">
       <div class="modal-content">
@@ -825,9 +834,17 @@ platform. If not, your cancellation of the booking would not be considered effec
 
 
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+
+
     <script>
     
-
+    const phoneInputField = document.querySelector("#loginNumber");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            preferredCountries: ["in","au","us","my"],
+          utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+    // const phoneNumber = phoneInput.getNumber();
 
     const firebaseConfig = {
       apiKey:"{{env('API_KEY')}}",
@@ -852,7 +869,8 @@ platform. If not, your cancellation of the booking would not be considered effec
     recaptchaVerifier.render();
     }
     function phoneSendAuth() {
-    var number = $("#loginNumber").val();
+    //var number = $("#loginNumber").val();
+    var number = phoneInput.getNumber();
     console.log(number);
     firebase.auth().signInWithPhoneNumber(number,window.recaptchaVerifier).then(function (confirmationResult) {
     window.confirmationResult=confirmationResult;
