@@ -94,7 +94,7 @@ input[type="checkbox"]+label {
                   <label class="about">Select the Service</label>
                 <select  id="service" class="select_serv form-select">
                   @foreach($serviceMaster as $service)
-                  <option value={{$service['id']}}>{{$service['service_name']}}</option>
+                  <option value="{{$service['id']}}.{{$service['service_name']}}">{{$service['service_name']}}</option>
                   @endforeach
                   {{-- <option value="Sitting">Sitting</option>
                   <option value="Breading">Breading</option>
@@ -231,7 +231,9 @@ range.addEventListener('input', setValue);
               // var cost_per_hour=$("input[name='cost_per_hour']").val();
               // var option=$("#option").val();
               var service_detail1=localStorage.getItem("localtask");
+           
               var service_detail=JSON.parse(service_detail1);
+             
               var amenities=$("#amenities").val();
              // alert(amenities);
               var imgfile = document.getElementById("file-input");
@@ -323,9 +325,8 @@ range.addEventListener('input', setValue);
                                             },
                                             success:function(data){
                                                 // alert(data.mail);
-                                              
-                                                 console.log(data.response);
-                                                // alert(data.venue);
+                                           
+                                                alert(data.venue);
                                                 if(data.response.Success==true){
                                                   localStorage.removeItem("localtask");
                                                   window.location.href = "{{url('/')}}";

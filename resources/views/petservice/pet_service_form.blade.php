@@ -100,7 +100,7 @@ input[type="checkbox"]+label {
                   <label class="about">Select the Service</label>
                 <select  id="service" class="select_serv form-select">
                   @foreach($serviceMaster as $service)
-                  <option value={{$service['id']}}>{{$service['service_name']}}</option>
+                  <option value="{{$service['id']}}.{{$service['service_name']}}">{{$service['service_name']}}</option>
                   @endforeach
                   {{-- <option value="Sitting">Sitting</option>
                   <option value="Breading">Breading</option>

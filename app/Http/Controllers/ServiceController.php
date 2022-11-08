@@ -104,7 +104,22 @@ class ServiceController extends Controller
             $user_id=$request->session()->get('user_id');
     
             $image[]= $request->image;
-           
+ //------------------explode service slot---------------------------------
+
+$i = 0;
+foreach ($service as $value) {
+
+  
+     $data_arr = explode('.', $value['service_master_id']);
+     $date_opt[] = [
+       "service_master_id" => $data_arr[0],
+       "cost" => $value['cost'],
+      ];
+  
+   $i++;
+  }
+ //-----------------end -------------------------------------------------------
+    
     
                //image upload
            
@@ -116,7 +131,7 @@ class ServiceController extends Controller
                 "user_id"=>$user_id,
                 "venue_name"=>$venue,
                 "service_details"=>$service_detail,
-                "service"=>$service,
+                "service"=>$date_opt,
                 "location"=>$location,   
                 "image"=>$image
             ];
@@ -209,7 +224,21 @@ class ServiceController extends Controller
         //     ];
             $imageName[]=$request->image;
             
-   
+ //------------------explode service slot---------------------------------
+
+$i = 0;
+foreach ($service as $value) {
+
+  
+     $data_arr = explode('.', $value['service_master_id']);
+     $date_opt[] = [
+       "service_master_id" => $data_arr[0],
+       "cost" => $value['cost'],
+      ];
+  
+   $i++;
+  }
+ //-----------------end -------------------------------------------------------
     
             $petSpaceData=[
                 "user_id"=> $user_id,
@@ -218,17 +247,16 @@ class ServiceController extends Controller
                 "cost_per_hour"=> $cost_per_hour,
                 "amenities"=>$amenities,
                 "location"=>$location,
-                "service"=> $service,
+                "service"=> $date_opt,
                 "image"=>$imageName
             ];
             // dd($petSpaceData);
            $petSpaceUrl=env('API').'createPetSpace';
            $petSpaceRequest=Http::post($petSpaceUrl,$petSpaceData);
            $petSpaceResponse=$petSpaceRequest->json();
-        //  dd($petSpaceResponse);
+        // //  dd($petSpaceResponse);
          return response()->json(['response'=>$petSpaceResponse]);
-          
-        
+      
      
         }
         catch(Exception $e){
