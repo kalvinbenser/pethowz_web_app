@@ -69,7 +69,7 @@
       </div>
  </div>
 </div>
-<div class="section position-relative">
+<div class="section position-relative" style="margin-top:100px">
   <div class="container">
        {{-- @if(session()->has('user_id'))
        <h1>{{session()->get('user_id')}}</h1>
@@ -134,6 +134,9 @@
 
                       </div>
                   </div>
+                  <div class="m-5">
+                    {{  $my_venue->links('vendor.pagination.bootstrap-5')  }}
+                    </div>  
 
               </div>
           </div>
@@ -197,62 +200,16 @@
 
                     </div>
                 </div>
+                
+                <div class="m-5">
+                    {{  $my_service->links('vendor.pagination.bootstrap-5')  }}
+                    </div>  
+
 
             </div>
         </div>
     </div>
     <!-- Pet service Tab End -->
-
-
-   <!-- Edit Modal -->
-<!-- <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog model-center">
-      
-          <div class="modal-content">    
-            <div class="modal-body model-login-two">
-                  <p class="model-text-center mt-5">Edit Your Details</p>
-                  <div class="model-item-center mt-2">
-                    <div style="display: flex;justify-content: center" id="otp-container">
-                    <form action="{{('/update_Profile')}}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
-                               <div class="single-input-item m-b-10">
-                                <input type="text" id="update" class="profile_email" value="{{$collection['name']}}" name="update_name" placeholder="Name" >                
-                                </div>
-                               <div class="single-input-item m-b-10">
-                                <input type="email" id="update" class="profile_email" value="{{$collection['email']}}" name="update_mail" placeholder="Email" >                
-                                </div>
-                                <div class="single-input-item m-b-10">
-                                <input type="number" id="update" class="profile_number" value="{{$collection['contact_number']}}" name="update_number" placeholder="Mobile Number" >                       
-                                </div>
-                                <div class="single-input-item m-b-10">
-                                   <textarea id="update" name="update_address"  class="profile_address" placeholder="Address" >{{$collection['address']}}</textarea>                         
-                                    </div>
-                                
-    
-                                    {{-- <div class="single-input-item m-b-10">
-                                        <input type="file">                       
-                                        </div>
-                                     --}}
-                           <div class="model-item-center">
-                            <input type="submit" class="submite" value="Update" > 
-                            </div>
-                      </form>
-                  </div>
-                  </div>
-                  
-    
-                </div>
-          
-    
-         
-            </div>
-
-
-  </div>
-</div>
-  -->
-
 
 
 
@@ -339,7 +296,7 @@
 
 
     <!-- Banner Section Start -->
- <div class="section section-margin">
+ {{-- <div class="section section-margin">
     <div class="container" >
         <div class="service-providers">
     <h1>Venue Booking</h1>
@@ -412,9 +369,9 @@
         <!-- Banners End -->
     </div>
     </div>
-</div>
+</div> --}}
   <!-- Banner Section Start -->
-  <div class="serv-booking">
+  {{-- <div class="serv-booking">
     <div class="container" >
         <div class="service-providers">
     <h1>Service  Booking</h1>
@@ -504,7 +461,82 @@
         <!-- Banners End -->
     </div>
     </div>
-</div>
+</div> --}}
+
+{{-- <div class="section section-margin">
+    <div class="container" >
+        <div class="service-providers">
+    <h1>Venue Booking</h1>
+        <!-- Banners Start -->
+        <div class="row m-b-n30">
+
+            <!-- Banner Start -->
+            <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+                <div class="venue-booking">
+                    <a class="banner">
+                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
+                    </a>
+                    <h1 style="font-size:medium;">john</h1>
+                </div>  
+            </div>
+          <!-- Banner End -->
+           <!-- Banner Start -->
+            <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+               <div class="venue-booking">
+                    <a class="banner">
+                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
+                    </a>
+                    <h1 style="font-size:medium;">john</h1>
+               </div>
+            </div>
+            <!-- Banner End -->
+            <!-- Banner Start -->
+            <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000"   >
+                <div class="venue-booking">
+                    <a class="banner">
+                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
+                    </a>
+                    <h1 style="font-size:medium;">john</h1>
+                </div>
+            </div>
+            <!-- Banner End -->
+            <!-- Banner Start -->
+            <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+                <div class="venue-booking">
+                    <a class="banner">
+                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
+                    </a>
+                    <h1 style="font-size:medium;">john</h1>
+                </div>
+            </div>
+            <!-- Banner End -->
+             <!-- Banner Start -->
+             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+                <div class="venue-booking">
+                    <a class="banner">
+                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
+                    </a>
+                    <h1 style="font-size:medium;">john</h1>
+                </div>
+            </div>
+            <!-- Banner End -->
+             <!-- Banner Start -->
+             <div class="col-12 col-sm-6 col-md-3 col-lg-2 m-b-30" data-aos="fade-up" data-aos-duration="1000" >
+                <div class="venue-booking">
+                    <a class="banner">
+                        <img class="fit-img" src="{{URL::asset('front-end/assets/images/banner/User Image.png')}}" alt="Banner Image" />
+                    </a>
+                    <h1 style="font-size:medium;">john</h1>
+                </div>
+            </div>
+            <!-- Banner End -->
+            
+
+        </div>
+        <!-- Banners End -->
+    </div>
+    </div>
+</div> --}}
 
     </div>
     </div>
