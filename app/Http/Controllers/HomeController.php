@@ -12,16 +12,16 @@ class HomeController extends Controller
 
     public function getServiceProvider(Request $request)
     {
-        $keyword=$request->keyword;
+        $keyword = $request->keyword;
         $serviceProviderUrl = env('API') . 'getServiceProvidersFilter/';
 
         $serviceProviderRequest = Http::post($serviceProviderUrl, ['service_keyword' => $keyword]);
         $serviceProviderResponse = $serviceProviderRequest->json();
         //dd($serviceProviderResponse['data']);
 
-       $pet_service=$serviceProviderResponse['data'];
+        $pet_service = $serviceProviderResponse['data'];
         $collection = (new Collection($pet_service))->paginate(8);
-        return view('service_provider/service_provider', compact('collection','keyword'));
+        return view('service_provider/service_provider', compact('collection', 'keyword'));
     }
     public function closeModel(Request $request)
     {
@@ -63,7 +63,7 @@ class HomeController extends Controller
 
         $petSpaceResponse = $petSpaceRequest->json();
         $pet_space = $petSpaceResponse['data'];
-       // dd($pet_space);
+        // dd($pet_space);
         // $PetSpaceCollection = collect($pet_space);
 
         // $filtered = $PetSpaceCollection->filter(function ($value, $key) {
@@ -380,7 +380,8 @@ class HomeController extends Controller
                 $myVenueUrl = env('API') . 'getPetSpaceMobileListById/' . $user_id;
                 $myVenueRequest = Http::get($myVenueUrl);
                 $myVenueResponse = $myVenueRequest->json();
-                $data['my_venue'] = $myVenueResponse['data'];
+                //dd($myVenueResponse);
+                $data['my_venue'] = (new Collection($myVenueResponse['data']));
 
                 //dd( $data['my_venue']);
 
@@ -391,15 +392,29 @@ class HomeController extends Controller
                 $myServiceUrl = env('API') . 'getPetServiceMobileListById/' . $user_id;
                 $myServiceRequest = Http::get($myServiceUrl);
                 $myServiceResponse = $myServiceRequest->json();
-                $data['my_service'] = $myServiceResponse['data'];
+                $data['my_service'] = (new Collection($myServiceResponse['data']));
+
                 //dd( $data['my_service']);
 
+                //my pet service booking
+                $myServicebookUrl = env('API') . 'getPetServiceBookByProvider/';
+                $myServiceBookRequest = Http::post($myServicebookUrl, ["user_id" => $user_id]);
+                $myServicebookResponse = $myServiceBookRequest->json();
+                //dd($myServicebookResponse['data']);
+                $data['my_service_book'] = (new Collection($myServicebookResponse['data']));
 
 
+                //my pet space booking
+
+                $mySpacebookUrl = env('API') . 'getPetSpaceBookByProvider/';
+                $mySpaceBookRequest = Http::post($mySpacebookUrl, ["user_id" => $user_id]);
+                $mySpacebookResponse = $mySpaceBookRequest->json();
+                // dd($mySpacebookResponse['data']);
+                $data['my_space_book'] = (new Collection($mySpacebookResponse['data']));
                 return view('/profile/profile', $data);
             }
         } else {
-            return redirect()->back() - with('message', 'login first');
+            return redirect()->back()->with('message', 'login first');
         }
 
 
