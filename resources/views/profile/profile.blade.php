@@ -136,11 +136,7 @@
 
                       </div>
                   </div>
-                  @if(count($my_venue)>0)
-                  <div class="m-5">
-                    {{  $my_venue->links('vendor.pagination.bootstrap-5')  }}
-                    </div>  
-                  @endif  
+                
 
               </div>
           </div>
@@ -206,11 +202,7 @@
 
                     </div>
                 </div>
-                @if(count($my_service)>0)
-                <div class="m-5">
-                    {{  $my_service->links('vendor.pagination.bootstrap-5')  }}
-                    </div>  
-                @endif    
+            
 
 
             </div>
@@ -325,11 +317,7 @@
             @endforeach
             @endif
           <!-- Banner End -->
-          @if(count($my_space_book)>0)
-          <div class="m-5">
-            {{  $my_space_book->links('vendor.pagination.bootstrap-5')  }}
-            </div>  
-         @endif
+     
         </div>
         <!-- Banners End -->
     </div>
@@ -360,11 +348,6 @@
             @endif
           <!-- Banner End -->
 
-          @if(count($my_service_book)>0)
-          <div class="m-5">
-            {{  $my_service_book->links('vendor.pagination.bootstrap-5')  }}
-            </div>  
-         @endif
         </div>
         <!-- Banners End -->
     </div>
