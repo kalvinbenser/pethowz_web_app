@@ -12,7 +12,7 @@
                             <label for="name" class="required m-b-10 ">First Name</label>
                             <input type="text" class="name" name="name" id="first-name" placeholder="Name" />
                            
-                        </div>
+                        </div><input type="hidden"  name="pet_service_id" value={{$pet_service_id}} />
                     </div>
                     <div class="col-lg-3">
                         <div class="single-input-item m-b-15">

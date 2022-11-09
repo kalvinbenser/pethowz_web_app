@@ -156,8 +156,10 @@
                                 @csrf
                                 <input type="hidden" name="user_service" id="userService">
                                 <input type="hidden" name="user_price" id="userPrice">
+                                <input type="hidden" name="pet_space_id" value="{{ $detail['id']}}" id="pet_space_id">
+                                <input type="hidden" name="p_space_id" value="{{ $detail['id']}}" >
                                 <input type="hidden" name="venue_name" value="{{ $detail['venue_name']}}" >
-                                <input type="hidden" name="user_amount" id="userAmount">
+                                <input type="hidden" name="user_amount" value={{$detail['cost_per_hour']}} id="userAmount">
                              
                                 <button  class="btn btn-primary btn-sm mx-auto" id="btn">Book</button>
                             </form>
@@ -169,7 +171,7 @@
                 </div>
             </div>
         </div>
-        </div>
+
               
     <div class="section section-margin pets-details">
 
