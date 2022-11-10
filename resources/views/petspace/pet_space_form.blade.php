@@ -326,7 +326,7 @@ range.addEventListener('input', setValue);
                                             success:function(data){
                                                 // alert(data.mail);
                                            
-                                                alert(data.venue);
+                                               
                                                 if(data.response.Success==true){
                                                   localStorage.removeItem("localtask");
                                                   window.location.href = "{{url('/')}}";
