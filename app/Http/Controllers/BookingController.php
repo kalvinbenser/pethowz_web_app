@@ -21,7 +21,8 @@ class BookingController extends Controller
 
         $petSpaceRequest = Http::get($petSpaceUrl);
         $petSpaceData = $petSpaceRequest->json();
-        $data['detail'] = $petSpaceData['data'];
+        $data['detail'] = $petSpaceData['data'][0];
+        // dd($data['detail']);
         $user_id = $data['detail']['user_id'];
 
         // self intro
@@ -309,7 +310,7 @@ class BookingController extends Controller
             $cost_per_hour = $request->session()->get('user_amount');
             $user_id = $request->session()->get('user_id');
             $venue_name = $request->session()->get('venue_name');
-            $pet_service_id=$request->pet_service_id;
+            $pet_service_id = $request->pet_service_id;
             // dd($service_type);
 
 
@@ -324,7 +325,7 @@ class BookingController extends Controller
                 'name' => $name,
                 'user_id' => $user_id,
                 "venue_name" => $venue_name,
-                "pet_service_id"=>$pet_service_id
+                "pet_service_id" => $pet_service_id
 
             ];
 
