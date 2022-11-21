@@ -148,7 +148,7 @@
                     <h1 class="pet_space">Independent House | Apartment</h1>
                 </div>
                 <div class="view-all col-12 col-sm-6 col-md-6 col-lg-4">
-                    <a  href="{{URL::asset('/house_apartment')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
+                    <a  href="{{URL::asset('/pet_host')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
                   </div>
               
                 <!-- Tab End -->
