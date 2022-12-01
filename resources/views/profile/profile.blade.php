@@ -75,18 +75,18 @@
        <h1>{{session()->get('user_id')}}</h1>
        @endif --}}
       <!-- Section Title & Tab Start -->
-      <div class="row " data-aos="fade-up" data-aos-duration="1000" >
+      {{-- <div class="row " data-aos="fade-up" data-aos-duration="1000" >
           <!-- Tab Start -->
           <div class="col-12 my-3">
               <h1>My Venues</h1>
           </div>
           
           <!-- Tab End -->
-      </div>
+      </div> --}}
       <!-- Section Title & Tab End -->
 
       <!-- Pet space Tab Start -->
-      <div class="row" data-aos="fade-up" data-aos-duration="1100">
+      {{-- <div class="row" data-aos="fade-up" data-aos-duration="1100">
           <div class="col-12">
               <div class="tab-content">
 
@@ -103,9 +103,9 @@
                                       <a href="#" class="image">
                                           <img class="fit-image" src="{{$venue['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
                                       </a>
-                                      {{-- <span class="badges">
+                                       <span class="badges">
                                       <span class="sale">-18%</span>
-                                      </span> --}}
+                                      </span> 
                                     
                                   </div>
                                   <!-- Thumb End  -->
@@ -140,9 +140,9 @@
 
               </div>
           </div>
-      </div>
+      </div> --}}
       <!-- Pet space Tab End -->
-  
+  {{--
       <div class="row " data-aos="fade-up" data-aos-duration="1000" >
         <!-- Tab Start -->
         <div class="col-12 my-3">
@@ -169,9 +169,7 @@
                                     <a href="#" class="image">
                                         <img class="fit-image" src="{{$service['image'][0]}}" style="width: 100%;height: 15vw;object-fit: cover;" alt="Product" />
                                     </a>
-                                    {{-- <span class="badges">
-                                    <span class="sale">-18%</span>
-                                    </span> --}}
+                                
                                   
                                 </div>
                                 <!-- Thumb End  -->
@@ -187,7 +185,7 @@
                                     <i class="fa fa-star-o"></i>
                                 </span> -->
                                     <span class="price">
-                                    {{-- <span class="new">₹{{$service['cost_per_hour']}}</span> --}}
+                                     <span class="new">₹{{$service['cost_per_hour']}}</span> 
                                     <span class="old">₹2080</span>
                                     </span>
                                 </div>
@@ -210,7 +208,7 @@
     </div>
     <!-- Pet service Tab End -->
 
-
+--}}
 
 
   <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
