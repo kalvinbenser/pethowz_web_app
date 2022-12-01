@@ -253,9 +253,9 @@
                 <p class="text-start">Gender</p>
                     <div class="d-flex">
                 <input type="radio" id="gender" name="gender" value=1 {{ $collection['gender'] == 1 ? 'checked' : '' }} >
-                 <label for="html">mail</label>
+                 <label for="html">male</label>
                  <input type="radio" id="gender" name="gender" value=0 {{ $collection['gender'] == 0 ? 'checked' : '' }}>
-                 <label for="css">Femail</label>
+                 <label for="css">Female</label>
                       </div>
                 </div>
               
