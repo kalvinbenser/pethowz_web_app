@@ -25,7 +25,7 @@
     <div class="col-12 col-sm-6 col-lg-4 m-b-40" id="profile1" data-aos="fade-up" data-aos-duration="1000">
     <h3 class="h3 text-secondary">Profile</h3>   
     </div>
-      <div class="col-12 col-sm-6 col-lg-4 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+      <div class="col-12 col-sm-6 col-lg-4 m-b-40 m-t-40 " data-aos="fade-up" data-aos-duration="1000">
     <div class="profile-details">
         <form>
             <input type="hidden" value="" name="" id="">
@@ -43,14 +43,14 @@
                 </div> 
                 <input id="file-input" type="file" />
               </div>
-              <h1 style="font-size:medium;">{{$collection['name']}}</h1>
-              <p style="font-size: small;"><a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa fa-pencil "></i>Edit</a></p>
+              <h1 style="font-size:medium;" class="text-secondary mt-2">{{$collection['name']}}</h1>
+              <p  class="text-secondary" style="font-size: small;"><a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa fa-pencil "></i>Edit</a></p>
               <div class="single-footer-widget" id="pro-details">
                             <ul>
-                                <li class="addicon2"><i class="fa fa-envelope-o addicon4" style="color:  #FF9A71"></i><p class="addicon1"> <strong>{{$collection['email']}}</strong></p></li>
-                                <li class="addicon2"><i class="fa fa-phone  addicon4" style="color:  #FF9A71"></i> <p class="addicon1"><strong>{{$collection['contact_number']}}</strong></p></li>
+                                <li class="addicon2"><i class="fa fa-envelope-o addicon4" style="color:  #FF9A71"></i><p class="addicon1 text-secondary"> <strong>{{$collection['email']}}</strong></p></li>
+                                <li class="addicon2 text-secondary"><i class="fa fa-phone  addicon4" style="color:  #FF9A71"></i> <p class="addicon1"><strong>{{$collection['contact_number']}}</strong></p></li>
                                 
-                                <li class="addicon2"><i class="fa fa-map-marker addicon4" style="color:  #FF9A71"></i><p class="addicon1">{{$collection['address']}}</span></li>
+                                <li class="addicon2"><i class="fa fa-map-marker addicon4" style="color:  #FF9A71"></i><p class="addicon1 text-secondary">{{$collection['address']}}</span></li>
 <!--                            
                                {{--     <li class="addicon2"><p class="addicon3">45/3 Residency Road,Mahatma Gandhi Rd,</p></li>
                                 <li class="addicon2"><p class="addicon3">ShanthalamNagar,Ashok Nagar,</p></li>
@@ -112,7 +112,7 @@
 
                                   <!-- Content Start  -->
                                   <div class="content">
-                                      <h5 class="title"><a href="single-product.html">{{$venue['venue_name']}}</a></h5>
+                                      <h5 class="title text-secondary"><a href="#">{{$venue['venue_name']}}</a></h5>
                                       <!-- <span class="rating">
                                       <i class="fa fa-star-o"></i>
                                       <i class="fa fa-star-o"></i>
@@ -120,10 +120,7 @@
                                       <i class="fa fa-star-o"></i>
                                       <i class="fa fa-star-o"></i>
                                   </span> -->
-                                      <span class="price">
-                                      <span class="new">₹{{$venue['cost_per_hour']}}</span>
-                                      {{-- <span class="old">₹2000</span> --}}
-                                      </span>
+                                    
                                   </div>
                                   <!-- Content End  -->
                               </div>
@@ -176,7 +173,7 @@
 
                                 <!-- Content Start  -->
                                 <div class="content">
-                                    <h5 class="title"><a href="single-product.html">{{$service['venue_name']}}</a></h5>
+                                    <h5 class="title text-secondary"><a href="#">{{$service['venue_name']}}</a></h5>
                                     <!-- <span class="rating">
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
