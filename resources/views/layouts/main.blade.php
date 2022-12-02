@@ -149,10 +149,10 @@
 
                                 <!-- Header Action Button Start -->
                                 <div class="header-action-btn header-action-btn-cart d-sm-flex">
-                                    <a class="cart-visible" href="javascript:void(0)">
+                                    {{-- <a class="cart-visible" href="javascript:void(0)">
                                         <i class="icon-bell icons"></i>
                                         <span class="header-action-num">3</span>
-                                    </a>
+                                    </a> --}}
 
                                     <!-- Header Cart Content Start -->
                                     <!-- <div class="header-cart-content"> -->
