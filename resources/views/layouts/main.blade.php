@@ -299,7 +299,7 @@
            
              
               <div class="model-item-center ">
-              <input type="submit" id="booking_btn" onclick="phoneSendAuth();" value="SUBMIT"  class="btn-model" >
+              <input type="submit" id="booking_btn" onclick="phoneSendAuth();" value="Submit"  class="btn-model" >
               </div>
 
               <p class="model-text-center mt-2">Or Login With</p>
@@ -430,7 +430,7 @@ platform. If not, your cancellation of the booking would not be considered effec
                 @csrf
                 <input type="checkbox" id="terms" name="terms" value="ok" required>
                 <label for="terms">I accept the Terms and Conditions</label><br>
-                <input type="submit" class="btn-model-verify mt-2 mb-2" value="submit" />
+                <input type="submit" class="btn-model-verify mt-2 mb-2" value="Submit" />
               </form>
            
 

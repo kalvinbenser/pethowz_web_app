@@ -118,7 +118,7 @@
                                                     </div>
                                                 </div>
                                                     <div class="view-all">
-                                                        <button  id="user_reg" class="submite" >submit</button>
+                                                        <button  id="user_reg" class="submite" >Submit</button>
                                                     
                                                    </div>
                                             </div>

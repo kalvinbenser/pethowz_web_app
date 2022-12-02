@@ -122,7 +122,7 @@
                                                     <div class="choices"><span class="fa fa-venus"></span></div>
                                                     </label>
                                                     <div class="view-all">
-                                                        <button  id="user_reg" class="submite" >submit</button>
+                                                        <button  id="user_reg" class="submite" >Submit</button>
                                                     
                                                    </div>
                                             </div>

@@ -154,7 +154,7 @@ input[type="checkbox"]+label {
                         </div>
                 
                     <div class="view-all">
-                        <input type="submit" id="pet_service_submit" value="submit" class="submite" >
+                        <input type="submit" id="pet_service_submit" value="Submit" class="submite" >
                    </div>                     
         </div>
     </div>

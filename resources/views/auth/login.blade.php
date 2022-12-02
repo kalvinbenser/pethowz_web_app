@@ -37,7 +37,7 @@
               </div>
 
               <div class="model-item-center mt-2">
-                <input type="submit" value="SUBMIT"  data-bs-toggle="modal" class="btn-model" data-bs-target="#exampleModal2" >
+                <input type="submit" value="Submit"  data-bs-toggle="modal" class="btn-model" data-bs-target="#exampleModal2" >
                 
               </div>
 
@@ -197,7 +197,7 @@
 
 
               <div class="model-item-center mb-5">
-                <input type="submit" value="SUBMIT" id="submit" class="btn-model-verify" >
+                <input type="submit" value="Submit" id="submit" class="btn-model-verify" >
                 
               </div>
 
