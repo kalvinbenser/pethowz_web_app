@@ -89,7 +89,7 @@
                     
                     </div>  -->
                     <div class="view-all">
-                      <input type="submit" value="submit" class="submite" >
+                      <input type="submit" value="Submit" class="submite" >
                  </div>
                         </div>
                 </div>

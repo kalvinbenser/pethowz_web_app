@@ -263,7 +263,7 @@
                    </div>
 
                    <div>
-                    <button id="update-btn" class="btn-model">submit</button>
+                    <button id="update-btn" class="btn-model">Submit</button>
                    </div>
             </div>
                     

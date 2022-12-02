@@ -78,7 +78,7 @@
      </div>
     <div class="col-12 col-sm-6 col-md-2">
  
-      <input type="submit" value="submit"  class="submite btn btn-primary btn-sm" id="pet_service_form" >
+      <input type="submit" value="Submit"  class="submite btn btn-primary btn-sm" id="pet_service_form" >
     </div>
   </form>
 @endsection
