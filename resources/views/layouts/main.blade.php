@@ -471,7 +471,7 @@ platform. If not, your cancellation of the booking would not be considered effec
                                 <li class="addicon2"><p class="addicon3 text-secondary">133/2,4th floor Janardhan Towers,</p></li>
                                 <li class="addicon2"><p class="addicon3 text-secondary">Residency Road</p></li>
                                 <li class="addicon2"><p class="addicon3 text-secondary">Bengaluru,Karnataka 560025</p></li>
-                                <li class="addicon2"><i class="fa fa-phone  addicon4"></i> <p class="addicon1 text-secondary"><strong>98840 42119</strong></p></li>
+                                <li class="addicon2"><i class="fa fa-phone  addicon4"></i> <p class="addicon1 text-secondary"><strong>9884042119</strong></p></li>
                                 <li class="addicon2"><i class="fa fa-envelope-o addicon4"></i><p class="addicon1 text-secondary"> <strong>pethowzindia@gmail.com</strong></p></li>
                             </ul>
                         </div>
@@ -545,7 +545,7 @@ platform. If not, your cancellation of the booking would not be considered effec
                 <div class="row align-items-center m-b-n20">
                     <div class="col-md-6 text-center text-md-start order-2 order-md-2 m-b-20">
                         <div class="copyright-content">
-                            <span class="mb-0 text-secondary">© 2022 <strong>Pethows.</strong>All rights reserved. </span>
+                            <span class="mb-0 text-secondary">© 2022 <strong>Pethows.&nbsp;</strong> All rights reserved. </span>
                         </div>
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
