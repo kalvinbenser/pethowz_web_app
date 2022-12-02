@@ -159,31 +159,31 @@
               <div class="row m-b-n30">
 
                 <div class="col-md-6 col-12 m-b-30" data-aos="fade-up" data-aos-duration="1000">
-                   <h2> <i class="fa fa-user" style="color:#f6ab49;font-size:50px"></i>About Me</h2>
+                   <h2 class="h3 text-secondary"> <i class="fa fa-user" style="color:#f6ab49;font-size:50px"></i>About Me</h2>
                        <div class="about-us">
-                       <p class="about"><b>Introduce yourself and why you enjoy being with pets.</b></p>
+                       <p class="about text-secondary"><b>Introduce yourself and why you enjoy being with pets.</b></p>
                        @if(isset($self['content1']))
-                       <p class="about">{{$self['content1']}}</p>
+                       <p class="about text-secondary">{{$self['content1']}}</p>
                        @endif
-                       <p class="about"><b>Tell us about the type of pet you have and your experience with it.</b></p>
+                       <p class="about text-secondary"><b>Tell us about the type of pet you have and your experience with it.</b></p>
                        @if(isset($self['content2']))
-                       <p class="about">{{$self['content2']}} </p>
+                       <p class="about text-secondary">{{$self['content2']}} </p>
                        @endif
-                       <p class="about"><b>How dose your service stand out ?</b></p>
+                       <p class="about text-secondary"><b>How dose your service stand out ?</b></p>
                        @if(isset($self['content3']))
-                       <p class="about">{{$self['content3']}}</p>
+                       <p class="about text-secondary">{{$self['content3']}}</p>
                        @endif
-                       <p class="about"><b>What do you enjoy about the work you do ?</b></p>
+                       <p class="about text-secondary"><b>What do you enjoy about the work you do ?</b></p>
                        @if(isset($self['content4']))
-                       <p class="about">{{$self['content4']}}</p>
+                       <p class="about text-secondary">{{$self['content4']}}</p>
                        @endif
-                       <p class="about"><b>Your Skills and qualifications</b></p>
+                       <p class="about text-secondary"><b>Your Skills and qualifications</b></p>
                        @if(isset($self['content5']))
-                       <p class="about">{{$self['content5']}}</p>
+                       <p class="about text-secondary">{{$self['content5']}}</p>
                        @endif
-                       <p class="about"><b>Other special skills with per or qualification ?</b></p>
+                       <p class="about text-secondary"><b>Other special skills with per or qualification ?</b></p>
                        @if(isset($self['content6']))
-                       <p class="about">{{$self['content6']}}</p>
+                       <p class="about text-secondary">{{$self['content6']}}</p>
                        @endif
                        
                        
@@ -203,7 +203,7 @@
       <div class="section section-margin">
         <div class="container" >
             <div class="service-providers " id="yourservice">
-        <h1>Select Your Service</h1>
+        <h1 class="text-secondary">Select Your Service</h1>
             <!-- Banners Start -->
             <div class="row m-b-n30">
                @foreach($slot as $s)
@@ -219,7 +219,7 @@
                     </div> 
                     <div>
                     <h3 class="rupee1"><i class="fa fa-rupee">{{$s['cost']}}</i></h3> 
-                    <h5 class="rupee2">Per Hour</h5>
+                    <h5 class="rupee2 text-secondary">Per Hour</h5>
                     </div>
                     </div>
                 </div>
@@ -238,7 +238,7 @@
                    </div>
                    <div>
                     <h3  class="rupee1"><i class="fa fa-rupee">{{$s['cost']}}</i></h3> 
-                    <h5 class="rupee2">Per Hour</h5>
+                    <h5 class="rupee2 text-secondary">Per Hour</h5>
                     </div>
                     </div>
                 </div>
@@ -257,7 +257,7 @@
                     </div>
                     <div>
                         <h3  class="rupee1"><i class="fa fa-rupee">{{$s['cost']}}</i></h3> 
-                        <h5 class="rupee2">Per Hour</h5>
+                        <h5 class="rupee2 text-secondary">Per Hour</h5>
                         </div>
                     </div>
                 </div>
@@ -275,7 +275,7 @@
                     </div>
                     <div>
                         <h3  class="rupee1"><i class="fa fa-rupee">{{$s['cost']}}</i></h3> 
-                        <h5 class="rupee2">Per Hour</h5>
+                        <h5 class="rupee2 text-secondary">Per Hour</h5>
                         </div>
                     </div>
                     </div>
@@ -295,7 +295,7 @@
                     </div>
                     <div>
                         <h3  class="rupee1"><i class="fa fa-rupee">{{$s['cost']}}</i></h3> 
-                        <h5 class="rupee2">Per Hour</h5>
+                        <h5 class="rupee2 text-secondary">Per Hour</h5>
                         </div>
                     </div>
                 </div>
@@ -313,7 +313,7 @@
                     </div>
                     <div>
                         <h3  class="rupee1"><i class="fa fa-rupee">{{$s['cost']}}</i></h3> 
-                        <h5 class="rupee2">Per Hour</h5>
+                        <h5 class="rupee2 text-secondary">Per Hour</h5>
                         </div>
                     </div>
                   </div>

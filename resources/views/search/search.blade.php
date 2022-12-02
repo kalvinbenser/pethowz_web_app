@@ -19,7 +19,7 @@
 <div class="section position-relative">
          <div class="container">
 <div class="my-3 text-center">
-            <h1>Search Result</h1>
+            <h1 class="h3 text-secondary">Search Result</h1>
             </div>
 
 </div></div>
@@ -35,7 +35,7 @@
          
 
                 <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-                    <h1>Pet Host</h1>
+                    <h1 class="h3 text-secondary">Pet Host</h1>
                 </div>
                 <div class="view-all col-12 col-sm-6 col-md-6 col-lg-6">
                     <a href="/pet_space_form" target="">
@@ -123,7 +123,7 @@
          
 
                 <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-                    <h1>Pet service</h1>
+                    <h1 class="h3 text-secondary">Pet service</h1>
                 </div>
                 <div class="view-all col-12 col-sm-6 col-md-6 col-lg-6">
                     <a href="/pet_space_form" target="">

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <div class="myaccount-content">
-        <h3 class="title" id="title1">Booking Details</h3>
+        <h3 class="text-secondary py-2">Booking Details</h3>
       
         <div class="account-details-form">
             <form action="/create_pet_space_booking" method="post">

@@ -21,7 +21,7 @@
   <div class="row" data-aos="fade-up" data-aos-duration="1000">
       <!-- Tab Start -->
    <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-          <h3 class="terms">About Us</h3>
+          <h3 class="terms h3 text-secondary">About Us</h3>
       </div>
      
     

@@ -465,26 +465,26 @@ platform. If not, your cancellation of the booking would not be considered effec
                 <div class="row m-b-n40">
                     <div class="col-12 col-sm-3 col-lg-4 m-b-40" data-aos="fade-up" data-aos-duration="1000">
                         <div class="single-footer-widget">
-                            <h1 class="widget-title">Head Office</h1>
+                            <h1 class="widget-title text-secondary">Head Office</h1>
                             <ul>
-                                <li class="addicon2"><i class="fa fa-map-marker addicon4"></i><p class="addicon1"> Corporate Office - Business Hut,</span></li>
-                                <li class="addicon2"><p class="addicon3">133/2,4th floor Janardhan Towers,</p></li>
-                                <li class="addicon2"><p class="addicon3">Residency Road</p></li>
-                                <li class="addicon2"><p class="addicon3">Bengaluru,Karnataka 560025</p></li>
-                                <li class="addicon2"><i class="fa fa-phone  addicon4"></i> <p class="addicon1"><strong>98840 42119</strong></p></li>
-                                <li class="addicon2"><i class="fa fa-envelope-o addicon4"></i><p class="addicon1"> <strong>pethowzindia@gmail.com</strong></p></li>
+                                <li class="addicon2"><i class="fa fa-map-marker addicon4"></i><p class="addicon1 text-secondary"> Corporate Office - Business Hut,</span></li>
+                                <li class="addicon2"><p class="addicon3 text-secondary">133/2,4th floor Janardhan Towers,</p></li>
+                                <li class="addicon2"><p class="addicon3 text-secondary">Residency Road</p></li>
+                                <li class="addicon2"><p class="addicon3 text-secondary">Bengaluru,Karnataka 560025</p></li>
+                                <li class="addicon2"><i class="fa fa-phone  addicon4"></i> <p class="addicon1 text-secondary"><strong>98840 42119</strong></p></li>
+                                <li class="addicon2"><i class="fa fa-envelope-o addicon4"></i><p class="addicon1 text-secondary"> <strong>pethowzindia@gmail.com</strong></p></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-12 col-sm-3 col-lg-2 m-b-40" data-aos="fade-up" data-aos-duration="1200">
                         <div class="single-footer-widget">
-                            <h2 class="widget-title">Site Links</h2>
+                            <h2 class="widget-title text-secondary">Site Links</h2>
                            
                         </div>
                     </div>
                     <div class="col-12 col-sm-3 col-lg-2 m-b-40" data-aos="fade-up" data-aos-duration="1400">
                         <div class="single-footer-widget">
-                            <h2 class="widget-title">Follow Us</h2>
+                            <h2 class="widget-title text-secondary">Follow Us</h2>
                            <!-- Soclial Link Start -->
                            <div class="widget-social justify-content-start mb-n2">
                            <a style="color: #ac2bac;" href="#!" role="button"><i class="fa fa-instagram fa-lg"></i></a>
@@ -497,15 +497,15 @@ platform. If not, your cancellation of the booking would not be considered effec
                     </div>
                     <div class="col-12 col-sm-3 col-lg-4 m-b-40" data-aos="fade-up" data-aos-duration="1600">
                         <div class="single-footer-widget">
-                            <h2 class="widget-title">Services We Provide</h2>
+                            <h2 class="widget-title text-secondary">Services We Provide</h2>
                             <div class="widget-body">
                                 <ul>
-                                    <li><p class="serv-pro">Pet Sitting</p></li>
-                                    <li><p class="serv-pro">Pet Training</p></li>
-                                    <li><p class="serv-pro">Pet Walking</p></li>
-                                    <li><p class="serv-pro">Pet Grooming</p></li>
-                                    <li><p class="serv-pro">Pet Breeding</p></li>
-                                    <li><p class="serv-pro">Pet Photography</p></li>
+                                    <li><p class="serv-pro text-secondary">Pet Sitting</p></li>
+                                    <li><p class="serv-pro text-secondary">Pet Training</p></li>
+                                    <li><p class="serv-pro text-secondary">Pet Walking</p></li>
+                                    <li><p class="serv-pro text-secondary">Pet Grooming</p></li>
+                                    <li><p class="serv-pro text-secondary">Pet Breeding</p></li>
+                                    <li><p class="serv-pro text-secondary">Pet Photography</p></li>
                                         <ul>
                                 <!-- Newsletter Form Start -->
                                 <div class="newsletter-form-wrap p-t-5">                             
@@ -526,12 +526,12 @@ platform. If not, your cancellation of the booking would not be considered effec
             </div>
             <div class="app ">
                                              <div class="paytm">
-                                            <a href="single-product.html" class="image">
+                                            <a href="#" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/payment/App Store.svg')}}" alt="Product" />
                                             </a>
                                              </div>
                                              <div class="gpay">
-                                            <a href="single-product.html" class="image">
+                                            <a href="#" class="image">
                                                 <img class="fit-image" src="{{URL::asset('front-end/assets/images/payment/Google Play.svg')}}" alt="Product" />
                                             </a>
                                              </div>
@@ -545,13 +545,13 @@ platform. If not, your cancellation of the booking would not be considered effec
                 <div class="row align-items-center m-b-n20">
                     <div class="col-md-6 text-center text-md-start order-2 order-md-2 m-b-20">
                         <div class="copyright-content">
-                            <span class="mb-0">© 2022 <strong>Pethows.</strong>All rights reserved. </span>
+                            <span class="mb-0 text-secondary">© 2022 <strong>Pethows.</strong>All rights reserved. </span>
                         </div>
                     </div>
                     <div class="col-md-6 text-center text-md-end order-1 order-md-2 m-b-20">
                         <div class="copyright-content">
-                            <span> <a href="{{URL::asset('/terms_coditions')}}">Terms&Conditions &emsp;&emsp;</a> </span> 
-                            <span> <a href="{{URL::asset('/privacy')}}">Privacy Policy &emsp;&emsp;</a> </span>                          
+                            <span> <a href="{{URL::asset('/terms_coditions')}}" class="text-secondary">Terms&Conditions &emsp;&emsp;</a> </span> 
+                            <span> <a href="{{URL::asset('/privacy')}}" class="text-secondary">Privacy Policy &emsp;&emsp;</a> </span>                          
                         </div>
                     </div>
                 </div>

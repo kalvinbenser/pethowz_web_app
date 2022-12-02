@@ -23,7 +23,7 @@
 <div class="section position-relative">
   <div class="row"  id="user-profile">
     <div class="col-12 col-sm-6 col-lg-4 m-b-40" id="profile1" data-aos="fade-up" data-aos-duration="1000">
-    <h3>Profile</h3>   
+    <h3 class="h3 text-secondary">Profile</h3>   
     </div>
       <div class="col-12 col-sm-6 col-lg-4 m-b-40" data-aos="fade-up" data-aos-duration="1000">
     <div class="profile-details">
@@ -78,7 +78,7 @@
       <div class="row " data-aos="fade-up" data-aos-duration="1000" >
           <!-- Tab Start -->
           <div class="col-12 my-3">
-              <h1>My Venues</h1>
+              <h1 class="h3 text-secondary">My Venues</h1>
           </div>
           
           <!-- Tab End -->
@@ -146,7 +146,7 @@
       <div class="row " data-aos="fade-up" data-aos-duration="1000" >
         <!-- Tab Start -->
         <div class="col-12 my-3">
-            <h1>My Services</h1>
+            <h1 class="h3 text-secondary">My Services</h1>
         </div>
         
         <!-- Tab End -->
@@ -221,7 +221,7 @@
 
             <div>
                 <div>
-                <p>Edit Profile</p>
+                <p class="h5 text-secondary">Edit Profile</p>
                 </div>
 
                 <div> 
@@ -296,7 +296,7 @@
  <div class="section section-margin">
     <div class="container" >
         <div class="service-providers">
-    <h1>Venue Booking</h1>
+    <h1 class="h3 text-secondary">Venue Booking</h1>
         <!-- Banners Start -->
         <div class="row m-b-n30">
 
@@ -326,7 +326,7 @@
   <div class="section section-margin">
     <div class="container" >
         <div class="service-providers">
-    <h1>Servcie Booking</h1>
+    <h1 class="h3 text-secondary">Service Booking</h1>
         <!-- Banners Start -->
         <div class="row m-b-n30">
 

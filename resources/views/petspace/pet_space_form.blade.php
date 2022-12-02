@@ -1,17 +1,17 @@
 @extends('layouts.main')
 @section('content') 
 <div class="p-4 ">
-    <h3 class="text-secondary">Pet Space Form</h3>
+    <h3 class="text-secondary">List Your Pet Space</h3>
 </div>
 <form class="row g-3 p-4">
     <div class="col-12 col-sm-6 col-md-4">
-      <label for="venue_name" class="form-label">Venue Name</label>
+      <label for="venue_name" class="form-label text-secondary">Venue Name</label>
       <input type="text" id="venue_name" class="form-control" name="venue_name" placeholder="">
     </div>
    
     <div class="col-12 col-sm-6 col-md-4">
-        <label for="inputEmail4" class="form-label">Select Venue Category</label>
-        <select class="select select_category" name="venue_category[]" id="venue_category" multiple id="basic-select" data-mdb-validation="true" data-mdb-valid-feedback="This value is valid" data-mdb-invalid-feedback="This value is invalid"  data-mdb-clear-button="true">
+        <label for="inputEmail4" class="form-label text-secondary">Select Venue Category</label>
+        <select class="form-select" name="venue_category[]" id="venue_category" multiple id="basic-select" data-mdb-validation="true" data-mdb-valid-feedback="This value is valid" data-mdb-invalid-feedback="This value is invalid"  data-mdb-clear-button="true">
             <option value="home">Home</option>
             <option value="Independent House">Independent House</option>
             <option value="Apartment">Apartment</option>
@@ -19,7 +19,7 @@
           </select>  
       </div>
       <div class="col-12 col-sm-6 col-md-4">
-        <label for="inputPassword4" class="form-label">Amenities</label>
+        <label for="inputPassword4" class="form-label text-secondary">Amenities</label>
         <select class="form-select" name="amenities[]" id="amenities" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
                               
             <option value="park signs"> park signs</option>
@@ -32,9 +32,8 @@
       </div>
       
       <div class="col-12 col-sm-6 col-md-4">
-        <label for="inputPassword4" class="form-label">Choose Location</label>
+        <label for="inputPassword4" class="form-label text-secondary">Choose Location</label>
         <select class="form-select select_location" name="location" id="location">
-            <option value="0">---Select Location---</option>
             <option value="T Nagar">T Nagar</option>
             <option value="Nungambakkam">Nungambakkam</option>
             <option value="Alwarpet">Alwarpet</option>
@@ -43,24 +42,26 @@
           </select>    
       </div>
       <div class="col-12 col-sm-6 col-md-4">
-        <label for="venue_cost" class="form-label">venue cost</label>
+        <label for="venue_cost" class="form-label text-secondary">venue cost</label>
         <input type="number" class="form-control" id="venue_cost">
       </div>
       <div class="col-12 col-sm-6 col-md-4">
         <input type="file"  accept="image/*" name="image" id="file-input"  style="display: none;padding:15px;">
-        <label class="images" for="file-input"  style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>
+        <label class="images text-secondary" for="file-input"  style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>
         <i class="fa fa-image " style="color:#FF9A71;font-size:20px;"></i><input id="title" class="pro_name select_profile" />
     </div>
+    <h6 class="text-secondary">Add your Services(optional)</h6>
       <div class="col-12 col-sm-6 col-md-3">
-        <label for="inputPassword4" class="form-label">Select the Service</label>
-        <select  id="service" class="form-select">
+       
+        <label for="inputPassword4" class="form-label text-secondary">Select the Service</label>
+        <select  id="service" class="form-select select_location">
           @foreach($serviceMaster as $service)
           <option value="{{$service['id']}}.{{$service['service_name']}}">{{$service['service_name']}}</option>
           @endforeach
         </select>   
       </div>
       <div class="col-12 col-sm-6 col-md-2">
-        <label for="inputEmail4" class="form-label">Price Details</label>
+        <label for="inputEmail4" class="form-label text-secondary">Price Details</label>
         <input type="number" class="form-control" placeholder="Enter your price" id="price" />
     </div>
     <div class="col-12 col-sm-6 col-md-1">
