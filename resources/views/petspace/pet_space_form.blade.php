@@ -1,189 +1,88 @@
 @extends('layouts.main')
-@section('styles')
-    <style>
-.multiselect-dropdown-list input[type="checkbox"] {
-    display: none;
-}
-      input[type="checkbox"]:checked+label:after {
-    opacity: 1;
-}
-input[type="checkbox"]:checked+label:before {
-    border: 1px solid #f6ab49;
-}
-input[type="checkbox"]+label:after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: block;
-    content: "\f00c";
-    font-family: 'FontAwesome';
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 15px;
-    opacity: 0;
-    width: 15px;
-    text-align: center;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s;
-    color: #f6ab49;
-}
-input[type="checkbox"]+label:before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 15px;
-    height: 15px;
-    display: block;
-    border: 1px solid #cccccc;
-    content: "";
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s;
-}
-input[type="checkbox"]+label {
-    position: relative;
-    padding-left: 30px;
-    line-height: 14px;
-    font-size: 14px;
-    font-weight: 500;
-    margin: 0;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s;
-}
-.multiselect-dropdown {
-    width: 100% !important;
-}
-.servive{
-  padding-bottom: 30px;
-}
-.btn-success{
-  width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-}
-.select_serv{
-  width: 285px;
-}
-      </style>
-@endsection
-@section('content')      
-    <div class="container">
-
-
-
-            <h1 id="yourself">Pet Space</h1>
-              <!-- <form action="/pet_space_create" method="post" enctype="multipart/form-data">
-                @csrf -->
-                  <div class="row m-b-n40">
-                      <div class="col-12 col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                 
-                 <div class="service-providers servive_detail1 servive" >
-                  <div class="form-outline">
-                  <label for="user-message" class="about">Venue Name</label>                    
-                            <!-- <textarea id="user-message" name="servive_details" class="form-control serv_details" cols="5" rows="2" placeholder=""></textarea> -->
-                            <input type="text" class="form-control" name="venue_name" placeholder="" >
-                    </div>
-                    <!-- <input type="number" class="form-control" placeholder="" id="service_cost"> -->
-                     
-                    </div>
-                    <div class="service-providers servive_detail1 servive">
-                  <div class="row justify-content-md-center">
-                  <label class="about">Select the Service</label>
-                <select  id="service" class="select_serv form-select">
-                  @foreach($serviceMaster as $service)
-                  <option value="{{$service['id']}}.{{$service['service_name']}}">{{$service['service_name']}}</option>
-                  @endforeach
-                  {{-- <option value="Sitting">Sitting</option>
-                  <option value="Breading">Breading</option>
-                  <option value="Photography">Photography</option>
-                  <option value="Grooming">Grooming</option>  
-                  <option value="Walking">Walking </option>
-                  <option value="Training">Training</option> --}}
-                </select>           
-            </div>
-            <div class="to-do-output">
-              <table class="table table-striped mt-3 mb-0" id="addedtasklist">
-                
-              </table>
-             </div>
-                 </div>     
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                  <div class="service-providers servive_detail1 servive">
-                  <div class="">
-                  <label class="about">Select Venue Category</label>  
-                          <select class="select select_category" name="venue_category[]" id="venue_category" multiple id="basic-select" data-mdb-validation="true" data-mdb-valid-feedback="This value is valid" data-mdb-invalid-feedback="This value is invalid"  data-mdb-clear-button="true">
-                          <option value="home">Home</option>
-                          <option value="Independent House">Independent House</option>
-                          <option value="Apartment">Apartment</option>
-                        
-                        </select>     
-                             
-                  </div>
-                  </div>
-                  <div class="service-providers servive_detail2">
-                    <label class="about">Price Details</label>                 
-                        <!-- <textarea id="user-message" name="service_detail" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>                      -->
-                        <input type="number" class="form-control" placeholder="Enter your price" id="price" />
-                      </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="service-providers servive_detail1 servive">
-                      <div class="">
-                        <label class="about">Choose Location</label>
-                        <select class="form-select select_location" name="location" id="location">
-                          <option value="0">---Select Location---</option>
-                          <option value="T Nagar">T Nagar</option>
-                          <option value="Nungambakkam">Nungambakkam</option>
-                          <option value="Alwarpet">Alwarpet</option>
-                          <option value="Kodambakkam">Kodambakkam</option>
-                          <option value="Teynampet">Teynampet</option>  
-                        </select>               
-                      </div>
-                    
-                      </div>
-                      <div class="service-providers servive_detail2">
-                      <input type="button" value="+" class="btn btn-success submite" id="addtaskbtn" >
-                      </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 m-b-40 p-t-25" data-aos="fade-up" data-aos-duration="1000">
-                   
-                       <div class="service-providers">
-                        <div class="">
-                            <label class="about">Amenities</label>
-                            <select class="form-select select_amenities" name="amenities[]" id="amenities" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
-                              
-                              <option value="park signs"> park signs</option>
-                              <option value="water fountains">water fountains</option>
-                              <option value="park benches">park benches</option>
-                              <option value="picnic tables">picnic tables</option>
-                              <option value="agility equipment">agility equipment</option>
-                              <option value="cage">cage</option>
-                            </select>               
-                          </div>
-                          <span id="select_amenities_error" class="text-danger"></span>
-                        </div>                        
-                      
-                    <div class="service-providers servive_detail1 servive">
-                    <input type="file"  accept="image/*" name="image" id="file-input"  style="display: none;padding:15px;">
-                    <label class="images" for="file-input"  style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>
-                    <i class="fa fa-image " style="color:#FF9A71;font-size:20px;"></i><input id="title" class="pro_name select_profile" />
-                      </div>
-                      </div>
-
-                    <div class="view-all">
-                      <input type="submit" value="submit" id="pet_service_form" class="submite" >
-               </div>
-            </div>
-        </div>
-    </div>
-  <!-- </form> -->
+@section('content') 
+<div class="p-4 ">
+    <h3 class="text-secondary">Pet Space Form</h3>
 </div>
+<form class="row g-3 p-4">
+    <div class="col-12 col-sm-6 col-md-4">
+      <label for="venue_name" class="form-label">Venue Name</label>
+      <input type="text" id="venue_name" class="form-control" name="venue_name" placeholder="">
+    </div>
+   
+    <div class="col-12 col-sm-6 col-md-4">
+        <label for="inputEmail4" class="form-label">Select Venue Category</label>
+        <select class="select select_category" name="venue_category[]" id="venue_category" multiple id="basic-select" data-mdb-validation="true" data-mdb-valid-feedback="This value is valid" data-mdb-invalid-feedback="This value is invalid"  data-mdb-clear-button="true">
+            <option value="home">Home</option>
+            <option value="Independent House">Independent House</option>
+            <option value="Apartment">Apartment</option>
+          
+          </select>  
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="inputPassword4" class="form-label">Amenities</label>
+        <select class="form-select" name="amenities[]" id="amenities" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                              
+            <option value="park signs"> park signs</option>
+            <option value="water fountains">water fountains</option>
+            <option value="park benches">park benches</option>
+            <option value="picnic tables">picnic tables</option>
+            <option value="agility equipment">agility equipment</option>
+            <option value="cage">cage</option>
+          </select>    
+      </div>
+      
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="inputPassword4" class="form-label">Choose Location</label>
+        <select class="form-select select_location" name="location" id="location">
+            <option value="0">---Select Location---</option>
+            <option value="T Nagar">T Nagar</option>
+            <option value="Nungambakkam">Nungambakkam</option>
+            <option value="Alwarpet">Alwarpet</option>
+            <option value="Kodambakkam">Kodambakkam</option>
+            <option value="Teynampet">Teynampet</option>  
+          </select>    
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <label for="venue_cost" class="form-label">venue cost</label>
+        <input type="number" class="form-control" id="venue_cost">
+      </div>
+      <div class="col-12 col-sm-6 col-md-4">
+        <input type="file"  accept="image/*" name="image" id="file-input"  style="display: none;padding:15px;">
+        <label class="images" for="file-input"  style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>
+        <i class="fa fa-image " style="color:#FF9A71;font-size:20px;"></i><input id="title" class="pro_name select_profile" />
+    </div>
+      <div class="col-12 col-sm-6 col-md-3">
+        <label for="inputPassword4" class="form-label">Select the Service</label>
+        <select  id="service" class="form-select">
+          @foreach($serviceMaster as $service)
+          <option value="{{$service['id']}}.{{$service['service_name']}}">{{$service['service_name']}}</option>
+          @endforeach
+        </select>   
+      </div>
+      <div class="col-12 col-sm-6 col-md-2">
+        <label for="inputEmail4" class="form-label">Price Details</label>
+        <input type="number" class="form-control" placeholder="Enter your price" id="price" />
+    </div>
+    <div class="col-12 col-sm-6 col-md-1">
+        <input type="button" value="+" class="btn btn-primary btn-sm mt-4" id="addtaskbtn" >
+    </div>
+    
+  
+     <div class="col-12 col-sm-6 col-md-4">
+        <div class="to-do-output">
+            <table class="table table-striped mt-3 mb-0" id="addedtasklist">
+              
+            </table>
+           </div>
+     </div>
+    <div class="col-12 col-sm-6 col-md-2">
+ 
+      <input type="submit" value="submit"  class="submite btn btn-primary btn-sm" id="pet_service_form" >
+    </div>
+  </form>
+@endsection
 
-@endsection 
+
 @section('scripts')
 <script src="{{URL::asset('front-end/assets/js/vendor/mains.js')}}"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -226,6 +125,8 @@ range.addEventListener('input', setValue);
               var venue_category=$("#venue_category").val();
               var venue=$("input[name='venue_name']").val();
               var location=$("#location").val();
+              var venue_cost=$("#venue_cost").val();
+              
               // var service_cost=$("#service_cost").val();
               // var select_service=$("#select_service").val();
               // var cost_per_hour=$("input[name='cost_per_hour']").val();
@@ -249,7 +150,9 @@ range.addEventListener('input', setValue);
               if(!venue_category){
                 toastr.error("venue category  is required");
               }   
-
+              if(!venue_cost){
+                toastr.error("venue cost  is required");
+              }   
               if(!amenities){
                 toastr.error("amenities  is required");
               }  
@@ -270,7 +173,7 @@ range.addEventListener('input', setValue);
 
         
 
-             if(imgfile.files.length == 0 ||  !venue || !venue_category || !amenities || location==0  ){
+             if(imgfile.files.length == 0 ||  !venue || !venue_category || !amenities || !venue_cost || location==0  ){
                 return false;
               }
               else{
@@ -318,6 +221,7 @@ range.addEventListener('input', setValue);
                                                 image:url,
                                                 venue:venue,
                                                 amenities:amenities,
+                                                venue_cost:venue_cost,
                                                 venue_category:venue_category,
                                                 location:location,
                                                  service:service_detail
@@ -328,6 +232,7 @@ range.addEventListener('input', setValue);
                                            
                                                
                                                 if(data.response.Success==true){
+                                                     console.log(data.response.Message);
                                                   localStorage.removeItem("localtask");
                                                   window.location.href = "{{url('/')}}";
                                                   toastr.success("pet space created successfully");

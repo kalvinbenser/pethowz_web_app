@@ -180,6 +180,34 @@ class ServiceController extends Controller
             return redirect()->back()->with('warning', 'Please Login');
         }
     }
+    public function pet_space_form_new(Request $request)
+    {
+
+        $user_id = $request->session()->get('user_id');
+        if (isset($user_id)) {
+            $petSelfUrl = env('API') . 'getSelfDescription/' . $user_id;
+
+            $petSelfRequest = Http::get($petSelfUrl);
+            $petSelfResponse = $petSelfRequest->json();
+
+            //service master
+
+            $serviceMasterUrl = env('API') . 'getAllServiceList';
+
+            $serviceMasterRequest = Http::get($serviceMasterUrl);
+
+            $serviceMasterResponse = $serviceMasterRequest->json();
+            $serviceMaster = $serviceMasterResponse['data'];
+            if ($petSelfResponse['Success'] == false) {
+                return redirect('add_your_self');
+            } else {
+                return view('/petspace/pet_space_form_new', compact('serviceMaster'));
+            }
+        } else {
+            return redirect()->back()->with('warning', 'Please Login');
+        }
+    }
+
     public function pet_space_create(Request $request)
     {
 
@@ -202,9 +230,8 @@ class ServiceController extends Controller
             $service = $request->service;
 
 
-            $cost_per_hour = 1;
-            $venue_name = $request->venue;
-            // $service=$request->service;
+            $cost_per_hour = $request->venue_cost;
+
 
 
             $location = $request->location;
