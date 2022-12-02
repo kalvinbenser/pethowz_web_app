@@ -37,10 +37,10 @@
             <div class="row " data-aos="fade-up" data-aos-duration="1000" >
                 <!-- Tab Start -->
                 <div class="col-12 col-sm-6 col-md-6 col-lg-8">
-                    <h1 class="pet_space">Exclusive Pet Spaces</h1>
+                    <h1 class="pet_space text-secondary">Exclusive Pet Spaces</h1>
                 </div>
                 <div class="view-all col-12 col-sm-6 col-md-6 col-lg-4">
-                    <a href="{{URL::asset('/pet_host')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
+                    <a href="{{URL::asset('/exclusive')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
                 </div>
                
                 
@@ -86,7 +86,7 @@
                                             <h5 class="title"><p>{{$item['venue_name']}}</p></h5>
                                             </a>
                                             <span class="price">
-                                                <span class="new">₹ {{$item['cost_per_hour']}}/Hr</span>
+                                                <span class="new text-secondary">₹ {{$item['cost_per_hour']}}/Hr</span>
                                                 </span>
                                             <!-- <span class="rating">
                                             <i class="fa fa-star"></i>
@@ -113,7 +113,7 @@
     <div class="section section-margin">
         <div class="container" >
             <div class="service-provider">
-        <h1>Pet Service Providers</h1>
+        <h1 class="text-secondary">Pet Service Providers</h1>
             <!-- Banners Start -->
             <div class="row m-b-n30">
 
@@ -145,10 +145,10 @@
             <div class="row" data-aos="fade-up" data-aos-duration="1000">
                 <!-- Tab Start -->
              <div class="col-12 col-sm-6 col-md-6 col-lg-8">
-                    <h1 class="pet_space">Independent House | Apartment</h1>
+                    <h1 class="pet_space text-secondary">Independent House | Apartment</h1>
                 </div>
                 <div class="view-all col-12 col-sm-6 col-md-6 col-lg-4">
-                    <a  href="{{URL::asset('/pet_host')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
+                    <a  href="{{URL::asset('/independent')}}" class="btn btn-warning btn-sm mx-auto">view all</a>
                   </div>
               
                 <!-- Tab End -->
@@ -163,7 +163,7 @@
                         <div class="tab-pane fade show active" id="tab-product-all">
                             <div class="row m-b-n40">
                                 <?php $count = 0; ?>
-                                @foreach ($collection as $item)
+                                @foreach ($independent as $item)
                                 <?php if($count == 8) break; ?>
                                     <?php $count++; ?>
                                 <!-- Product Start -->
@@ -190,7 +190,7 @@
                                             <h5 class="title"><p>{{$item['venue_name']}}</p></h5>
                                             </a>
                                             <span class="price">
-                                                <span class="new">₹ {{$item['cost_per_hour']}}/Hr</span>
+                                                <span class="new text-secondary">₹ {{$item['cost_per_hour']}}/Hr</span>
                                                 </span>
                                             <!-- <span class="rating">
                                             <i class="fa fa-star"></i>

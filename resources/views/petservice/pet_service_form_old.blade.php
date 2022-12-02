@@ -1,72 +1,167 @@
 @extends('layouts.main')
-@section('content') 
-<div class="p-4 ">
-    <h3 class="text-secondary">List Your Pet Service</h3>
-</div>
-<form class="row g-3 p-4">
+@section('styles')
+    <style>
+      input[type="checkbox"]:checked+label:after {
+    opacity: 1;
+}
+input[type="checkbox"]:checked+label:before {
+    border: 1px solid #f6ab49;
+}
+input[type="checkbox"]+label:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    content: "\f00c";
+    font-family: 'FontAwesome';
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    opacity: 0;
+    width: 15px;
+    text-align: center;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    color: #f6ab49;
+}
+input[type="checkbox"]+label:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    display: block;
+    border: 1px solid #cccccc;
+    content: "";
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+input[type="checkbox"]+label {
+    position: relative;
+    padding-left: 30px;
+    line-height: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+.multiselect-dropdown-list input[type="checkbox"] {
+    display: none;
+}
+.button-success{
+  width: 60px;
+    height: 30px;
+    background-color: #FF9966 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+    font-size: 18px;
+}
 
+.button-danger{
+  width: 60px !important;
+    height: 30px !important;
+    background-color: #FF9966 !important;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    justify-content: center;
 
-    <div class="col-12 col-sm-6 col-md-3">
-        <label class="text-secondary">Venue Name</label>                 
-        <input type="text" name="venue" class="form-control" placeholder="Enter Name">
-    </div>
-    
-    <div class="col-12 col-sm-6 col-md-3">
-        <label class="text-secondary">Service Details</label>                 
-        <input type="text" class="form-control service_details" name="service_detail" id="service_detail" placeholder="">
-    </div>
+}
+.service-provide{
+  padding-left: 30px;
+  padding-right:30px;
 
-    <div class="col-12 col-sm-6 col-md-3">
-        <label class="text-secondary">Choose Location</label>
-        <select class="form-select select_location" name="location" id="location" >
-        
-          <option value="T Nagar">T Nagar</option>
-          <option value="Nungambakkam">Nungambakkam</option>
-          <option value="Alwarpet">Alwarpet</option>
-          <option value="Kodambakkam">Kodambakkam</option>
-          <option value="Teynampet">Teynampet</option>             
-        </select>   
-      </div>
-      <div class="col-12 col-sm-6 col-md-3">
-        <input type="file"  accept="image/*" name="image" id="file-input"  style="display: none;padding:15px;">
-        <label class="images text-secondary" for="file-input"  style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>
-        <i class="fa fa-image " style="color:#FF9A71;font-size:20px;"></i><input id="title" class="pro_name select_profile" />
-      </div>
-      
-     
-    <h6 class="text-secondary">Add your Services</h6>
-      <div class="col-12 col-sm-6 col-md-3">
-       
-        <label for="inputPassword4" class="text-secondary">Select the Service</label>
-        <select  id="service" class="form-select select_location">
-          @foreach($serviceMaster as $service)
-          <option value="{{$service['id']}}.{{$service['service_name']}}">{{$service['service_name']}}</option>
-          @endforeach
-        </select>   
-      </div>
-      <div class="col-12 col-sm-6 col-md-2">
-        <label for="inputEmail4" class="text-secondary">Price Details</label>
-        <input type="number" class="form-control" placeholder="Enter your price" id="price" />
-    </div>
-    <div class="col-12 col-sm-6 col-md-1">
-        <input type="button" value="+" class="btn btn-primary btn-sm mt-4" id="addtaskbtn" >
-    </div>
-    
-  
-     <div class="col-12 col-sm-6 col-md-4">
-        <div class="to-do-output">
-            <table class="table table-striped mt-3 mb-0" id="addedtasklist">
-              
-            </table>
-           </div>
-     </div>
-    <div class="col-12 col-sm-6 col-md-2">
- 
-      <input type="submit" value="submit"  class="submite btn btn-primary btn-sm" id="pet_service_submit" >
-    </div>
-  </form>
+}
+.select_serv{
+  width: 285px;
+}
+      </style>
 @endsection
+@section('content')    
 
+    <div class="container">
+  
+            <h3 id="yourself" class=" text-secondary">List Your Pet Service</h3>
+            
+                  <div class="row m-b-n40">
+                      <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="service-providers">
+                          <label class="about">Venue Name</label>                 
+                             <input type="text" name="venue" class="form-control" placeholder="Enter Name">
+                        </div>
+                        <div class="service-providers">
+                  <div class="row justify-content-md-center">
+                  <label class="about">Select the Service</label>
+                <select  id="service" class="select_serv form-select">
+                  @foreach($serviceMaster as $service)
+                  <option value="{{$service['id']}}.{{$service['service_name']}}">{{$service['service_name']}}</option>
+                  @endforeach
+                  {{-- <option value="Sitting">Sitting</option>
+                  <option value="Breading">Breading</option>
+                  <option value="Photography">Photography</option>
+                  <option value="Grooming">Grooming</option>
+                  <option value="Walking">Walking </option>
+                  <option value="Training">Training</option> --}}
+                </select>           
+            </div>
+            <div class="to-do-output">
+              <table class="table table-striped mt-3 mb-0" id="addedtasklist">
+                
+              </table>
+             </div>
+                    </div>   
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="service-providers p-t-25">
+                    <label class="about">Service Details</label>                 
+                        <input type="text" class="form-control service_details" name="service_detail" id="service_detail" placeholder="">
+                      </div>
+                      <div class="service-provide">
+                    <label class="about">Price Details</label>                 
+                        <!-- <textarea id="user-message" name="service_detail" class="form-control venue_details" cols="5" rows="2" placeholder=""></textarea>                      -->
+                        <input type="number" class="form-control" placeholder="Enter your price" id="price" />
+                      </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                <div class="service-providers" >
+                    <div class="">
+                      <label class="about">Choose Location</label>
+                      <select class="form-select select_location" name="location" id="location" >
+                        <option value="0" >--- Select Location ---</option>
+                        <option value="T Nagar">T Nagar</option>
+                        <option value="Nungambakkam">Nungambakkam</option>
+                        <option value="Alwarpet">Alwarpet</option>
+                        <option value="Kodambakkam">Kodambakkam</option>
+                        <option value="Teynampet">Teynampet</option>             
+                      </select>               
+                    </div>   
+                    </div>
+                    <div class="service-provide p-t-25">
+                      <input type="button" value="+" class="btn btn-success submite" id="addtaskbtn" >
+                      </div>                                          
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 m-b-40" data-aos="fade-up" data-aos-duration="1000">
+                         <div class="service-providers2"> 
+                          <input type="file"  accept="image/*" name="image" id="file-input"  style="display: none;padding:15px;">
+                          <label class="images" for="file-input"  style="cursor: pointer;">Upload Image<i class="fa fa-upload" style="color: white;"></i></label>
+                          <i class="fa fa-image " style="color:#FF9A71;font-size:20px;"></i><input id="title" class="pro_name select_profile" />
+                        </div>
+                
+                    <div class="view-all">
+                        <input type="submit" id="pet_service_submit" value="submit" class="submite" >
+                   </div>                     
+        </div>
+    </div>
+  
+</div>
+
+@endsection 
 @section('scripts')
 <script src="{{URL::asset('front-end/assets/js/vendor/mains.js')}}"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

@@ -9,7 +9,7 @@
             <div class="row " data-aos="fade-up" data-aos-duration="1000" >
                 <!-- Tab Start -->
                 <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-                    <h1 class="h3 text-secondary">Pet Host</h1>
+                    <h1 class="h3 text-secondary">Independent House | Apartment</h1>
                 </div>
                 <div class="view-all col-12 col-sm-6 col-md-6 col-lg-6">
                     <a href="/pet_space_form" target="">
@@ -54,7 +54,7 @@
                                             <h5 class="title"><p>{{$item['venue_name']}}</p></h5>
                                             </a>
                                             <span class="price">
-                                                <span class="new text-secondary">₹ {{$item['cost_per_hour']}}/Hr</span>
+                                                <span class="new">₹ {{$item['cost_per_hour']}}/Hr</span>
                                                 </span>
                                             <!-- <span class="rating">
                                             <i class="fa fa-star"></i>

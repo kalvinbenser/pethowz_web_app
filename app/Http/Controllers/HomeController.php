@@ -64,29 +64,19 @@ class HomeController extends Controller
         $petSpaceResponse = $petSpaceRequest->json();
         $pet_space = $petSpaceResponse['data'];
         // dd($pet_space);
-        // $PetSpaceCollection = collect($pet_space);
-
-        // $filtered = $PetSpaceCollection->filter(function ($value, $key) {
-        //     // return $value['approved']==true;
-        //     return $value['approved']==true;
-        // });
-
-        //dd($pet_space);
-        // dd($petSpaceResponse[data]);
-
-        //**************************  Pet Service  ****************************\\
-
-        // $petServiceUrl=env('API').'getAllPetService';
-
-        // $petServiceRequest=Http::get($petServiceUrl);
-        // $petServiceResponse=$petServiceRequest->json();
-        // //dd($petServiceResponse);
-        // $pet_service=$petServiceResponse['data'];
-        // // dd($pet_service);
-        //
+       
         $collection = (new Collection($pet_space))->paginate(8);
 
+        $petIndependentUrl = env('API') . 'getIndependentHouseApartment';
 
+        $petIndependentRequest = Http::get($petIndependentUrl);
+
+        $petIndependentResponse = $petIndependentRequest->json();
+        $independentData = $petIndependentResponse['data'];
+        // dd($pet_space);
+       
+        $independent = (new Collection($independentData))->paginate(8);
+        // dd($independent);
 
         $serviceMasterUrl = env('API') . 'getAllServiceList';
 
@@ -95,7 +85,7 @@ class HomeController extends Controller
         $serviceMasterResponse = $serviceMasterRequest->json();
         $serviceMaster = $serviceMasterResponse['data'];
         //dd($serviceMaster);
-        return view('home/index', compact('collection', 'serviceMaster'));
+        return view('home/index', compact('collection', 'serviceMaster','independent'));
     }
 
     //about
@@ -616,7 +606,40 @@ class HomeController extends Controller
         return view('petspace/pet_host', compact('collection'));
     }
 
+    
+    function independent(Request $request)
+    {
 
+        $petSpaceUrl = env('API') . 'getIndependentHouseApartment';
+
+        $petSpaceRequest = Http::get($petSpaceUrl);
+
+        $petSpaceResponse = $petSpaceRequest->json();
+       
+
+        $collection = (new Collection($petSpaceResponse['data']))->paginate(8);
+
+        // $collection = (new Collection($pet_space))->paginate(8);
+        // dd($collection);
+        return view('petspace/independent', compact('collection'));
+    }
+    
+    function exclusive(Request $request)
+    {
+
+        $petSpaceUrl = env('API') . 'getAllPetSpaceList';
+
+        $petSpaceRequest = Http::get($petSpaceUrl);
+
+        $petSpaceResponse = $petSpaceRequest->json();
+       
+
+        $collection = (new Collection($petSpaceResponse['data']))->paginate(8);
+
+        // $collection = (new Collection($pet_space))->paginate(8);
+        // dd($collection);
+        return view('petspace/exclusive', compact('collection'));
+    }
     //search
 
     public function search(Request $request)

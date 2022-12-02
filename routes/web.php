@@ -106,6 +106,8 @@ Route::post('/insert_otp_details',[HomeController::class,'insert_otp_details']);
 
 Route::post('/pet_host_details',[HomeController::class,'pet_host_details']);
 Route::get('/pet_host',[HomeController::class,'pet_host']);
+Route::get('/independent',[HomeController::class,'independent']);
+Route::get('/exclusive ',[HomeController::class,'exclusive']);
 
 
 
