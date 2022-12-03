@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Validator;
 use App\Support\Collection;
+
+
 
 class BookingController extends Controller
 {
@@ -119,63 +122,73 @@ class BookingController extends Controller
     // create pet space booking 
     function create_pet_space_booking(Request $request)
     {
-        $validated = $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'contact' => 'required',
             'pet_name' => 'required',
             'pet_count' => 'required',
-            'no_of_days' => 'required',
-            'service_type' => 'required',
+            'no_days'=>'required',
+            'days'=>'required'
+       
         ]);
-        $name = $request->name;
-        $contact = $request->contact;
-        $pet_name = $request->pet_name;
-        $pet_count = $request->pet_count;
-        $no_of_days = $request->no_of_days;
-        $service_type = $request->service_type;
-        $service = $request->session()->get('user_service');
-        if ($service == null) {
-            $service_array = null;
-        } else {
-            $service_array = preg_split("/[,]/", $service);
+        if ($validator->passes()) {
+            $name = $request->name;
+            $contact = $request->contact;
+            $pet_name = $request->pet_name;
+            $pet_count = $request->pet_count;
+            $no_of_days = $request->no_days;
+            $service_type = $request->days;
+            $service = $request->session()->get('user_service');
+            if ($service == null) {
+                $service_array = null;
+            } else {
+                $service_array = preg_split("/[,]/", $service);
+            }
+            $cost_per_hour = $request->session()->get('user_amount');
+            $user_id = $request->session()->get('user_id');
+            $pet_space_id = $request->pet_space_id;
+            //dd($pet_space_id);
+            $venue_name = $request->session()->get('venue_name');
+            // dd($service_type);
+
+
+            $petSpaceData = [
+                'service' => $service_array,
+                'cost_per_hour' => $cost_per_hour,
+                'service_type' => $service_type,
+                'days' => $no_of_days,
+                'pet_count' => $pet_count,
+                'pet_name' => $pet_name,
+                'contact_number' => $contact,
+                'name' => $name,
+                'user_id' => $user_id,
+                "venue_name" => $venue_name,
+                "pet_space_id" => $pet_space_id
+
+            ];
+
+            //Message
+
+            //dd($petSpaceData);
+            $petSpaceUrl = env('API') . 'createPetSpaceBooking';
+            $petSpaceRequest = Http::post($petSpaceUrl, $petSpaceData);
+            $petSpaceResponse = $petSpaceRequest->json();
+
+
+            return response()->json(['success' => 'Added new records.', "petSpaceResponse" => $petSpaceResponse]);
         }
-        $cost_per_hour = $request->session()->get('user_amount');
-        $user_id = $request->session()->get('user_id');
-        $pet_space_id = $request->petSpaceId;
-        //dd($pet_space_id);
-        $venue_name = $request->session()->get('venue_name');
-        // dd($service_type);
 
+        return response()->json(['error' => $validator->errors()]);
 
-        $petSpaceData = [
-            'service' => $service_array,
-            'cost_per_hour' => $cost_per_hour,
-            'service_type' => $service_type,
-            'days' => $no_of_days,
-            'pet_count' => $pet_count,
-            'pet_name' => $pet_name,
-            'contact_number' => $contact,
-            'name' => $name,
-            'user_id' => $user_id,
-            "venue_name" => $venue_name,
-            "pet_space_id" => $pet_space_id
-
-        ];
-
-        //Message
-
-        //dd($petSpaceData);
-        $petSpaceUrl = env('API') . 'createPetSpaceBooking';
-        $petSpaceRequest = Http::post($petSpaceUrl, $petSpaceData);
-        $petSpaceResponse = $petSpaceRequest->json();
         // dd($petSpaceResponse);
-        if ($petSpaceResponse['Success'] == true) {
+        // if ($petSpaceResponse['Success'] == true) {
 
-            return redirect('/')->with('message', 'Pet space booked successfuly');
-        } else {
-            $request->session()->put('custom_error', $petSpaceResponse['Message']);
-            return redirect('/pet_space_booking/' . $pet_space_id);
-        }
+        //     return redirect('/')->with('message', 'Pet space booked successfuly');
+        // } else {
+        //     $request->session()->put('custom_error', $petSpaceResponse['Message']);
+        //     $route = '/pet_space_booking/' . $pet_space_id;
+        //     return redirect($route);
+        // }
     }
 
 
@@ -291,58 +304,66 @@ class BookingController extends Controller
     {
         try {
 
-            $validated = $request->validate([
+            $validator = Validator::make($request->all(), [
                 'name' => 'required',
                 'contact' => 'required',
                 'pet_name' => 'required',
                 'pet_count' => 'required',
-                'no_of_days' => 'required',
-                'service_type' => 'required',
+                'no_days'=>'required',
+                'days'=>'required'
+           
             ]);
-            $name = $request->name;
-            $contact = $request->contact;
-            $pet_name = $request->pet_name;
-            $pet_count = $request->pet_count;
-            $no_of_days = $request->no_of_days;
-            $service_type = $request->service_type;
-            $service = $request->session()->get('user_service');
-            $service_array = preg_split("/[,]/", $service);
-            $cost_per_hour = $request->session()->get('user_amount');
-            $user_id = $request->session()->get('user_id');
-            $venue_name = $request->session()->get('venue_name');
-            $pet_service_id = $request->pet_service_id;
-            // dd($service_type);
-
-
-            $petServiceData = [
-                'service' => $service_array,
-                'cost_per_hour' => $cost_per_hour,
-                'service_type' => $service_type,
-                'days' => $no_of_days,
-                'pet_count' => $pet_count,
-                'pet_name' => $pet_name,
-                'contact_number' => $contact,
-                'name' => $name,
-                'user_id' => $user_id,
-                "venue_name" => $venue_name,
-                "pet_service_id" => $pet_service_id
-
-            ];
-
-
-            //dd($petServiceData);
-            $petServiceUrl = env('API') . 'createPetServiceBooking';
-            $petServiceRequest = Http::post($petServiceUrl, $petServiceData);
-            $petServiceResponse = $petServiceRequest->json();
-            //  dd($petServiceResponse);
-
-            if ($petServiceResponse['Success'] == true) {
-
-                return redirect('/')->with('message', 'Pet service booked successfuly');
-            } else {
-                $request->session()->put('custom_error', $petServiceResponse['Message']);
-                return redirect()->back();
+            if ($validator->passes()) {
+                $name = $request->name;
+                $contact = $request->contact;
+                $pet_name = $request->pet_name;
+                $pet_count = $request->pet_count;
+                $no_of_days = $request->no_days;
+                $service_type = $request->days;
+                $service = $request->session()->get('user_service');
+                $service_array = preg_split("/[,]/", $service);
+                $cost_per_hour = $request->session()->get('user_amount');
+                $user_id = $request->session()->get('user_id');
+                $venue_name = $request->session()->get('venue_name');
+                $pet_service_id = $request->pet_service_id;
+                // dd($service_type);
+    
+    
+                $petServiceData = [
+                    'service' => $service_array,
+                    'cost_per_hour' => $cost_per_hour,
+                    'service_type' => $service_type,
+                    'days' => $no_of_days,
+                    'pet_count' => $pet_count,
+                    'pet_name' => $pet_name,
+                    'contact_number' => $contact,
+                    'name' => $name,
+                    'user_id' => $user_id,
+                    "venue_name" => $venue_name,
+                    "pet_service_id" => $pet_service_id
+    
+                ];
+    
+    
+                //dd($petServiceData);
+                $petServiceUrl = env('API') . 'createPetServiceBooking';
+                $petServiceRequest = Http::post($petServiceUrl, $petServiceData);
+                $petServiceResponse = $petServiceRequest->json();
+                //  dd($petServiceResponse);
+                return response()->json(['success'=>'Added new records.',"petServiceResponse"=>$petServiceResponse]);
+                
             }
+    
+            return response()->json(['error'=>$validator->errors()]);
+          
+
+            // if ($petServiceResponse['Success'] == true) {
+
+            //     return redirect('/')->with('message', 'Pet service booked successfuly');
+            // } else {
+            //     $request->session()->put('custom_error', $petServiceResponse['Message']);
+            //     return redirect()->back();
+            // }
         } catch (Exception $e) {
             echo 'Message: ' . $e->getMessage();
         }

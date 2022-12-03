@@ -147,3 +147,4 @@ Route::post('/closeModel',[HomeController::class,'closeModel']);
 
 require __DIR__.'/Auth.php';
 require __DIR__.'/Booking.php';
+require __DIR__.'/test.php';
