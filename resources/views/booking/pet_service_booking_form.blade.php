@@ -1,4 +1,14 @@
 @extends('layouts.main')
+@section('styles')
+<style>
+.check-box-align{
+  margin-left:20px;
+}
+.check-box-align1{
+  margin-left:12px;
+}
+</style>
+@endsection
 @section('content')
 <div class="p-4 ">
     <h3 class="text-secondary">Booking Details</h3>
@@ -41,13 +51,13 @@
        <div class="row">
      <div class="col-12 d-flex ">
                 <div class="form-check ">
-                    <input class="form-check-input" name="days" type="radio"  id="days" value="days" >
+                    <input class="form-check-input" name="service_type" type="radio"  id="service_type" value="days" >
                     <label class="form-check-label text-secondary" for="exampleRadios1">
                 With in a Days
                     </label>
                   </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio"  name="days" id="days" value="weeks" >
+                  <div class="form-check check-box-align">
+                    <input class="form-check-input" type="radio"  name="service_type" id="service_type" value="weeks" >
                                     <label class="form-check-label text-secondary" for="exampleRadios1">
                                 With in a Weeks
                                     </label>
@@ -56,20 +66,21 @@
                 <div class="col-12 d-flex">
             <div class="form-check">
 
-                <input class="form-check-input" type="radio"  name="days" id="days" value="months" >
+                <input class="form-check-input" type="radio"  name="service_type" id="service_type" value="months" >
                 <label class="form-check-label text-secondary" for="exampleRadios1">
             With in a Month
                 </label>
               </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio"  name="days" id="days" value="immediate" >
+              <div class="form-check check-box-align1">
+                <input class="form-check-input" type="radio"  name="service_type" id="service_type" value="immediate" >
                                          <label class="form-check-label text-secondary" for="exampleRadios1">
                                             immediate
                                          </label>
               </div>
   
-              <span class="text-danger error-text days_err"></span>
+          
             </div>
+            <span class="text-danger error-text service_type_err"></span>
         </div>
             
             </div>
@@ -93,7 +104,7 @@
           var pet_name = $("#pet_name").val();
           var pet_count = $("#pet_count").val();
           var no_days=$("#no_days").val();
-          var days=$("input[type='radio']:checked").val();
+          var service_type=$("input[type='radio']:checked").val();
           var pet_service_id=$("#pet_service_id").val();
       
 
@@ -111,7 +122,7 @@
                 pet_name:pet_name,
                 pet_count:pet_count,
                 no_days:no_days,
-                days:days,
+                service_type:service_type,
                 pet_service_id:pet_service_id                                     
              },
         success:function(data){

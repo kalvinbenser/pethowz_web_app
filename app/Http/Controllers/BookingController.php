@@ -128,7 +128,7 @@ class BookingController extends Controller
             'pet_name' => 'required',
             'pet_count' => 'required',
             'no_days'=>'required',
-            'days'=>'required'
+            'service_type'=>'required'
        
         ]);
         if ($validator->passes()) {
@@ -137,7 +137,7 @@ class BookingController extends Controller
             $pet_name = $request->pet_name;
             $pet_count = $request->pet_count;
             $no_of_days = $request->no_days;
-            $service_type = $request->days;
+            $service_type = $request->service_type;
             $service = $request->session()->get('user_service');
             if ($service == null) {
                 $service_array = null;
@@ -310,7 +310,7 @@ class BookingController extends Controller
                 'pet_name' => 'required',
                 'pet_count' => 'required',
                 'no_days'=>'required',
-                'days'=>'required'
+                'service_type'=>'required'
            
             ]);
             if ($validator->passes()) {
@@ -319,7 +319,7 @@ class BookingController extends Controller
                 $pet_name = $request->pet_name;
                 $pet_count = $request->pet_count;
                 $no_of_days = $request->no_days;
-                $service_type = $request->days;
+                $service_type = $request->service_type;
                 $service = $request->session()->get('user_service');
                 $service_array = preg_split("/[,]/", $service);
                 $cost_per_hour = $request->session()->get('user_amount');
